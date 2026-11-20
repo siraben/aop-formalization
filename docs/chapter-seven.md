@@ -56,4 +56,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [SumOfMinima](../src/AoP/SumOfMinima.agda) verifies the unnumbered addition example. Given minima `m` and `n` of two sets of natural numbers, their sum is attainable and bounds every pairwise sum below. The bound is exactly the componentwise monotonicity of addition.
 
+[OneWayMonotone](../src/AoP/OneWayMonotone.agda) gives the intermediate §7.2 counterexample for relational monotonicity. The high input can return an extra low output. Every increase in input permits a matching increase or equality in output, but the reverse comparison cannot match that extra output.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
