@@ -1,5 +1,6 @@
 *.djvu
 .pi/
+pi-session-*.html
 *.agdai
 _build/
 result
