@@ -231,6 +231,7 @@ import AoP.TreeMemberPath
 import AoP.ListMemberPath
 import AoP.ContainerEmpty
 import AoP.ClosureIterate
+import AoP.ClosureChain
 import AoP.MemberFold
 import AoP.SimpleHylo
 import AoP.FoldReachability
