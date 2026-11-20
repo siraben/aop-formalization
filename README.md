@@ -56,6 +56,8 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 
 | §10.3 | [Tardiness](src/AoP/Tardiness.agda) | Fuse elapsed time and maximum weighted tardiness into a single schedule evaluator; verify the three-job example |
 
+| §10.4 | [TeXExternal](src/AoP/TeXExternal.agda) | Specify shortest round-tripping decimals; check the zero and half-unit cases (not the general printer) |
+
 `R : B ← A` takes the output first: `R b a` is evidence that `b` is a possible result for `a`. Thus `S ∘ R` runs `R` first. Inclusion `R ⊆ S` maps witnesses rather than comparing predicates by definitional equality. `⦅ e ∣ f ⦆` denotes the list catamorphism with base `e` and step `f`; Agda reserves `⦇ ⦈` for idiom brackets.
 
 **Reading the calculations.** Read the expressions down the left margin between `begin` and `∎`. A step `≡⟨ law ⟩` names its justification; `≡⟨⟩` means the neighbouring expressions agree by definition. Compare [snoc-list associativity](src/AoP/Snoc.agda) with §1.3, or [Horner promotion](src/AoP/Horner.agda) with §3.2. Prefer a chain for a derivation; keep `refl` or a named law when it already explains the whole step.

@@ -17,6 +17,7 @@ import AoP.ListAlgebra
 import AoP.Folds
 import AoP.Horner
 import AoP.TeXFraction
+import AoP.TeXExternal
 import AoP.Conditions
 import AoP.Currying
 import AoP.Relations
