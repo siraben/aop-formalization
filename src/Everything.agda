@@ -511,11 +511,15 @@ import AoP.FixedPoint
 import AoP.UniqueFixedBounds
 import AoP.AbstractFoldBounds
 import AoP.HyloDivisionBound
+import AoP.HyloSimpleDivision
 import AoP.HyloBranchUnion
 import AoP.PositiveLoopFixed
 import AoP.AccessiblePlus
 import AoP.AccessibleNoDescent
 import AoP.AccessibleContainerHylo
+import AoP.AccessibleFoldPreimage
+import AoP.ContainerConverseFold
+import AoP.SurjectiveFoldEquality
 import AoP.PrefixLambek
 import AoP.RelPrefixLambek
 import AoP.DifunctionalClosure
