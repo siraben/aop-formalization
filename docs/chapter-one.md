@@ -1,5 +1,9 @@
 # Chapter 1: folds, inverses, and polymorphism
 
+In §1.3, [SnocConcatTrace](../src/AoP/SnocConcatTrace.agda) calculates `[1,2,3] ++ [4,5]` using lists built from the rear. The recursion exposes `5` before `4`. The base case returns `[1,2,3]`; rebuilding appends `4` and then `5`, preserving their order. `read-back` checks the result against the ordinary cons-list `[1,2,3,4,5]`.
+
+In §1.4, [RoseSizeTrace](../src/AoP/RoseSizeTrace.agda) counts the nodes of a tree with two children: a branch with one bud, and a leaf. The forest fold adds the child sizes `2 + 1`; the tree fold counts the root as well, giving `1 + (2 + 1) = 4`. Empty forests contribute zero.
+
 The numbered exercises below link to their checked constructions. For the section-level examples, the [README](../README.md) links to the main developments. The unnumbered examples are being checked section by section. For §1.1, [SmallDatatypes](../src/AoP/SmallDatatypes.agda) enumerates seven-bit ASCII, constructs the Boolean sum and product examples, checks their list lengths (130 and 256), and defines negation, switch, paired and curried conjunction, and optional values.
 
 For §1.2, [ArithmeticFolds](../src/AoP/ArithmeticFolds.agda) constructs addition, multiplication, and exponentiation by fixing their first argument. It also shows that the solutions of `f n ≡ f (suc n)` are exactly the constant functions. [Naturals](../src/AoP/Naturals.agda) covers fold uniqueness and the factorial and Fibonacci pair invariants.
@@ -26,7 +30,7 @@ For §1.7, [FilterCalculation](../src/AoP/FilterCalculation.agda) derives ordina
 | 1.9–1.10 | [Snoc](../src/AoP/Snoc.agda) proves the snoc append unit law; [Naturality](../src/AoP/Naturality.agda) defines curried cons-list append by a fold. The cons-list left unit holds by reduction. |
 | 1.11–1.12 | [CountingFolds](../src/AoP/CountingFolds.agda): fold into a function awaiting an accumulator or count. Taking a prefix and dropping it produce pieces that append to the input. |
 | 1.13–1.14 | [Trees](../src/AoP/Trees.agda) folds rose trees and proves both currying round trips. [CurriedExpression](../src/AoP/CurriedExpression.agda) checks the concrete seven-label expression and its depth. |
-| 1.15 | [Inverses](../src/AoP/Inverses.agda): fold over the first list to obtain a function waiting for the second. The reverse zip/unzip law uses aligned lengths. |
+| 1.15 | [Inverses](../src/AoP/Inverses.agda): fold over the first list to obtain a function waiting for the second. [ZipInverseDomain](../src/AoP/ZipInverseDomain.agda) also proves necessity: every pair produced by `unzip` is aligned, so the truncating `zip` recovers both inputs exactly when their lengths agree. Zipping `[1,2]` with `[3]` yields `[(1,3)]`; unzipping it loses `2`. |
 | 1.16 | [DecimalDigits](../src/AoP/DecimalDigits.agda): evaluate by a digit fold; `Printer` specifies the inverse by two laws. [DecimalSuccessor](../src/AoP/DecimalSuccessor.agda) implements printing by counting with carries and proves that evaluation recovers the positive input. [DecimalInverse](../src/AoP/DecimalInverse.agda) proves that every canonical numeral is reachable by successive increments, then uses that fact to recover the original digits after evaluation and printing. |
 | 1.17 | [Naturality](../src/AoP/Naturality.agda): map commutes with concat, reverse, zip, and snoc-list prefix enumeration. |
 | 1.18–1.19 | [NaturalShapes](../src/AoP/NaturalShapes.agda): relabelling laws for the proposed polymorphic functions. The first type has no total inhabitant; the second has a checked root-selection example. |

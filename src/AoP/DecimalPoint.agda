@@ -39,4 +39,15 @@ places [] = refl
 places (d ∷ ds) = cong (10 *_) (places ds)
 
 example : eval ((ε ▻ nonzero one) ▻ nonzero two) (nonzero three ∷ oh ∷ nonzero five ∷ []) ≡ (12305 over 1000)
-example = refl
+example = begin
+  eval ((ε ▻ nonzero one) ▻ nonzero two) (nonzero three ∷ oh ∷ nonzero five ∷ [])
+    ≡⟨⟩ -- Whole: shift 1 left one place, then add 2.
+  ((10 * 1 + 2) * 1000 + Ratio.numerator (frac-step (nonzero three) (frac-step oh (frac-step (nonzero five) (0 over 1))))) over 1000
+    ≡⟨⟩ -- Innermost digit: .5 is 5/10.
+  (12 * 1000 + Ratio.numerator (frac-step (nonzero three) (frac-step oh (5 over 10)))) over 1000
+    ≡⟨⟩ -- Prepending zero changes the scale: .05 is 5/100.
+  (12 * 1000 + Ratio.numerator (frac-step (nonzero three) (5 over 100))) over 1000
+    ≡⟨⟩ -- The leading 3 contributes 300 at scale 1000.
+  (12 * 1000 + (3 * 100 + 5)) over 1000
+    ≡⟨⟩
+  12305 over 1000 ∎

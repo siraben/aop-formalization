@@ -13,10 +13,13 @@ import AoP.NonemptyFolds
 import AoP.ConversionFold
 import AoP.ConversionCost
 import AoP.Snoc
+import AoP.SnocConcatTrace
 import AoP.Trees
+import AoP.RoseSizeTrace
 import AoP.CurriedExpression
 import AoP.ForestList
 import AoP.Inverses
+import AoP.ZipInverseDomain
 import AoP.InverseDomains
 import AoP.DecimalDigits
 import AoP.DecimalDivision
@@ -129,6 +132,7 @@ import AoP.Transformations
 import AoP.Whiskering
 import AoP.FunctorCategory
 import AoP.ParallelExponentialObstruction
+import AoP.DiscreteDiagramClosure
 import AoP.WalkingArrow
 import AoP.ArrowCategory
 import AoP.ArrowProducts

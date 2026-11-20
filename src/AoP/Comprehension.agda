@@ -32,4 +32,13 @@ range start zero = []
 range start (suc length) = start ∷ range (suc start) length
 
 even-squares : collect (λ n → n * n) even (range 1 10) ≡ 4 ∷ 16 ∷ 36 ∷ 64 ∷ 100 ∷ []
-even-squares = refl
+even-squares = begin
+  collect square even (range 1 10)
+    ≡⟨ map-filter square even (range 1 10) ⟩ -- test the input before mapping
+  map square (filter even (range 1 10))
+    ≡⟨⟩ -- delete odd inputs, retaining the order of the others
+  map square (2 ∷ 4 ∷ 6 ∷ 8 ∷ 10 ∷ [])
+    ≡⟨⟩
+  4 ∷ 16 ∷ 36 ∷ 64 ∷ 100 ∷ [] ∎
+  where square : Nat → Nat
+        square n = n * n
