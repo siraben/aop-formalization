@@ -19,6 +19,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §§2.6–2.7 | [ListAlgebra](src/AoP/ListAlgebra.agda) | Instantiate the initial-algebra interface for cons-lists; obtain the map on labels as a catamorphism |
 | §§2.6, 3.1 | [Folds](src/AoP/Folds.agda) | List-fold uniqueness; fusion and banana-split derived from uniqueness |
 | §3.2 | [Horner](src/AoP/Horner.agda) | Fuse a list reduction with a Ruby triangle, yielding Horner's one-pass rule |
+| §§4.1–4.2 | [Shunting](src/AoP/Shunting.agda) | Function graphs are entire and simple; calculate both implications of the left shunting rule |
 | §§4.1, 4.4 | [Relations](src/AoP/Relations.agda) | Modular law and both implications of the universal property of right division |
 | §5.5 | [Relations](src/AoP/Relations.agda), [Refinement](src/AoP/Refinement.agda) | Inductive relational fold; derive a deterministic implementation from branch refinements; filter refines subsequence selection |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
