@@ -76,5 +76,6 @@ import AoP.TabStop
 import AoP.Entab
 import AoP.EntabLength
 import AoP.EntabPending
+import AoP.TabDistance
 import AoP.Tardiness
 import AoP.TardinessExample
