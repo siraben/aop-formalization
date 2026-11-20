@@ -1,6 +1,6 @@
 # Chapter 6: recursive programs
 
-This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md) separately tracks the §6.6 algorithms and intermediate equations.
+This inventory tracks the 37 numbered exercises in Chapter 6. The [sorting inventory](sorting-coverage.md) separately tracks the §6.6 algorithms and intermediate equations.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -33,4 +33,18 @@ This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md
 
 [ContainerEmpty](../src/AoP/ContainerEmpty.agda) checks a container case of exercise 6.21. If every value has a member, there are no values over the empty element type. Conversely, if each shape has decidably inhabited positions, emptiness over the empty element type implies that every value has a member. The general Boolean-allegory proof remains open.
 
-The remaining sections and the inventory of unnumbered examples still need a full audit.
+Exercises 6.18–6.20 remain open: the equivalent formulation of the membership law, maximality of membership as a lax transformation, and the corresponding maximal transformation between two relators. See the [sorting inventory](sorting-coverage.md) for exercises 6.22–6.30.
+
+### §6.7 Closure
+
+| Exercise | Construction and scope |
+| --- | --- |
+| 6.31 | [Closure](../src/AoP/Closure.agda) proves the one-step fixed-point law, prefixpoint induction and least reflexive-transitive extension for finite paths. |
+| 6.32 | Open: both least-fixed-point equations for composition with a closure. |
+| 6.33 | [ClosureIterate](../src/AoP/ClosureIterate.agda) proves both directions using `once` and `again`. The identity fold reads the starting vertex; the relational fold takes one edge per `again`. |
+| 6.34 | Open: derive closure via a relational chain fold on nonempty lists. |
+| 6.35 | Open: the rolling, diagonal and substitution rules of the μ-calculus. |
+| 6.36 | Open: use the diagonal rule to derive closure of a union. |
+| 6.37 | Open: specialize the union law to a coreflexive restriction. |
+
+Unnumbered examples and intermediate derivations still need a full audit.

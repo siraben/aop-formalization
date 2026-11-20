@@ -230,6 +230,7 @@ import AoP.AccessibleExtremes
 import AoP.TreeMemberPath
 import AoP.ListMemberPath
 import AoP.ContainerEmpty
+import AoP.ClosureIterate
 import AoP.MemberFold
 import AoP.SimpleHylo
 import AoP.FoldReachability
