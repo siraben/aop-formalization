@@ -223,6 +223,15 @@ import AoP.TeXBoundedPrinter
 import AoP.TeXResidualLoop
 import AoP.TeXResidualGap
 import AoP.TeXLoopTermination
+import AoP.TeXResidualAccept
+import AoP.TeXLoopSound
+import AoP.TeXLoopRoundTrip
+import AoP.TeXResidualRival
+import AoP.TeXLoopWidth
+import AoP.TeXSinglePrinter
+import AoP.TeXLoopGreatest
+import AoP.TeXWidthAgreement
+import AoP.TeXFixedWidthUnique
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
