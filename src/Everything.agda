@@ -440,6 +440,7 @@ import AoP.ChoiceCoverage
 import AoP.NonlinearChoices
 import AoP.QuadraticQueries
 import AoP.GreedySingleton
+import AoP.InitialSingletonThinning
 import AoP.FibreMinimumPrune
 import AoP.FibrePowerThinning
 import AoP.InitialFibrePruning
@@ -481,6 +482,9 @@ import AoP.BusMinimum
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
+import AoP.LayeredCostFold
+import AoP.LayeredRowChoice
+import AoP.LayeredPathMinimum
 import AoP.BranchNetwork
 import AoP.BranchNetworkTrace
 import AoP.Bump
