@@ -35,4 +35,6 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [ListSetify](../src/AoP/ListSetify.agda) checks exercises 5.21–5.22. Treating a list as its membership predicate turns nil into the empty set, a singleton list into a singleton set, cons into union with a singleton, and map into direct image. Applying the same operation to the subsequence enumeration yields exactly the subsequence relation at the given input.
 
+[InitFold](../src/AoP/InitFold.agda) checks exercise 5.24: folding a nonempty list with an empty singleton result and a cons step removes exactly its last element. The proof reconstructs the input by appending the discarded element and shows that any such decomposition yields the same prefix.
+
 Later sections and the unnumbered calculations still need a full audit.
