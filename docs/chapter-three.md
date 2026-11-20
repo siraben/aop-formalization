@@ -4,9 +4,9 @@ This inventory lists exercises 3.1–3.51 and selected worked derivations in §�
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
-| 3.1 | [Average](../src/AoP/Average.agda): evaluating the sum and count algebras on their respective projections gives the paired update for both list constructors. |
+| 3.1 | [CategoricalBananaSplit](../src/AoP/CategoricalBananaSplit.agda) derives §3.1’s law for an initial algebra and a product of the two result objects. `direct` shows that pairing the two separate folds satisfies the equation for the combined fold: observe each projection, use fold computation, then apply functor composition. Conversely `left-fold` and `right-fold` recover the separate folds from the combined one by fusion. [Average](../src/AoP/Average.agda): evaluating the sum and count algebras on their respective projections gives the paired update for both list constructors. For `[2,3,5]`, the fold builds the suffix summaries `(5,1)`, `(8,2)`, then `(10,3)`, so the average is `10/3`. The empty fold returns `(0,0)`; the final ratio renders it as `0/1`. |
 | 3.2 | [ProductComparison](../src/AoP/ProductComparison.agda): the two mapped projections give a natural comparison from `F (A × B)` to `F A × F B`. |
-| 3.3 | [Steep](../src/AoP/Steep.agda): maintain the suffix sum to test each entry with one comparison. |
+| 3.3 | [Steep](../src/AoP/Steep.agda): maintain the suffix sum to test each entry with one comparison. [SteepWork](../src/AoP/SteepWork.agda) counts additions. With short-circuit comparisons the direct method uses at most `0 + 1 + … + (n−1)` additions; `hard n` attains that count by choosing each head one larger than its tail sum. Computing the full cached pair takes exactly `n` additions. These counts exclude comparisons and the cost of natural-number arithmetic. |
 | 3.4 | [AuxiliaryFold](../src/AoP/AuxiliaryFold.agda): use the auxiliary fold result at each child and recover the desired answer by projection. |
 | 3.5 | [BalanceFold](../src/AoP/BalanceFold.agda): return each subtree’s size alongside its balance flag. Integer cross-products test the inclusive one-third and two-thirds bounds. |
 | 3.6–3.7 | [Predecessors](../src/AoP/Predecessors.agda) derives the descending list; [FactorialFusion](../src/AoP/FactorialFusion.agda) multiplies it without allocating the list. |

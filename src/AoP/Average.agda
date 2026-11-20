@@ -47,4 +47,16 @@ average : List Nat → Nat × Nat
 average xs = ratio (stats xs)
 
 example : average (2 ∷ 3 ∷ 5 ∷ []) ≡ (10 , 3)
-example = refl
+example = begin
+  average (2 ∷ 3 ∷ 5 ∷ []) ≡⟨⟩
+  ratio (combined (inr (2 , stats (3 ∷ 5 ∷ [])))) ≡⟨⟩
+  ratio (combined (inr (2 , combined (inr (3 , (5 , 1)))))) ≡⟨⟩
+  ratio (combined (inr (2 , (8 , 2)))) ≡⟨⟩
+  ratio (10 , 3) ≡⟨⟩
+  (10 , 3) ∎
+
+-- The empty fold still reports zero observations. Only the final ratio
+-- changes its denominator, keeping the summary useful as a fold seed.
+empty : average [] ≡ (0 , 1)
+empty = begin
+  average [] ≡⟨⟩ ratio (0 , 0) ≡⟨⟩ (0 , 1) ∎

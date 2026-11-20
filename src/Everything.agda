@@ -119,6 +119,11 @@ import AoP.InitialAlgebraBridge
 import AoP.ListTypeFunctorFusion
 import AoP.ChangeAlgebraParameter
 import AoP.InitialTypeFunctor
+import AoP.ParametricFoldSquare
+import AoP.FoldTransformation
+import AoP.AbstractFoldRetraction
+import AoP.CategoricalBananaSplit
+import AoP.IdentityInitialObject
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
@@ -193,6 +198,7 @@ import AoP.GeneralHorner
 import AoP.HornerMultiplier
 import AoP.Hyperproduct
 import AoP.Steep
+import AoP.SteepWork
 import AoP.Average
 import AoP.ProductComparison
 import AoP.AuxiliaryFold
