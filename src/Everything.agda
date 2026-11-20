@@ -426,6 +426,7 @@ import AoP.VanLexOrder
 import AoP.VanLexLinear
 import AoP.VanLexSingletons
 import AoP.VanLexCost
+import AoP.VanSplitCost
 import AoP.VanLexGuard
 import AoP.VanLexMinimumExample
 import AoP.VanExtensionOrder
