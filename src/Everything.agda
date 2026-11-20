@@ -311,6 +311,9 @@ import AoP.ExponentialCases
 import AoP.ExponentialFunctor
 import AoP.ExponentialRelator
 import AoP.RelatorTests
+import AoP.AllegoryAdjointConverse
+import AoP.RelatorMapConverse
+import AoP.RelatorSpanConverse
 import AoP.InhabitedFunctor
 import AoP.LaxChoices
 import AoP.RelatorDomain

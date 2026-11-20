@@ -1,5 +1,11 @@
 # Chapter 5: relational datatypes
 
+### §5.1: why a relator takes maps to maps
+
+A map `f` in an allegory is entire and simple. Those conditions bound its two round trips: `id ⊑ f˘ ∘ f` and `f ∘ f˘ ⊑ id`. [RelatorMapConverse](../src/AoP/RelatorMapConverse.agda) transports the bounds through a monotone functor, using preservation of identity and composition. At this stage the transported right adjoint is `F(f˘)`. To identify it with `(F f)˘`, [AllegoryAdjointConverse](../src/AoP/AllegoryAdjointConverse.agda) proves Proposition 4.1 abstractly: apply the modular law to the unit to restrict the left arrow to its overlap with the converse of the right arrow; the counit shows the restriction still covers the whole left arrow. Reversing the adjunction gives the other inclusion. Consequently `F f` is a map and the two ways to form its converse agree (Lemma 5.1). Neither proof needs a tabulation.
+
+[RelatorSpanConverse](../src/AoP/RelatorSpanConverse.agda) proves the forward direction of Theorem 5.1. Write `R = f ∘ g˘` using the maps from the rows of a table to the output and input. Reversing the relation swaps those maps, so `F(R˘)` reduces to `F g ∘ (F f)˘`. Reversing `F R` gives the same composite by the lemma and double converse. `Row.preserve` requires just the factorization equation and map legs; uniqueness of rows plays no role in this direction.
+
 This inventory covers all 30 numbered Chapter 5 exercises. A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
 
 | Exercise | Construction and scope |
