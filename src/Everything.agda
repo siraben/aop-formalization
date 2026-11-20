@@ -109,6 +109,7 @@ import AoP.StrictInitial
 import AoP.RelDistribution
 import AoP.Currying
 import AoP.ExponentialCases
+import AoP.MapNaturality
 import AoP.Relations
 import AoP.Shunting
 import AoP.Tabulation
