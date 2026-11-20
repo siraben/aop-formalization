@@ -166,6 +166,7 @@ import AoP.StrictInitial
 import AoP.RelDistribution
 import AoP.Currying
 import AoP.DistributiveHoms
+import AoP.RepresentingIso
 import AoP.ExponentialCases
 import AoP.ExponentialFunctor
 import AoP.ExponentialRelator
