@@ -110,6 +110,7 @@ import AoP.RelDistribution
 import AoP.Currying
 import AoP.ExponentialCases
 import AoP.MapNaturality
+import AoP.FunStrength
 import AoP.Iteration
 import AoP.Relations
 import AoP.Shunting
