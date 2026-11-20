@@ -547,6 +547,8 @@ import AoP.EditTail
 import AoP.EditSuffix
 import AoP.EditDropSquares
 import AoP.ScriptRelationInduction
+import AoP.EditDropCalculation
+import AoP.EditDropExample
 import AoP.EditSourceTail
 import AoP.EditSuffixPair
 import AoP.ScriptLengthOrder
