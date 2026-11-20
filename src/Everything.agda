@@ -317,6 +317,7 @@ import AoP.Binary
 import AoP.Refinement
 import AoP.Thinning
 import AoP.ThinIdentity
+import AoP.ThinUnion
 import AoP.ThinningFold
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
