@@ -465,6 +465,7 @@ import AoP.BlockHeadCover
 import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackGuardStep
+import AoP.KnapsackSortedBranches
 import AoP.KnapsackSearch
 import AoP.Paragraph
 import AoP.LineWidthClosure
