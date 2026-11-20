@@ -162,6 +162,7 @@ import AoP.FactorialFusion
 import AoP.TeXFraction
 import AoP.RoundingCollision
 import AoP.DecimalTriangle
+import AoP.QuarterCells
 import AoP.ExtendUpdate
 import AoP.FloorRule
 import AoP.FractionThreshold
