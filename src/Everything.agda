@@ -179,6 +179,7 @@ import AoP.TransposeCounterexample
 import AoP.TransposeCombinations
 import AoP.ListSetify
 import AoP.PartitionFlatten
+import AoP.PartitionPredicate
 import AoP.PartitionRanges
 import AoP.PermuteTail
 import AoP.BagTailCalculation

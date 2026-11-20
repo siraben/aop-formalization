@@ -1,6 +1,6 @@
 # Chapter 5: relational datatypes
 
-This inventory covers exercises 5.1–5.19 (§§5.1–5.5). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
+This inventory covers exercises 5.1–5.29 (§§5.1–5.6). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -42,6 +42,8 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 [PartitionRanges](../src/AoP/PartitionRanges.agda) checks both range identities of exercise 5.25. Starting a new block produces precisely a singleton first block. Gluing produces precisely a first block with at least two elements. In either case all later blocks stay unchanged.
 
 [PartitionFlatten](../src/AoP/PartitionFlatten.agda) checks exercise 5.26: the enumeration returns a list of nonempty blocks exactly when flattening those blocks gives the original input. The empty input has one partition, the empty list of blocks. For a nonempty candidate the completeness proof removes either its first singleton block or the first element of a longer block, reconstructing the `new` or `glue` step.
+
+[PartitionPredicate](../src/AoP/PartitionPredicate.agda) checks exercise 5.27: fold directly into a predicate on block lists. Each step takes the union of the `new` and `glue` images. Both directions of the proof identify that predicate with membership in the enumeration from exercise 5.26.
 
 [PermuteTail](../src/AoP/PermuteTail.agda) checks the identity in exercise 5.28 for the insertion-based permutation relation: permuting the tail first leaves the set of final permutations unchanged. [BagTailCalculation](../src/AoP/BagTailCalculation.agda) gives the bag-based derivation assuming every bag has a representative list. It uses `bagify ∘ bagify˘ = id` to insert a tail representative, then the cons-fold equation to remove that intermediate list. Identifying this abstract bag relation with the concrete insertion relation remains open.
 
