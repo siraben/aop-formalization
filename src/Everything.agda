@@ -53,6 +53,7 @@ import AoP.LeafSplit
 import AoP.PreorderSort
 import AoP.PostorderSort
 import AoP.OrderedMerge
+import AoP.MergeTreeSort
 import AoP.PermutationGuard
 import AoP.Squaring
 import AoP.Binary
