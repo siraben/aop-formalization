@@ -34,6 +34,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 [SortedSubset](../src/AoP/SortedSubset.agda) proves exercise 8.17: every subsequence of an ordered listing of `X` is an ordered listing of some subset of `X`. Take the subset to be the members of the subsequence. Every comparison required in the smaller list already held in the larger one, so this direction does not require connectedness.
 
-[SortedImage](../src/AoP/SortedImage.agda) verifies equation (8.8) of exercise 8.18. Mapping an ordered listing under the pulled-back comparison gives an ordered listing of the image set. A preimage witness transfers each required comparison and proves the membership equivalence; injectivity is unnecessary. The filter equation (8.9) remains open.
+[SortedImage](../src/AoP/SortedImage.agda) verifies equation (8.8) of exercise 8.18. Mapping an ordered listing under the pulled-back comparison gives an ordered listing of the image set. A preimage witness transfers each required comparison and proves the membership equivalence; injectivity is unnecessary. [SortedFilter](../src/AoP/SortedFilter.agda) verifies equation (8.9) for a decidable predicate: the chapter 7 filter yields a subsequence, so exercise 8.17 preserves orderedness, and the survivors are exactly the original members passing the test.
 
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
