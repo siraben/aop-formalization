@@ -10,4 +10,6 @@
 
 [LowerMinimum](../src/AoP/LowerMinimum.agda) proves exercises 7.5 and 7.12 for preorders. Transitivity makes every predecessor of a lower bound another lower bound; reflexivity supplies the converse witness. A member of a set is a minimum exactly when it precedes some minimum of that set.
 
+[PrincipalMaximum](../src/AoP/PrincipalMaximum.agda) proves exercise 7.14. The maxima of the predecessors of `a` are exactly the elements `b` satisfying both `R b a` and `R a b`. This allows distinct maxima in a preorder.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
