@@ -95,6 +95,7 @@ import AoP.Predecessors
 import AoP.FactorialFusion
 import AoP.TeXFraction
 import AoP.FloorRule
+import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.Conditions
 import AoP.Currying
