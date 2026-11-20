@@ -493,6 +493,7 @@ import AoP.EditScript
 import AoP.EditTail
 import AoP.EditSuffix
 import AoP.EditSourceTail
+import AoP.EditSuffixPair
 import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
 import AoP.DisjointFibres
