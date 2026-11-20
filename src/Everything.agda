@@ -20,6 +20,7 @@ import AoP.InverseDomains
 import AoP.DecimalDigits
 import AoP.DecimalDivision
 import AoP.TwoMinima
+import AoP.MinimumComparison
 import AoP.DecimalAccumulator
 import AoP.DecimalPoint
 import AoP.Comprehension
