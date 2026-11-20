@@ -35,3 +35,4 @@ import AoP.Refinement
 import AoP.Thinning
 import AoP.Bellman
 import AoP.Greedy
+import AoP.Detab

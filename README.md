@@ -36,10 +36,9 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §6.3 | [Hylo](src/AoP/Hylo.agda) | List hylomorphism as unfold followed by fold; prove both fixed-point inclusions and leastness |
 | §6.7 | [Closure](src/AoP/Closure.agda) | Finite paths, closure induction, and the least preorder containing a relation |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
-
 | §9.1 | [Bellman](src/AoP/Bellman.agda) | Unary-subproblem principle of optimality: branchwise monotone extension preserves the validity of replacing each child by a minimum |
-
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
+| §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant |
 
 `R : B ← A` takes the output first: `R b a` is evidence that `b` is a possible result for `a`. Thus `S ∘ R` runs `R` first. Inclusion `R ⊆ S` maps witnesses rather than comparing predicates by definitional equality. `⦅ e ∣ f ⦆` denotes the list catamorphism with base `e` and step `f`; Agda reserves `⦇ ⦈` for idiom brackets.
 
@@ -47,4 +46,4 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 
 Run `nix flake check` to type-check all modules with `--safe --without-K`, or `nix develop` followed by `agda -i src src/Everything.agda` to work interactively. Only Agda builtins are required.
 
-This is not a chapter-by-chapter transcription; in particular most recursive-program and optimization examples, the general dynamic-programming and greedy theorems, and the chapter 10 applications are not yet covered.
+This is not a chapter-by-chapter transcription; in particular most recursive-program and optimization examples, the general dynamic-programming and greedy theorems, and most chapter 10 applications (including optimal entabbing) are not yet covered.
