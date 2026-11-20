@@ -30,3 +30,23 @@ module Rules {c r : Level} {P : Set c} (_≤_ : P → P → Set r)
     backward : d ≤ n
     backward = least diag n (trans (hm n (unfold nested))
                               (trans (fold (rows n)) (fold nested)))
+
+  -- Substitution: roll f out of the outer binder. What remains is
+  -- a nested fixed point with row at a given by h (f a); diagonalize
+  -- those rows before applying f again.
+  module Substitution (f inner : P → P) (h : P → P → P)
+         (fm : ∀ {a b} → a ≤ b → f a ≤ f b)
+         (im : ∀ {a b} → a ≤ b → inner a ≤ inner b)
+         (hm : ∀ a {b c} → b ≤ c → h a b ≤ h a c)
+         (rows : ∀ a → Mu (h a) (inner a))
+         {x n d} (outer : Mu (λ a → f (inner a)) x)
+         (rolled : Mu (λ a → inner (f a)) n)
+         (diagonal : Mu (λ a → h (f a) a) d) where
+    private
+      module R = Rolling f inner fm im outer rolled
+      module D = Diagonal (λ a → h (f a)) (λ a → hm (f a))
+                          (λ a → inner (f a)) (λ a → rows (f a)) rolled diagonal
+    forward : x ≤ f d
+    forward = trans R.forward (fm D.forward)
+    backward : f d ≤ x
+    backward = trans (fm D.backward) R.backward
