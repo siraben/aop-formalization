@@ -41,7 +41,7 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [PartitionRanges](../src/AoP/PartitionRanges.agda) checks both range identities of exercise 5.25. Starting a new block produces precisely a singleton first block. Gluing produces precisely a first block with at least two elements. In either case all later blocks stay unchanged.
 
-[PartitionFlatten](../src/AoP/PartitionFlatten.agda) checks exercise 5.26: the enumeration returns a list of nonempty blocks exactly when flattening those blocks gives the original input. The empty input has one partition, the empty list of blocks. For a nonempty candidate the completeness proof removes either its first singleton block or the first element of a longer block, reconstructing the `new` or `glue` step.
+[PartitionFlatten](../src/AoP/PartitionFlatten.agda) checks exercise 5.26: the enumeration returns a list of nonempty blocks exactly when flattening those blocks gives the original input. The empty input has one partition, the empty list of blocks. [PartitionThree](../src/AoP/PartitionThree.agda) checks the book’s full example: the two gaps in `[1,2,3]` yield exactly four partitions, by cutting both, only the first, only the last, or neither. For a nonempty candidate the completeness proof removes either its first singleton block or the first element of a longer block, reconstructing the `new` or `glue` step.
 
 [PartitionPredicate](../src/AoP/PartitionPredicate.agda) checks exercise 5.27: fold directly into a predicate on block lists. Each step takes the union of the `new` and `glue` images. Both directions of the proof identify that predicate with membership in the enumeration from exercise 5.26.
 
