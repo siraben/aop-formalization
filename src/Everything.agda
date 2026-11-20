@@ -61,6 +61,7 @@ import AoP.LineBreaks
 import AoP.ParagraphMinimum
 import AoP.Bitonic
 import AoP.BitonicTable
+import AoP.BitonicExample
 import AoP.FiniteMinimum
 import AoP.Party
 import AoP.Cylinder
