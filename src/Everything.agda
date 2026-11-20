@@ -26,6 +26,7 @@ import AoP.Naturality
 import AoP.NaturalShapes
 import AoP.PointFree
 import AoP.FilterCalculation
+import AoP.FilterMap
 import AoP.Categories
 import AoP.Retractions
 import AoP.Cancellation
