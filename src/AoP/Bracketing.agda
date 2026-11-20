@@ -32,6 +32,43 @@ module Model {A Size : Set} (atom : A → Size) (combine : Size → Size → Siz
     replace l l′ r r′ eq₁ eq₂ cheap₁ cheap₂ rewrite same-size l l′ eq₁ | same-size r r′ eq₂ =
       sum-mono (rid (charge (size l′) (size r′))) (sum-mono cheap₁ cheap₂)
 
+  -- For example, summing lengths gives the same size however append is
+  -- bracketed. In general a monoid of sizes suffices: first calculate
+  -- the size of a sequence, then show that flattening preserves size.
+  module SizeFold (e : Size) (unitˡ : ∀ x → combine e x ≡ x)
+                  (unitʳ : ∀ x → combine x e ≡ x)
+                  (assoc : ∀ x y z → combine (combine x y) z ≡ combine x (combine y z)) where
+    back : ∀ {x y : Size} → x ≡ y → y ≡ x
+    back refl = refl
+
+    seq : List A → Size
+    seq [] = e
+    seq (x ∷ xs) = combine (atom x) (seq xs)
+
+    split : ∀ xs ys → seq (xs ++ ys) ≡ combine (seq xs) (seq ys)
+    split [] ys = back (unitˡ (seq ys))
+    split (x ∷ xs) ys = begin
+      combine (atom x) (seq (xs ++ ys))           ≡⟨ cong (combine (atom x)) (split xs ys) ⟩
+      combine (atom x) (combine (seq xs) (seq ys)) ≡⟨ back (assoc (atom x) (seq xs) (seq ys)) ⟩
+      combine (seq (x ∷ xs)) (seq ys) ∎
+
+    flatten-size : ∀ t → seq (leaves t) ≡ size t
+    flatten-size (tip a) = unitʳ (atom a)
+    flatten-size (bin l r) = begin
+      seq (leaves l ++ leaves r)           ≡⟨ split (leaves l) (leaves r) ⟩
+      combine (seq (leaves l)) (seq (leaves r)) ≡⟨ cong (λ u → combine u (seq (leaves r))) (flatten-size l) ⟩
+      combine (size l) (seq (leaves r))     ≡⟨ cong (combine (size l)) (flatten-size r) ⟩
+      size (bin l r) ∎
+
+    same : ∀ l r → leaves l ≡ leaves r → size l ≡ size r
+    same l r eq = begin
+      size l         ≡⟨ back (flatten-size l) ⟩
+      seq (leaves l) ≡⟨ cong seq eq ⟩
+      seq (leaves r) ≡⟨ flatten-size r ⟩
+      size r ∎
+
+    open OptimalSubtrees same public
+
 -- Small executable comparison for list concatenation, with leaf lengths
 -- as input labels. This checks the costs, not just the abstract recurrence.
 module Append = Model (λ (n : Nat) → n) _+_ (λ l _ → l)
