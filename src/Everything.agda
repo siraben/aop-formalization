@@ -416,6 +416,8 @@ import AoP.ImageUnionLaws
 import AoP.TransposeColumnTests
 import AoP.TabularIndirectEquality
 import AoP.SpanColumnShunt
+import AoP.SpanDivisionTests
+import AoP.TabularTransposeFormula
 import AoP.FibreEquality
 import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
