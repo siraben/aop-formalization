@@ -28,4 +28,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 [ConnectedBlock](../src/AoP/ConnectedBlock.agda) proves the closure premise for exercise 8.14: any subsequence of a pairwise-comparable block is pairwise comparable. Extending a connected suffix requires only self-comparison of the new head and comparisons between that head and suffix members. [ConnectedMaximum](../src/AoP/ConnectedMaximum.agda) proves the optimized extension criterion under the common-upper-bound hypothesis: comparison with a cached greatest member suffices, and either successful comparison supplies the new greatest member. The minimum-block greedy partition and its fusion remain open.
 
+[LeftMinimumBlock](../src/AoP/LeftMinimumBlock.agda) checks the block laws in exercise 8.15. A block stays admissible when its first element is retained and its tail shortened. For transitive comparison, a new head can be prepended exactly when it dominates the old head. Removing the old head can break admissibility: `[0,2,1]` passes but `[2,1]` fails. The partition optimality and fusion steps remain open.
+
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
