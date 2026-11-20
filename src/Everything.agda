@@ -66,6 +66,7 @@ import AoP.SwapNatural
 import AoP.Polynomial
 import AoP.Products
 import AoP.Initial
+import AoP.ThreeOperations
 import AoP.IdentityAlgebra
 import AoP.FoldRetraction
 import AoP.ListAlgebra
