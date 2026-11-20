@@ -55,12 +55,12 @@ Exercise 8.22 remains open: derive binary thinning with guards tested before the
 
 ## §8.6 Bitonic tours and final exercises
 
-[BitonicTable](../src/AoP/BitonicTable.agda) and [BitonicExample](../src/AoP/BitonicExample.agda) verify a table algorithm and a directed example. The following exercise variants remain open.
+[BitonicTable](../src/AoP/BitonicTable.agda) and [BitonicExample](../src/AoP/BitonicExample.agda) verify a table algorithm and a directed example. The following entries track the tour variants and final exercises.
 
 | Exercise | Remaining construction |
 | --- | --- |
 | 8.25 | Calculate the endpoint pairs produced by extending the left or right leg, then derive the order of the table entries. |
-| 8.26 | Exploit symmetric travel costs to generate only one orientation of each tour. |
+| 8.26 | [SymmetricTour](../src/AoP/SymmetricTour.agda) proves that swapping both leg endpoints and every interior assignment preserves cost for symmetric edges. Fixing the first interior city on the outward leg removes the duplicate orientation; the reference recurrence then returns a globally optimal tour. A symmetry-reduced table implementation remains open. |
 | 8.27 | Allow a city to occur on both legs. |
 | 8.28 | Allow cities to be skipped. |
 | 8.29 | Derive a longest ordered subsequence algorithm by thinning. |
