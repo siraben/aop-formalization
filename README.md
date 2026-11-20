@@ -65,7 +65,7 @@ A constructive Agda companion to Richard Bird and Oege de Moor’s *Algebra of P
 | §9.3 | [Bracketing](src/AoP/Bracketing.agda) | Cost and size of expression trees; same-input subtree replacement, with a checked concatenation example |
 | §9.4 | [Compression](src/AoP/Compression.agda) | Decode literals and overlapping backward references; prove literal encodings round-trip and reject an initial pointer |
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
-| §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant; [TabFree](src/AoP/TabFree.agda) characterizes the image of expansion; [Entab](src/AoP/Entab.agda) proves buffered encoding round-trips on that image (minimality not yet proved) |
+| §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant; [TabFree](src/AoP/TabFree.agda) characterizes the image of expansion; [Entab](src/AoP/Entab.agda) proves buffered encoding round-trips on that image ([minimality at width one](src/AoP/UnitTabs.agda); general minimality remains open) |
 | §10.3 | [Tardiness](src/AoP/Tardiness.agda) | Fuse elapsed time and maximum weighted tardiness into a single schedule evaluator; [check all six schedules in the example](src/AoP/TardinessExample.agda) |
 | §10.4 | [TeXExternal](src/AoP/TeXExternal.agda) | Specify shortest round-tripping decimals; check the zero and half-unit cases (not the general printer) |
 
