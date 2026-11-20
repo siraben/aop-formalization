@@ -105,6 +105,7 @@ import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
 import AoP.DistributedCase
+import AoP.StrictInitial
 import AoP.RelDistribution
 import AoP.Currying
 import AoP.Relations
