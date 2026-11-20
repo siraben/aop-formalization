@@ -362,6 +362,7 @@ import AoP.PostorderSort
 import AoP.OrderedMerge
 import AoP.MergeTreeSort
 import AoP.SetSort
+import AoP.SetSortUnique
 import AoP.PermutationGuard
 import AoP.Squaring
 import AoP.Binary
