@@ -485,6 +485,8 @@ import AoP.SymmetricTour
 import AoP.SymmetricTourTable
 import AoP.TourVariants
 import AoP.TourNext
+import AoP.TourKeyLayer
+import AoP.TourKeyExample
 import AoP.TourVariantExamples
 import AoP.BitonicTable
 import AoP.BitonicExample
