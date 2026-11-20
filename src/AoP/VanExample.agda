@@ -30,3 +30,18 @@ two-visits = refl
 -- No number of visits can make a single deposit of eleven fit.
 infeasible : answer (deposit 11) [] ≡ nothing
 infeasible = refl
+
+open import AoP.VanRefinement using (module Refine)
+open import AoP.Paragraph using (_∷⁺_)
+
+-- Three deposits of four require one visit. Either gap works; the
+-- longest-prefix rule chooses the second gap, after the vault reaches
+-- eight from zero. Resetting to zero then permits the last deposit.
+chosen : (t : Tx) (ts : List Tx) → Maybe Plan
+chosen t ts with Refine.greedy 10 t ts
+... | impossible _ = nothing
+... | optimal plan _ _ _ = just plan
+
+latest-visit : chosen (deposit 4) (deposit 4 ∷ deposit 4 ∷ []) ≡
+  just ((deposit 4 ∷⁺ (deposit 4 ∷ [])) ∷⁺ ((deposit 4 ∷⁺ []) ∷ []))
+latest-visit = refl
