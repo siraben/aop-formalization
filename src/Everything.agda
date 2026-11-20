@@ -587,6 +587,10 @@ import AoP.PartyExample
 import AoP.Bellman
 import AoP.BranchingDP
 import AoP.PrunedDP
+import AoP.DPContextExample
+import AoP.DPCostFactor
+import AoP.DPContextCost
+import AoP.DPBifunctor
 import AoP.IdentityDecompositions
 import AoP.ObjectiveThinning
 import AoP.ObjectiveThinningExample
