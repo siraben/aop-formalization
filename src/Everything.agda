@@ -28,6 +28,7 @@ import AoP.PointFree
 import AoP.FilterCalculation
 import AoP.Categories
 import AoP.Retractions
+import AoP.Cancellation
 import AoP.UniversalObjects
 import AoP.Functors
 import AoP.Transformations
