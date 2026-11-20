@@ -50,6 +50,7 @@ import AoP.QuickPermutation
 import AoP.QuickOrdered
 import AoP.OrderedMeet
 import AoP.OrderedPivot
+import AoP.Inordered
 import AoP.LeafSplit
 import AoP.PreorderSort
 import AoP.PostorderSort
