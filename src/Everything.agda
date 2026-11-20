@@ -82,6 +82,7 @@ import AoP.Steep
 import AoP.Average
 import AoP.ProductComparison
 import AoP.AuxiliaryFold
+import AoP.MutualFold
 import AoP.Predecessors
 import AoP.FactorialFusion
 import AoP.TeXFraction
