@@ -311,6 +311,7 @@ import AoP.InjectionTests
 import AoP.InjectionAdjunction
 import AoP.PowerRelator
 import AoP.RelationalFusion
+import AoP.FoldFixedFusion
 import AoP.Subsequences
 import AoP.Splits
 import AoP.Permutations
