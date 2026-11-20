@@ -324,6 +324,7 @@ import AoP.ThinFamily
 import AoP.MinimalThinning
 import AoP.HiddenComparison
 import AoP.QueryTrace
+import AoP.HiddenTrace
 import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
 import AoP.FibreMinimumFold
