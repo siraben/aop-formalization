@@ -19,6 +19,8 @@ In §5.3, [CopairCancellation](../src/AoP/CopairCancellation.agda) checks equati
 
 [SumRestriction](../src/AoP/SumRestriction.agda) checks exercise 5.14: a step in the relational sum keeps its tag, so a common observation restricting that step need only be tested in the matching branch. Both inclusions retain the same observation witness.
 
-In §5.4, [ImageDomainCover](../src/AoP/ImageDomainCover.agda) checks exercise 5.16. Passing the lifted domain test supplies an output for every input member. An output in the existential image already has an input witness. These two facts give both coverage conditions of the power relator.
+In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruction in exercise 5.15. Adding the sole edge on a singleton changes the image of the full input from empty to full. The graph of the image function therefore loses its old output, violating monotonicity in the relation. Agreement on functions alone cannot identify it with the power relator.
+
+[ImageDomainCover](../src/AoP/ImageDomainCover.agda) checks exercise 5.16. Passing the lifted domain test supplies an output for every input member. An output in the existential image already has an input witness. These two facts give both coverage conditions of the power relator.
 
 Later sections and the unnumbered calculations still need a full audit.
