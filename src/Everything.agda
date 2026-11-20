@@ -80,6 +80,7 @@ import AoP.TabDistance
 import AoP.TabCountdown
 import AoP.TabEmission
 import AoP.TabBlock
+import AoP.EntabMinimum
 import AoP.UnitTabs
 import AoP.Tardiness
 import AoP.TardinessExample
