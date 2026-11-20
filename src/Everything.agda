@@ -380,6 +380,8 @@ import AoP.RelUnitObject
 import AoP.FullTabulationProduct
 import AoP.UnitTerminalBridge
 import AoP.ResidualFromJoin
+import AoP.DivisionSingletonJoin
+import AoP.ImplicationSingletonJoin
 import AoP.TabulatedFunction
 import AoP.MonicKernel
 import AoP.ImageComparison
