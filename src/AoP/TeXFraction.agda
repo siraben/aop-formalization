@@ -3,7 +3,8 @@ module AoP.TeXFraction where
 
 open import AoP.Prelude
 open import AoP.Folds
-open import AoP.NatOrder using (_≤_)
+open import AoP.NatOrder using (_≤_; z≤)
+open import AoP.Complement using (⊥)
 open import Agda.Builtin.Nat using (Nat; suc; _+_; _*_; div-helper)
 
 -- §3.3 — TeX stores a length in units of 1/65536. For a decimal
@@ -25,6 +26,25 @@ halve n = div-helper 0 1 (suc n) 1
 
 intern : List Digit → Nat
 intern ds = halve (⦅ 0 ∣ cshift ⦆ ds)
+
+-- Why not fuse halve into the digit fold too? With incoming digit zero,
+-- suffix states 9 and 10 have the same rounded value (5). Yet after
+-- shifting, they round to 0 and 1. No step on the rounded state alone
+-- can satisfy the second fusion equation for all intermediate states.
+no-second-fusion : (f : Digit → Nat → Nat) →
+                   (∀ d n → halve (cshift d n) ≡ f d (halve n)) → ⊥
+no-second-fusion f law = distinct contradiction
+  where
+  d = digit 0 z≤
+  back : ∀ {a b : Nat} → a ≡ b → b ≡ a
+  back refl = refl
+  contradiction : 0 ≡ 1
+  contradiction = begin
+    halve (cshift d 9)  ≡⟨ law d 9 ⟩
+    f d 5               ≡⟨ back (law d 10) ⟩
+    halve (cshift d 10) ∎
+  distinct : 0 ≡ 1 → ⊥
+  distinct ()
 
 -- Factor out the arithmetic floor lemma from the structural calculation:
 -- for an exact interpretation V, scaled v is floor(131072 * v).
