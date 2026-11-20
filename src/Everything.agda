@@ -403,6 +403,7 @@ import AoP.BellmanTable
 import AoP.BranchingGreedy
 import AoP.EditScript
 import AoP.ScriptLengthOrder
+import AoP.TaggedThinning
 import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.MatrixBracketCost

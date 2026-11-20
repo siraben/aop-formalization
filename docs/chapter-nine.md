@@ -1,5 +1,9 @@
 # Chapter 9: dynamic programming
 
+## §9.1 Theory
+
+[TaggedThinning](../src/AoP/TaggedThinning.agda) checks the left-injection thinning law in exercise 9.5. Thinning a set of left-tagged candidates can only retain left-tagged values. Removing their tags gives a thinning under the left comparison, and any such thinning can be lifted back. The right-injection law, disjoint-range calculation, and full proposition remain open.
+
 ## §9.2 The string edit problem
 
 [ScriptLengthOrder](../src/AoP/ScriptLengthOrder.agda) verifies exercise 9.6. Prepending one command to each script preserves their length comparison, even when the commands differ. This proves the point-free cons monotonicity law for the shortest-script objective.
