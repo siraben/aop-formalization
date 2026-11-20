@@ -20,6 +20,8 @@ This inventory lists exercises 3.1–3.51 and selected worked derivations in §�
 
 ## §3.3: decimal input for TeX
 
+[Worked rounding calculation](tex-rounding.md): the integer states for `.25`, a midpoint where sixteen digits fail, and the grid argument for retaining seventeen digits.
+
 Given decimal digits after the point, return the nearest count of units of size `1/65536`, rounding ties upward. [TeXFraction](../src/AoP/TeXFraction.agda) folds the digits from the right with one extra binary digit of precision, then rounds once. Its refinement from exact valuation assumes the floor-and-shift identity. For example, `.00007` and `.00008` both round to 5 units, but prefixing a zero makes their rounded values differ.
 
 | Exercise | Checked construction or remaining work |

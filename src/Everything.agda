@@ -165,6 +165,7 @@ import AoP.DecimalTriangle
 import AoP.QuarterCells
 import AoP.QuarterZero
 import AoP.QuarterDigits
+import AoP.QuarterTrace
 import AoP.QuarterRound
 import AoP.QuarterUnique
 import AoP.SeventeenGrid
