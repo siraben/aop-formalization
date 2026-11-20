@@ -5,8 +5,8 @@
 | Ordered permutation specification | `Result` in [SelectionSort](../src/AoP/SelectionSort.agda) pairs `Sorted` with occurrence-preserving `Perm` for natural numbers. The general preorder specification remains open. |
 | Select a minimum, remove one occurrence, recur on the remainder | [Selection](../src/AoP/Selection.agda) and [SelectionSort](../src/AoP/SelectionSort.agda) prove the executable algorithm meets `Result`. The point-free fusion calculation remains open. |
 | Quicksort: split a nonempty input around its last element | `split` in [Quicksort](../src/AoP/Quicksort.agda) returns both sublists and a `Split` trace. The trace records a comparison and destination for each nonpivot item. |
-| Introduce a pivot tree, unfold it by splitting, flatten in order | `Tree`, `unfold`, and `flatten` implement these steps. `duplicates` checks `[3,1,2,2]`. [QuickPermutation](../src/AoP/QuickPermutation.agda) proves that splitting and flattening preserve every occurrence. General sortedness remains open. |
-| Move pivot bounds through flattening and permutation; derive quicksort by fusion | Open. |
+| Introduce a pivot tree, unfold it by splitting, flatten in order | `Tree`, `unfold`, and `flatten` implement these steps. `duplicates` checks `[3,1,2,2]`. [QuickPermutation](../src/AoP/QuickPermutation.agda) proves that splitting and flattening preserve every occurrence. [QuickOrdered](../src/AoP/QuickOrdered.agda) carries pivot bounds through permutation and proves that quicksort meets the same `Result` specification as selection sort. |
+| Move pivot bounds through flattening and permutation; derive quicksort by fusion | `upper-perm`, `lower-perm`, and `ordered` prove the forward bound-preservation and sortedness steps for natural numbers. The full relational equalities and fusion calculation remain open. |
 | 6.22: permutation and membership, selection guard | Open. |
 | 6.23: termination of both sorts | `shorter` in SelectionSort and `smaller` in Quicksort justify recursive calls by input length. |
 | 6.24: ordering by the intersection of preorders | Open. |
