@@ -50,6 +50,7 @@ import AoP.KnapsackSearch
 import AoP.Paragraph
 import AoP.LineBreaks
 import AoP.ParagraphMinimum
+import AoP.Bitonic
 import AoP.FiniteMinimum
 import AoP.Party
 import AoP.PartyExample
