@@ -30,6 +30,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §5.4 | [PowerRelator](src/AoP/PowerRelator.agda) | Two-sided coverage of subsets, extensional identity, converse, and factorization through a middle subset |
 | §5.5 | [RelationalFusion](src/AoP/RelationalFusion.agda) | Derive the two fold-fusion inclusions independently from local simulations of nil and cons |
 | §5.5 | [Relations](src/AoP/Relations.agda), [Refinement](src/AoP/Refinement.agda) | Inductive relational fold; derive a deterministic implementation from branch refinements; filter refines subsequence selection |
+| §5.6 | [Subsequences](src/AoP/Subsequences.agda) | Enumerate subsequences by a fold; prove membership is equivalent to the skip/keep relational specification |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
 
