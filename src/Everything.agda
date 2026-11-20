@@ -506,6 +506,9 @@ import AoP.ConnectedCutLongest
 import AoP.ConnectedReverseCut
 import AoP.LongestPrefixUnique
 import AoP.GreedyBoundaryAgreement
+import AoP.StreamingCutSequence
+import AoP.StreamingPartitionMinima
+import AoP.ConnectedFusionTrace
 import AoP.ConnectedMaximum
 import AoP.LeftMinimumBlock
 import AoP.LeftMinimumDirection
