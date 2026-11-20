@@ -40,6 +40,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §6.4 | [Squaring](src/AoP/Squaring.agda) | Calculate exponentiation by squaring over binary digits using associativity and a left unit |
 | §6.5 | [Inductive](src/AoP/Inductive.agda) | Accessibility of every recursive child makes the relational list hylomorphism the unique fixed point |
 | §6.7 | [Closure](src/AoP/Closure.agda) | Finite paths, closure induction, and the least preorder containing a relation |
+| §7.3 | [Party](src/AoP/Party.agda) | Company-party planning on rose trees; compute a feasible maximum-score guest plan, tracking whether each supervisor attends |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
 | §9.1 | [Bellman](src/AoP/Bellman.agda) | Unary-subproblem principle of optimality: branchwise monotone extension preserves the validity of replacing each child by a minimum |
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
