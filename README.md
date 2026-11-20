@@ -21,6 +21,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §3.2 | [Horner](src/AoP/Horner.agda) | Fuse a list reduction with a Ruby triangle, yielding Horner's one-pass rule |
 | §§4.1–4.2 | [Shunting](src/AoP/Shunting.agda) | Function graphs are entire and simple; calculate both implications of the left shunting rule |
 | §4.3 | [Tabulation](src/AoP/Tabulation.agda) | Reconstruct a relation from its two columns; derive uniqueness of mediators for proposition-valued membership |
+| §4.4 | [Joins](src/AoP/Joins.agda) | Universal properties of indexed joins and meets; composition distributes over joins on either side |
 | §§4.1, 4.4 | [Relations](src/AoP/Relations.agda) | Modular law and both implications of the universal property of right division |
 | §5.5 | [Relations](src/AoP/Relations.agda), [Refinement](src/AoP/Refinement.agda) | Inductive relational fold; derive a deterministic implementation from branch refinements; filter refines subsequence selection |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
