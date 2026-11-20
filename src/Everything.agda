@@ -27,6 +27,7 @@ import AoP.MinimumMeet
 import AoP.ProductMinimum
 import AoP.TieMinimum
 import AoP.MinimalComparison
+import AoP.ConnectedMinima
 import AoP.MinimalInclusion
 import AoP.MinimalSymmetry
 import AoP.MinimalImage

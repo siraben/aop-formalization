@@ -36,4 +36,6 @@
 
 [UnionMinimal](../src/AoP/UnionMinimal.agda) proves exercise 7.32 for indexed families under a well-supported preorder. Keeping all local minimal elements preserves the global minimal elements, including ties and incomparable candidates. For a discarded challenger, exercise 7.31 supplies a retained one below it.
 
+[ConnectedMinima](../src/AoP/ConnectedMinima.agda) checks exercise 7.20. Every minimum is minimal, and for a connected comparison every minimal element is a minimum. Equality of the two predicates does not force transitivity: the reflexive three-cycle is connected but fails the transitivity test.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
