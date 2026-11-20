@@ -36,6 +36,12 @@ import AoP.MinimumComparison
 import AoP.UniqueMinimum
 import AoP.LowerMinimum
 import AoP.MinimumMeet
+import AoP.MinimumFibreCalculation
+import AoP.MinimumImageShunt
+import AoP.MinimumPowerFusion
+import AoP.MinimumUnionGuard
+import AoP.LeftmostMinimumFold
+import AoP.LowerBoundCalculations
 import AoP.ProductMinimum
 import AoP.SumOfMinima
 import AoP.OneWayMonotone
