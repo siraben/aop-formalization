@@ -130,6 +130,7 @@ import AoP.MeetWitness
 import AoP.MeetTerminal
 import AoP.IndirectMeet
 import AoP.ModularRefinement
+import AoP.SimpleZigzag
 import AoP.CoreflexiveMeet
 import AoP.PartialEquivalence
 import AoP.Shunting
