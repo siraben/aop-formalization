@@ -413,6 +413,9 @@ import AoP.PowerTransposeTerminal
 import AoP.ExistentialImageFunctor
 import AoP.ImageSingletonNaturality
 import AoP.ImageUnionLaws
+import AoP.TransposeColumnTests
+import AoP.TabularIndirectEquality
+import AoP.SpanColumnShunt
 import AoP.FibreEquality
 import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
