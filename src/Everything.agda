@@ -97,6 +97,14 @@ import AoP.MembershipImageUnion
 import AoP.ForkNaturality
 import AoP.MembershipImageSquare
 import AoP.PrefixTransformation
+import AoP.UnionImageNaturality
+import AoP.PostWhiskering
+import AoP.EmptyZeroObject
+import AoP.SpanProduct
+import AoP.ProductProjectionFunctors
+import AoP.SpanProductFunctor
+import AoP.OppositeCategory
+import AoP.CoproductByDuality
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
