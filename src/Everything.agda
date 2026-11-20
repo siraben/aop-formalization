@@ -409,6 +409,7 @@ import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.MatrixBracketCost
 import AoP.AssociativeBrackets
+import AoP.PrefixLoop
 import AoP.BracketSpine
 import AoP.BracketEnumeration
 import AoP.BracketMinimum
