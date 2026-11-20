@@ -6,6 +6,7 @@ import AoP.Snoc
 import AoP.Trees
 import AoP.Inverses
 import AoP.Naturality
+import AoP.PointFree
 import AoP.Polynomial
 import AoP.Folds
 import AoP.Horner
