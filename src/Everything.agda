@@ -47,5 +47,6 @@ import AoP.Party
 import AoP.PartyExample
 import AoP.Bellman
 import AoP.EditScript
+import AoP.EditMinimum
 import AoP.Greedy
 import AoP.Detab
