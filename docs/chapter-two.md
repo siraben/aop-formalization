@@ -1,6 +1,6 @@
 # Chapter 2: categories, functors, and transformations
 
-This inventory covers the exercises in §§2.1–2.5. Later sections and the unnumbered examples still need an exercise-by-exercise and example-by-example audit.
+This inventory covers the 40 numbered exercises in Chapter 2. The unnumbered examples still need a separate audit.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -33,3 +33,9 @@ This inventory covers the exercises in §§2.1–2.5. Later sections and the unn
 | 2.29 | [ArrowProducts](../src/AoP/ArrowProducts.agda): pair the sources and targets, then pair commuting squares. Both projections and uniqueness hold componentwise. |
 | 2.30 | [PartialProduct](../src/AoP/PartialProduct.agda): construct the unique pairing of partial functions, accounting for inputs where only one function is defined. |
 | 2.31 | [LazyPair](../src/AoP/LazyPair.agda): observing the outer constructor distinguishes two lazy pairs whose projections agree. |
+| 2.32–2.33 | [ThreeOperations](../src/AoP/ThreeOperations.agda) encodes the three operations in one functor layer. [IdentityAlgebra](../src/AoP/IdentityAlgebra.agda) constructs the identity functor’s initial algebra on the empty type. |
+| 2.34–2.36 | [FoldRetraction](../src/AoP/FoldRetraction.agda) constructs folds from sections, derives the sliding law, and represents any function from an initial carrier in `Fun` as the first projection of a fold. |
+| 2.37 | [CantorDiagonal](../src/AoP/CantorDiagonal.agda) proves that no small carrier can encode all its subsets with membership-preserving decoding. This checks the diagonal obstruction; the predicates live a universe above their carrier, so this module does not exhibit a small powerset endofunctor. |
+| 2.38 | [ConstantInitial](../src/AoP/ConstantInitial.agda) identifies the initial algebra for a constant layer and the sum functor for the two-parameter example. |
+| 2.39 | [ParametricFold](../src/AoP/ParametricFold.agda) derives the naturality square for a change of parameter in `Fun` by two applications of fold fusion. |
+| 2.40 | [FreeSubstitution](../src/AoP/FreeSubstitution.agda) and [FreeMonad](../src/AoP/FreeMonad.agda) derive the substitution and monad laws for an endofunctor on `Fun` with the required initial algebras. [TreeMonad](../src/AoP/TreeMonad.agda) checks the binary-tree instance. |
