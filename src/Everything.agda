@@ -120,6 +120,7 @@ import AoP.DepthAccumulator
 import AoP.MinimumDepth
 import AoP.SnocLoop
 import AoP.TipTraversal
+import AoP.AppendEquation
 import AoP.Iteration
 import AoP.Relations
 import AoP.Shunting
