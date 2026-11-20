@@ -228,6 +228,7 @@ import AoP.AccessibleFixed
 import AoP.AccessibleTransfer
 import AoP.AccessibleExtremes
 import AoP.TreeMemberPath
+import AoP.MemberFold
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
