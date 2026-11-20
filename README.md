@@ -1,6 +1,10 @@
 # Algebra of Programming in Agda
 
-A constructive formalization of selected results from Richard Bird and Oege de Moor’s *Algebra of Programming*. Start at [`Everything.agda`](src/Everything.agda). The book is not included.
+A constructive Agda companion to Richard Bird and Oege de Moor’s *Algebra of Programming*. The book is not included. To check the whole development, run `nix flake check`; [`Everything.agda`](src/Everything.agda) imports the proofs.
+
+**Start with a worked problem.** In the [company-party example](src/AoP/PartyExample.agda), Ada supervises Bo and Cy. May Ada and Bo both attend? No. Should Ada attend? Not necessarily: the two reports together score more. Load the example to see the two checked guest lists, then follow [the general derivation](src/AoP/Party.agda) to see why comparing two plans per subtree suffices. For a smaller equational calculation, try [Horner’s rule](src/AoP/Horner.agda).
+
+**Coverage.** The table lists checked results, not completed chapters. Some rows give the book’s general theorem, others a list instance, a reference solver, or only a specification. Those distinctions matter: proving optimality of an exhaustive solver does not verify the book’s faster algorithm.
 
 | Book sections | Agda | Checked statements |
 | --- | --- | --- |
@@ -62,9 +66,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §9.4 | [Compression](src/AoP/Compression.agda) | Decode literals and overlapping backward references; prove literal encodings round-trip and reject an initial pointer |
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
 | §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant; [TabFree](src/AoP/TabFree.agda) characterizes the image of expansion; [Entab](src/AoP/Entab.agda) proves buffered encoding round-trips on that image (minimality not yet proved) |
-
-| §10.3 | [Tardiness](src/AoP/Tardiness.agda) | Fuse elapsed time and maximum weighted tardiness into a single schedule evaluator; verify the three-job example |
-
+| §10.3 | [Tardiness](src/AoP/Tardiness.agda) | Fuse elapsed time and maximum weighted tardiness into a single schedule evaluator; [check all six schedules in the example](src/AoP/TardinessExample.agda) |
 | §10.4 | [TeXExternal](src/AoP/TeXExternal.agda) | Specify shortest round-tripping decimals; check the zero and half-unit cases (not the general printer) |
 
 The [appendix list product](src/AoP/ListProduct.agda) enumerates one choice from each of a list of menus, with proofs of soundness and completeness.
@@ -75,4 +77,4 @@ The [appendix list product](src/AoP/ListProduct.agda) enumerates one choice from
 
 Run `nix flake check` to type-check all modules with `--safe --without-K`, or `nix develop` followed by `agda -i src src/Everything.agda` to work interactively. Only Agda builtins are required.
 
-This is not a chapter-by-chapter transcription; in particular most recursive-program and optimization examples, the general dynamic-programming and greedy theorems, and most chapter 10 applications (including optimal entabbing) are not yet covered.
+Outstanding work includes the general dynamic-programming and greedy theorems, the quadratic bitonic-tour algorithm, optimal dictionary encoding, shortestness of entabbing, and the general TeX printer. The table is not a claim that every exercise or derivation has been formalized.
