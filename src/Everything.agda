@@ -573,6 +573,7 @@ import AoP.TardinessBound
 import AoP.EqualWeightDeadline
 import AoP.DeadlineRun
 import AoP.DeadlineCertificate
+import AoP.DeadlineMerge
 import AoP.PickLast
 import AoP.BackwardSchedule
 import AoP.LastBound
