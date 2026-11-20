@@ -33,6 +33,7 @@ import AoP.PowerRelator
 import AoP.RelationalFusion
 import AoP.Subsequences
 import AoP.Splits
+import AoP.ListProduct
 import AoP.LaxMembership
 import AoP.FixedPoint
 import AoP.Closure
