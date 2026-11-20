@@ -500,6 +500,7 @@ import AoP.DisjointFibres
 import AoP.EditMinimum
 import AoP.EditCellCount
 import AoP.CachedEditCell
+import AoP.CachedEditTable
 import AoP.Bracketing
 import AoP.MatrixBracketCost
 import AoP.DecimalBracketCost

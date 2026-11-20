@@ -10,7 +10,7 @@
 
 [EditCellCount](../src/AoP/EditCellCount.agda) counts interior table updates. Advancing a row visits one interior cell per target letter, and tabulation advances one row per source letter. For lengths `p` and `q` the exact count is `p*q`. This measure excludes boundary initialization, letter comparison, and computing or comparing script lengths.
 
-[CachedEditCell](../src/AoP/CachedEditCell.agda) checks the book’s script-length cache for an interior cell. Matching letters copy the diagonal entry; unequal letters compare the two neighbouring cached lengths. Each branch prepends one command and increments the chosen length. The returned script is shortest and the cache equals its operation count. Integrating these entries into a complete cached table remains open.
+[CachedEditCell](../src/AoP/CachedEditCell.agda) checks the book’s script-length cache for an interior cell. Matching letters copy the diagonal entry; unequal letters compare the two neighbouring cached lengths. Each branch prepends one command and increments the chosen length. The returned script is shortest and the cache equals its operation count. [CachedEditTable](../src/AoP/CachedEditTable.agda) builds the complete table from these entries. Empty-string boundaries admit only insertions or only deletions; each interior update uses the diagonal, below, and right entries. `solve` returns a shortest script and its certified length for any alphabet with decidable equality.
 
 ## §9.3 Optimal bracketing
 
