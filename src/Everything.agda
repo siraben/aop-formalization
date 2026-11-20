@@ -411,6 +411,8 @@ import AoP.RightModularDisjointness
 import AoP.Power
 import AoP.PowerTransposeTerminal
 import AoP.ExistentialImageFunctor
+import AoP.ImageSingletonNaturality
+import AoP.ImageUnionLaws
 import AoP.FibreEquality
 import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
