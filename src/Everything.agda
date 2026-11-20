@@ -339,6 +339,7 @@ import AoP.AccumulatorFusion
 import AoP.ReverseAccumulator
 import AoP.DepthAccumulator
 import AoP.MinimumDepth
+import AoP.MinimumDepthWork
 import AoP.SnocLoop
 import AoP.LoopConversion
 import AoP.TipTraversal
