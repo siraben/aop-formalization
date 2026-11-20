@@ -177,6 +177,7 @@ import AoP.TransformerOrder
 import AoP.FibreBounds
 import AoP.PreorderFibres
 import AoP.RelationalProducts
+import AoP.RelationalPairing
 import AoP.RelationalSums
 import AoP.PowerRelator
 import AoP.RelationalFusion
