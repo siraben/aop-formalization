@@ -36,6 +36,21 @@
 
 [ContainerConverseFold](../src/AoP/Chapter06/ContainerConverseFold.agda) proves Theorem 6.4 for shape-and-position layers. A function `f` assigns each value a tree. Assume each allowed algebra step describes the root of that tree and its children. Then any fold derivation for `a` must have tree `f a`: `sound` assembles the child equalities using an explicit constructor congruence for pointwise-equal child families. Conversely, surjectivity supplies a layer for `a`. Its root equation identifies the subtrees, so `complete` recurses on the children of the given tree and constructs a fold derivation. This direction needs neither constructor congruence nor an accessibility test on `a`. The book also obtains accessibility as an intermediate conclusion. `decrease` sends an algebra child at position `i` to the immediate subtree at the same position in `f a`; `pull` transfers structural accessibility of trees back to the values. `accessible` thus supplies the input hypothesis of Corollary 6.3 without using surjectivity. [SurjectiveFoldEquality](../src/AoP/Chapter06/SurjectiveFoldEquality.agda) checks the last step in an abstract allegory. Given a fold `h` with `f ∘ h ⊑ id`, entireness of `f` gives `h ⊑ f˘`. For the reverse inclusion, insert a preimage using surjectivity of `h`; reversing `f ∘ h ⊑ id` then contracts the return path. Together the inclusions identify `h` with `f˘`.
 
+### §6.6: deriving quicksort from a pivot split
+
+Specify the output as an ordered permutation of the input. For a nonempty input, remove one occurrence of a pivot `p` and distribute the remaining occurrences into `l` and `r`, with each member of `l` at most `p` and each member of `r` at least `p`. Suppose recursively that `L` and `R` are ordered permutations of those two lists. Calculate the bag of the proposed answer (`⊎` adds multiplicities):
+
+```text
+bag (L ++ [p] ++ R)
+= bag L ⊎ {p} ⊎ bag R       concatenation adds occurrence counts
+= bag l ⊎ {p} ⊎ bag r       recursive permutation guarantees
+= bag input                 the split assigns every occurrence exactly once
+```
+
+For order, the recursive guarantees handle comparisons inside `L` and `R`. Permutation transfers the split bounds to their elements; any `x` in `L` and `y` in `R` satisfy `x ≤ p ≤ y`. Thus concatenating the two recursive outputs around `p` meets both requirements. Removing the pivot makes each recursive list strictly shorter. The empty input returns `[]`.
+
+[QuickSplitWork](../src/AoP/Chapter06/QuickSplitWork.agda) checks the last-pivot instance on `[3,1,2,2]`. The root pivot `2` leaves `[1,2]` and `[3]`; the next pivot `2` leaves `[1]` and `[]`. Reassembly gives `[1,2,2,3]`: the two equal occurrences both survive. The root costs three pivot comparisons, its left child costs one, and singleton nodes cost zero. See the [sorting guide](sorting-coverage.md) for the split refinement, recursive equation, proofs of order and permutation, and worst-case cost.
+
 ### §6.7: why an empty search frontier certifies closure
 
 [FrontierRolling](../src/AoP/Chapter06/FrontierRolling.agda) derives the recursive update from (6.9) for vertex sets. `Grow P Q` starts in `Q` and extends paths only to destinations outside `P`. If such a path revisits `Q`, its earlier portion can be dropped: restart at that frontier vertex. After the last visit, its first edge supplies a fresh seed and the remaining edges avoid both `P` and `Q`. `forward` uses this split and `backward` restores the edge from the old frontier. Together they show that scanning the frontier preserves the answer, given decidable membership in `Q`. [RelationalFrontierRolling](../src/AoP/Chapter06/RelationalFrontierRolling.agda) proves the relational equations column by column. Starting with seed relation `S` yields `R* ∘ S`; an empty frontier yields `P`; otherwise the next frontier is `(R ∘ Q) − (P ∪ Q)`. Each successor witness retains the same starting column, so discoveries from different seeds cannot be mixed across columns.

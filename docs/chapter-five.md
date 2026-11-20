@@ -14,6 +14,17 @@ A map `f` in an allegory is entire and simple. Those conditions bound its two ro
 
 ### §5.2: projecting a relational pair
 
+For functions, projecting the first component of a pair recovers the first function. What changes when either component can have no output? Let `R` and `S` be the two branches and fix input `a` and proposed left output `b`. Expand the path to the projection:
+
+```text
+(fst ∘ pair R S) b a
+⇔ ∃ c. R b a ∧ S c a        the intermediate pair must be (b,c)
+⇔ R b a ∧ (∃ c. S c a)      the left edge does not depend on c
+⇔ (R ∘ dom S) b a           dom S tests a and leaves it unchanged
+```
+
+For example, if `R` returns `7` at `a` but `S` has no output there, the pair has no output to project. The last line predicts this: `a` fails the domain test before `R` can run.
+
 [PairProjectionDomains](../src/AoP/Chapter05/PairProjectionDomains.agda) proves (5.6)–(5.7) in `Rel`. To project the left output of `(R,S)`, both branches must first produce values. The discarded right value is exactly the witness for `dom S`, giving `fst ∘ pair R S = R ∘ dom S`. The reverse proof takes that witness and reconstructs the intermediate pair. Swapping branches gives the right projection law. `necessary` and `unrestricted` identify exactly when the left projection equals `R`: the right branch needs an output at every input used by `R`.
 
 [ModularPairPull](../src/AoP/Chapter05/ModularPairPull.agda) checks the abstract modular calculation for (5.4), given the two stated projection laws for `t = r × id`. The first law rewrites the changed left branch as `t` after the old left branch. Modularity then pulls `t` outside the intersection, leaving a right branch restricted by `t˘`. The second projection law bounds that branch by the original right branch, completing the inclusion. The hypotheses allow the product object to change when the type of the left output changes. [PairPullInstance](../src/AoP/Chapter05/PairPullInstance.agda) discharges both hypotheses for relations on sets: the unchanged right coordinate supplies the intermediate value, and its identity edge guarantees the right projection is preserved. It uses [ConcreteAllegory](../src/AoP/Chapter05/ConcreteAllegory.agda) to interpret the abstract proof with relation witnesses.
@@ -33,6 +44,18 @@ A map `f` in an allegory is entire and simple. Those conditions bound its two ro
 For composition, take the middle points reached from `X` by `R` that can also reach `Z` by `S`. [PowerMiddleBounds](../src/AoP/Chapter05/PowerMiddleBounds.agda) identifies this set as the intersection of two direct images. `largest` proves every possible intermediate set is contained in it: at each admitted point, the two coverage proofs supply its incoming and outgoing edges. `enlarge` proves the whole intersection still covers both endpoints whenever any factorization does. This explains why the composition proof needs no choice of a preferred path.
 
 ### §5.5: folding a relation by collecting its answers
+
+How can an ordinary list fold implement a specification that allows several answers? Give the fold a set of answers as its state. Write `Run b xs` for a derivation of output `b` on `xs` and `answers xs = {b | Run b xs}`. Let `base` be the allowed outputs on `[]`, and let `step a t b` mean that the head `a` can turn tail result `t` into `b`. Calculate membership at a cons cell:
+
+```text
+b ∈ answers (a ∷ xs)
+⇔ Run b (a ∷ xs)                          definition of answers
+⇔ ∃ t. Run t xs ∧ step a t b              unpack the last rule of the run
+⇔ ∃ t. t ∈ answers xs ∧ step a t b        definition on the tail
+⇔ b ∈ advance a (answers xs)              collect all successors of tail answers
+```
+
+At `[]` the corresponding test is just `b ∈ base`. Together these equations give `answers = foldr advance base`, with sets compared by their members. An empty tail-result set contributes no successors; two possible tail results both contribute theirs. The calculation never needs to choose a single run.
 
 [RelationalFoldTransfer](../src/AoP/Chapter05/RelationalFoldTransfer.agda) checks the abstract calculation in (5.12). Given a relational algebra `r`, lift membership through one datatype layer and transpose `r ∘ H mem` to form an ordinary algebra `alg` on the power object. Fold `alg`, then read its result by membership. The key equation `layer` shows that reading one ordinary step equals taking one relational step. `solves` uses this equation forwards; `Rival.only` transposes any other solution and uses it backwards to obtain the ordinary fold equation. Ordinary fold uniqueness gives the Eilenberg–Wright lemma, `transpose-fold`: transposing any solution yields the ordinary fold on fibres. Reading the fibres back by membership then identifies the relations. The hypotheses specify the graph action, composition and congruence of the lifting, the power transpose at the output, and the ordinary fold’s computation and uniqueness laws.
 
