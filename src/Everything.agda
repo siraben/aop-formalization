@@ -288,6 +288,8 @@ import AoP.PartitionRanges
 import AoP.PermuteTail
 import AoP.BagTailCalculation
 import AoP.BagCountPermutation
+import AoP.SortedBagUnique
+import AoP.SorterAgreement
 import AoP.InterleaveFold
 import AoP.SupersequenceFold
 import AoP.InitFold
