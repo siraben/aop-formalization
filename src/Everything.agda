@@ -423,6 +423,7 @@ import AoP.ReserveIntervalExample
 import AoP.VanLengthOrder
 import AoP.VanHeadOrder
 import AoP.VanLexOrder
+import AoP.VanLexLinear
 import AoP.VanLexGuard
 import AoP.VanLexMinimumExample
 import AoP.VanExtensionOrder
