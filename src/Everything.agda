@@ -223,6 +223,7 @@ import AoP.ModulusBound
 import AoP.ModulusStep
 import AoP.BinaryModulus
 import AoP.AccessibilityMeasure
+import AoP.AccessibleMeet
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
