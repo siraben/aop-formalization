@@ -787,6 +787,12 @@ import AoP.PartyComparisons
 import AoP.PartyCachedPlan
 import AoP.Cylinder
 import AoP.CylinderTupleLift
+import AoP.CylinderCachedColumn
+import AoP.CylinderFourRowTable
+import AoP.CylinderFiniteRim
+import AoP.CylinderTableWinner
+import AoP.CylinderPotential
+import AoP.CylinderSampleGrid
 import AoP.StraightCylinder
 import AoP.FiveMoveCylinder
 import AoP.FiveMoveEntry
