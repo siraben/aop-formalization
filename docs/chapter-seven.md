@@ -68,4 +68,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [GreedyImage](../src/AoP/GreedyImage.agda) proves exercise 7.38 for concrete relations. After selecting a minimum input and a minimum output at that input, compare against any competing output. The simulation hypothesis supplies an output available at the selected input that is at least as good as the competitor; transitivity gives the bound.
 
+[TakeWhilePrefix](../src/AoP/TakeWhilePrefix.agda) checks the greedy recurrence in exercise 7.39. A passing head is retained and a failing head forces the prefix to stop. Every feasible prefix is a prefix of the computed answer, and mutual prefix inclusion proves uniqueness. The proof proceeds directly by induction on feasible prefixes.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
