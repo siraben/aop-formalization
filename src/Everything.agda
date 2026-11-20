@@ -340,6 +340,7 @@ import AoP.SelectionUnique
 import AoP.SelectionRelUnique
 import AoP.InsertionSort
 import AoP.InsertionGap
+import AoP.InsertionFusion
 import AoP.Quicksort
 import AoP.QuickSplitWork
 import AoP.QuickSplitFold
