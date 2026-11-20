@@ -12,7 +12,7 @@
 | --- | --- |
 | 10.1 | [ProjectedLoop](../src/AoP/ProjectedLoop.agda) proves the streaming loop equivalent to projecting the output of the accumulating loop. The invariant allows an arbitrary saved output prefix and column state; specializing to the empty prefix gives the exercise equation. |
 | 10.2 | [TabCountObjective](../src/AoP/TabCountObjective.agda) checks a width-two counterexample. Both `TAB` and `BLANK TAB` expand to two blanks. One tab is the maximum over every valid encoding, yet the second encoding is longer. |
-| 10.3 | Prove cost monotonicity of extension and derive the variant preferring a single blank on ties. |
+| 10.3 | [BlankTie](../src/AoP/BlankTie.agda) proves snoc-length monotonicity and refines the shortest encoder with a postprocessing pass: replace each tab spanning one column with a blank. Expansion and encoded length are preserved at every positive width, so shortestness transfers. |
 | 10.4 | Prove the three prefix/fill laws and identify the failure when the fill constraint is removed. |
 
 ## §10.3 Minimum tardiness
