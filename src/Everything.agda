@@ -329,6 +329,7 @@ import AoP.MinimalQueries
 import AoP.TraceCardinality
 import AoP.OrderedPairs
 import AoP.PairMembers
+import AoP.QuadraticQueries
 import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
 import AoP.FibreMinimumFold
