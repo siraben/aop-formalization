@@ -50,4 +50,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [SupremumThreshold](../src/AoP/SupremumThreshold.agda) checks exercise 7.17 for a preorder. An element is the least upper bound exactly when the upper bounds are all and only the elements above it. In the converse direction, reflexivity at the candidate proves that it is itself an upper bound.
 
+[MinimalTieClass](../src/AoP/MinimalTieClass.agda) checks exercise 7.25 with the candidate as representative of its primary tie class. Among the `R`-minimal elements tied with that candidate, `S` decides minimality for the combined comparison. Extracting primary minimality uses decidability of `R`; combining the two stages uses only the preorder laws.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

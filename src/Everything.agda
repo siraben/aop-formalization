@@ -31,6 +31,7 @@ import AoP.LowerMinimum
 import AoP.MinimumMeet
 import AoP.ProductMinimum
 import AoP.TieMinimum
+import AoP.MinimalTieClass
 import AoP.MinimalComparison
 import AoP.ConnectedMinima
 import AoP.MinimalInclusion
