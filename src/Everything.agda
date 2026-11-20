@@ -40,6 +40,7 @@ import AoP.ProjectionEpic
 import AoP.ExchangeLaw
 import AoP.ProductUnit
 import AoP.ProductSymmetry
+import AoP.ProductAssociator
 import AoP.TerminalDiagrams
 import AoP.Functors
 import AoP.FunctorIso
