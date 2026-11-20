@@ -511,6 +511,8 @@ import AoP.ConverseFlattenFold
 import AoP.BracketPruneFailure
 import AoP.BracketSpineDominance
 import AoP.BracketSpineDecision
+import AoP.BracketFrontier
+import AoP.BracketFrontierCoverage
 import AoP.BracketMinimum
 import AoP.PermutedBrackets
 import AoP.PermutedMinimum
