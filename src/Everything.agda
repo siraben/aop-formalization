@@ -298,6 +298,7 @@ import AoP.ConditionalFusion
 import AoP.DistributedBranchRouting
 import AoP.Quad
 import AoP.DistributedCase
+import AoP.CategoricalDistributedCase
 import AoP.StrictInitial
 import AoP.RelDistribution
 import AoP.Currying
@@ -342,6 +343,7 @@ import AoP.SnocLoop
 import AoP.LoopConversion
 import AoP.TipTraversal
 import AoP.AppendEquation
+import AoP.AppendCurriedLayer
 import AoP.Iteration
 import AoP.ParameterRecursion
 import AoP.ParameterFold
