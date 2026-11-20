@@ -13,6 +13,7 @@ import AoP.Transformations
 import AoP.Polynomial
 import AoP.Products
 import AoP.Initial
+import AoP.ListAlgebra
 import AoP.Folds
 import AoP.Horner
 import AoP.Relations
