@@ -68,6 +68,7 @@ import AoP.Cylinder
 import AoP.Reserves
 import AoP.SecureBlock
 import AoP.LongestPrefix
+import AoP.VanTrimming
 import AoP.VanSchedule
 import AoP.VanExample
 import AoP.CylinderEntry
