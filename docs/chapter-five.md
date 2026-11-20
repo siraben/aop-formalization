@@ -15,4 +15,6 @@ This inventory covers exercises 5.1–5.11 (§§5.1–5.2). A relator lifts a re
 | 5.10 | Open: derive naturality of `unzip` for a general relator. |
 | 5.11 | [RelationalCurry](../src/AoP/RelationalCurry.agda): construct evaluation for the relational tensor and prove that currying gives the unique solution up to mutual inclusion. |
 
+In §5.3, [CopairCancellation](../src/AoP/CopairCancellation.agda) checks equation 5.11 (exercise 5.13) in `Rel`. The intermediate point carries a tag, so its path belongs to exactly one branch of the construction. The result is the union of the two component composites. The relational tensor used for products has pairs of intermediate points; reversing arrows preserves that tensor rather than turning it into a tagged union.
+
 Later sections and the unnumbered calculations still need a full audit.
