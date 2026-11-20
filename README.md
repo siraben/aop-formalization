@@ -39,7 +39,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §6.3 | [Hylo](src/AoP/Hylo.agda) | List hylomorphism as unfold followed by fold; prove both fixed-point inclusions and leastness |
 | §6.4 | [Squaring](src/AoP/Squaring.agda) | Calculate exponentiation by squaring over binary digits using associativity and a left unit |
 | §6.5 | [Inductive](src/AoP/Inductive.agda) | Accessibility of every recursive child makes the relational list hylomorphism the unique fixed point |
-| §6.6 | [Selection](src/AoP/Selection.agda) | Select a least element from nonempty input, with evidence that exactly one occurrence was removed |
+| §6.6 | [Selection](src/AoP/Selection.agda) | Select a least element from nonempty input, with evidence that exactly one occurrence was removed; [SelectionSort](src/AoP/SelectionSort.agda) iterates selection and proves sortedness and preservation of multiplicities |
 | §6.7 | [Closure](src/AoP/Closure.agda) | Finite paths, closure induction, and the least preorder containing a relation |
 | §7.3 | [Party](src/AoP/Party.agda), [worked example](src/AoP/PartyExample.agda) | Company-party planning on rose trees; compute a feasible maximum-score guest plan, tracking whether each supervisor attends |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
