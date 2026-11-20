@@ -71,6 +71,7 @@ import AoP.LongestPrefix
 import AoP.VanTrimming
 import AoP.VanBudget
 import AoP.VanMinimum
+import AoP.VanService
 import AoP.VanSchedule
 import AoP.VanExample
 import AoP.CylinderEntry
