@@ -41,6 +41,7 @@ import AoP.SingletonImage
 import AoP.ProductNaturality
 import AoP.PartialHead
 import AoP.Transformations
+import AoP.Whiskering
 import AoP.Polynomial
 import AoP.Products
 import AoP.Initial
