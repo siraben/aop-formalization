@@ -15,7 +15,7 @@ For §1.7, [FilterCalculation](../src/AoP/FilterCalculation.agda) derives ordina
 | Exercise | Construction or remaining work |
 | --- | --- |
 | 1.1 | [PositiveFold](../src/AoP/PositiveFold.agda): instantiating the proposed recursion at zero would give a natural equal to its successor. |
-| 1.2 | Open: determine whether the nested recursion fixes a unique function. |
+| 1.2 | [NestedSolutions](../src/AoP/NestedSolutions.agda) gives a family of solutions over naturals with truncated predecessor. In row zero every positive column can take the same arbitrary positive value. Two checked solutions give 1 and 2 at `(0,1)`, disproving uniqueness. |
 | 1.3 | [PositiveFold](../src/AoP/PositiveFold.agda): iterate from one, convert between the two representations, and prove both round trips. |
 | 1.4 | [SquareFold](../src/AoP/SquareFold.agda): maintain the side length and square area together. |
 | 1.5 | [LastSatisfying](../src/AoP/LastSatisfying.agda): keep the greatest passing index in a growing interval. |
