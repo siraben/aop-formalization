@@ -134,6 +134,7 @@ import AoP.SimpleZigzag
 import AoP.CoreflexiveMeet
 import AoP.PartialEquivalence
 import AoP.RangeRotation
+import AoP.RangeJoins
 import AoP.EmptyRange
 import AoP.DomainPullback
 import AoP.UnitRange
