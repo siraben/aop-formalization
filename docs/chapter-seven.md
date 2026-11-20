@@ -48,4 +48,6 @@
 
 The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agda) returns one minimum of a nonempty list under a decidable connected preorder. A successful head comparison selects the head, including on ties; in the other branch connectedness proves that the tail winner precedes the head. Each result carries input membership and its lower-bound proof.
 
+[SupremumThreshold](../src/AoP/SupremumThreshold.agda) checks exercise 7.17 for a preorder. An element is the least upper bound exactly when the upper bounds are all and only the elements above it. In the converse direction, reflexivity at the candidate proves that it is itself an upper bound.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
