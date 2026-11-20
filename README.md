@@ -46,6 +46,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §8.3 | [Bump](src/AoP/Bump.agda) | Implement thinning by comparing adjacent survivors; prove no candidates are invented and every discarded candidate is dominated |
 | §8.4 | [Knapsack](src/AoP/Knapsack.agda) | Reference solver for 0–1 knapsack with capacity-indexed packs and a proof of maximum value; [KnapsackFrontier](src/AoP/KnapsackFrontier.agda) proves why pruning preserves optima, and [KnapsackSearch](src/AoP/KnapsackSearch.agda) verifies repeated pruning after each item (unsorted tables) |
 | §9.1 | [Bellman](src/AoP/Bellman.agda) | Unary-subproblem principle of optimality: branchwise monotone extension preserves the validity of replacing each child by a minimum |
+| §9.2 | [EditScript](src/AoP/EditScript.agda) | Decode copy/delete/insert scripts to their endpoints; prove symmetry and feasibility of endpoint-indexed scripts |
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
 | §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant |
 
