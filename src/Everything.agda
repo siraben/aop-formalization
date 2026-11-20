@@ -405,6 +405,7 @@ import AoP.PartyCachedPlan
 import AoP.Cylinder
 import AoP.StraightCylinder
 import AoP.FiveMoveCylinder
+import AoP.CylinderMoveExample
 import AoP.Reserves
 import AoP.SecureBlock
 import AoP.SecureSubsequence
