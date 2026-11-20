@@ -467,6 +467,8 @@ import AoP.KnapsackFrontier
 import AoP.KnapsackGuardStep
 import AoP.KnapsackSortedBranches
 import AoP.KnapsackMerge
+import AoP.KnapsackSortedTable
+import AoP.KnapsackStreamLaw
 import AoP.KnapsackSearch
 import AoP.Paragraph
 import AoP.LineWidthClosure
