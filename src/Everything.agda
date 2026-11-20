@@ -603,6 +603,7 @@ import AoP.EditSuffixPair
 import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
 import AoP.DisjointFibres
+import AoP.DisjointMinimum
 import AoP.EditMinimum
 import AoP.EditCellCount
 import AoP.CachedEditCell
