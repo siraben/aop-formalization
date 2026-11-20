@@ -40,4 +40,31 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 [NonlinearChoices](../src/AoP/NonlinearChoices.agda) proves exercise 8.21 for `I × I`. The sorted Boolean menus `[false,true]` generate both `(false,true)` and `(true,false)`. These pairs are incomparable in the product order, while any two members of an ordered listing must be comparable. Hence even changing the enumeration order cannot satisfy (8.11).
 
-The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
+Exercise 8.22 remains open: derive binary thinning with guards tested before the two branch functions.
+
+## §8.4 The knapsack problem
+
+[Knapsack](../src/AoP/Knapsack.agda), [KnapsackSearch](../src/AoP/KnapsackSearch.agda), and [KnapsackFrontier](../src/AoP/KnapsackFrontier.agda) treat feasible selections, optimal search, and pruning. This section has no numbered exercise; its worked calculations still need a separate audit.
+
+## §8.5 The paragraph problem
+
+| Exercise | Construction and scope |
+| --- | --- |
+| 8.23 | [LineBreaks](../src/AoP/LineBreaks.agda) enumerates partitions; [ParagraphMinimum](../src/AoP/ParagraphMinimum.agda) selects fitting layouts of minimum cost. The fusion with the fit-guarded glue step remains open. |
+| 8.24 | Open: derive the snoc-list greedy algorithm for additive whitespace cost. |
+
+## §8.6 Bitonic tours and final exercises
+
+[BitonicTable](../src/AoP/BitonicTable.agda) and [BitonicExample](../src/AoP/BitonicExample.agda) verify a table algorithm and a directed example. The following exercise variants remain open.
+
+| Exercise | Remaining construction |
+| --- | --- |
+| 8.25 | Calculate the endpoint pairs produced by extending the left or right leg, then derive the order of the table entries. |
+| 8.26 | Exploit symmetric travel costs to generate only one orientation of each tour. |
+| 8.27 | Allow a city to occur on both legs. |
+| 8.28 | Allow cities to be skipped. |
+| 8.29 | Derive a longest ordered subsequence algorithm by thinning. |
+| 8.30 | Minimize fuel stops along a route subject to tank capacity and station supplies. |
+| 8.31 | Choose a fixed number of bus stops to minimize total walking distance. |
+
+This inventory accounts for exercises 8.1–8.31. The audit of unnumbered examples and intermediate derivations continues.
