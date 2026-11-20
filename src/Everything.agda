@@ -163,6 +163,7 @@ import AoP.TeXFraction
 import AoP.RoundingCollision
 import AoP.DecimalTriangle
 import AoP.QuarterCells
+import AoP.QuarterZero
 import AoP.ExtendUpdate
 import AoP.FloorRule
 import AoP.FractionThreshold
