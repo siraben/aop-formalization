@@ -9,7 +9,7 @@ This inventory covers exercises all 52 numbered exercises in Chapter 4. [Relatio
 | 4.3 | [MeetWitness](../src/AoP/MeetWitness.agda): prove the forward distribution inclusion and refute its converse with incompatible Boolean witnesses. |
 | 4.4 | [MeetTerminal](../src/AoP/MeetTerminal.agda): construct the thin category of common lower bounds and its terminal intersection. |
 | 4.5–4.6 | [ModularRefinement](../src/AoP/ModularRefinement.agda): keep a witness through a modular restriction; turn one edge into a three-edge zigzag. |
-| 4.7 | Open: construct the product of two allegories. |
+| 4.7 | [ProductAllegory](../src/AoP/ProductAllegory.agda) equips the product category of two allegories with componentwise inclusion, meet and converse. A pair lies below a meet exactly when both coordinates satisfy their respective lower-bound conditions. The modular inequality follows by applying each factor’s modular law in its own coordinate. The construction permits different universe levels and uses each category’s arrow equivalence. |
 | 4.8–4.9 | [CoreflexiveMeet](../src/AoP/CoreflexiveMeet.agda): composing two coreflexive relations gives their intersection; taking the same relation twice yields transitivity. |
 | 4.10, 4.12 | [RangeTest](../src/AoP/RangeTest.agda): move an output test through intersection or range. |
 | 4.11 | [DiagonalTest](../src/AoP/DiagonalTest.agda): reduce all five expressions to the same condition: the test accepts the state and the relation has a loop there. |

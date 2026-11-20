@@ -92,6 +92,7 @@ import AoP.PreorderFunctor
 import AoP.UniversalObjects
 import AoP.ConstantArrow
 import AoP.ProductCategory
+import AoP.ProductAllegory
 import AoP.OrderProducts
 import AoP.ProjectionEpic
 import AoP.PartialProduct
