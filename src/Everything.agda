@@ -36,9 +36,12 @@ import AoP.SumOfMinima
 import AoP.OneWayMonotone
 import AoP.AdditionReflection
 import AoP.MonotoneConstructor
+import AoP.InitialConstructorOrder
 import AoP.ReachableDistribution
+import AoP.ContextMinimumDistribution
 import AoP.LocalWinnerFold
 import AoP.GreedyCriterion
+import AoP.GreedyHyloCriterion
 import AoP.GreedyImage
 import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
@@ -60,6 +63,7 @@ import AoP.MinimalSymmetry
 import AoP.MinimalImage
 import AoP.MinimalSum
 import AoP.WellBounded
+import AoP.ConnectedWellBounded
 import AoP.WellSupported
 import AoP.UnionMinimum
 import AoP.ListMinimumFold
