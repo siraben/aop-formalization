@@ -458,6 +458,10 @@ import AoP.FibreBounds
 import AoP.PreorderFibres
 import AoP.RelationalProducts
 import AoP.RelationalPairing
+import AoP.PairProjectionDomains
+import AoP.ModularPairPull
+import AoP.ConcreteAllegory
+import AoP.PairPullInstance
 import AoP.TensorFactorCalculation
 import AoP.RelationalCurry
 import AoP.PairInput
