@@ -48,6 +48,7 @@ import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackSearch
 import AoP.Paragraph
+import AoP.LineBreaks
 import AoP.Party
 import AoP.PartyExample
 import AoP.Bellman
