@@ -490,6 +490,7 @@ import AoP.BranchingDP
 import AoP.BellmanTable
 import AoP.BranchingGreedy
 import AoP.EditScript
+import AoP.EditTail
 import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
 import AoP.DisjointFibres

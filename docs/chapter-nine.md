@@ -32,7 +32,7 @@
 | 9.4 | Open: construct a thinning comparison from the objective and examine its implementation cost. |
 | 9.5 | Both tag laws and the concrete disjoint-range calculation above; final composition open. |
 | 9.6 | Script-length cons monotonicity above. |
-| 9.7 | Open: derive the relational tail condition for string editing. |
+| 9.7 | [EditTail](../src/AoP/EditTail.agda) proves the target-tail condition constructively: from any script for `x → b∷y`, produce one for `x → y` of no greater length. Keep leading deletions, replace the first copy by a deletion, or remove the first insertion. This is a structural proof; the requested point-free calculation remains open. |
 | 9.8 | Open: decimal-addition size and work model. |
 | 9.9 | Open: decimal-multiplication size and work model. |
 | 9.10 | Dimension-indexed matrix costs above. |
