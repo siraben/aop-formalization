@@ -146,6 +146,7 @@ import AoP.TabulatedFunction
 import AoP.MonicKernel
 import AoP.ImageComparison
 import AoP.AdjointJoins
+import AoP.MeetConnection
 import AoP.RelImplication
 import AoP.ImplicationPullback
 import AoP.MeetFromJoin
