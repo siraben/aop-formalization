@@ -167,6 +167,7 @@ import AoP.RelDistribution
 import AoP.Currying
 import AoP.DistributiveHoms
 import AoP.InverseNaturality
+import AoP.DistributiveSquare
 import AoP.RepresentingIso
 import AoP.ExponentialCases
 import AoP.ExponentialFunctor
