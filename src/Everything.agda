@@ -40,6 +40,7 @@ import AoP.GreedyImage
 import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
 import AoP.MaximumSegment
+import AoP.SignedSegment
 import AoP.SegmentFusion
 import AoP.PrefixScoreGreedy
 import AoP.TieMinimum
