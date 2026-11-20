@@ -68,6 +68,8 @@ This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/A
 
 [InhabitedTranspose](../src/AoP/InhabitedTranspose.agda) checks exercise 4.45: a relation admits a transpose into inhabited subsets exactly when each input has an output. The transpose is unique up to equality of subset membership.
 
+[SingletonTranspose](../src/AoP/SingletonTranspose.agda) checks exercises 4.46–4.47. Singleton formation is monic: testing two equal singletons at the first element identifies their elements. The image of a singleton is its fibre; the image of any subset is the union of the fibres at its members.
+
 [FibreEquality](../src/AoP/FibreEquality.agda) proves exercise 4.48 with extensional equality of subsets. Two inputs have the same set of possible outputs exactly when each fibre contains the other. Left division expresses each containment. The witness for the shared set lives in the universe of predicates.
 
 [PreorderFibres](../src/AoP/PreorderFibres.agda) checks exercise 4.49: `R` is a preorder exactly when it equals its left division by itself. Sending each input to its fibre realizes that preorder by inclusion of subsets, with extensional equality. Conversely, pulling a preorder back along any function preserves reflexivity and transitivity.
