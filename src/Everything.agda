@@ -93,6 +93,10 @@ import AoP.RelationGraphCategory
 import AoP.GraphInclusionTrace
 import AoP.SquareProductFunctors
 import AoP.InitialSegmentImage
+import AoP.MembershipImageUnion
+import AoP.ForkNaturality
+import AoP.MembershipImageSquare
+import AoP.PrefixTransformation
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
