@@ -23,6 +23,7 @@ import AoP.TwoMinima
 import AoP.MinimumComparison
 import AoP.UniqueMinimum
 import AoP.LowerMinimum
+import AoP.MinimumMeet
 import AoP.PrincipalMaximum
 import AoP.DecimalAccumulator
 import AoP.DecimalPoint
