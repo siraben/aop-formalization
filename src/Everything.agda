@@ -79,6 +79,7 @@ import AoP.ListAlgebra
 import AoP.Folds
 import AoP.Horner
 import AoP.Steep
+import AoP.Average
 import AoP.AuxiliaryFold
 import AoP.Predecessors
 import AoP.TeXFraction

@@ -26,7 +26,7 @@ Exercise inventories: [Chapter 1](docs/chapter-one.md) · [Chapter 2](docs/chapt
 | §2.5 | [Polynomial](src/AoP/Polynomial.agda) | Interpret constants, identity, sums and products; functor laws; list roll/unroll isomorphism |
 | §2.6 | [Initial](src/AoP/Initial.agda) | Algebras for an arbitrary endofunctor on Fun; derive reflection, fusion, and both directions of Lambek’s isomorphism from initiality |
 | §§2.6–2.7 | [ListAlgebra](src/AoP/ListAlgebra.agda) | Instantiate the initial-algebra interface for cons-lists; obtain the map on labels as a catamorphism |
-| §§2.6, 3.1 | [Folds](src/AoP/Folds.agda) | List-fold uniqueness; fusion and banana-split derived from uniqueness. [Steep](src/AoP/Steep.agda) tests whether each entry exceeds the sum of the following entries in one list traversal |
+| §§2.6, 3.1 | [Folds](src/AoP/Folds.agda) | List-fold uniqueness; fusion and banana-split derived from uniqueness. [Average](src/AoP/Average.agda) computes the sum and length in one traversal. [Steep](src/AoP/Steep.agda) tests whether each entry exceeds the sum of the following entries in one list traversal |
 | §3.2 | [Horner](src/AoP/Horner.agda) | Fuse a list reduction with a Ruby triangle, yielding Horner's one-pass rule |
 | §3.3 | [TeXFraction](src/AoP/TeXFraction.agda) | Integer decimal-to-fixed-point conversion; derive the fold given the floor/shift lemma |
 | §3.4 | [Conditions](src/AoP/Conditions.agda) | Derive a conditional from distributivity and coproduct case analysis; verify branch equations and postcomposition |
