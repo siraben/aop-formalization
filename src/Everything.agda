@@ -315,6 +315,7 @@ import AoP.Selection
 import AoP.SelectionSort
 import AoP.SelectionFusion
 import AoP.SelectionPairFold
+import AoP.PreorderSelection
 import AoP.SelectionPairCost
 import AoP.SelectionTotalCost
 import AoP.SelectionQuadratic
