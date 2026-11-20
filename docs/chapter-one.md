@@ -1,6 +1,6 @@
 # Chapter 1: folds, inverses, and polymorphism
 
-The numbered exercises below link to their checked constructions. For the section-level examples, the [README](../README.md) links to the main developments. A line-by-line audit of the unnumbered examples is still pending.
+The numbered exercises below link to their checked constructions. For the section-level examples, the [README](../README.md) links to the main developments. The unnumbered examples are being checked section by section. For §1.1, [SmallDatatypes](../src/AoP/SmallDatatypes.agda) enumerates seven-bit ASCII, constructs the Boolean sum and product examples, checks their list lengths (130 and 256), and defines negation, switch, paired and curried conjunction, and optional values.
 
 | Exercise | Construction or remaining work |
 | --- | --- |

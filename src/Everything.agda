@@ -2,6 +2,7 @@
 module Everything where
 
 import AoP.Naturals
+import AoP.SmallDatatypes
 import AoP.PositiveFold
 import AoP.SquareFold
 import AoP.LastSatisfying
