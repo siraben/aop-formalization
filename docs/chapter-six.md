@@ -1,5 +1,19 @@
 # Chapter 6: recursive programs
 
+### §6.1: solving the inverse valuation equation
+
+[DecimalConverseStep](../src/AoP/DecimalConverseStep.agda) starts with the specification `eval ds ≡ n` for positive `n`. Unrolling it gives two possibilities: a single nonzero digit, or a prefix representing `q` followed by a digit `d` with `n = 10q + d`. `roll` reads either witness back as a valuation equation. `Fixed.sound` and `Fixed.complete` show by induction on the candidate digits that any relation satisfying both directions describes exactly these numerals. This induction checks supplied digits. Computing them from `n` needs a branch decision and a decreasing quotient, supplied by the division and accumulator proofs below. [DecimalPrinterRefinement](../src/AoP/DecimalPrinterRefinement.agda) connects their output list to this specification. The printer’s nonzero first digit initializes a canonical numeral; parsing each further digit shifts the magnitude by one decimal place and adds the digit. `read-parse` proves agreement with the accumulator’s reader, and `positive` proves the resulting numeral represents the original positive input. `agrees` proves that the quotient algorithm and the Chapter 1 successor algorithm return the same canonical digits: reprint the valuation with the Chapter 1 inverse and apply `positive`. Thus `quotient-printer` satisfies both inverse laws, including recovery of every canonical input numeral. The separate singleton-zero convention applies only to the natural-number interface.
+
+### §6.2: bounding a uniquely determined fold
+
+[UniqueFixedBounds](../src/AoP/UniqueFixedBounds.agda) derives the order argument behind (6.2) and (6.3). Suppose the fold is the unique fixed point of its monotone step `Φ`, up to mutual inclusion. A proposed upper bound `x` only has to satisfy `Φ x ≤ x`: the infimum of all such candidates is fixed by [Knaster–Tarski](../src/AoP/FixedPoint.agda), so uniqueness puts the fold below `x`. For a lower bound, reverse the order and apply the same proof to the supremum of candidates satisfying `x ≤ Φ x`. The module takes those two bounds as data rather than assuming all predicates can be resized.
+
+[AbstractFoldBounds](../src/AoP/AbstractFoldBounds.agda) applies these tests to the candidate `s ∘ r` for equations (6.4)–(6.5). Here `r` folds with algebra `R` and `t` folds with algebra `T`. Expanding one `T`-step on `s ∘ r` exposes `T ∘ F s`, followed on its input side by the recursive child `F r` and the constructor inverse. An upper comparison `T ∘ F s ⊑ s ∘ R` therefore makes the candidate prefixed once the `R` layer is folded back up; hence `t ⊑ s ∘ r`. The opposite comparison uses unfolding instead and gives `s ∘ r ⊑ t`. Each direction needs only its own local inequality.
+
+### §6.3: why the hylomorphism is least
+
+[HyloDivisionBound](../src/AoP/HyloDivisionBound.agda) checks Theorem 6.2’s calculation. A producer `u` builds intermediate trees and a fold `c` consumes them. `fixed` shows that expanding `c ∘ u` by one layer gives the same relation, using the producer and consumer equations. For leastness, start with any candidate `x` closed under one hylomorphism step. Divide `x` by `u`: the resulting `d` is the greatest relation satisfying `d ∘ u ⊑ x`. `rearrange` passes the producer through the exposed layer; cancellation under the monotone functor then shows `d` is closed under the consumer step. Fold induction yields `c ⊑ d`, hence `c ∘ u ⊑ x`. Only this particular division and the stated fold induction rule are required.
+
 This inventory tracks the 37 numbered exercises in Chapter 6. The [sorting inventory](sorting-coverage.md) separately tracks the §6.6 algorithms and intermediate equations.
 
 | Exercise | Construction and scope |

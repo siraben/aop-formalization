@@ -23,6 +23,8 @@ import AoP.ZipInverseDomain
 import AoP.InverseDomains
 import AoP.DecimalDigits
 import AoP.DecimalDivision
+import AoP.DecimalConverseStep
+import AoP.DecimalPrinterRefinement
 import AoP.TwoMinima
 import AoP.SubsetBounds
 import AoP.CommonSet
@@ -506,6 +508,9 @@ import AoP.PermuteRemoval
 import AoP.ListProduct
 import AoP.LaxMembership
 import AoP.FixedPoint
+import AoP.UniqueFixedBounds
+import AoP.AbstractFoldBounds
+import AoP.HyloDivisionBound
 import AoP.PrefixLambek
 import AoP.RelPrefixLambek
 import AoP.DifunctionalClosure
