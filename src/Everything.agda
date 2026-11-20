@@ -18,6 +18,7 @@ import AoP.Folds
 import AoP.Horner
 import AoP.Relations
 import AoP.Shunting
+import AoP.Tabulation
 import AoP.FixedPoint
 import AoP.Refinement
 import AoP.Thinning
