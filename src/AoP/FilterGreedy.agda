@@ -39,3 +39,23 @@ module Law {A : Set} (P : A → Set) (test : ∀ x → P x ⊎ (P x → ⊥)) wh
 
   longest : ∀ xs → ∀ {ys} → Fold (λ zs → zs ≡ []) Step ys xs → len ys ≤ len (filter xs)
   longest xs = G.bound (greedy xs)
+
+  -- Equality at the optimum forces every passing head to be kept.
+  -- Dropping one would require the tail to beat its own maximum.
+  open import Agda.Builtin.Nat using (Nat; zero; suc)
+  private
+    impossible : ∀ n → suc n ≤ n → ⊥
+    impossible zero ()
+    impossible (suc n) (s≤ h) = impossible n h
+
+  tight : ∀ {xs ys} → Fold (λ zs → zs ≡ []) Step ys xs → len (filter xs) ≤ len ys → ys ≡ filter xs
+  tight (nil refl) h = refl
+  tight (cons {x = x} {xs = xs} drop tail) h with test x
+  ... | inr _ = tight tail h
+  ... | inl _ with impossible (len (filter xs)) (chain h (longest xs tail))
+  ...   | ()
+  tight (cons {x = x} (keep p) tail) h with test x
+  ... | inl _ with h
+  ...   | s≤ q = cong (x ∷_) (tight tail q)
+  tight (cons {x = x} (keep p) tail) h | inr no with no p
+  ... | ()
