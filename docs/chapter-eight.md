@@ -40,7 +40,7 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 [NonlinearChoices](../src/AoP/NonlinearChoices.agda) proves exercise 8.21 for `I × I`. The sorted Boolean menus `[false,true]` generate both `(false,true)` and `(true,false)`. These pairs are incomparable in the product order, while any two members of an ordered listing must be comparable. Hence even changing the enumeration order cannot satisfy (8.11).
 
-Exercise 8.22 remains open: derive binary thinning with guards tested before the two branch functions.
+For exercise 8.22, [GuardedBinaryThin](../src/AoP/GuardedBinaryThin.agda) proves a cons-list version for two deterministic branches guarded on the input state. If a state dominates another, it must keep each enabled guard enabled and dominate the corresponding branch output. `match` then supplies a continuation for each discarded state; `Solver.correct` lifts local thinning to the whole fold. This theorem assumes a locally correct pruning operation. [GuardLoss](../src/AoP/GuardLoss.agda) shows why monotonicity of the branch functions alone is insufficient: thinning `{0,1}` to `{0}` preserves a minimum, but when both identity branches require a positive input, the exhaustive next set contains `1` and the pruned next set is empty.
 
 ## §8.4 The knapsack problem
 

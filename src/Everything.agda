@@ -419,6 +419,8 @@ import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
 import AoP.FibreMinimumFold
 import AoP.ThinningFold
+import AoP.GuardedBinaryThin
+import AoP.GuardLoss
 import AoP.UpsequenceDominance
 import AoP.UpsequenceDecision
 import AoP.UpsequenceFrontier
