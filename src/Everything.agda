@@ -486,6 +486,11 @@ import AoP.AutomatonFibreFold
 import AoP.TypeLiftConverse
 import AoP.SubsequenceLayerCalculation
 import AoP.CartesianMenuPairs
+import AoP.ChoiceProductFold
+import AoP.PrefixFoldCuts
+import AoP.PrefixFoldEnumeration
+import AoP.SuffixPathCuts
+import AoP.PartitionLayerInverse
 import AoP.RelationalFoldTransfer
 import AoP.RelationalFusion
 import AoP.FoldFixedFusion
