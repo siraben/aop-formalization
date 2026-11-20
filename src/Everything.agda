@@ -460,6 +460,12 @@ import AoP.RelationalProducts
 import AoP.RelationalPairing
 import AoP.PairProjectionDomains
 import AoP.ModularPairPull
+import AoP.PairAbsorptionCalculation
+import AoP.TensorCompositionByAbsorption
+import AoP.TensorBifunctor
+import AoP.PairCancellationCalculation
+import AoP.PowerCopair
+import AoP.SumCopairCalculation
 import AoP.ConcreteAllegory
 import AoP.PairPullInstance
 import AoP.TensorFactorCalculation
