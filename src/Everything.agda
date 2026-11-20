@@ -115,6 +115,7 @@ import AoP.ExponentialRelator
 import AoP.RelatorTests
 import AoP.RelatorDomain
 import AoP.PowerMeetFailure
+import AoP.ImageDomainCover
 import AoP.PreorderExponential
 import AoP.MapNaturality
 import AoP.FunStrength
