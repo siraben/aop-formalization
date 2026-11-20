@@ -491,6 +491,7 @@ import AoP.BellmanTable
 import AoP.BranchingGreedy
 import AoP.EditScript
 import AoP.EditTail
+import AoP.EditSuffix
 import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
 import AoP.DisjointFibres
