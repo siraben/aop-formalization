@@ -673,6 +673,10 @@ import AoP.ReducedPointerBound
 import AoP.ReducedBellman
 import AoP.ReducedDictionaryOptimal
 import AoP.DictionaryCachedSize
+import AoP.DictionaryCodeDomain
+import AoP.DictionaryConverseStep
+import AoP.DictionaryConverseCases
+import AoP.DictionaryConverseFold
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
