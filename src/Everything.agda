@@ -43,6 +43,7 @@ import AoP.FilterGreedy
 import AoP.LexSubsequence
 import AoP.LexHeadFold
 import AoP.LexCounterexample
+import AoP.LexWinner
 import AoP.MaximumSegment
 import AoP.SignedSegment
 import AoP.SegmentFusion
