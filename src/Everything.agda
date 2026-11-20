@@ -165,6 +165,7 @@ import AoP.NegationLaws
 import AoP.Schroeder
 import AoP.Power
 import AoP.FibreEquality
+import AoP.InhabitedTranspose
 import AoP.LiberalPrecondition
 import AoP.TransformerOrder
 import AoP.FibreBounds
