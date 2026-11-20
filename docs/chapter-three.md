@@ -1,6 +1,6 @@
 # Chapter 3: paired folds, Horner’s rule, and TeX decimal input
 
-This inventory covers §§3.1–3.4. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
+This inventory lists exercises 3.1–3.51 and selected worked derivations in §§3.1–3.5. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -44,3 +44,24 @@ Given decimal digits after the point, return the nearest count of units of size 
 | 3.28 | [DistributedCase](../src/AoP/DistributedCase.agda): derive the product/case identity in `Fun` using cancellation of distribution. |
 | 3.29 | [Quad](../src/AoP/Quad.agda): encode two Booleans as one of four tags, verify both round trips, and recover conjunction. |
 | 3.30 | [FilterMap](../src/AoP/FilterMap.agda): derive the filter/map law by moving `map` past concatenation and simplifying each singleton-or-empty contribution. |
+
+## §3.5: concatenation and currying
+
+[Currying](../src/AoP/Currying.agda) implements concatenation as a fold whose result accepts a suffix. The [tip traversal calculation](../src/AoP/TipTraversal.agda) applies the same idea to trees: the two suffix functions at a fork compose, preserving left-to-right order and eliminating repeated list appends.
+
+| Exercise | Checked construction or remaining work |
+| --- | --- |
+| 3.31 | [AppendEquation](../src/AoP/AppendEquation.agda) splits equation 3.6 into its two constructor laws and recombines them in `Fun`. |
+| 3.32 | Open: derive distributivity from cartesian closure and coproducts. |
+| 3.33–3.34 | [ExponentialCases](../src/AoP/ExponentialCases.agda): exponentials indexed by zero, one and a coproduct, and global elements of function spaces; pointwise inverse laws in `Fun`. |
+| 3.35–3.37 | Open: characterize cartesian closed preorders, construct the exponential functor in an arbitrary cartesian closed category, and treat cartesian closure of the functor category in 3.37. |
+| 3.38 | [MapNaturality](../src/AoP/MapNaturality.agda): list map is natural contravariantly in the input element type and covariantly in the output. |
+| 3.39 | [ListStrength](../src/AoP/ListStrength.agda): derive the right-list product by currying and mapping, with the left-list variant. |
+| 3.40 | [FunStrength](../src/AoP/FunStrength.agda) proves the book’s strength condition on `Fun`. [SwapStrength](../src/AoP/SwapStrength.agda) gives a functor on `Fun × Fun` with no possible strength component. |
+| 3.41 | Open: state and prove the general sufficient conditions for unique solution with a parameter. |
+| 3.42–3.43 | [Iteration](../src/AoP/Iteration.agda): unique iteration, addition by iterating successor, and composition by adding counts. |
+| 3.44 | [IndexedBranches](../src/AoP/IndexedBranches.agda): a strictly positive tree with a branch per index and its structural fold. |
+| 3.45 | [AccumulatorFusion](../src/AoP/AccumulatorFusion.agda): evaluating a fused function-valued fold at a neutral accumulator recovers the initial answer. |
+| 3.46–3.47 | [ConversionFold](../src/AoP/ConversionFold.agda) derives linear snoc-list conversion; [ReverseAccumulator](../src/AoP/ReverseAccumulator.agda) derives reversal with a suffix accumulator. |
+| 3.48–3.49 | [DepthAccumulator](../src/AoP/DepthAccumulator.agda) propagates tip depth down the tree. [MinimumDepth](../src/AoP/MinimumDepth.agda) prunes subtrees with a remaining-distance bound. |
+| 3.50–3.51 | [SnocLoop](../src/AoP/SnocLoop.agda) proves state-loop uniqueness. [LoopConversion](../src/AoP/LoopConversion.agda) implements each representation’s fold by a loop on the other. |
