@@ -318,6 +318,7 @@ import AoP.Refinement
 import AoP.Thinning
 import AoP.ThinIdentity
 import AoP.ThinUnion
+import AoP.SingletonThinning
 import AoP.ThinningFold
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
