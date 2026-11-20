@@ -47,6 +47,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §7.3 | [Party](src/AoP/Party.agda), [worked example](src/AoP/PartyExample.agda) | Company-party planning on rose trees; compute a feasible maximum-score guest plan, tracking whether each supervisor attends |
 | §7.4 | [Cylinder](src/AoP/Cylinder.agda) | Minimum-cost path from a given entry row, with up/stay/down moves; [CylinderEntry](src/AoP/CylinderEntry.agda) chooses the best start among a nonempty list of entry rows |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
+| §8.1 | [ThinningFold](src/AoP/ThinningFold.agda) | For a relational list fold, derive global coverage from local pruning and a step-matching condition |
 | §8.2 | [LayeredPaths](src/AoP/LayeredPaths.agda) | Why a shortest-path table groups candidates by starting vertex; extending routes preserves that pruning invariant |
 | §8.3 | [Bump](src/AoP/Bump.agda) | Implement thinning by comparing adjacent survivors; prove no candidates are invented and every discarded candidate is dominated |
 | §8.4 | [Knapsack](src/AoP/Knapsack.agda) | Reference solver for 0–1 knapsack with capacity-indexed packs and a proof of maximum value; [KnapsackFrontier](src/AoP/KnapsackFrontier.agda) proves why pruning preserves optima, and [KnapsackSearch](src/AoP/KnapsackSearch.agda) verifies repeated pruning after each item (unsorted tables) |

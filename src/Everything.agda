@@ -42,6 +42,7 @@ import AoP.Squaring
 import AoP.Binary
 import AoP.Refinement
 import AoP.Thinning
+import AoP.ThinningFold
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
