@@ -191,6 +191,9 @@ import AoP.RationalFloorOrder
 import AoP.FractionCrossOrder
 import AoP.FloorCounterexample
 import AoP.TeXExternal
+import AoP.TeXDistanceExample
+import AoP.TeXDigitAlphabet
+import AoP.TeXShortestSearch
 import AoP.DigitInterval
 import AoP.OpenUpperDigit
 import AoP.Conditions

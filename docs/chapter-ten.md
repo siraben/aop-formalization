@@ -31,13 +31,13 @@
 
 ## §10.4 TeX decimal output
 
-[TeXExternal](../src/AoP/TeXExternal.agda) specifies shortest round-tripping output and verifies particular values. The general shortest printer and the stricter closest-output tie rule remain open.
+[TeXExternal](../src/AoP/TeXExternal.agda) specifies shortest round-tripping output and verifies particular values. [TeXShortestSearch](../src/AoP/TeXShortestSearch.agda) gives an exhaustive reference printer. It searches all strings over the [ten digits](../src/AoP/TeXDigitAlphabet.agda) through length 17 and returns a shortest round-tripping string or a proof that none exists. The 17-digit cutoff sends every longer rival to a candidate of no greater length with the same decoded value. This finite search is impractically large. The book’s greedy integer printer and closest-output tie rule remain open.
 
 | Exercise | Remaining construction |
 | --- | --- |
 | 10.12 | [DigitInterval](../src/AoP/DigitInterval.agda) proves uniqueness for a nonnegative rational scaled fraction `n/w`, with positive denominator. After clearing denominators the digit must satisfy `d*w ≤ n < (d+1)*w`; two distinct digits would force `n < n`. |
 | 10.13 | Derive the printer using integer arithmetic throughout. |
 | 10.14 | [OpenUpperDigit](../src/AoP/OpenUpperDigit.agda) treats the excluded upper endpoint: for positive `10q` and `w`, choosing the floor of `(10q−1)/w` gives the unique `d` with `d*w < 10q ≤ (d+1)*w`, even at exact multiples. The checked example `10*65536 = 5*131072` concerns arbitrary numerators; reachability of endpoints and the full printer derivation remain open. |
-| 10.15 | Characterize the selected shortest decimal and refine ties by distance to the represented value. |
+| 10.15 | [TeXDistanceExample](../src/AoP/TeXDistanceExample.agda) compares two five-digit strings read as 5 scaled points: `.00007` and `.00008`. Multiplying both distances from `5/65536` by `100000 × 65536` gives 41248 and 24288, so `.00008` is closer. A general characterization of the shortest output and refinement by distance remain open. |
 
 This inventory tracks all 15 numbered exercises. The unnumbered worked examples and intermediate derivations still need a separate audit.
