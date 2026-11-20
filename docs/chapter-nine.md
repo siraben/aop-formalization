@@ -38,7 +38,7 @@
 | 9.10 | Dimension-indexed matrix costs above. |
 | 9.11 | [AppendOptimal](../src/AoP/AppendOptimal.agda): right association attains the append-work lower bound. |
 | 9.12 | Associative nonempty fold fusion above. |
-| 9.13 | [PrefixLoop](../src/AoP/PrefixLoop.agda) proves both directions of the snoc characterization of a loop over successive nonempty prefixes. Its application to equation (9.9) remains open. |
+| 9.13 | [PrefixLoop](../src/AoP/PrefixLoop.agda) proves both directions of the snoc characterization of a loop over successive nonempty prefixes. [BracketColumnLoop](../src/AoP/BracketColumnLoop.agda) applies the sufficient direction to the column recurrence (9.8), deriving (9.9): processing the tail’s array of prefix rows from the singleton tip gives the same column. The row and mixing functions remain parameters of this calculation. |
 | 9.14 | Open research exercise: derive a thinning fold for bracketing via converse flattening. |
 | 9.15 | Open: optimize over permutations as well as bracketings for commutative operations. |
 | 9.16 | [DictionaryMonotone](../src/AoP/DictionaryMonotone.agda) proves the empty and snoc cases. Extending a code adds the element’s charge; extending two cost-ordered codes with elements of the same kind preserves their order. |
