@@ -388,6 +388,7 @@ import AoP.RallyExpansion
 import AoP.RallyCoverage
 import AoP.RallyReachable
 import AoP.RallyMinimum
+import AoP.RallyPartialLoad
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
