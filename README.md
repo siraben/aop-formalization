@@ -8,6 +8,8 @@ In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a di
 
 ## Results by book section
 
+Exercise inventories: [Chapter 1](docs/chapter-one.md) · [§6.6 sorting](docs/sorting-coverage.md).
+
 | Book sections | Agda | Checked statements |
 | --- | --- | --- |
 | §1.2 | [Naturals](src/AoP/Naturals.agda) | Natural folds and uniqueness; factorial and Fibonacci pair invariants; higher-order fold for Ackermann; [PositiveFold](src/AoP/PositiveFold.agda) gives an unsatisfiable recursion equation and the positive-number fold isomorphism; [SquareFold](src/AoP/SquareFold.agda) derives squaring by repeated addition; [LastSatisfying](src/AoP/LastSatisfying.agda) finds the greatest index passing a Boolean test |
