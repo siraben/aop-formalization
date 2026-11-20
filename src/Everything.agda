@@ -311,6 +311,7 @@ import AoP.ListProduct
 import AoP.LaxMembership
 import AoP.FixedPoint
 import AoP.PrefixLambek
+import AoP.RelPrefixLambek
 import AoP.DifunctionalClosure
 import AoP.BinaryOctal
 import AoP.HalvingRun
