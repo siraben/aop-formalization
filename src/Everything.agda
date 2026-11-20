@@ -172,6 +172,8 @@ import AoP.DecimalTailBound
 import AoP.SixteenDigitsFail
 import AoP.DivisionThreshold
 import AoP.TeXStateBound
+import AoP.GridTranslation
+import AoP.GridDivision
 import AoP.ExtendUpdate
 import AoP.FloorRule
 import AoP.FractionThreshold
