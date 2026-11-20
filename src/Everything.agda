@@ -396,6 +396,8 @@ import AoP.BusReference
 import AoP.BusProfile
 import AoP.BusProfileCost
 import AoP.BusProfileDecision
+import AoP.BusFrontier
+import AoP.BusFrontierSound
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
