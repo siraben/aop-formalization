@@ -50,14 +50,17 @@ module Law {A : Set} (n : Nat) where
   keep : ∀ xs → V (fill xs) (fill xs)
   keep xs = same , refl
 
-  fixed : ∀ xs {y} → V y (fill xs) → y ≡ fill xs
-  fixed xs {y} (pr , eq) = equal pr (cancel (suc n) compare)
+  at-stop : ∀ xs {y} → position xs ≡ n → V y xs → y ≡ xs
+  at-stop xs {y} stop (pr , eq) = equal pr (cancel (suc n) compare)
     where
-    lengths : suc (position y) + len y ≡ suc n + len (fill xs)
-    lengths with count y (suc (position y)) | count (fill xs) (suc (position (fill xs))) | cong len eq
-    ... | l | r | e rewrite reset (position xs) xs refl = sym′ l ∙ e ∙ r
+    lengths : suc (position y) + len y ≡ suc n + len xs
+    lengths with count y (suc (position y)) | count xs (suc (position xs)) | cong len eq
+    ... | l | r | e rewrite stop = sym′ l ∙ e ∙ r
       where sym′ : ∀ {a b : Nat} → a ≡ b → b ≡ a
             sym′ refl = refl
-    compare : suc n + len (fill xs) ≤ suc n + len y
+    compare : suc n + len xs ≤ suc n + len y
     compare with sum-mono (s≤ (pos y)) (rid (len y))
     ... | le rewrite lengths = le
+
+  fixed : ∀ xs {y} → V y (fill xs) → y ≡ fill xs
+  fixed xs = at-stop (fill xs) (reset (position xs) xs refl)
