@@ -422,6 +422,7 @@ import AoP.ReserveExtrema
 import AoP.ReserveIntervalExample
 import AoP.VanLengthOrder
 import AoP.VanHeadOrder
+import AoP.VanLexOrder
 import AoP.VanExtensionOrder
 import AoP.VanGreedyStep
 import AoP.VanGreedyDominance
