@@ -148,6 +148,7 @@ import AoP.ImageComparison
 import AoP.AdjointJoins
 import AoP.MeetConnection
 import AoP.RelImplication
+import AoP.LexicalOrder
 import AoP.RelDifference
 import AoP.LeftDivision
 import AoP.ImplicationPullback

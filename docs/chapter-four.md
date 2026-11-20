@@ -46,6 +46,8 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 
 [ImplicationPullback](../src/AoP/ImplicationPullback.agda) proves exercise 4.33 for function graphs: changing both endpoints before forming an implication gives the same relation as changing them afterwards.
 
+[LexicalOrder](../src/AoP/LexicalOrder.agda) checks exercise 4.34 in `Rel`. Compare by `R`, consulting `S` when `R` ties. This operation preserves preorders, is associative, and has the universal relation as a two-sided unit.
+
 [LeftDivision](../src/AoP/LeftDivision.agda) checks the universal property of left division in `Rel`. Exercise 4.35 moves a function graph across either argument of division; the graph fixes the intermediate input, giving both directions of each equality.
 
 [MeetConnection](../src/AoP/MeetConnection.agda) checks exercise 4.39: the diagonal map is left adjoint to binary meet in the componentwise product order. It derives the adjunction from the meet projections and pairing, recovers both laws, and proves monotonicity of the two maps.
