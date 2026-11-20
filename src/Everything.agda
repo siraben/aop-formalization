@@ -39,6 +39,7 @@ import AoP.LocalWinnerFold
 import AoP.GreedyImage
 import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
+import AoP.MaximumSegment
 import AoP.TieMinimum
 import AoP.MinimalTieClass
 import AoP.MinimalComparison
