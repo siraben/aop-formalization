@@ -31,6 +31,16 @@ module Iterate {A B : Set} (Φ : (B ← A) → B ← A)
     bounded zero ()
     bounded (suc n) p = closed (mono (stage n) X (bounded n) p)
 
+  -- Exercise 6.4, fixed-point induction. A rule that preserves the
+  -- bound at *any* approximation preserves it at every finite stage.
+  -- Membership in μ supplies the particular stage whose bound we need.
+  stage-induction : (X : B ← A) → (∀ Y → Y ⊆ X → Φ Y ⊆ X) → μ ⊆ X
+  stage-induction X step (n , edge) = bounded n edge
+    where
+    bounded : ∀ i → stage i ⊆ X
+    bounded zero ()
+    bounded (suc i) = step (stage i) (bounded i)
+
   unfold : μ ⊆ Φ μ
   unfold (zero , ())
   unfold (suc n , p) = mono (stage n) μ (inject stage n) p
