@@ -162,6 +162,7 @@ import AoP.EntireBridge
 import AoP.Joins
 import AoP.Complement
 import AoP.NegationLaws
+import AoP.Schroeder
 import AoP.Power
 import AoP.RelationalProducts
 import AoP.RelationalSums

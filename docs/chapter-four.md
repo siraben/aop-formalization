@@ -1,6 +1,6 @@
 # Chapter 4: relations
 
-This inventory covers exercises 4.1–4.40 (§§4.1–4.4). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
+This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -62,6 +62,6 @@ This inventory covers exercises 4.1–4.40 (§§4.1–4.4). [Relations](../src/A
 
 ## §4.5: Boolean allegories
 
-[NegationLaws](../src/AoP/NegationLaws.agda) checks exercises 4.41–4.42 in `Rel`. Negating the universal relation gives the empty relation, triple negation reduces to single negation, negation exchanges union with intersection of complements, and excluded middle holds under double negation. Eliminating double negation for all relations is equivalent to deciding membership in all relations. Exercise 4.43 (Schröder’s rule) remains open.
+[NegationLaws](../src/AoP/NegationLaws.agda) checks exercises 4.41–4.42 in `Rel`. Negating the universal relation gives the empty relation, triple negation reduces to single negation, negation exchanges union with intersection of complements, and excluded middle holds under double negation. Eliminating double negation for all relations is equivalent to deciding membership in all relations. [Schroeder](../src/AoP/Schroeder.agda) proves exercise 4.43 for concrete relations: a path inclusion rules out each forbidden step, and stability of the target relation suffices for the reverse implications. The abstract Boolean-allegory proof remains open.
 
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.
