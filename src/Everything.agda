@@ -219,6 +219,7 @@ import AoP.BinaryOctal
 import AoP.HalvingRun
 import AoP.HalvingDigits
 import AoP.HalvingPower
+import AoP.ModulusBound
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
