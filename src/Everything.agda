@@ -99,6 +99,7 @@ import AoP.RoundingCollision
 import AoP.DecimalTriangle
 import AoP.ExtendUpdate
 import AoP.FloorRule
+import AoP.FloorConnection
 import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.Conditions

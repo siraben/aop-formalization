@@ -1,6 +1,6 @@
 # Chapter 4: relations
 
-This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
+This inventory covers exercises 4.1–4.40 (§§4.1–4.4). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -54,8 +54,10 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 
 [OppositeComposition](../src/AoP/OppositeComposition.agda) checks exercise 4.37: the proposed adjunction holds exactly when the two round trips satisfy `X ⊆ S ∘ (X ∘ R)` and `(S ∘ Y) ∘ R ⊆ Y` for all `X` and `Y`.
 
+[FloorConnection](../src/AoP/FloorConnection.agda) checks the order argument for exercise 4.38. Integer inclusion into the rationals is the lower adjoint and floor the upper adjoint: `embed z ≤ q` exactly when `z ≤ floor q`. The proof assumes the greatest-integer-below specification and derives monotonicity; a concrete rational arithmetic instance remains open.
+
 [MeetConnection](../src/AoP/MeetConnection.agda) checks exercise 4.39: the diagonal map is left adjoint to binary meet in the componentwise product order. It derives the adjunction from the meet projections and pairing, recovers both laws, and proves monotonicity of the two maps.
 
-[AdjointJoins](../src/AoP/AdjointJoins.agda) checks both directions of exercise 4.40 for monotone `f` on orders with small indexed joins. Given an adjunction, `f` preserves joins and `g y` is the join of the inputs whose images lie below `y`. Conversely, join preservation makes that join itself admissible, yielding `f x ≤ y` exactly when `x ≤ g y`. The rest of §4.4 still needs an exercise-by-exercise inventory.
+[AdjointJoins](../src/AoP/AdjointJoins.agda) checks both directions of exercise 4.40 for monotone `f` on orders with small indexed joins. Given an adjunction, `f` preserves joins and `g y` is the join of the inputs whose images lie below `y`. Conversely, join preservation makes that join itself admissible, yielding `f x ≤ y` exactly when `x ≤ g y`.
 
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.
