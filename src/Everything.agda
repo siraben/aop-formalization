@@ -421,6 +421,7 @@ import AoP.VanFold
 import AoP.ReserveExtrema
 import AoP.ReserveIntervalExample
 import AoP.VanLengthOrder
+import AoP.SecurePartitionFold
 import AoP.ReserveTransfer
 import AoP.VaultCapacity
 import AoP.CachedVan
