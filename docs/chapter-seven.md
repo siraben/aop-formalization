@@ -14,4 +14,6 @@
 
 [MinimumMeet](../src/AoP/MinimumMeet.agda) checks exercises 7.6 and 7.13. A minimum for the intersection of two relations is precisely a member minimizing both. Restricting a preorder to pairs with equal images under a function also preserves reflexivity and transitivity.
 
+[ProductMinimum](../src/AoP/ProductMinimum.agda) checks exercise 7.15 for independent choices from two result sets at a common input. Pairing their minima gives a minimum for the componentwise comparison; the two components may have different types and comparison relations.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
