@@ -32,7 +32,9 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 | 4.25 | Open: determine when locale-valued relations admit tabulations. |
 | 4.26–4.27 | [UnitRange](../src/AoP/UnitRange.agda): range reflects inclusion for relations from a singleton; composing with the universal relation and intersecting with identity gives the domain test. |
 
-## §4.4: Galois connections
+## §4.4: local completeness and Galois connections
+
+[EmptyRange](../src/AoP/EmptyRange.agda) checks exercise 4.31 in `Rel`: a relation is empty exactly when its range is empty. Exchanging the two input witnesses around a triangle then proves that `(R ∘ S) ⊓ T` is empty exactly when `R ⊓ (T ∘ S˘)` is empty.
 
 [AdjointJoins](../src/AoP/AdjointJoins.agda) checks both directions of exercise 4.40 for monotone `f` on orders with small indexed joins. Given an adjunction, `f` preserves joins and `g y` is the join of the inputs whose images lie below `y`. Conversely, join preservation makes that join itself admissible, yielding `f x ≤ y` exactly when `x ≤ g y`. The rest of §4.4 still needs an exercise-by-exercise inventory.
 
