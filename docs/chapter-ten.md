@@ -27,7 +27,7 @@
 | 10.8 | Derive the bag-algebra equation for permutation generation. |
 | 10.9 | Derive the equal-weight schedule and its sorting time bound. |
 | 10.10 | Generalize the objective to signed lateness and a bottom cost for the empty schedule. |
-| 10.11 | Investigate greedy selection for the sum of penalties. |
+| 10.11 | [SumTardiness](../src/AoP/SumTardiness.agda) refutes the chapter’s backward minimum-final-penalty rule for the sum objective. Two jobs due at zero have durations 3 and 1 and weights 2 and 1. Selecting the short job last gives total 10; reversing them gives 9. This concerns that specific rule. |
 
 ## §10.4 TeX decimal output
 
