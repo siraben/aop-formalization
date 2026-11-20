@@ -79,6 +79,7 @@ import AoP.EditScript
 import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.BracketSpine
+import AoP.BracketEnumeration
 import AoP.Compression
 import AoP.CompressionGrowth
 import AoP.PointerBounds
