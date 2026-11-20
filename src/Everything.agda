@@ -117,6 +117,7 @@ import AoP.IndexedBranches
 import AoP.AccumulatorFusion
 import AoP.ReverseAccumulator
 import AoP.DepthAccumulator
+import AoP.MinimumDepth
 import AoP.SnocLoop
 import AoP.Iteration
 import AoP.Relations
