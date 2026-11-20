@@ -655,6 +655,10 @@ import AoP.PointerBounds
 import AoP.CompressionAlphabet
 import AoP.BoundedWords
 import AoP.DictionarySearch
+import AoP.DictionarySplice
+import AoP.DictionaryTable
+import AoP.DictionaryTableTrace
+import AoP.DictionaryScanBound
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
