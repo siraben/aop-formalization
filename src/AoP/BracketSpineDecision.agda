@@ -8,7 +8,7 @@ open import AoP.ParagraphMinimum using (Dec; le?)
 open import AoP.Polynomial using (inl; inr)
 open import AoP.Trees using (Tree; tip; bin)
 open import AoP.NatOrder using (rid; chain)
-open import AoP.Bump using (module Prune)
+open import AoP.PoolPruning using (module Sweep)
 open import Agda.Builtin.Nat using (Nat)
 
 module Check {A S : Set} (atom : A → S) (combine : S → S → S) (charge : S → S → Nat)
@@ -36,11 +36,8 @@ module Check {A S : Set} (atom : A → S) (combine : S → S → S) (charge : S 
   ... | inr no | _ = inr λ { (fork p _) → no p }
   ... | inl _ | inr no = inr λ { (fork _ q) → no q }
   ... | inl p | inl q = inl (fork p q)
-  module P = Prune Spine self compose
-  compare : ∀ t u → P.Comparison t u
-  compare t u with spine? t u
-  ... | inl p = P.first p
-  ... | inr _ with spine? u t
-  ...   | inl q = P.second q
-  ...   | inr _ = P.retain
-  module Thin = P.Algorithm compare
+  module Thin where
+    open Sweep Spine self spine? using (prune)
+    thinlist : List (Tree A) → List (Tree A)
+    thinlist ts = fst (prune ts)
+    correct = λ ts → snd (prune ts)
