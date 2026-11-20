@@ -82,6 +82,7 @@ import AoP.Compression
 import AoP.CompressionGrowth
 import AoP.PointerBounds
 import AoP.CompressionAlphabet
+import AoP.BoundedWords
 import AoP.Greedy
 import AoP.Detab
 import AoP.TabFree
