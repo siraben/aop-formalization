@@ -44,6 +44,7 @@ import AoP.Transformations
 import AoP.Whiskering
 import AoP.FunctorCategory
 import AoP.WalkingArrow
+import AoP.SwapNatural
 import AoP.Polynomial
 import AoP.Products
 import AoP.Initial
