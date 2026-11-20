@@ -53,7 +53,7 @@ Exercise inventories: [Chapter 1](docs/chapter-one.md) · [Chapter 2](docs/chapt
 | §6.4 | [Squaring](src/AoP/Squaring.agda) | Calculate exponentiation by squaring over binary digits using associativity and a left unit |
 | §6.5 | [Inductive](src/AoP/Inductive.agda) | Accessibility of every recursive child makes the relational list hylomorphism the unique fixed point |
 | §6.6 | [Selection](src/AoP/Selection.agda) | Select a least element from nonempty input, with evidence that exactly one occurrence was removed; [SelectionSort](src/AoP/SelectionSort.agda) iterates selection and proves sortedness and preservation of multiplicities. [Quicksort](src/AoP/Quicksort.agda) splits around a pivot, unfolds a tree and flattens it in order. [Derivations and exercises](docs/sorting-coverage.md) |
-| §6.7 | [Closure](src/AoP/Closure.agda) | Finite paths, closure induction, and the least preorder containing a relation |
+| §6.7 | [Frontier search](src/AoP/FiniteFrontierClosure.agda) · [cycle example](src/AoP/FrontierCycleTrace.agda) | Enumerate exactly the vertices reachable from the seeds given a finite cover and decidable edges and seeds. The cycle `0 → 1 → 0` yields `[0,1]` from the cover `[0,1,2]`. |
 | §7.2 | [MonotoneMinimum](src/AoP/MonotoneMinimum.agda) | A unary function preserves minima of direct images exactly when it is monotone; recover monotonicity using two-element sets |
 | §7.2 | [GreedyFold](src/AoP/GreedyFold.agda) | Relational list-fold greedy theorem: matching steps from better tails makes every locally minimal run globally optimal |
 | §7.3 | [Party](src/AoP/Party.agda), [worked example](src/AoP/PartyExample.agda) | Company-party planning on rose trees; compute a feasible maximum-score guest plan, tracking whether each supervisor attends |

@@ -544,6 +544,12 @@ import AoP.RelatorEmptyMembership
 import AoP.ClosureIterate
 import AoP.MuCalculus
 import AoP.ClosureRuns
+import AoP.ClosureFrontierInvariant
+import AoP.FiniteFrontierBudget
+import AoP.FiniteFrontierClosure
+import AoP.FrontierCycleTrace
+import AoP.FrontierRolling
+import AoP.RelationalFrontierRolling
 import AoP.ClosureDiagonal
 import AoP.ClosureGuard
 import AoP.ClosureSeed
