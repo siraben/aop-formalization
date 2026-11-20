@@ -12,5 +12,5 @@
 | 6.24: ordering by the intersection of preorders | [OrderedMeet](../src/AoP/OrderedMeet.agda) proves both relational inclusions for arbitrary comparison relations, using the all-pairs definition of orderedness. |
 | 6.25: sorting a set represented by a list with duplicates | Open. |
 | 6.26–6.28: preorder, postorder and merge variants of tree flattening | Open. |
-| 6.29: changing the intermediate tree datatype | Open. |
+| 6.29: changing the intermediate tree datatype | [LeafSplit](../src/AoP/LeafSplit.agda) exhibits an unchanged recursive input and proves strict length decrease when contiguous splits require two nonempty children. |
 | 6.30: insertion sort and its fusion condition | [InsertionSort](../src/AoP/InsertionSort.agda) proves the deletion guard, inserts into a sorted suffix, and returns the same `Result` as selection sort for natural numbers. |
