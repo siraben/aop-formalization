@@ -74,6 +74,7 @@ import AoP.VanMinimum
 import AoP.VanService
 import AoP.VanComparison
 import AoP.VanRefinement
+import AoP.VanFold
 import AoP.VanSchedule
 import AoP.VanExample
 import AoP.CylinderEntry
