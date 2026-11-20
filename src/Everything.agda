@@ -82,6 +82,7 @@ import AoP.Slice
 import AoP.TipDepths
 import AoP.GeneralHorner
 import AoP.HornerMultiplier
+import AoP.Hyperproduct
 import AoP.Steep
 import AoP.Average
 import AoP.ProductComparison
