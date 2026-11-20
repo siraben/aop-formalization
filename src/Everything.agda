@@ -262,6 +262,9 @@ import AoP.LexicalOrder
 import AoP.LexicalPairs
 import AoP.RelDifference
 import AoP.LeftDivision
+import AoP.MembershipDivisionLaw
+import AoP.LargestMembership
+import AoP.LargestRelatorTransformation
 import AoP.ResidualConnections
 import AoP.OppositeComposition
 import AoP.DivisionCalculation
