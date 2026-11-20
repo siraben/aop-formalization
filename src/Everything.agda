@@ -325,6 +325,7 @@ import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackSearch
 import AoP.Paragraph
+import AoP.LineWidthClosure
 import AoP.LineBreaks
 import AoP.ParagraphMinimum
 import AoP.Bitonic
