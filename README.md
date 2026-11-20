@@ -34,6 +34,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §5.5 | [RelationalFusion](src/AoP/RelationalFusion.agda) | Derive the two fold-fusion inclusions independently from local simulations of nil and cons |
 | §5.5 | [Relations](src/AoP/Relations.agda), [Refinement](src/AoP/Refinement.agda) | Inductive relational fold; derive a deterministic implementation from branch refinements; filter refines subsequence selection |
 | §5.6 | [Subsequences](src/AoP/Subsequences.agda) | Enumerate subsequences by a fold; prove membership is equivalent to the skip/keep relational specification |
+| §5.6 | [Splits](src/AoP/Splits.agda) | Enumerate the inverse of list concatenation, including cuts at either endpoint; prove soundness and completeness |
 | §5.7 | [LaxMembership](src/AoP/LaxMembership.agda) | Membership is lax natural for power lifting; the opposite inclusion holds for function graphs |
 | §§6.1, 6.4 | [Binary](src/AoP/Binary.agda) | Binary carry, increment correctness, and evaluation as a left inverse of unary-to-binary encoding |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
