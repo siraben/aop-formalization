@@ -73,6 +73,7 @@ import AoP.CylinderExample
 import AoP.PartyExample
 import AoP.Bellman
 import AoP.BranchingDP
+import AoP.BellmanTable
 import AoP.BranchingGreedy
 import AoP.EditScript
 import AoP.EditMinimum
