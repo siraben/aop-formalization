@@ -395,6 +395,7 @@ import AoP.BitonicTable
 import AoP.BitonicExample
 import AoP.FiniteMinimum
 import AoP.Party
+import AoP.PartyListCost
 import AoP.Cylinder
 import AoP.Reserves
 import AoP.SecureBlock
