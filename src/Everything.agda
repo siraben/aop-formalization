@@ -94,6 +94,7 @@ import AoP.ConstantArrow
 import AoP.ProductCategory
 import AoP.ProductAllegory
 import AoP.LocaleRelations
+import AoP.LocaleIdentity
 import AoP.OrderProducts
 import AoP.ProjectionEpic
 import AoP.PartialProduct
