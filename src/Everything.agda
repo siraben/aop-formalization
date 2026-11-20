@@ -337,6 +337,7 @@ import AoP.AdjacentCoverage
 import AoP.ConnectedBlock
 import AoP.ConnectedMaximum
 import AoP.LeftMinimumBlock
+import AoP.LeftMinimumDirection
 import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackSearch
