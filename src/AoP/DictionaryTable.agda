@@ -42,6 +42,8 @@ module Table {A : Set} (eq? : (x y : A) → Dec (x ≡ y)) (target : List A) (c 
   rows : ∀ ys → List Row → Cell ys → Cell ys
   rows ys [] best = best
   rows ys (r ∷ rs) best = rows ys rs (scan ys r tokens best)
+  substCell : ∀ {x y} → x ≡ y → Cell x → Cell y
+  substCell refl w = w
   fill : ∀ xs → Cell xs → List Row → (rest : List A) → Cell (xs ++ rest)
   fill xs (ps , ok) old [] = ps , (ok ∙ prefix-law xs [])
   fill xs u old (a ∷ rest) = substCell (assoc xs (a ∷ []) rest) (fill ys next history rest)
@@ -49,7 +51,5 @@ module Table {A : Set} (eq? : (x y : A) → Dec (x ≡ y)) (target : List A) (c 
     ys = xs ++ (a ∷ [])
     history = (xs , u) ∷ old
     next = rows ys history ((fst u ++ (sym a ∷ [])) , resume [] (fst u) (sym a ∷ []) (snd u))
-    substCell : ∀ {x y} → x ≡ y → Cell x → Cell y
-    substCell refl w = w
   encode : Cell target
   encode = fill [] ([] , refl) [] target

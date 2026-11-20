@@ -659,6 +659,11 @@ import AoP.DictionarySplice
 import AoP.DictionaryTable
 import AoP.DictionaryTableTrace
 import AoP.DictionaryScanBound
+import AoP.DictionaryLastEdge
+import AoP.DictionaryTokenCoverage
+import AoP.DictionaryHistory
+import AoP.DictionaryBellman
+import AoP.DictionaryOptimal
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
