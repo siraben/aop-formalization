@@ -301,6 +301,7 @@ import AoP.FibreBounds
 import AoP.PreorderFibres
 import AoP.RelationalProducts
 import AoP.RelationalPairing
+import AoP.TensorFactorCalculation
 import AoP.RelationalCurry
 import AoP.PairInput
 import AoP.RelationalSums
