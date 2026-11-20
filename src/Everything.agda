@@ -385,6 +385,7 @@ import AoP.RallyDominance
 import AoP.RallyRoute
 import AoP.RallyFrontier
 import AoP.RallyExpansion
+import AoP.RallyCoverage
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
