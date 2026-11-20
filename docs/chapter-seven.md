@@ -24,4 +24,6 @@
 
 [MinimalSymmetry](../src/AoP/MinimalSymmetry.agda) proves exercise 7.23. Every member of every set is minimal exactly when the comparison relation is symmetric. For the converse, testing minimality on the full set reverses any given edge.
 
+[MinimalImage](../src/AoP/MinimalImage.agda) proves exercise 7.22. The minimal elements of an image are exactly the images of source elements minimal under the pulled-back comparison. Image membership supplies the required preimage even when the function is not injective.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

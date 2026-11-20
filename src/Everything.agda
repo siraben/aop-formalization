@@ -29,6 +29,7 @@ import AoP.TieMinimum
 import AoP.MinimalComparison
 import AoP.MinimalInclusion
 import AoP.MinimalSymmetry
+import AoP.MinimalImage
 import AoP.PrincipalMaximum
 import AoP.DecimalAccumulator
 import AoP.DecimalPoint
