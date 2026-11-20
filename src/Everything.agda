@@ -192,10 +192,12 @@ import AoP.FractionCrossOrder
 import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.TeXDistanceExample
+import AoP.TeXGreedyTieTrace
 import AoP.TeXDigitAlphabet
 import AoP.TeXShortestSearch
 import AoP.DigitInterval
 import AoP.OpenUpperDigit
+import AoP.StrictUpperQuotient
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
