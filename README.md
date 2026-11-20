@@ -88,4 +88,4 @@ The [appendix list product](src/AoP/ListProduct.agda) enumerates one choice from
 
 ## Open work
 
-The [dictionary encoder guide](docs/dictionary.md) derives the minimum-cost prefix table and its longest-pointer refinement. [Chapter 9](docs/chapter-nine.md) records the relational hypotheses for the dynamic-programming theorem. Open work includes the general greedy theorem, exercise 9.20’s alternative dictionary thinning fold, and the general TeX printer.
+The [dictionary encoder guide](docs/dictionary.md) derives the minimum-cost prefix table and its longest-pointer refinement. [Chapter 9](docs/chapter-nine.md) records the relational hypotheses for the dynamic-programming theorem. Exercise 9.20’s [alternative thinning fold](src/AoP/DictionaryStateMinimum.agda) groups partial encodings by their ability to extend the final pointer. Open work includes the general greedy theorem and the general TeX printer.
