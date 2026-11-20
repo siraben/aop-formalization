@@ -1,0 +1,23 @@
+# Chapter 2: categories, functors, and transformations
+
+This inventory covers the exercises in §§2.1–2.3. Later sections and the unnumbered examples still need an exercise-by-exercise and example-by-example audit.
+
+| Exercise | Checked construction or remaining work |
+| --- | --- |
+| 2.1 | [Retractions](../src/AoP/Retractions.agda): applying the proposed right-unit law to the identity determines the arrow. |
+| 2.2 | Open: check which composites in the diagram have matching endpoints. |
+| 2.3 | [Retractions](../src/AoP/Retractions.agda): use a chosen section to factor through its retraction, and prove the dual extension law. |
+| 2.4–2.5 | [Cancellation](../src/AoP/Cancellation.agda): cancel a section on the left and a retraction on the right. If a composite is epic, its outer arrow is epic; if monic, its inner arrow is monic. |
+| 2.6 | [PreorderCategory](../src/AoP/PreorderCategory.agda): every arrow cancels in both directions. On naturals, `1 → 0` has no return arrow. |
+| 2.7 | [RelEpic](../src/AoP/RelEpic.agda): a shared input can hit two outputs without distinguishing them. Adding a private input for each output yields an epic relation that still has a multivalued input. |
+| 2.8 | Partial: [WalkingArrow](../src/AoP/WalkingArrow.agda) gives commuting squares. The standalone arrow category and the characterization of its monics remain open. |
+| 2.9–2.10 | [FunctorIso](../src/AoP/FunctorIso.agda) maps both inverse equations. [PreorderFunctor](../src/AoP/PreorderFunctor.agda) constructs a functor from a monotone map and reads monotonicity back from its action on arrows. |
+| 2.11 | [HomAction](../src/AoP/HomAction.agda): precompose at the source and postcompose at the target. The proofs check identity, composition, and congruence on all three arrows. |
+| 2.12 | [TreeFunctor](../src/AoP/TreeFunctor.agda): the tip mapping of §1.4 gives an endofunctor on functions. |
+| 2.13 | [UniversalImage](../src/AoP/UniversalImage.agda): universal direct image preserves identity and composition. A missing preimage distinguishes it from ordinary direct image. |
+| 2.14 | [SwapNatural](../src/AoP/SwapNatural.agda): construct both product functors, the swap transformation, and its inverse. |
+| 2.15 | [SingletonImage](../src/AoP/SingletonImage.agda): prove singleton naturality for direct image; refute it for universal image. |
+| 2.16 | [ProductNaturality](../src/AoP/ProductNaturality.agda): choosing one element per set commutes with taking direct images. The reverse inclusion collects a preimage for each choice. |
+| 2.17 | [Whiskering](../src/AoP/Whiskering.agda): precompose a transformation with a functor and reuse the original square on each mapped arrow. |
+| 2.18 | [PartialHead](../src/AoP/PartialHead.agda): a defined head and an undefined tail distinguish the two sides of the proposed naturality square. |
+| 2.19 | [FunctorCategory](../src/AoP/FunctorCategory.agda) verifies the category laws componentwise. [WalkingArrow](../src/AoP/WalkingArrow.agda) converts between transformations and squares for two-object diagrams. A packaged category isomorphism remains open. |
