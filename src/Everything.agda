@@ -327,6 +327,7 @@ import AoP.QueryTrace
 import AoP.HiddenTrace
 import AoP.MinimalQueries
 import AoP.TraceCardinality
+import AoP.OrderedPairs
 import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
 import AoP.FibreMinimumFold
