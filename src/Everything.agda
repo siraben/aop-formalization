@@ -487,6 +487,7 @@ import AoP.ParagraphAllowanceOrder
 import AoP.ParagraphSnocWaste
 import AoP.ParagraphSnocTrace
 import AoP.ParagraphSnocWinner
+import AoP.ParagraphSquareFailure
 import AoP.Bitonic
 import AoP.SymmetricTour
 import AoP.SymmetricTourTable
