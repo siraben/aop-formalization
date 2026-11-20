@@ -54,6 +54,7 @@ import AoP.Bitonic
 import AoP.FiniteMinimum
 import AoP.Party
 import AoP.Cylinder
+import AoP.CylinderEntry
 import AoP.PartyExample
 import AoP.Bellman
 import AoP.EditScript
