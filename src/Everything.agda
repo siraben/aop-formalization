@@ -12,6 +12,7 @@ import AoP.CurriedExpression
 import AoP.Inverses
 import AoP.DecimalDigits
 import AoP.Naturality
+import AoP.NaturalShapes
 import AoP.PointFree
 import AoP.Categories
 import AoP.UniversalObjects
