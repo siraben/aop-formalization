@@ -3,7 +3,9 @@ module AoP.Bump where
 
 open import AoP.Prelude
 open import AoP.Folds
-open import AoP.Subsequences using (_∈_; here; there)
+open import AoP.Subsequences using (_∈_; here; there; Subseq)
+open import AoP.Relations using (nil; cons)
+open import AoP.Refinement using (skip; keep)
 open import AoP.Thinning using (Thin; thin; thin-compose; thin-id)
 
 -- §8.3 — Prune a list without reordering it. Imagine keeping candidate
@@ -55,3 +57,19 @@ module Prune {A : Set} (_≼_ : A → A → Set) (rid : ∀ x → x ≼ x)
     correct : ∀ xs → Covers (thinlist xs) xs
     correct [] = thin-id rid
     correct (x ∷ xs) = thin-compose chain (local x (thinlist xs)) (lift x (correct xs))
+
+    -- Coverage alone would permit shuffling or duplicating candidates.
+    -- The second half of the specification is about their positions:
+    -- each survivor must occupy a distinct input slot, in input order.
+    drop-first : ∀ {y : A} {ys xs} → Subseq (y ∷ ys) xs → Subseq ys xs
+    drop-first (cons keep p) = cons skip p
+    drop-first (cons skip p) = cons skip (drop-first p)
+
+    ordered : ∀ xs → Subseq (thinlist xs) xs
+    ordered [] = nil refl
+    ordered (x ∷ xs) with thinlist xs | ordered xs
+    ... | [] | p = cons keep p
+    ... | y ∷ ys | p with compare x y
+    ...   | first le = cons keep (drop-first p)
+    ...   | second le = cons skip p
+    ...   | retain = cons keep p
