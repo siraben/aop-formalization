@@ -339,6 +339,7 @@ import AoP.ConnectedMaximum
 import AoP.LeftMinimumBlock
 import AoP.LeftMinimumDirection
 import AoP.LeftMinimumCount
+import AoP.LeftMinimumFusion
 import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackSearch
