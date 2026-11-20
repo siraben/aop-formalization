@@ -391,6 +391,7 @@ import AoP.RallyMinimum
 import AoP.RallyPartialLoad
 import AoP.RallyPartialRoute
 import AoP.BusWalking
+import AoP.BusLayouts
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
