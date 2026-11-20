@@ -419,6 +419,7 @@ import AoP.VanComparison
 import AoP.VanRefinement
 import AoP.VanFold
 import AoP.ReserveExtrema
+import AoP.ReserveIntervalExample
 import AoP.ReserveTransfer
 import AoP.VaultCapacity
 import AoP.CachedVan
