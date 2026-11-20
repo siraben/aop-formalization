@@ -42,4 +42,6 @@
 
 [ResidualFactor](../src/AoP/ResidualFactor.agda) checks exercise 7.3 for concrete relations. The set of intermediate values related to a fixed output by `R` witnesses the factorization; conversely, each witness from the intermediate set composes with its `S` edge.
 
+[LiftBound](../src/AoP/LiftBound.agda) proves exercise 7.4 using the factorization from 7.3. Intersect the intermediate set with the image of the source set: each source still has a witness, and every retained intermediate value now has a source. These are the two coverage conditions of the power relator.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

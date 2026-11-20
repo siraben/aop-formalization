@@ -22,6 +22,7 @@ import AoP.DecimalDivision
 import AoP.TwoMinima
 import AoP.SubsetBounds
 import AoP.ResidualFactor
+import AoP.LiftBound
 import AoP.MinimumComparison
 import AoP.UniqueMinimum
 import AoP.LowerMinimum
