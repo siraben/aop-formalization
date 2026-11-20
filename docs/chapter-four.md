@@ -82,6 +82,10 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Injectio
 
 ## §4.6: power allegories
 
+[PowerTransposeTerminal](../src/AoP/PowerTransposeTerminal.agda) gives the categorical meaning of the power transpose. Fix the output `A`. Objects are relations into `A`; an arrow changes the input by a function while preserving the relation. If membership is terminal here, the unique arrow from `R` sends each input to its set of `R`-outputs: its commuting triangle gives cancellation, and terminal uniqueness forces that choice. Conversely, cancellation and uniqueness of transpose make membership terminal. `Derived.reflection` takes the transpose of membership itself: the identity already satisfies its triangle. `Derived.fusion` precomposes a relation with a function graph; the resulting change of input composes with the original terminal map, so transposing before or after that change gives the same arrow. The construction takes the candidate power object and membership arrow as inputs; it does not assume that all powersets live in the input universe.
+
+[ExistentialImageFunctor](../src/AoP/ExistentialImageFunctor.agda) derives the existential image from that same universal property. With membership supplied at each output object, define `E R = Λ (R ∘ mem)`. To prove `E R ∘ Λ S ≈ Λ (R ∘ S)`, read membership after the left side: the first cancellation exposes `R ∘ mem`, and the second recovers `S`. Choosing `S` itself as a relation after membership gives preservation of composition. Reflection supplies the identity law.
+
 [TransposeCounterexample](../src/AoP/TransposeCounterexample.agda) checks exercise 4.44. With the empty relation in place of a function, one side of the fusion equation returns the empty subset; the other has no output at all.
 
 [InhabitedTranspose](../src/AoP/InhabitedTranspose.agda) checks exercise 4.45: a relation admits a transpose into inhabited subsets exactly when each input has an output. The transpose is unique up to equality of subset membership.

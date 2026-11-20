@@ -409,6 +409,8 @@ import AoP.Schroeder
 import AoP.ModularDisjointness
 import AoP.RightModularDisjointness
 import AoP.Power
+import AoP.PowerTransposeTerminal
+import AoP.ExistentialImageFunctor
 import AoP.FibreEquality
 import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
