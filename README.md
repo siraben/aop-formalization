@@ -13,6 +13,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §2.1 | [Categories](src/AoP/Categories.agda) | Categories with an equivalence on arrows; instantiate the laws for functions using pointwise equality |
 | §2.2 | [Functors](src/AoP/Functors.agda) | Functors between categories; list map preserves arrow equivalence, identity and composition |
 | §2.3 | [Transformations](src/AoP/Transformations.agda) | Naturality squares, reversal on lists, and a calculation pasting two squares for vertical composition |
+| §2.4 | [UniversalObjects](src/AoP/UniversalObjects.agda) | Initial and terminal objects, their fusion laws, and their empty-set and singleton instances in Fun |
 | §2.5 | [Products](src/AoP/Products.agda) | Pairing and case analysis in Fun: uniqueness and fusion laws |
 | §2.5 | [Polynomial](src/AoP/Polynomial.agda) | Interpret constants, identity, sums and products; functor laws; list roll/unroll isomorphism |
 | §2.6 | [Initial](src/AoP/Initial.agda) | Algebras for an arbitrary endofunctor on Fun; derive reflection, fusion, and both directions of Lambek’s isomorphism from initiality |

@@ -8,6 +8,7 @@ import AoP.Inverses
 import AoP.Naturality
 import AoP.PointFree
 import AoP.Categories
+import AoP.UniversalObjects
 import AoP.Functors
 import AoP.Transformations
 import AoP.Polynomial
