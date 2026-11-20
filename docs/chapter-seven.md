@@ -64,4 +64,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [ReachableDistribution](../src/AoP/ReachableDistribution.agda) checks exercise 7.35 for one container shape. For a fixed input, the algebra need only preserve comparisons between feasible answer tuples. Applying it to a tuple of component minima then gives a feasible result below every competing output.
 
+[LocalWinnerFold](../src/AoP/LocalWinnerFold.agda) checks exercise 7.37 for container-generated trees. Each node chooses a feasible local minimum for its child answers. Monotonicity compares the computed children with those of a competing run; local optimality then compares the node choices. The resulting fold is feasible and globally minimal.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

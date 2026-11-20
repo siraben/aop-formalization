@@ -35,6 +35,7 @@ import AoP.OneWayMonotone
 import AoP.AdditionReflection
 import AoP.MonotoneConstructor
 import AoP.ReachableDistribution
+import AoP.LocalWinnerFold
 import AoP.TieMinimum
 import AoP.MinimalTieClass
 import AoP.MinimalComparison
