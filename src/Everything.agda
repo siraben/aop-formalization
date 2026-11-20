@@ -6,6 +6,7 @@ import AoP.PositiveFold
 import AoP.SquareFold
 import AoP.LastSatisfying
 import AoP.CountingFolds
+import AoP.ConversionFold
 import AoP.Snoc
 import AoP.Trees
 import AoP.CurriedExpression
