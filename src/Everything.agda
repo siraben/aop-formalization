@@ -342,6 +342,7 @@ import AoP.MinimumDepth
 import AoP.SnocLoop
 import AoP.LoopConversion
 import AoP.TipTraversal
+import AoP.TipTraversalWork
 import AoP.AppendEquation
 import AoP.AppendCurriedLayer
 import AoP.Iteration
