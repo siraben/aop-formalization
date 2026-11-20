@@ -168,6 +168,7 @@ import AoP.FractionThreshold
 import AoP.SignedFloorThreshold
 import AoP.FloorConnection
 import AoP.MixedFloorAdjunction
+import AoP.RationalFloorOrder
 import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.DigitInterval
