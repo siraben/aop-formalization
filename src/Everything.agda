@@ -345,6 +345,7 @@ import AoP.ClosureSeed
 import AoP.ClosureChain
 import AoP.MemberFold
 import AoP.SimpleHylo
+import AoP.ContainerHyloSimple
 import AoP.FoldReachability
 import AoP.FoldComparison
 import AoP.Kleene
