@@ -216,6 +216,7 @@ import AoP.LaxMembership
 import AoP.FixedPoint
 import AoP.DifunctionalClosure
 import AoP.BinaryOctal
+import AoP.HalvingRun
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.Kleene
