@@ -43,6 +43,7 @@ import AoP.Binary
 import AoP.Refinement
 import AoP.Thinning
 import AoP.MonotoneMinimum
+import AoP.GreedyFold
 import AoP.LayeredPaths
 import AoP.Bump
 import AoP.Knapsack

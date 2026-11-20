@@ -43,6 +43,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §6.6 | [Selection](src/AoP/Selection.agda) | Select a least element from nonempty input, with evidence that exactly one occurrence was removed; [SelectionSort](src/AoP/SelectionSort.agda) iterates selection and proves sortedness and preservation of multiplicities |
 | §6.7 | [Closure](src/AoP/Closure.agda) | Finite paths, closure induction, and the least preorder containing a relation |
 | §7.2 | [MonotoneMinimum](src/AoP/MonotoneMinimum.agda) | A unary function preserves minima of direct images exactly when it is monotone; recover monotonicity using two-element sets |
+| §7.2 | [GreedyFold](src/AoP/GreedyFold.agda) | Relational list-fold greedy theorem: matching steps from better tails makes every locally minimal run globally optimal |
 | §7.3 | [Party](src/AoP/Party.agda), [worked example](src/AoP/PartyExample.agda) | Company-party planning on rose trees; compute a feasible maximum-score guest plan, tracking whether each supervisor attends |
 | §7.4 | [Cylinder](src/AoP/Cylinder.agda) | Minimum-cost path from a given entry row, with up/stay/down moves; [CylinderEntry](src/AoP/CylinderEntry.agda) chooses the best start among a nonempty list of entry rows |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
