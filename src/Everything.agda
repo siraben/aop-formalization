@@ -198,6 +198,12 @@ import AoP.TeXShortestSearch
 import AoP.DigitInterval
 import AoP.OpenUpperDigit
 import AoP.StrictUpperQuotient
+import AoP.TeXGridStop
+import AoP.TeXGridDigit
+import AoP.TeXUpperResidual
+import AoP.TeXLowerResidual
+import AoP.TeXStrictDigit
+import AoP.TeXPrinterStep
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
