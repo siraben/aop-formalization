@@ -22,4 +22,6 @@
 
 [MinimalInclusion](../src/AoP/MinimalInclusion.agda) answers exercise 7.21 with a counterexample. Under equality, `high` is minimal in the full three-point set. Adding `low ≤ high` makes `low` a strict predecessor, so `high` loses minimality on that same set.
 
+[MinimalSymmetry](../src/AoP/MinimalSymmetry.agda) proves exercise 7.23. Every member of every set is minimal exactly when the comparison relation is symmetric. For the converse, testing minimality on the full set reverses any given edge.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
