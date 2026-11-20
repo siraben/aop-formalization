@@ -185,6 +185,7 @@ import AoP.PairInput
 import AoP.RelationalSums
 import AoP.CopairCancellation
 import AoP.SumRestriction
+import AoP.InjectionTests
 import AoP.PowerRelator
 import AoP.RelationalFusion
 import AoP.Subsequences

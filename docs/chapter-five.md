@@ -1,6 +1,6 @@
 # Chapter 5: relational datatypes
 
-This inventory covers exercises 5.1–5.11 (§§5.1–5.2). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
+This inventory covers exercises 5.1–5.16 (§§5.1–5.4). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -15,7 +15,9 @@ This inventory covers exercises 5.1–5.11 (§§5.1–5.2). A relator lifts a re
 | 5.10 | Open: derive naturality of `unzip` for a general relator. |
 | 5.11 | [RelationalCurry](../src/AoP/RelationalCurry.agda): construct evaluation for the relational tensor and prove that currying gives the unique solution up to mutual inclusion. |
 
-In §5.3, [CopairCancellation](../src/AoP/CopairCancellation.agda) checks equation 5.11 (exercise 5.13) in `Rel`. The intermediate point carries a tag, so its path belongs to exactly one branch of the construction. The result is the union of the two component composites. The relational tensor used for products has pairs of intermediate points; reversing arrows preserves that tensor rather than turning it into a tagged union.
+In §5.3, [InjectionTests](../src/AoP/InjectionTests.agda) checks the identities in exercise 5.12 for concrete relations. The left and right partial projections accept only the matching tag. Reinjecting their results recovers identity, and the union of the two branches recovers any copair. The abstract derivation via Proposition 4.1 remains open.
+
+[CopairCancellation](../src/AoP/CopairCancellation.agda) checks equation 5.11 (exercise 5.13) in `Rel`. The intermediate point carries a tag, so its path belongs to exactly one branch of the construction. The result is the union of the two component composites. The relational tensor used for products has pairs of intermediate points; reversing arrows preserves that tensor rather than turning it into a tagged union.
 
 [SumRestriction](../src/AoP/SumRestriction.agda) checks exercise 5.14: a step in the relational sum keeps its tag, so a common observation restricting that step need only be tested in the matching branch. Both inclusions retain the same observation witness.
 
