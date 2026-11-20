@@ -12,7 +12,7 @@ This inventory covers exercises 4.1–4.18 (§§4.1–4.2). [Relations](../src/A
 | 4.7 | Open: construct the product of two allegories. |
 | 4.8–4.9 | [CoreflexiveMeet](../src/AoP/CoreflexiveMeet.agda): composing two coreflexive relations gives their intersection; taking the same relation twice yields transitivity. |
 | 4.10, 4.12 | [RangeTest](../src/AoP/RangeTest.agda): move an output test through intersection or range. |
-| 4.11 | Open: derive the chain of equalities for a test intersected with identity. |
+| 4.11 | [DiagonalTest](../src/AoP/DiagonalTest.agda): reduce all five expressions to the same condition: the test accepts the state and the relation has a loop there. |
 | 4.13–4.14 | [PartialEquivalence](../src/AoP/PartialEquivalence.agda): symmetric transitive relations are idempotent; symmetry and transitivity together are equivalent to `R = R ∘ R˘`. |
 | 4.15 | [SimpleZigzag](../src/AoP/SimpleZigzag.agda): simplicity collapses a zigzag; allowing both Boolean outputs disproves the converse. |
 | 4.16 | [RangeRotation](../src/AoP/RangeRotation.agda): expose the same range by exchanging triangle witnesses. |

@@ -136,6 +136,7 @@ import AoP.PartialEquivalence
 import AoP.RangeRotation
 import AoP.DomainPullback
 import AoP.RangeTest
+import AoP.DiagonalTest
 import AoP.Shunting
 import AoP.Tabulation
 import AoP.Joins
