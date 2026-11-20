@@ -68,7 +68,7 @@ In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a di
 | §9.1 | [BranchingDP](src/AoP/BranchingDP.agda) | Bellman optimality for shape-indexed subproblems with attainable child minima and a monotone cost algebra |
 | §9.2 | [EditScript](src/AoP/EditScript.agda) | Decode copy/delete/insert scripts to their endpoints; prove symmetry and feasibility of endpoint-indexed scripts; [EditMinimum](src/AoP/EditMinimum.agda) tabulates suffix pairs row by row, storing a shortest witness and its optimality proof in each cell |
 | §9.3 | [Bracketing](src/AoP/Bracketing.agda) | Cost and size of expression trees; same-input subtree replacement, with a checked concatenation example |
-| §9.4 | [Compression](src/AoP/Compression.agda) | Decode literals and overlapping backward references; prove literal encodings round-trip and reject an initial pointer |
+| §9.4 | [Compression](src/AoP/Compression.agda) | Decode literals and overlapping backward references; prove literal encodings round-trip; [DictionarySearch](src/AoP/DictionarySearch.agda) computes a minimum-cost encoding by bounded exhaustive search |
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
 | §10.1 | [BranchingGreedy](src/AoP/BranchingGreedy.agda) | Prove global optimality of recursive branch selection from an exchange witness and a monotone cost algebra |
 | §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant; [TabFree](src/AoP/TabFree.agda) characterizes the image of expansion; [Entab](src/AoP/Entab.agda) proves buffered encoding round-trips on that image and [EntabMinimum](src/AoP/EntabMinimum.agda) proves shortestness against every competing encoding at any positive tab width |
@@ -86,4 +86,4 @@ The [appendix list product](src/AoP/ListProduct.agda) enumerates one choice from
 
 ## Open work
 
-The general dynamic-programming and greedy theorems, optimal dictionary encoding, and the general TeX printer remain open.
+The general dynamic-programming and greedy theorems, the dynamic-programming dictionary encoder, and the general TeX printer remain open.
