@@ -43,7 +43,7 @@ Exercises 6.18–6.20 remain open: the equivalent formulation of the membership 
 | 6.32 | [ClosureSeed](../src/AoP/ClosureSeed.agda) proves both least-fixed-point equations for composition with a closure. The seed edge can precede or follow the finite path; in each orientation the proof gives one-step folding, unfolding, and leastness. |
 | 6.33 | [ClosureIterate](../src/AoP/ClosureIterate.agda) proves both directions using `once` and `again`. The identity fold reads the starting vertex; the relational fold takes one edge per `again`. |
 | 6.34 | [ClosureChain](../src/AoP/ClosureChain.agda) represents paths by nonempty lists with the destination first. Its relational fold keeps both endpoints and checks each prepended edge. Reading the head of a chain recovers exactly the destinations reachable from its starting vertex. |
-| 6.35 | Open: the rolling, diagonal and substitution rules of the μ-calculus. |
+| 6.35 | [MuCalculus](../src/AoP/MuCalculus.agda) proves the rolling and diagonal rules in both order directions, using monotonicity and the supplied least-fixed-point laws. The substitution derivation remains open. |
 | 6.36 | Open: use the diagonal rule to derive closure of a union. |
 | 6.37 | Open: specialize the union law to a coreflexive restriction. |
 
