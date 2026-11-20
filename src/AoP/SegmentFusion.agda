@@ -41,3 +41,21 @@ module Law {A : Set} (zero : A) (_+_ : A → A → A) (_≤_ : A → A → Set)
   assemble : ∀ {xs zs p} → Suffix zs xs → Prefix zs p → Segment xs p
   assemble here pre = start pre
   assemble (skip suf) pre = later (assemble suf pre)
+
+  -- Maximize the prefix at *each* suffix, then maximize these scores.
+  -- The segment winner belongs to some suffix. In a preorder that
+  -- suffix's prefix winner can be tied without being equal, so compare
+  -- the two maxima in both directions rather than identifying scores.
+  BestAtSuffix : List A → A → Set
+  BestAtSuffix xs v = Σ (List A) λ zs → Suffix zs xs × (Max.score (fst (scan zs)) ≡ v)
+
+  suffix-upper : ∀ xs {v} → BestAtSuffix xs v → v ≤ Max.score (snd (scan xs))
+  suffix-upper xs (zs , suf , refl) = Max.bounds (snd (scan xs)) (assemble suf (Max.attains (fst (scan zs))))
+
+  winning-suffix : ∀ xs → Σ A λ v → BestAtSuffix xs v × (Max.score (snd (scan xs)) ≤ v)
+  winning-suffix xs with decompose (Max.attains (snd (scan xs)))
+  ... | zs , suf , pre = _ , (zs , suf , refl) , Max.bounds (fst (scan zs)) pre
+
+  suffix-maximum : ∀ xs → Max (BestAtSuffix xs)
+  suffix-maximum xs with winning-suffix xs
+  ... | v , witness , upper = winner v witness (λ p → tr (suffix-upper xs p) upper)
