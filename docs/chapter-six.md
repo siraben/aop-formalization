@@ -21,6 +21,8 @@ This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md
 
 [AccessibleFixed](../src/AoP/AccessibleFixed.agda) proves both directions of exercise 6.12 for predicates. A state satisfies `Box X` when all its predecessors satisfy `X`. Accessibility induction puts every accessible state in every fixed predicate. Conversely, both accessibility and the full predicate are fixed, so uniqueness up to mutual inclusion makes every state accessible.
 
+[AccessibleTransfer](../src/AoP/AccessibleTransfer.agda) proves exercise 6.13. If every two-step `R` path can be replaced by an `S` step followed by an `R` step with the same endpoint, well-foundedness of `S` implies well-foundedness of `R`. The induction at `x` establishes accessibility of every `R`-child of `x`.
+
 [AccessibleMeet](../src/AoP/AccessibleMeet.agda) checks exercise 6.15 for accessibility. Restricting a relation preserves accessibility, so a meet is well-founded if either factor is. On two vertices, each one-way edge alone is well-founded; their union admits an endless alternating path.
 
 [AccessibilityMeasure](../src/AoP/AccessibilityMeasure.agda) proves exercise 6.16 for type-valued relations. Pulling a well-founded relation back along any function preserves accessibility: each recursive call descends to a predecessor of its measure. The measure may take the same value at distinct inputs.

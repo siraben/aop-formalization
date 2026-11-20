@@ -225,6 +225,7 @@ import AoP.BinaryModulus
 import AoP.AccessibilityMeasure
 import AoP.AccessibleMeet
 import AoP.AccessibleFixed
+import AoP.AccessibleTransfer
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
