@@ -480,6 +480,7 @@ import AoP.GuardedParagraph
 import AoP.LayoutTie
 import AoP.LineBreaks
 import AoP.ParagraphMinimum
+import AoP.ParagraphWasteBalance
 import AoP.Bitonic
 import AoP.SymmetricTour
 import AoP.SymmetricTourTable
