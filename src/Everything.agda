@@ -52,6 +52,7 @@ import AoP.OrderedMeet
 import AoP.OrderedPivot
 import AoP.Inordered
 import AoP.PivotPermutation
+import AoP.PivotFusion
 import AoP.LeafSplit
 import AoP.PreorderSort
 import AoP.PostorderSort
