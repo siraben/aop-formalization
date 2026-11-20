@@ -498,6 +498,7 @@ import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
 import AoP.DisjointFibres
 import AoP.EditMinimum
+import AoP.EditCellCount
 import AoP.Bracketing
 import AoP.MatrixBracketCost
 import AoP.DecimalBracketCost
