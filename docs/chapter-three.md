@@ -52,7 +52,7 @@ Given decimal digits after the point, return the nearest count of units of size 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
 | 3.31 | [AppendEquation](../src/AoP/AppendEquation.agda) splits equation 3.6 into its two constructor laws and recombines them in `Fun`. |
-| 3.32 | Open: derive distributivity from cartesian closure and coproducts. |
+| 3.32 | [DistributiveHoms](../src/AoP/DistributiveHoms.agda) derives the hom-set bijection for `(A + B) × C`: curry, split at the coproduct, then uncurry each branch. Both inverse laws hold for supplied hom-set bijections using propositional equality. Naturality in the target and the resulting categorical object isomorphism remain open. |
 | 3.33–3.34 | [ExponentialCases](../src/AoP/ExponentialCases.agda): exponentials indexed by zero, one and a coproduct, and global elements of function spaces; pointwise inverse laws in `Fun`. |
 | 3.35 | [PreorderExponential](../src/AoP/PreorderExponential.agda): in a preorder with finite meets, an exponential `b^a` is a greatest `x` satisfying `x ∧ a ≼ b`. Both implications of this characterization are checked. |
 | 3.36 | [ExponentialFunctor](../src/AoP/ExponentialFunctor.agda): curry `f ∘ eval` to lift `f` to function spaces. Evaluation and uniqueness give the identity and composition laws in an arbitrary category with the specified exponentials. |
