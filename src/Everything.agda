@@ -9,6 +9,7 @@ import AoP.Naturality
 import AoP.PointFree
 import AoP.Categories
 import AoP.Functors
+import AoP.Transformations
 import AoP.Polynomial
 import AoP.Folds
 import AoP.Horner
