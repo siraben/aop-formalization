@@ -338,6 +338,7 @@ import AoP.IndexedBranches
 import AoP.AccumulatorFusion
 import AoP.ReverseAccumulator
 import AoP.DepthAccumulator
+import AoP.DepthLabelWork
 import AoP.MinimumDepth
 import AoP.MinimumDepthWork
 import AoP.SnocLoop
