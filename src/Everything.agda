@@ -316,6 +316,7 @@ import AoP.SelectionSort
 import AoP.SelectionFusion
 import AoP.SelectionCalculation
 import AoP.SelectionEquation
+import AoP.SelectionUnique
 import AoP.InsertionSort
 import AoP.Quicksort
 import AoP.QuickPermutation
