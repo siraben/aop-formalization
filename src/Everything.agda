@@ -38,6 +38,7 @@ import AoP.AdditionReflection
 import AoP.MonotoneConstructor
 import AoP.ReachableDistribution
 import AoP.LocalWinnerFold
+import AoP.GreedyCriterion
 import AoP.GreedyImage
 import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
