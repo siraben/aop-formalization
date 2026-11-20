@@ -53,7 +53,7 @@ A constructive Agda companion to Richard Bird and Oege de Moor’s *Algebra of P
 | §7.2 | [GreedyFold](src/AoP/GreedyFold.agda) | Relational list-fold greedy theorem: matching steps from better tails makes every locally minimal run globally optimal |
 | §7.3 | [Party](src/AoP/Party.agda), [worked example](src/AoP/PartyExample.agda) | Company-party planning on rose trees; compute a feasible maximum-score guest plan, tracking whether each supervisor attends |
 | §7.4 | [Cylinder](src/AoP/Cylinder.agda) | Minimum-cost path from a given entry row, with up/stay/down moves; [CylinderEntry](src/AoP/CylinderEntry.agda) chooses the best start among a nonempty list of entry rows |
-| §7.5 | [Reserves](src/AoP/Reserves.agda) | Model secure transaction blocks and prove they split at an intermediate balance; not yet the minimum-visit scheduler |
+| §7.5 | [Reserves](src/AoP/Reserves.agda) | Model secure transaction blocks and prove they split at an intermediate balance; [SecureBlock](src/AoP/SecureBlock.agda) decides whether any starting reserve works. Minimum-visit scheduling remains open |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
 | §8.1 | [ThinningFold](src/AoP/ThinningFold.agda) | For a relational list fold, derive global coverage from local pruning and a step-matching condition |
 | §8.2 | [LayeredPaths](src/AoP/LayeredPaths.agda) | Why a shortest-path table groups candidates by starting vertex; extending routes preserves that pruning invariant |
