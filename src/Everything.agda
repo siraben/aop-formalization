@@ -478,6 +478,7 @@ import AoP.BitonicTable
 import AoP.BitonicExample
 import AoP.FiniteMinimum
 import AoP.Party
+import AoP.PartyChoiceOrder
 import AoP.PartyListCost
 import AoP.PartyPlanTraversal
 import AoP.PartyPlanWork
