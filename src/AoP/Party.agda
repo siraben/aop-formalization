@@ -6,8 +6,33 @@ open import AoP.Trees using (Rose; Forest; fork; null; grow)
 open import AoP.Polynomial using (_⊎_; inl; inr)
 open import Agda.Builtin.Bool
 
--- §7.3. A plan is indexed by the actual hierarchy and by whether the
--- immediate supervisor attends. Its constructors enforce feasibility.
+-- §7.3 — Who should come to the company party?
+--
+-- Input: an organisation chart, rooted at the president. In `fork e ts`,
+-- e is an employee and ts lists the subtrees of their direct reports.
+-- Each employee has a conviviality rating. Return a list of invitees with
+-- the greatest possible sum of ratings, subject to one rule: no employee
+-- may attend alongside their immediate supervisor. A grandparent and a
+-- grandchild may attend together. Ties need not have a unique answer.
+--
+-- Example: Ada (8) supervises Bo (5) and Cy (5), who have no reports.
+-- Inviting Ada scores 8 and rules out both children. Omitting Ada lets
+-- both children come, scoring 10. So the answer is [Bo, Cy], unless the
+-- president is required to attend, in which case it is [Ada]. Choosing
+-- the highest-rated individual first would miss the unconstrained answer.
+--
+-- Algorithm: solve each subtree under two assumptions about its parent.
+-- If the parent attends, the root must stay home. Otherwise compare
+-- inviting the root (and forbidding its children) against omitting it
+-- (and freeing its children). Sibling subtrees have no constraints between
+-- them, so their best scores add. `mono` justifies that last step; `compare`
+-- chooses between scores. The score type is abstract so this reasoning
+-- does not depend on a particular numeric representation.
+--
+-- Reading the types: the Boolean in `Plan p t` describes the *parent*,
+-- not the employee at t. `Best score` packages a plan with evidence that
+-- every competing plan scores at most as much. Start at `invitations` for
+-- the ordinary problem or `presidential-invitations` for the variant.
 module Planning {Employee Score : Set} (rating : Employee → Score)
   (zero : Score) (_+_ : Score → Score → Score) (_≤_ : Score → Score → Set)
   (refl≤ : ∀ x → x ≤ x) (trans : ∀ {x y z} → x ≤ y → y ≤ z → x ≤ z)

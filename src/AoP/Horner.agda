@@ -1,6 +1,17 @@
 {-# OPTIONS --safe --without-K #-}
 module AoP.Horner where
 
+-- §3.2 — How can a polynomial be evaluated without computing powers?
+-- Read [a,b,c] as coefficients in ascending order. At x, the triangle
+-- transforms this list into [a,b*x,c*x*x], which we then sum. Horner's
+-- rule computes the same value as a + (b + c*x)*x, without building the
+-- transformed list. For [2,3,4] at 10, both routes give 432.
+--
+-- `Ruby` abstracts this example: e is zero, _⊛_ is addition, and f
+-- multiplies by x. `base` and `step` express exactly what the calculation
+-- uses: multiplying zero gives zero and multiplication distributes over
+-- addition. Read `horner` as the theorem and `promote` as its key step.
+
 open import AoP.Prelude
 open import AoP.Folds
 

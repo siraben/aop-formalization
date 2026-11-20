@@ -5,7 +5,16 @@ open import Agda.Builtin.Nat using (Nat; zero; suc)
 open import AoP.Prelude
 open import AoP.Snoc using (Snoc; ε; _▻_; foldl)
 
--- §10.2. The state counts extra blanks before the next tab stop: if it
+-- §10.2 — Expand tabs without rescanning the output line.
+-- With tab stops every four columns, `A<TAB>B` becomes `A   B`:
+-- A occupies column zero and B must start in column four. At a tab stop
+-- a tab advances a *full* width, not zero columns; a newline starts the
+-- column count over. The task here is expansion, not its shortest inverse.
+-- Compare `detab`, the specification that inspects the expanded prefix,
+-- with `state`, which also carries the distance to the next stop. The
+-- final `invariant` says its text is exactly the specified expansion.
+--
+-- The state counts extra blanks before the next tab stop: if it
 -- is zero, a tab still consumes one column. A width of suc n is positive
 -- by construction. Line breaks reset the state; glyphs consume one column.
 data Char′ (A : Set) : Set where
