@@ -16,6 +16,7 @@ import AoP.CurriedExpression
 import AoP.Inverses
 import AoP.DecimalDigits
 import AoP.DecimalPoint
+import AoP.Comprehension
 import AoP.DecimalSuccessor
 import AoP.DecimalInverse
 import AoP.Naturality

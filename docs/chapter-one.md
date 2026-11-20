@@ -4,7 +4,7 @@ The numbered exercises below link to their checked constructions. For the sectio
 
 For §1.2, [ArithmeticFolds](../src/AoP/ArithmeticFolds.agda) constructs addition, multiplication, and exponentiation by fixing their first argument. It also shows that the solutions of `f n ≡ f (suc n)` are exactly the constant functions. [Naturals](../src/AoP/Naturals.agda) covers fold uniqueness and the factorial and Fibonacci pair invariants.
 
-For §1.3, [DecimalPoint](../src/AoP/DecimalPoint.agda) evaluates the whole part with a snoc-list fold and the fractional part with a cons-list fold. The worked input `12.305` gives the exact ratio `12305/1000`.
+For §1.3, [DecimalPoint](../src/AoP/DecimalPoint.agda) evaluates the whole part with a snoc-list fold and the fractional part with a cons-list fold. The worked input `12.305` gives the exact ratio `12305/1000`. [Comprehension](../src/AoP/Comprehension.agda) proves that a guarded comprehension equals filtering followed by mapping; squaring the even numbers from 1 through 10 gives `[4,16,36,64,100]`.
 
 | Exercise | Construction or remaining work |
 | --- | --- |
