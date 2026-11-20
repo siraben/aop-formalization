@@ -333,6 +333,7 @@ import AoP.SortedSubset
 import AoP.SortedImage
 import AoP.SortedFilter
 import AoP.PolynomialChoices
+import AoP.InfiniteChoices
 import AoP.ChoiceCoverage
 import AoP.NonlinearChoices
 import AoP.QuadraticQueries
