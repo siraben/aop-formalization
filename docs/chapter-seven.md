@@ -40,4 +40,6 @@
 
 [ConnectedMinima](../src/AoP/ConnectedMinima.agda) checks exercise 7.20. Every minimum is minimal, and for a connected comparison every minimal element is a minimum. Equality of the two predicates does not force transitivity: the reflexive three-cycle is connected but fails the transitivity test.
 
+[ResidualFactor](../src/AoP/ResidualFactor.agda) checks exercise 7.3 for concrete relations. The set of intermediate values related to a fixed output by `R` witnesses the factorization; conversely, each witness from the intermediate set composes with its `S` edge.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
