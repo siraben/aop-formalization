@@ -32,6 +32,7 @@ import AoP.FixedPoint
 import AoP.Closure
 import AoP.Hylo
 import AoP.Inductive
+import AoP.Squaring
 import AoP.Refinement
 import AoP.Thinning
 import AoP.Bellman
