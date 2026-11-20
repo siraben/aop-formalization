@@ -3,6 +3,7 @@ module Everything where
 
 import AoP.Naturals
 import AoP.PositiveFold
+import AoP.SquareFold
 import AoP.Snoc
 import AoP.Trees
 import AoP.Inverses
