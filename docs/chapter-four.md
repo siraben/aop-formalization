@@ -70,4 +70,6 @@ This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/A
 
 [PreorderFibres](../src/AoP/PreorderFibres.agda) checks exercise 4.49: `R` is a preorder exactly when it equals its left division by itself. Sending each input to its fibre realizes that preorder by inclusion of subsets, with extensional equality. Conversely, pulling a preorder back along any function preserves reflexivity and transitivity.
 
+[FibreBounds](../src/AoP/FibreBounds.agda) checks exercise 4.50: an output belongs to a fibre exactly when every set containing the whole fibre contains that output. For the reverse direction, choose the fibre itself as the test set.
+
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.
