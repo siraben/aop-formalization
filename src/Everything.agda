@@ -80,6 +80,7 @@ import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.BracketSpine
 import AoP.BracketEnumeration
+import AoP.BracketMinimum
 import AoP.Compression
 import AoP.CompressionGrowth
 import AoP.PointerBounds
