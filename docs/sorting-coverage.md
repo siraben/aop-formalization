@@ -10,7 +10,7 @@
 | 6.22: permutation and membership, selection guard | [PermutationGuard](../src/AoP/PermutationGuard.agda) proves both directions of the membership law and shows that permuting the remainder commutes with testing its lower bound. `test` expresses the guard point-free using relational division, pair projections, and identity; `express` and `interpret` prove equivalence. |
 | 6.23: termination of both sorts | `shorter` in SelectionSort and `smaller` in Quicksort justify recursive calls by input length. |
 | 6.24: ordering by the intersection of preorders | [OrderedMeet](../src/AoP/OrderedMeet.agda) proves both relational inclusions for arbitrary comparison relations, using the all-pairs definition of orderedness. |
-| 6.25: sorting a set represented by a list with duplicates | Open. |
+| 6.25: sorting a set represented by a list with duplicates | [SetSort](../src/AoP/SetSort.agda) selection-sorts and removes duplicates. It proves strict ordering and equality of input and output membership. |
 | 6.26: preorder flattening | [PreorderSort](../src/AoP/PreorderSort.agda) selects a minimum for each root and recurses on a single right child. Its preorder traversal meets `Result`. |
 | 6.27: postorder flattening | [PostorderSort](../src/AoP/PostorderSort.agda) maintains a maximum at the root. Inserting each input key preserves occurrences and sorted postorder traversal. |
 | 6.28: merge variant of tree flattening | [OrderedMerge](../src/AoP/OrderedMerge.agda) implements the merge step, records each head choice and proves preservation of sortedness and common lower bounds. [MergeTreeSort](../src/AoP/MergeTreeSort.agda) builds a minimum-rooted tree, merges its child traversals, and proves the result is a sorted permutation. |
