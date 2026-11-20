@@ -75,6 +75,7 @@ import AoP.PrefixEnumerationFold
 import AoP.NaturalShapes
 import AoP.PointFree
 import AoP.FilterCalculation
+import AoP.FilterCombinators
 import AoP.FilterMap
 import AoP.Categories
 import AoP.ArrowEndpoints
