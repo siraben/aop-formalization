@@ -434,6 +434,7 @@ import AoP.TabFree
 import AoP.TabStop
 import AoP.Entab
 import AoP.EntabLength
+import AoP.TabCountObjective
 import AoP.EntabPending
 import AoP.TabDistance
 import AoP.TabCountdown
