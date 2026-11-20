@@ -16,4 +16,6 @@
 
 [ProductMinimum](../src/AoP/ProductMinimum.agda) checks exercise 7.15 for independent choices from two result sets at a common input. Pairing their minima gives a minimum for the componentwise comparison; the two components may have different types and comparison relations.
 
+[TieMinimum](../src/AoP/TieMinimum.agda) derives exercise 7.16 in both directions. Taking an `R`-minimum among the `S`-minima gives the same candidates as comparing first by `S` and applying `R` on ties. Transitivity of `S` suffices for the concrete relation proof.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
