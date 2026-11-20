@@ -581,6 +581,7 @@ import AoP.DeadlineRunCount
 import AoP.DeadlinePassCost
 import AoP.DeadlineLog
 import AoP.DeadlineSort
+import AoP.EqualWeightSchedule
 import AoP.PickLast
 import AoP.BackwardSchedule
 import AoP.LastBound
