@@ -38,6 +38,8 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 
 [RangeJoins](../src/AoP/RangeJoins.agda) proves exercise 4.29 for small indexed families in `Rel`: taking range commutes with union because the input witness and the branch index can be supplied in either order.
 
+[RelDifference](../src/AoP/RelDifference.agda) checks exercise 4.30 for concrete relations. The universal property uses decidability of membership in the subtracted relation to recover a cover. The four difference identities record where such a decision is needed.
+
 [EmptyRange](../src/AoP/EmptyRange.agda) checks exercise 4.31 in `Rel`: a relation is empty exactly when its range is empty. Exchanging the two input witnesses around a triangle then proves that `(R ∘ S) ⊓ T` is empty exactly when `R ⊓ (T ∘ S˘)` is empty.
 
 [RelImplication](../src/AoP/RelImplication.agda) checks exercise 4.32 in `Rel`. At each pair of endpoints, implication turns an `R` witness into an `S` witness. The proof gives its universal property and both inclusions for each of the four identities.
