@@ -36,4 +36,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 [SortedImage](../src/AoP/SortedImage.agda) verifies equation (8.8) of exercise 8.18. Mapping an ordered listing under the pulled-back comparison gives an ordered listing of the image set. A preimage witness transfers each required comparison and proves the membership equivalence; injectivity is unnecessary. [SortedFilter](../src/AoP/SortedFilter.agda) verifies equation (8.9) for a decidable predicate: the chapter 7 filter yields a subsequence, so exercise 8.17 preserves orderedness, and the survivors are exactly the original members passing the test.
 
+[PolynomialChoices](../src/AoP/PolynomialChoices.agda) implements exercise 8.19 by recursion on polynomial functors. The identity case returns its menu; a constant contributes a singleton. Products enumerate independent choices by a Cartesian product, and sums preserve the input tag. The checked Boolean-product example computes all four output pairs. The membership characterization and exercise 8.20’s generality question remain open.
+
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
