@@ -487,6 +487,8 @@ import AoP.TourVariants
 import AoP.TourNext
 import AoP.TourKeyLayer
 import AoP.TourKeyExample
+import AoP.TourThinProjection
+import AoP.TourRepeatedBlock
 import AoP.TourVariantExamples
 import AoP.BitonicTable
 import AoP.BitonicExample
