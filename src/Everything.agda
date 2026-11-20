@@ -333,6 +333,7 @@ import AoP.Bump
 import AoP.SnocBump
 import AoP.SnocBumpProof
 import AoP.AdjacentThin
+import AoP.AdjacentCoverage
 import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackSearch
