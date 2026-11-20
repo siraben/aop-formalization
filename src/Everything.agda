@@ -128,6 +128,7 @@ import AoP.PartialHead
 import AoP.Transformations
 import AoP.Whiskering
 import AoP.FunctorCategory
+import AoP.ParallelExponentialObstruction
 import AoP.WalkingArrow
 import AoP.ArrowCategory
 import AoP.ArrowProducts
@@ -300,6 +301,9 @@ import AoP.MeetTerminal
 import AoP.IndirectMeet
 import AoP.SemicommutativePaths
 import AoP.SetoidImageFactor
+import AoP.ImageFactorTrace
+import AoP.DecidableImageFactor
+import AoP.FiniteImageFactor
 import AoP.ModularRefinement
 import AoP.SimpleZigzag
 import AoP.CoreflexiveMeet
@@ -401,6 +405,8 @@ import AoP.AccessibleExtremes
 import AoP.TreeMemberPath
 import AoP.ListMemberPath
 import AoP.ContainerEmpty
+import AoP.ContainerEmptyConverse
+import AoP.RelatorEmptyMembership
 import AoP.ClosureIterate
 import AoP.MuCalculus
 import AoP.ClosureRuns
