@@ -183,6 +183,7 @@ import AoP.PartitionFlatten
 import AoP.PartitionThree
 import AoP.ZippedSplits
 import AoP.SuffixFold
+import AoP.SuffixSnocLaw
 import AoP.PartitionPredicate
 import AoP.PartitionRanges
 import AoP.PermuteTail

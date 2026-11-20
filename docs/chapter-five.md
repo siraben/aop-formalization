@@ -37,7 +37,7 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [SupersequenceFold](../src/AoP/SupersequenceFold.agda) checks exercise 5.23. The empty input permits any supersequence. Each required head permits an arbitrary prefix before its matching occurrence. The proof converts these witnesses in both directions to the skip/keep subsequence specification.
 
-[ZippedSplits](../src/AoP/ZippedSplits.agda) checks the unnumbered split construction. [SuffixFold](../src/AoP/SuffixFold.agda) derives the descending suffix list by folding into a nonempty collection whose first entry is the entire input processed so far. Pair the prefixes in increasing length with these suffixes in decreasing length. The resulting list agrees in order and membership with the direct split enumeration, including both endpoint cuts.
+[ZippedSplits](../src/AoP/ZippedSplits.agda) checks the unnumbered split construction. [SuffixSnocLaw](../src/AoP/SuffixSnocLaw.agda) verifies the preceding last-element recurrence: append the new element to each old suffix, then include the empty suffix. [SuffixFold](../src/AoP/SuffixFold.agda) derives the descending suffix list by folding into a nonempty collection whose first entry is the entire input processed so far. Pair the prefixes in increasing length with these suffixes in decreasing length. The resulting list agrees in order and membership with the direct split enumeration, including both endpoint cuts.
 
 [InitFold](../src/AoP/InitFold.agda) checks exercise 5.24: folding a nonempty list with an empty singleton result and a cons step removes exactly its last element. The proof reconstructs the input by appending the discarded element and shows that any such decomposition yields the same prefix.
 
