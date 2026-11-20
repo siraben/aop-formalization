@@ -7,6 +7,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §1.2 | [Naturals](src/AoP/Naturals.agda) | Natural folds and uniqueness; factorial and Fibonacci pair invariants; higher-order fold for Ackermann |
 | §1.3 | [Snoc](src/AoP/Snoc.agda) | Snoc-list fold and concatenation; accumulator conversions between cons- and snoc-lists, proved mutually inverse |
 | §1.4 | [Trees](src/AoP/Trees.agda) | Binary and mutually recursive rose/forest folds; currying as application along the left spine |
+| §1.5 | [Inverses](src/AoP/Inverses.agda) | Calculate a left inverse of unzip by a function-valued fold, and the opposite inverse on aligned lists |
 | §2.5 | [Polynomial](src/AoP/Polynomial.agda) | Interpret constants, identity, sums and products; functor laws; list roll/unroll isomorphism |
 | §§2.6, 3.1 | [Folds](src/AoP/Folds.agda) | List-fold uniqueness; fusion and banana-split derived from uniqueness |
 | §3.2 | [Horner](src/AoP/Horner.agda) | Fuse a list reduction with a Ruby triangle, yielding Horner's one-pass rule |
