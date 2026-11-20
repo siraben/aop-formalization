@@ -11,7 +11,7 @@ In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a di
 | Book sections | Agda | Checked statements |
 | --- | --- | --- |
 | §1.2 | [Naturals](src/AoP/Naturals.agda) | Natural folds and uniqueness; factorial and Fibonacci pair invariants; higher-order fold for Ackermann; [PositiveFold](src/AoP/PositiveFold.agda) gives an unsatisfiable recursion equation and the positive-number fold isomorphism; [SquareFold](src/AoP/SquareFold.agda) derives squaring by repeated addition; [LastSatisfying](src/AoP/LastSatisfying.agda) finds the greatest index passing a Boolean test |
-| §1.3 | [Snoc](src/AoP/Snoc.agda) | Snoc-list fold and concatenation; accumulator conversions between cons- and snoc-lists, proved mutually inverse |
+| §1.3 | [Snoc](src/AoP/Snoc.agda) | Snoc-list fold and concatenation; accumulator conversions between cons- and snoc-lists, proved mutually inverse; [CountingFolds](src/AoP/CountingFolds.agda) expresses left iteration, take, and drop as right folds |
 | §1.4 | [Trees](src/AoP/Trees.agda) | Binary and mutually recursive rose/forest folds; currying as application along the left spine |
 | §1.5 | [Inverses](src/AoP/Inverses.agda) | Calculate a left inverse of unzip by a function-valued fold, and the opposite inverse on aligned lists |
 | §1.6 | [Naturality](src/AoP/Naturality.agda) | Naturality of concat, reverse, zip and snoc-list prefixes |
