@@ -439,6 +439,7 @@ import AoP.TabCountObjective
 import AoP.BlankTie
 import AoP.TabPrefixExample
 import AoP.FillPrefixes
+import AoP.FilledPrefix
 import AoP.EntabPending
 import AoP.TabDistance
 import AoP.TabCountdown

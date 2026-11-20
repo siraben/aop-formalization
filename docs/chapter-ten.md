@@ -13,7 +13,7 @@
 | 10.1 | [ProjectedLoop](../src/AoP/ProjectedLoop.agda) proves the streaming loop equivalent to projecting the output of the accumulating loop. The invariant allows an arbitrary saved output prefix and column state; specializing to the empty prefix gives the exercise equation. |
 | 10.2 | [TabCountObjective](../src/AoP/TabCountObjective.agda) checks a width-two counterexample. Both `TAB` and `BLANK TAB` expand to two blanks. One tab is the maximum over every valid encoding, yet the second encoding is longer. |
 | 10.3 | [BlankTie](../src/AoP/BlankTie.agda) proves snoc-length monotonicity and refines the shortest encoder with a postprocessing pass: replace each tab spanning one column with a blank. Expansion and encoded length are preserved at every positive width, so shortestness transfers. |
-| 10.4 | [FillPrefixes](../src/AoP/FillPrefixes.agda) proves the empty-input law for the fill-restricted prefix relation. For unrestricted prefixes it proves the empty and snoc laws and refutes the fill law at width one: the empty prefix of a filled empty line differs from the one-blank output. The restricted fill and snoc calculations remain open. |
+| 10.4 | [FillPrefixes](../src/AoP/FillPrefixes.agda) proves the empty-input law for the fill-restricted prefix relation. For unrestricted prefixes it proves the empty and snoc laws and refutes the fill law at width one: the empty prefix of a filled empty line differs from the one-blank output. [FilledPrefix](../src/AoP/FilledPrefix.agda) proves the restricted fill law: filling again from a tab stop adds a whole width; a proper prefix starts shorter and can add at most a width. Only the restricted snoc calculation remains open. |
 
 ## §10.3 Minimum tardiness
 
