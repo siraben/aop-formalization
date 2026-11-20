@@ -1,6 +1,6 @@
 # Chapter 4: relations
 
-This inventory covers exercises 4.1–4.18 (§§4.1–4.2). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
+This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -18,5 +18,18 @@ This inventory covers exercises 4.1–4.18 (§§4.1–4.2). [Relations](../src/A
 | 4.16 | [RangeRotation](../src/AoP/RangeRotation.agda): expose the same range by exchanging triangle witnesses. |
 | 4.17 | [DomainPullback](../src/AoP/DomainPullback.agda): pull a domain test back along a function graph. |
 | 4.18 | Open: construct the allegory of locale-valued relations. |
+
+## §4.3: tabulations
+
+[Tabulation](../src/AoP/Tabulation.agda) gives a table one row per witnessed edge. Reading its source and target columns reconstructs the relation. Joint injectivity of the columns follows when evidence for any given edge is unique.
+
+| Exercise | Construction and scope |
+| --- | --- |
+| 4.19 | [MonicKernel](../src/AoP/MonicKernel.agda): a function is monic exactly when two inputs sharing an output must be equal. |
+| 4.20 | Open: construct the epi-monic factorization and establish its uniqueness up to isomorphism. |
+| 4.21–4.23 | [TabulatedFunction](../src/AoP/TabulatedFunction.agda): simplicity makes the source column injective for a jointly injective table. Totality supplies a row for each input. Together these yield both inverse laws. |
+| 4.24 | [EntireBridge](../src/AoP/EntireBridge.agda): each row can be connected to an intermediate value exactly when the span lies in the composite relation. |
+| 4.25 | Open: determine when locale-valued relations admit tabulations. |
+| 4.26–4.27 | [UnitRange](../src/AoP/UnitRange.agda): range reflects inclusion for relations from a singleton; composing with the universal relation and intersecting with identity gives the domain test. |
 
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.
