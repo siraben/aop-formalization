@@ -1,6 +1,6 @@
 # Chapter 4: relations
 
-This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
+This inventory covers exercises all 52 numbered exercises in Chapter 4. [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -66,6 +66,8 @@ This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/A
 
 ## §4.6: power allegories
 
+[TransposeCounterexample](../src/AoP/TransposeCounterexample.agda) checks exercise 4.44. With the empty relation in place of a function, one side of the fusion equation returns the empty subset; the other has no output at all.
+
 [InhabitedTranspose](../src/AoP/InhabitedTranspose.agda) checks exercise 4.45: a relation admits a transpose into inhabited subsets exactly when each input has an output. The transpose is unique up to equality of subset membership.
 
 [SingletonTranspose](../src/AoP/SingletonTranspose.agda) checks exercises 4.46–4.47. Singleton formation is monic: testing two equal singletons at the first element identifies their elements. The image of a singleton is its fibre; the image of any subset is the union of the fibres at its members.
@@ -80,4 +82,4 @@ This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/A
 
 [LiberalPrecondition](../src/AoP/LiberalPrecondition.agda) checks exercise 4.52: a weakest liberal precondition requires every possible output to satisfy the postcondition. Sequential composition applies the two transformers in reverse order, and comparison on all postconditions reverses and reflects relation inclusion.
 
-The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.
+The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, and the full inventory of unnumbered examples remain open.
