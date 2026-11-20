@@ -52,4 +52,8 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [MinimalTieClass](../src/AoP/MinimalTieClass.agda) checks exercise 7.25 with the candidate as representative of its primary tie class. Among the `R`-minimal elements tied with that candidate, `S` decides minimality for the combined comparison. Extracting primary minimality uses decidability of `R`; combining the two stages uses only the preorder laws.
 
+## §7.2 Monotonic algebras
+
+[SumOfMinima](../src/AoP/SumOfMinima.agda) verifies the unnumbered addition example. Given minima `m` and `n` of two sets of natural numbers, their sum is attainable and bounds every pairwise sum below. The bound is exactly the componentwise monotonicity of addition.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
