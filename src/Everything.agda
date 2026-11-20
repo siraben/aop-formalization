@@ -165,6 +165,7 @@ import AoP.DecimalTriangle
 import AoP.QuarterCells
 import AoP.QuarterZero
 import AoP.QuarterDigits
+import AoP.QuarterRound
 import AoP.ExtendUpdate
 import AoP.FloorRule
 import AoP.FractionThreshold
