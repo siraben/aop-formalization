@@ -404,6 +404,7 @@ import AoP.BranchingGreedy
 import AoP.EditScript
 import AoP.EditMinimum
 import AoP.Bracketing
+import AoP.MatrixBracketCost
 import AoP.BracketSpine
 import AoP.BracketEnumeration
 import AoP.BracketMinimum
