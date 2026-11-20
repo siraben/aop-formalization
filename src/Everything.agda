@@ -584,6 +584,7 @@ import AoP.DeadlineSort
 import AoP.EqualWeightSchedule
 import AoP.SignedLateness
 import AoP.LatenessExchange
+import AoP.LatenessPick
 import AoP.DeadlineSortExample
 import AoP.PickLast
 import AoP.BackwardSchedule
