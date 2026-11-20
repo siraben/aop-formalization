@@ -501,6 +501,7 @@ import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.MatrixBracketCost
 import AoP.DecimalBracketCost
+import AoP.DecimalBracketMinimum
 import AoP.AssociativeBrackets
 import AoP.PrefixLoop
 import AoP.BracketColumnLoop
