@@ -178,6 +178,7 @@ import AoP.FibreBounds
 import AoP.PreorderFibres
 import AoP.RelationalProducts
 import AoP.RelationalPairing
+import AoP.RelationalCurry
 import AoP.PairInput
 import AoP.RelationalSums
 import AoP.PowerRelator
