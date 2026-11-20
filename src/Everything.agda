@@ -180,6 +180,7 @@ import AoP.TransposeCombinations
 import AoP.ListSetify
 import AoP.PartitionFlatten
 import AoP.PermuteTail
+import AoP.BagTailCalculation
 import AoP.InterleaveFold
 import AoP.SupersequenceFold
 import AoP.InitFold

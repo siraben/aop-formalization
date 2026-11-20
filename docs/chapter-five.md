@@ -41,7 +41,7 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [PartitionFlatten](../src/AoP/PartitionFlatten.agda) checks exercise 5.26: the enumeration returns a list of nonempty blocks exactly when flattening those blocks gives the original input. The empty input has one partition, the empty list of blocks. For a nonempty candidate the completeness proof removes either its first singleton block or the first element of a longer block, reconstructing the `new` or `glue` step.
 
-[PermuteTail](../src/AoP/PermuteTail.agda) checks the identity in exercise 5.28 for the insertion-based permutation relation: permuting the tail first leaves the set of final permutations unchanged. The derivation from the book’s `bagify` equation remains open.
+[PermuteTail](../src/AoP/PermuteTail.agda) checks the identity in exercise 5.28 for the insertion-based permutation relation: permuting the tail first leaves the set of final permutations unchanged. [BagTailCalculation](../src/AoP/BagTailCalculation.agda) gives the bag-based derivation assuming every bag has a representative list. It uses `bagify ∘ bagify˘ = id` to insert a tail representative, then the cons-fold equation to remove that intermediate list. Identifying this abstract bag relation with the concrete insertion relation remains open.
 
 [InterleaveFold](../src/AoP/InterleaveFold.agda) checks exercise 5.29. A fold assigns each output entry to one of two lists while preserving order in each. Its converse agrees in both directions with consuming the next head of either input. The book’s example interleaves `[1,2,3,4]` and `[10,11,12]` to obtain `[1,10,2,3,11,12,4]`.
 
