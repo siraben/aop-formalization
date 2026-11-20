@@ -25,4 +25,6 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [ImageDomainCover](../src/AoP/ImageDomainCover.agda) checks exercise 5.16. Passing the lifted domain test supplies an output for every input member. An output in the existential image already has an input witness. These two facts give both coverage conditions of the power relator.
 
+[EntireFold](../src/AoP/EntireFold.agda) checks the cons-list instance of exercise 5.19: an entire list algebra supplies a base value and a successor for each head and reduced tail, yielding a fold result for every input list. The general proof by reflection remains open.
+
 Later sections and the unnumbered calculations still need a full audit.
