@@ -12,7 +12,7 @@ This inventory covers all 30 numbered Chapter 5 exercises. A relator lifts a rel
 | 5.6 | [RelationalProducts](../src/AoP/RelationalProducts.agda) checks componentwise composition in `Rel`. The requested derivation using only laws (5.4) and (5.2) remains open. |
 | 5.7–5.8 | [RelationalPairing](../src/AoP/RelationalPairing.agda): separate paths that share an intermediate input; push independent component steps into both branches and reassemble them. |
 | 5.9 | [PairInput](../src/AoP/PairInput.agda): distribute an input function into both branches. Replacing it with a relation that chooses either Boolean admits a mixed pair on only one side. |
-| 5.10 | Open: derive naturality of `unzip` for a general relator. |
+| 5.10 | [UnzipListLaw](../src/AoP/UnzipListLaw.agda) proves both inclusions for the list relator. Projecting an alignment gives the two component alignments; conversely, their common input positions synchronize them into a list of related output pairs. The derivation for an arbitrary relator remains open. |
 | 5.11 | [RelationalCurry](../src/AoP/RelationalCurry.agda): construct evaluation for the relational tensor and prove that currying gives the unique solution up to mutual inclusion. |
 
 In §5.3, [InjectionTests](../src/AoP/InjectionTests.agda) checks the identities in exercise 5.12 for concrete relations. The left and right partial projections accept only the matching tag. Reinjecting their results recovers identity, and the union of the two branches recovers any copair. The abstract derivation via Proposition 4.1 remains open.
