@@ -77,6 +77,7 @@ import AoP.VanRefinement
 import AoP.VanFold
 import AoP.ReserveExtrema
 import AoP.ReserveTransfer
+import AoP.VaultCapacity
 import AoP.VanSchedule
 import AoP.VanExample
 import AoP.CylinderEntry
