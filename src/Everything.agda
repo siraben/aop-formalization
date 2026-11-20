@@ -13,6 +13,7 @@ import AoP.CurriedExpression
 import AoP.Inverses
 import AoP.DecimalDigits
 import AoP.DecimalSuccessor
+import AoP.DecimalInverse
 import AoP.Naturality
 import AoP.NaturalShapes
 import AoP.PointFree
