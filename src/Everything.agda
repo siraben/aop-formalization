@@ -377,6 +377,9 @@ import AoP.TabulationMediator
 import AoP.TabulationMeet
 import AoP.TabulationIso
 import AoP.RelUnitObject
+import AoP.FullTabulationProduct
+import AoP.UnitTerminalBridge
+import AoP.ResidualFromJoin
 import AoP.TabulatedFunction
 import AoP.MonicKernel
 import AoP.ImageComparison

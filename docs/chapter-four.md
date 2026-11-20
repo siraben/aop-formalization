@@ -27,7 +27,9 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Injectio
 
 [TabulationIso](../src/AoP/TabulationIso.agda) compares two tables of the same relation. Use each table’s columns as a span into the other to get `encode` and `decode`. Each round trip preserves both column values; joint monicity therefore recovers the original row. `unique` proves pointwise uniqueness among maps that preserve both columns.
 
-[RelUnitObject](../src/AoP/RelUnitObject.agda) characterizes the unit objects of concrete `Rel`: a type must have an inhabitant and any two inhabitants must be equal. An entire relation from the singleton supplies the inhabitant; testing the scalar law on the full endorelation forces equality. Conversely, the constant map to that inhabitant covers every input. Its converse composed with the corresponding constant map on another type contains every relation between the two types: the chosen inhabitant witnesses every path.
+[RelUnitObject](../src/AoP/RelUnitObject.agda) characterizes the unit objects of concrete `Rel`: a type must have an inhabitant and any two inhabitants must be equal. An entire relation from the singleton supplies the inhabitant; testing the scalar law on the full endorelation forces equality. Conversely, the constant map to that inhabitant covers every input. Its converse composed with the corresponding constant map on another type contains every relation between the two types: the chosen inhabitant witnesses every path. [UnitTerminalBridge](../src/AoP/UnitTerminalBridge.agda) proves that this unit condition is equivalent to terminality in `Fun`. For the reverse implication, take any edge of a relation on the terminal type. The two columns of its table are functions from the same row type to the terminal type, so they agree at the row for that edge. Its endpoints must therefore coincide.
+
+[FullTabulationProduct](../src/AoP/FullTabulationProduct.agda) shows why tabulating the full relation gives a product in `Fun`. For any functions `h` and `k` on a common input, their observed pair lies in the full relation. Proposition 4.2 therefore supplies a row map with projections `h` and `k`; joint monicity makes it unique. `terminal` packages this argument as the terminal-span property of a product from §2.5. For the ordinary pair type, `Pairs.columns` and `Pairs.paired` prove both inclusions in the final calculation: the graph of `d ↦ (h d, k d)` is precisely the intersection of the two column tests.
 
 [Tabulation](../src/AoP/Tabulation.agda) gives a table one row per witnessed edge. Reading its source and target columns reconstructs the relation. Joint injectivity of the columns follows when evidence for any given edge is unique.
 
@@ -41,6 +43,8 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Injectio
 | 4.26–4.27 | [UnitRange](../src/AoP/UnitRange.agda): range reflects inclusion for relations from a singleton; composing with the universal relation and intersecting with identity gives the domain test. |
 
 ## §4.4: local completeness and Galois connections
+
+[ResidualFromJoin](../src/AoP/ResidualFromJoin.agda) derives the universal property shared by implication and division. Fix the right operand of meet or composition and call the resulting operation `apply`. Join all candidates `x` satisfying `apply x ≤ s`. Each admissible candidate lies below that join. Conversely, distributing `apply` over the join shows that the join itself is admissible, since every summand is bounded by `s`. Monotonicity gives the same bound for anything below the join. The formal statement assumes small carriers and the indicated indexed joins.
 
 [MeetFromJoin](../src/AoP/MeetFromJoin.agda) constructs the meet in exercise 4.28 for a small ordered carrier: take the join of all common lower bounds, then verify both clauses of the greatest-lower-bound property.
 
