@@ -220,6 +220,7 @@ import AoP.HalvingRun
 import AoP.HalvingDigits
 import AoP.HalvingPower
 import AoP.ModulusBound
+import AoP.ModulusStep
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
