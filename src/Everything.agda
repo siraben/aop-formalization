@@ -485,6 +485,7 @@ import AoP.LayeredPaths
 import AoP.LayeredCostFold
 import AoP.LayeredRowChoice
 import AoP.LayeredPathMinimum
+import AoP.LayeredHeadCache
 import AoP.BranchNetwork
 import AoP.BranchNetworkTrace
 import AoP.Bump
@@ -493,6 +494,9 @@ import AoP.SnocBumpProof
 import AoP.AdjacentThin
 import AoP.AdjacentCoverage
 import AoP.ConnectedBlock
+import AoP.LongestConnectedBlock
+import AoP.ConnectedBlockExchange
+import AoP.ConnectedPartitionMinimum
 import AoP.ConnectedMaximum
 import AoP.LeftMinimumBlock
 import AoP.LeftMinimumDirection
