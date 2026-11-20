@@ -310,6 +310,7 @@ import AoP.PermuteRemoval
 import AoP.ListProduct
 import AoP.LaxMembership
 import AoP.FixedPoint
+import AoP.PrefixLambek
 import AoP.DifunctionalClosure
 import AoP.BinaryOctal
 import AoP.HalvingRun
