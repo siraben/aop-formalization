@@ -32,4 +32,6 @@
 
 [UnionMinimum](../src/AoP/UnionMinimum.agda) proves the union law in exercise 7.29 for indexed families. The minima of the union are exactly the minima of the union of the local minima. Empty member sets contribute no candidates. The list-fold derivation in the exercise remains open.
 
+[WellSupported](../src/AoP/WellSupported.agda) checks exercises 7.30–7.31. Every minimum is minimal, whereas equality on two points has a minimal member in every inhabited subset without having a minimum in the full set. Under a well-supported preorder, restricting attention to predecessors of a given member produces a minimal element below it that is also minimal in the original set.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
