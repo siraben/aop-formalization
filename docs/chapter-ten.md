@@ -35,7 +35,7 @@
 
 | Exercise | Remaining construction |
 | --- | --- |
-| 10.12 | Prove uniqueness of the integer digit satisfying the interval bound. |
+| 10.12 | [DigitInterval](../src/AoP/DigitInterval.agda) proves uniqueness for a nonnegative rational scaled fraction `n/w`, with positive denominator. After clearing denominators the digit must satisfy `d*w ≤ n < (d+1)*w`; two distinct digits would force `n < n`. |
 | 10.13 | Derive the printer using integer arithmetic throughout. |
 | 10.14 | Isolate the nonintegral-quotient hypothesis on the scale and remove it. |
 | 10.15 | Characterize the selected shortest decimal and refine ties by distance to the represented value. |

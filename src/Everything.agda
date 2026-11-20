@@ -149,6 +149,7 @@ import AoP.FloorRule
 import AoP.FloorConnection
 import AoP.FloorCounterexample
 import AoP.TeXExternal
+import AoP.DigitInterval
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
