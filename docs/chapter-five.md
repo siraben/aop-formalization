@@ -116,3 +116,5 @@ In §5.4, [ImageNotRelator](../src/AoP/Chapter05/ImageNotRelator.agda) checks th
 [InterleaveFold](../src/AoP/Chapter05/InterleaveFold.agda) checks exercise 5.29. A fold assigns each output entry to one of two lists while preserving order in each. Its converse agrees in both directions with consuming the next head of either input. The book’s example interleaves `[1,2,3,4]` and `[10,11,12]` to obtain `[1,10,2,3,11,12,4]`.
 
 [LaxChoices](../src/AoP/Chapter05/LaxChoices.agda) checks exercise 5.30: wrapping one chosen output gives a cover of singletons; duplicating one output gives two compatible choices; taking the union of two covers gives a cover of the union. The unnumbered examples and intermediate calculations still need a full audit.
+
+[← Chapter 4](chapter-four.md) · [Contents](../README.md#results-by-book-section) · [Chapter 6 →](chapter-six.md)

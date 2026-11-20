@@ -2,7 +2,19 @@
 
 [Browse the Agda sources](../src/AoP/Chapter03) · [Type-check this chapter](../src/AoP/Chapter03/Index.agda)
 
-This inventory lists exercises 3.1–3.51 and selected worked derivations in §§3.1–3.5. The [one-pass average](../src/AoP/Chapter03/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Chapter03/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Chapter03/Horner.agda) with the [depth-labelled tree](../src/AoP/Chapter03/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction. [HornerPolynomialTrace](../src/AoP/Chapter03/HornerPolynomialTrace.agda) checks the polynomial example: with coefficients `[2,3,4]` in ascending degree at `x = 10`, the triangle builds `[2,30,400]`. Horner’s fold instead evaluates the suffixes to `4`, `43`, then `432`. Distributivity proves that the routes agree for any list of natural coefficients and any natural evaluation point.
+## §3.1 Banana-split: deriving one traversal from two
+
+To compute the average of a list of natural numbers, we need its sum and length. Specify the intermediate result as `stats xs = (sum xs, length xs)`. Derive the fold by asking what this pair must do at each constructor:
+
+```text
+stats []       = (0, 0)                            definitions of sum and length
+stats (a ∷ xs) = (sum (a ∷ xs), length (a ∷ xs))    specification
+               = (a + sum xs, suc (length xs))      unfold both list folds
+               = step a (sum xs, length xs)         step a (s,n) = (a+s, suc n)
+               = step a (stats xs)                  specification on the tail
+```
+
+These are the equations of a single right fold. In [Average](../src/AoP/Chapter03/Average.agda), `layer-law` checks the constructor cases and `split` proves agreement with the pair of separate folds. Only after the traversal do we interpret the result as a ratio; the chosen convention for an empty list is `0/1`. In the [steep-list test](../src/AoP/Chapter03/Steep.agda), the Boolean result for the head also uses the sum for the tail. That dependence is why the auxiliary-fold law in exercise 3.4 is useful.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -13,6 +25,23 @@ This inventory lists exercises 3.1–3.51 and selected worked derivations in §�
 | 3.5 | [BalanceFold](../src/AoP/Chapter03/BalanceFold.agda): return each subtree’s size alongside its balance flag. Integer cross-products test the inclusive one-third and two-thirds bounds. [BalanceConvention](../src/AoP/Chapter03/BalanceConvention.agda) proves that assigning size zero to `null` makes every nonempty tree fail: a bottom node has left fraction `0/1`. With size one for `null`, a bottom node passes at `1/3`; attaching it on the left gives `3/5` (passes), while attaching it on the right gives `1/5` (fails). |
 | 3.6–3.7 | [Predecessors](../src/AoP/Chapter03/Predecessors.agda) derives the descending list; [FactorialFusion](../src/AoP/Chapter03/FactorialFusion.agda) derives the fold that computes its product without allocating the list. `four-step` checks the final update for `4!`: instead of prepending `4` to `[3,2,1]` and multiplying the list, the commuting equation changes the cached pair `(3,6)` directly to `(4,4 × 6) = (4,24)`. |
 | 3.8 | [MutualFold](../src/AoP/Chapter03/MutualFold.agda): mutual recursion for an initial algebra in `Fun`, with banana-split and the auxiliary fold as corollaries. [CategoricalMutualFold](../src/AoP/Chapter03/CategoricalMutualFold.agda) proves both directions in any category with the specified initial algebra and product of the two answer objects. Either update may inspect both child results. `combine` uses the two component equations to identify their pairing as the unique fold; `first` and `second` recover the component equations by projecting the fold equation. |
+
+## §3.2 Ruby triangles and Horner’s rule
+
+Suppose the coefficients start with the constant term. One evaluation strategy builds a list in which each coefficient has been scaled by `x` once for each earlier coefficient, then sums the list. Write `T` for that triangle, `scale a = a * x`, and `H as = sum (T as)`. Derive the update rather than constructing the triangle:
+
+```text
+H []       = 0                                      empty triangle and sum
+H (a ∷ as) = sum (a ∷ map scale (T as))             triangle step
+           = a + sum (map scale (T as))             sum step
+           = a + scale (sum (T as))                 push scaling through sum
+           = a + scale (H as)                       specification on the suffix
+```
+
+The third equality uses two laws: `scale 0 = 0` for an empty sum, and `(b+c)*x = b*x + c*x` for a cons step. [Horner](../src/AoP/Chapter03/Horner.agda) derives the rule from those laws. [HornerPolynomialTrace](../src/AoP/Chapter03/HornerPolynomialTrace.agda) compares both computations at `x = 10`: the triangle for `[2,3,4]` is `[2,30,400]`; the fused fold starts at `0` and updates to `4`, `43`, then `432`. Exercise 3.14 applies the same idea to depths in a tree.
+
+| Exercise | Checked construction or remaining work |
+| --- | --- |
 | 3.9 | [Slice](../src/AoP/Chapter03/Slice.agda): applying `tri tail` drops `i` elements from row `i`. |
 | 3.10 | [Hyperproduct](../src/AoP/Chapter03/Hyperproduct.agda): use commutativity to distribute squaring over multiplication, then fuse the triangle of repeated squarings. |
 | 3.11 | [GeneralHorner](../src/AoP/Chapter03/GeneralHorner.agda): derive the generalized Horner rule in `Fun` for a natural transformation of layers and a compatible reduction. [CategoricalHorner](../src/AoP/Chapter03/CategoricalHorner.agda) gives the derivation in an arbitrary category with the specified initial algebra. `promote` moves the layer change past reduction. Using it under the functor makes the reduction a homomorphism from the triangle algebra to the Horner algebra; `horner` then fuses triangle construction and reduction into a single fold. |
@@ -71,3 +100,5 @@ Given decimal digits after the point, return the nearest count of units of size 
 | 3.46–3.47 | [ConversionFold](../src/AoP/Chapter01/ConversionFold.agda) derives linear snoc-list conversion; [ReverseAccumulator](../src/AoP/Chapter03/ReverseAccumulator.agda) derives reversal with a suffix accumulator. |
 | 3.48–3.49 | [DepthAccumulator](../src/AoP/Chapter03/DepthAccumulator.agda) propagates tip depth down the tree. [DepthLabelWork](../src/AoP/Chapter03/DepthLabelWork.agda) counts successor operations: the accumulator shares one increment between the children of each fork, while the triangle increments every tip below that fork. On a left comb with `n` forks the accumulator makes `n` updates and the triangle makes `2 + 3 + … + (n+1)`. `reference-exact` connects the triangle count to an instrumented implementation: each increment pass rebuilds the mapped subtree and charges one successor per tip. The count excludes constructing the output tree. [MinimumDepth](../src/AoP/Chapter03/MinimumDepth.agda) prunes subtrees with a remaining-distance bound. [MinimumDepthWork](../src/AoP/Chapter03/MinimumDepthWork.agda) counts inspected tree constructors. Its instrumented search returns the minimum tip depth and inspects at most the number of nodes. Every fork saves at least one inspection (`saves-one`). The bound is tight: on the `spine` family, the first fork skips its right tip, but every higher fork inspects its right tip, so exactly one node is skipped. If the left child is a tip, the root and that tip are the only two inspections: a zero remaining bound answers the right call without inspecting its tree, whatever its size. |
 | 3.50–3.51 | [SnocLoop](../src/AoP/Chapter03/SnocLoop.agda) proves state-loop uniqueness. [LoopConversion](../src/AoP/Chapter03/LoopConversion.agda) implements each representation’s fold by a loop on the other. |
+
+[← Chapter 2](chapter-two.md) · [Contents](../README.md#results-by-book-section) · [Chapter 4 →](chapter-four.md)

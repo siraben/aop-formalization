@@ -90,3 +90,5 @@ This inventory tracks the 37 numbered exercises in Chapter 6. The [sorting inven
 | 6.37 | [ClosureGuard](../src/AoP/Chapter06/ClosureGuard.agda) specializes the union law to a decidable source test. When all edges from a passing source are self-loops, splitting there and erasing those loops preserves reachability in both directions. |
 
 Unnumbered examples and intermediate derivations still need a full audit.
+
+[← Chapter 5](chapter-five.md) · [Contents](../README.md#results-by-book-section) · [Chapter 7 →](chapter-seven.md)

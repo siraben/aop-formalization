@@ -2,9 +2,20 @@
 
 [Browse the Agda sources](../src/AoP/Chapter04) · [Type-check this chapter](../src/AoP/Chapter04/Index.agda)
 
-This inventory covers all 52 numbered exercises in Chapter 4. [Relations](../src/AoP/Chapter04/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
+## §4.1 Allegories: following a witness
 
-For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Chapter05/InjectionAdjunction.agda) identifies the right adjoint `S` with the converse of `R`. [AdjointGraph](../src/AoP/Chapter04/AdjointGraph.agda) extracts the function: at each input the unit supplies a round trip, whose intermediate point is the output. The counit forces every other output there to equal that one. `sound` and `complete` prove that the extracted function’s graph and `R` contain exactly the same edges.
+Read `R b a` as an edge from `a` to `b`. To use a composite, unpack its intermediate point; to prove a composite, supply one. Intersection asks for both proofs at the *same endpoints*. These rules explain why composition distributes over intersection in just one direction:
+
+```text
+((R ∩ S) ∘ T) c a
+⇔ ∃ b. (R c b ∧ S c b) ∧ T b a                  unpack the composite
+⇒ (∃ b. R c b ∧ T b a) ∧ (∃ b. S c b ∧ T b a)   reuse b twice
+⇔ ((R ∘ T) ∩ (S ∘ T)) c a                         collect the composites
+```
+
+Reading backwards would require the two intermediate points to agree. For a concrete failure, let `T` connect the input to both Booleans, let `R` accept only `false`, and let `S` accept only `true`. Both paths reach the output, but no intermediate Boolean satisfies both tests. See [MeetWitness](../src/AoP/Chapter04/MeetWitness.agda) for the checked inclusion and counterexample.
+
+The register below covers all 52 numbered exercises. [Relations](../src/AoP/Chapter04/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -14,6 +25,21 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Chapter0
 | 4.4 | [MeetTerminal](../src/AoP/Chapter04/MeetTerminal.agda): construct the thin category of common lower bounds and its terminal intersection. |
 | 4.5–4.6 | [ModularRefinement](../src/AoP/Chapter04/ModularRefinement.agda): keep a witness through a modular restriction; turn one edge into a three-edge zigzag. |
 | 4.7 | [ProductAllegory](../src/AoP/Chapter04/ProductAllegory.agda) equips the product category of two allegories with componentwise inclusion, meet and converse. A pair lies below a meet exactly when both coordinates satisfy their respective lower-bound conditions. The modular inequality follows by applying each factor’s modular law in its own coordinate. The construction permits different universe levels and uses each category’s arrow equivalence. |
+
+## §4.2 Special properties of arrows: recovering a function
+
+For Proposition 4.1 assume `id ⊆ S ∘ R` (unit) and `R ∘ S ⊆ id` (counit). At an input `a`, apply the unit to its identity edge. It supplies some `b` with both `R b a` and `S a b`; define `f a = b`. To test a competing output `c`, follow its edges:
+
+```text
+R c a  and  S a b   ⇒   (R ∘ S) c b      use a as intermediate point
+                     ⇒   id c b           counit
+                     ⇒   c = b            identity relates equal values
+```
+
+Thus the unit supplies an output and the counit makes it unique. [AdjointGraph](../src/AoP/Chapter04/AdjointGraph.agda) checks both inclusions between the resulting graph and `R`; [InjectionAdjunction](../src/AoP/Chapter05/InjectionAdjunction.agda) identifies `S` with the converse. The construction in concrete `Rel` reads the intermediate point directly from the unit witness.
+
+| Exercise | Construction and scope |
+| --- | --- |
 | 4.8–4.9 | [CoreflexiveMeet](../src/AoP/Chapter04/CoreflexiveMeet.agda): composing two coreflexive relations gives their intersection; taking the same relation twice yields transitivity. |
 | 4.10, 4.12 | [RangeTest](../src/AoP/Chapter04/RangeTest.agda): move an output test through intersection or range. |
 | 4.11 | [DiagonalTest](../src/AoP/Chapter04/DiagonalTest.agda): reduce all five expressions to the same condition: the test accepts the state and the relation has a loop there. |
@@ -45,6 +71,17 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Chapter0
 | 4.26–4.27 | [UnitRange](../src/AoP/Chapter04/UnitRange.agda): range reflects inclusion for relations from a singleton; composing with the universal relation and intersecting with identity gives the domain test. |
 
 ## §4.4: local completeness and Galois connections
+
+Left division asks for a guarantee against every continuation. At endpoints `a,b`, `(S ＼ T) b a` means that every `S`-edge out of `b` can be matched by a `T`-edge out of `a` to the same destination. For a two-step continuation the guarantee can be split in stages:
+
+```text
+((R ∘ S) ＼ T) b a
+⇔ ∀ d. (∃ c. R d c ∧ S c b) → T d a          definition of left division and composition
+⇔ ∀ c. S c b → (∀ d. R d c → T d a)          supply the two edges one at a time
+⇔ (S ＼ (R ＼ T)) b a                          collect the two divisions
+```
+
+In [DivisionCalculation](../src/AoP/Chapter04/DivisionCalculation.agda), `stages` builds the composite witness from the two edges. `together` takes the witness apart again. This is an equivalence even when there are no continuations: the universal guarantee then has no edge to check.
 
 [ResidualFromJoin](../src/AoP/Chapter04/ResidualFromJoin.agda) derives the universal property shared by implication and division. Fix the right operand of meet or composition and call the resulting operation `apply`. Join all candidates `x` satisfying `apply x ≤ s`. Each admissible candidate lies below that join. Conversely, distributing `apply` over the join shows that the join itself is admissible, since every summand is bounded by `s`. Monotonicity gives the same bound for anything below the join. The formal statement assumes small carriers and the indicated indexed joins. [ImplicationSingletonJoin](../src/AoP/Chapter04/ImplicationSingletonJoin.agda) specializes the argument to implication in `Rel`: admit the singleton at `(b,a)` precisely when intersecting it with `R` gives only edges of `S`. `largest` proves that every edge of every admissible test contributes such a singleton. `into` and `out` identify their join with the pointwise implication `R b a → S b a`, without deciding either predicate.
 
@@ -111,3 +148,5 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Chapter0
 [TransformerEnvelope](../src/AoP/Chapter04/TransformerEnvelope.agda) handles the last part of 4.52 for an arbitrary predicate transformer `p`. At input `a`, keep precisely the outputs satisfying every postcondition accepted by `p` at `a`. Call this relation `S`. If `p ≤ wlp R`, each `R` edge must pass every such test, hence is an `S` edge. Thus `wlp S ≤ wlp R`. Conversely, `p ≤ wlp S` by construction, giving the reverse implication. Quantifying over small predicates puts `S` in `Set₁`; `Small` proves the original small-relation version given a logically equivalent small edge predicate. No monotonicity or global resizing is assumed.
 
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, and the full inventory of unnumbered examples remain open.
+
+[← Chapter 3](chapter-three.md) · [Contents](../README.md#results-by-book-section) · [Chapter 5 →](chapter-five.md)

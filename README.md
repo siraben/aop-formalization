@@ -1,6 +1,6 @@
 # Algebra of Programming in Agda
 
-Agda formalization of definitions, calculations, and programs from Richard Bird and Oege de Moor’s *Algebra of Programming*.
+An Agda companion to Richard Bird and Oege de Moor’s *Algebra of Programming*. **[Start reading at §1.1](docs/chapter-one.md)** and follow the numbered sections. In §1.2, derive the state of a factorial fold from its specification; in §1.7, follow the filter calculation one equality at a time. The linked Agda proofs give the precise types and laws used at each step.
 
 Run `nix flake check` to type-check [`Everything.agda`](src/Everything.agda), which imports all modules. For interactive work, run `nix develop` and open a `.agda` file in your editor. The proofs use Agda builtins with `--safe --without-K`.
 
