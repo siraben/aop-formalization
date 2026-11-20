@@ -31,6 +31,17 @@ module Derive (F : Functor Fun Fun) (I : Theory.Initial F) where
     as-fold : ∀ x → m x ≡ ⦅ alg ⦆ x
     as-fold = unique alg m (λ t → back (cong (λ s → m (inn s)) (children t)))
 
+  -- Exercise 2.36. To compute an arbitrary f, retain the original
+  -- subtree as well as its answer. The second projection undoes this
+  -- pairing, so the preceding construction gives its fold algebra.
+  module Remember {A : Set} (f : μ → A) where
+    save : μ → A × μ
+    save x = f x , x
+    module S = Section save snd (λ _ → refl)
+
+    projected : ∀ x → f x ≡ fst (⦅ S.alg ⦆ x)
+    projected x = cong fst (S.as-fold x)
+
   -- Exercise 2.35. Slide f across a fold. Precomposing g by map f
   -- on the right supplies precisely the homomorphism equation needed
   -- by fusion: the two sides of that equation agree by computation.
