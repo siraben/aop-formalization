@@ -21,6 +21,7 @@ import AoP.Shunting
 import AoP.Tabulation
 import AoP.Joins
 import AoP.Complement
+import AoP.Power
 import AoP.FixedPoint
 import AoP.Refinement
 import AoP.Thinning
