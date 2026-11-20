@@ -418,6 +418,8 @@ import AoP.TabularIndirectEquality
 import AoP.SpanColumnShunt
 import AoP.SpanDivisionTests
 import AoP.TabularTransposeFormula
+import AoP.AllegoryMapOrder
+import AoP.AllegoryMapComposition
 import AoP.FibreEquality
 import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
