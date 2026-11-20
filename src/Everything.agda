@@ -117,6 +117,7 @@ import AoP.RelatorDomain
 import AoP.PowerMeetFailure
 import AoP.ImageDomainCover
 import AoP.EntireFold
+import AoP.ListMeet
 import AoP.GuardCases
 import AoP.ImageNotRelator
 import AoP.PreorderExponential

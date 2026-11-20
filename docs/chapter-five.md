@@ -1,6 +1,6 @@
 # Chapter 5: relational datatypes
 
-This inventory covers exercises 5.1–5.16 (§§5.1–5.4). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
+This inventory covers exercises 5.1–5.19 (§§5.1–5.5). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -26,6 +26,8 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 [ImageDomainCover](../src/AoP/ImageDomainCover.agda) checks exercise 5.16. Passing the lifted domain test supplies an output for every input member. An output in the existential image already has an input witness. These two facts give both coverage conditions of the power relator.
 
 [GuardCases](../src/AoP/GuardCases.agda) checks exercise 5.17 for concrete relations and decidable predicates. Each input receives exactly one branch tag. Refining a guarded conditional is equivalent to refining each branch on the inputs that reach it.
+
+[ListMeet](../src/AoP/ListMeet.agda) checks the cons-list case of exercise 5.18. Two alignments of the same lists have matching constructors, so each pair of element witnesses can be combined into a witness for their intersection. The theorem for general binary relators remains open.
 
 [EntireFold](../src/AoP/EntireFold.agda) checks the cons-list instance of exercise 5.19: an entire list algebra supplies a base value and a successor for each head and reduced tail, yielding a fold result for every input list. The general proof by reflection remains open.
 
