@@ -12,7 +12,7 @@ In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a di
 | --- | --- | --- |
 | §1.2 | [Naturals](src/AoP/Naturals.agda) | Natural folds and uniqueness; factorial and Fibonacci pair invariants; higher-order fold for Ackermann; [PositiveFold](src/AoP/PositiveFold.agda) gives an unsatisfiable recursion equation and the positive-number fold isomorphism; [SquareFold](src/AoP/SquareFold.agda) derives squaring by repeated addition; [LastSatisfying](src/AoP/LastSatisfying.agda) finds the greatest index passing a Boolean test |
 | §1.3 | [Snoc](src/AoP/Snoc.agda) | Snoc-list fold and concatenation; accumulator conversions between cons- and snoc-lists, proved mutually inverse; [CountingFolds](src/AoP/CountingFolds.agda) expresses left iteration, take, and drop as right folds |
-| §1.4 | [Trees](src/AoP/Trees.agda) | Binary and mutually recursive rose/forest folds; currying as application along the left spine |
+| §1.4 | [Trees](src/AoP/Trees.agda) | Binary and mutually recursive rose/forest folds; currying as application along the left spine. [CurriedExpression](src/AoP/CurriedExpression.agda) checks both representations of `f(g(a,b),h(c),d)`, its size, and its depth |
 | §1.5 | [Inverses](src/AoP/Inverses.agda) | Calculate a left inverse of unzip by a function-valued fold, and the opposite inverse on aligned lists |
 | §1.6 | [Naturality](src/AoP/Naturality.agda) | Naturality of concat, reverse, zip and snoc-list prefixes |
 | §1.7 | [PointFree](src/AoP/PointFree.agda) | Derive filtering by tagging with predicate results, selecting on the second component, and projecting the first |

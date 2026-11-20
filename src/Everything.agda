@@ -8,6 +8,7 @@ import AoP.LastSatisfying
 import AoP.CountingFolds
 import AoP.Snoc
 import AoP.Trees
+import AoP.CurriedExpression
 import AoP.Inverses
 import AoP.Naturality
 import AoP.PointFree
