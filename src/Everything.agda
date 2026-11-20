@@ -492,6 +492,8 @@ import AoP.TourRepeatedBlock
 import AoP.TourKeyTransition
 import AoP.TourKeyNormal
 import AoP.TourArmNormal
+import AoP.TourArmExtension
+import AoP.TourTableOrder
 import AoP.TourVariantExamples
 import AoP.BitonicTable
 import AoP.BitonicExample
