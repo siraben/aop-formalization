@@ -2,6 +2,8 @@
 
 This inventory covers all 52 numbered exercises in Chapter 4. [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
+For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/InjectionAdjunction.agda) identifies the right adjoint `S` with the converse of `R`. [AdjointGraph](../src/AoP/AdjointGraph.agda) extracts the function: at each input the unit supplies a round trip, whose intermediate point is the output. The counit forces every other output there to equal that one. `sound` and `complete` prove that the extracted function’s graph and `R` contain exactly the same edges.
+
 | Exercise | Construction and scope |
 | --- | --- |
 | 4.1 | [IndirectMeet](../src/AoP/IndirectMeet.agda): compare the lower bounds of both bracketings to derive associativity from the meet universal property. |
@@ -20,6 +22,8 @@ This inventory covers all 52 numbered exercises in Chapter 4. [Relations](../src
 | 4.18 | [LocaleRelations](../src/AoP/LocaleRelations.agda) defines composition by joining the meets of path grades over all intermediate points. It proves the modular inequality by distributing the outer meet across that join and using the original target as witness in the converse composite. [LocaleIdentity](../src/AoP/LocaleIdentity.agda) defines the diagonal grade as the join of top over equality witnesses. It proves both identity laws by mutual inclusion, without assuming decidable equality on the objects. [LocaleComposition](../src/AoP/LocaleComposition.agda) proves associativity by mutual inclusion: distributing the outer meet exposes paths through two intermediate points, which can be inserted into either nesting of the joins. [LocaleAllegory](../src/AoP/LocaleAllegory.agda) packages these results into a category on small sets and an allegory instance. Arrow equality is mutual pointwise inclusion. Converse exchanges endpoints and reverses composition because the meet of the two path grades is symmetric. |
 
 ## §4.3: tabulations
+
+[TabulationMediator](../src/AoP/TabulationMediator.agda) proves Proposition 4.2 in concrete `Rel` for any supplied table. The span with columns `h,k` is included in `R` exactly when each of its inputs can be mapped to a table row with those column values. `factor` constructs the row from inclusion; `include` reads it back as a witness of `R`. If the table columns jointly distinguish rows, any two such maps agree pointwise (`unique`).
 
 [Tabulation](../src/AoP/Tabulation.agda) gives a table one row per witnessed edge. Reading its source and target columns reconstructs the relation. Joint injectivity of the columns follows when evidence for any given edge is unique.
 

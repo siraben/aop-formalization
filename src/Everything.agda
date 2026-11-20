@@ -373,6 +373,7 @@ import AoP.RangeTest
 import AoP.DiagonalTest
 import AoP.Shunting
 import AoP.Tabulation
+import AoP.TabulationMediator
 import AoP.TabulatedFunction
 import AoP.MonicKernel
 import AoP.ImageComparison
@@ -433,6 +434,7 @@ import AoP.CopairCancellation
 import AoP.SumRestriction
 import AoP.InjectionTests
 import AoP.InjectionAdjunction
+import AoP.AdjointGraph
 import AoP.PowerRelator
 import AoP.RelationalFusion
 import AoP.FoldFixedFusion
