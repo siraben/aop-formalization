@@ -29,7 +29,7 @@ This inventory covers exercises all 52 numbered exercises in Chapter 4. [Relatio
 | 4.20 | [ImageComparison](../src/AoP/ImageComparison.agda): two given surjective/injective factorizations have a unique comparison isomorphism in `Fun`, using supplied preimages. Constructing a factorization for every function remains open. |
 | 4.21–4.23 | [TabulatedFunction](../src/AoP/TabulatedFunction.agda): simplicity makes the source column injective for a jointly injective table. Totality supplies a row for each input. Together these yield both inverse laws. |
 | 4.24 | [EntireBridge](../src/AoP/EntireBridge.agda): each row can be connected to an intermediate value exactly when the span lies in the composite relation. |
-| 4.25 | Open: determine when locale-valued relations admit tabulations. |
+| 4.25 | [LocaleScalarTabulation](../src/AoP/LocaleScalarTabulation.agda) proves a necessary condition by considering relations from a singleton to itself. Each total leg into a singleton has top grade at every input. Hence a scalar factored through two such legs must be equivalent to a join of copies of top indexed by the witness type. A counterexample frame or a sufficient tabulation criterion remains open. |
 | 4.26–4.27 | [UnitRange](../src/AoP/UnitRange.agda): range reflects inclusion for relations from a singleton; composing with the universal relation and intersecting with identity gives the domain test. |
 
 ## §4.4: local completeness and Galois connections
