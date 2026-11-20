@@ -7,7 +7,7 @@ This inventory covers all 30 numbered Chapter 5 exercises. A relator lifts a rel
 | 5.1 | Open: exhibit a non-monotone endofunctor on `Rel`. |
 | 5.2 | [RelatorTests](../src/AoP/RelatorTests.agda) derives meet preservation for coreflexive tests from composition and monotonicity. [PowerMeetFailure](../src/AoP/PowerMeetFailure.agda) uses Boolean identity and negation to refute unrestricted meet preservation. |
 | 5.3 | [ExponentialRelator](../src/AoP/ExponentialRelator.agda): lift relations pointwise to indexed families, using pointwise equality for the identity relation on families. |
-| 5.4 | Open: derive the arrow action of the empty/nonempty functor and prove the obstruction to extending it to a relator. |
+| 5.4 | [InhabitedFunctor](../src/AoP/InhabitedFunctor.agda) derives the unique pointwise arrow action for objects supplied with an empty/inhabited classification and checks identity and composition. No relator extends it: the distinct Boolean constants have disjoint images, so their overlap factors through the empty object; after mapping, both constants are the unique singleton map, whose overlap contains the singleton point. |
 | 5.5 | [RelatorDomain](../src/AoP/RelatorDomain.agda): identify the domain of a lifted relation using the lifted domain test and a witness for an outgoing edge. |
 | 5.6 | [RelationalProducts](../src/AoP/RelationalProducts.agda) checks componentwise composition in `Rel`. The requested derivation using only laws (5.4) and (5.2) remains open. |
 | 5.7–5.8 | [RelationalPairing](../src/AoP/RelationalPairing.agda): separate paths that share an intermediate input; push independent component steps into both branches and reassemble them. |
