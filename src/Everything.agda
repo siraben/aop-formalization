@@ -684,6 +684,9 @@ import AoP.BusFrontierSound
 import AoP.BusFrontierCoverage
 import AoP.BusMinimum
 import AoP.MonotoneMinimum
+import AoP.ContainerMinimumDistribution
+import AoP.AlgebraMinimumComparison
+import AoP.GreedyHyloInduction
 import AoP.GreedyFold
 import AoP.LayeredPaths
 import AoP.LayeredCostFold
@@ -770,6 +773,7 @@ import AoP.BitonicExample
 import AoP.FiniteMinimum
 import AoP.Party
 import AoP.PartyChoiceOrder
+import AoP.PartyRootRefinement
 import AoP.PartyConcatOrder
 import AoP.PartyIncludeExclude
 import AoP.PartyExcludeMaximum
