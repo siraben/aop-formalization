@@ -29,7 +29,7 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [ListMeet](../src/AoP/ListMeet.agda) checks the cons-list case of exercise 5.18. Two alignments of the same lists have matching constructors, so each pair of element witnesses can be combined into a witness for their intersection. The theorem for general binary relators remains open.
 
-[EntireFold](../src/AoP/EntireFold.agda) checks the cons-list instance of exercise 5.19: an entire list algebra supplies a base value and a successor for each head and reduced tail, yielding a fold result for every input list. The general proof by reflection remains open.
+[EntireFold](../src/AoP/EntireFold.agda) checks the cons-list instance of exercise 5.19: an entire list algebra supplies a base value and a successor for each head and reduced tail, yielding a fold result for every input list. [EntireFoldReflection](../src/AoP/EntireFoldReflection.agda) gives the reflection calculation in concrete `Rel` for an arbitrary lifted endofunctor with the stated relator laws, fold computation equation and constructor reflection principle. Because the algebra accepts every input, the domain test of the fold commutes with the constructor in both directions. Reflection then gives `Id ⊆ dom H`, hence `Id ⊆ H ˘ ∘ H`.
 
 [TransposeCombinations](../src/AoP/TransposeCombinations.agda) checks exercise 5.20. For a given input, the outputs of a union form the union of the two output sets; intersection works analogously. For independent inputs, the possible output pairs form the Cartesian product.
 

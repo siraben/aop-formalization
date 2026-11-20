@@ -211,6 +211,7 @@ import AoP.RelatorDomain
 import AoP.PowerMeetFailure
 import AoP.ImageDomainCover
 import AoP.EntireFold
+import AoP.EntireFoldReflection
 import AoP.ListMeet
 import AoP.UnzipListLaw
 import AoP.UnzipContainer
