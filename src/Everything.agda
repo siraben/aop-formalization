@@ -204,6 +204,7 @@ import AoP.ProductComparison
 import AoP.AuxiliaryFold
 import AoP.CategoricalAuxiliaryFold
 import AoP.BalanceFold
+import AoP.BalanceConvention
 import AoP.MutualFold
 import AoP.Predecessors
 import AoP.FactorialFusion
