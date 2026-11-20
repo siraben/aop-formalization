@@ -20,4 +20,6 @@
 
 [MinimalComparison](../src/AoP/MinimalComparison.agda) checks exercise 7.19. The comparison `R b a → R a b` used to test minimality is reflexive. A three-element preorder with one strict edge and an isolated point shows why this comparison can fail transitivity.
 
+[MinimalInclusion](../src/AoP/MinimalInclusion.agda) answers exercise 7.21 with a counterexample. Under equality, `high` is minimal in the full three-point set. Adding `low ≤ high` makes `low` a strict predecessor, so `high` loses minimality on that same set.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
