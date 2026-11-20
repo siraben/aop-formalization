@@ -41,6 +41,7 @@ import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
 import AoP.MaximumSegment
 import AoP.SegmentFusion
+import AoP.PrefixScoreGreedy
 import AoP.TieMinimum
 import AoP.MinimalTieClass
 import AoP.MinimalComparison
