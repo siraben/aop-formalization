@@ -322,6 +322,7 @@ import AoP.SingletonThinning
 import AoP.FibreThinning
 import AoP.ThinFamily
 import AoP.MinimalThinning
+import AoP.HiddenComparison
 import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
 import AoP.FibreMinimumFold
