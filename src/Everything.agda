@@ -233,6 +233,7 @@ import AoP.ContainerEmpty
 import AoP.ClosureIterate
 import AoP.MuCalculus
 import AoP.ClosureRuns
+import AoP.ClosureGuard
 import AoP.ClosureSeed
 import AoP.ClosureChain
 import AoP.MemberFold
