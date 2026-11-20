@@ -34,6 +34,8 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 
 ## §4.4: local completeness and Galois connections
 
+[MeetFromJoin](../src/AoP/MeetFromJoin.agda) constructs the meet in exercise 4.28 for a small ordered carrier: take the join of all common lower bounds, then verify both clauses of the greatest-lower-bound property.
+
 [RangeJoins](../src/AoP/RangeJoins.agda) proves exercise 4.29 for small indexed families in `Rel`: taking range commutes with union because the input witness and the branch index can be supplied in either order.
 
 [EmptyRange](../src/AoP/EmptyRange.agda) checks exercise 4.31 in `Rel`: a relation is empty exactly when its range is empty. Exchanging the two input witnesses around a triangle then proves that `(R ∘ S) ⊓ T` is empty exactly when `R ⊓ (T ∘ S˘)` is empty.
