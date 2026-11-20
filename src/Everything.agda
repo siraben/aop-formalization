@@ -294,6 +294,8 @@ import AoP.TeXNearestShortest
 import AoP.TeXClosestPrinter
 import AoP.Conditions
 import AoP.BranchTags
+import AoP.ConditionalFusion
+import AoP.DistributedBranchRouting
 import AoP.Quad
 import AoP.DistributedCase
 import AoP.StrictInitial
