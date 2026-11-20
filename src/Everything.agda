@@ -316,6 +316,7 @@ import AoP.Squaring
 import AoP.Binary
 import AoP.Refinement
 import AoP.Thinning
+import AoP.ThinIdentity
 import AoP.ThinningFold
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
