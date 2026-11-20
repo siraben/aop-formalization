@@ -444,6 +444,7 @@ import AoP.EntabMinimum
 import AoP.UnitTabs
 import AoP.Tardiness
 import AoP.SumTardiness
+import AoP.ScheduleCostFactor
 import AoP.TardinessExample
 import AoP.ScheduleSearch
 import AoP.ScheduleDuration

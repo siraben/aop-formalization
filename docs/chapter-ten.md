@@ -22,7 +22,7 @@
 | Exercise | Derivation or variant to audit |
 | --- | --- |
 | 10.5 | Monotonicity of the cost algebra with the remaining bag held fixed. |
-| 10.6 | Factor schedule cost through maximum and the two component functions. |
+| 10.6 | [ScheduleCostFactor](../src/AoP/ScheduleCostFactor.agda) proves (10.4) for empty and extended schedules: the cost is the maximum of the final job’s penalty and the prefix cost, with both components zero in the empty case. |
 | 10.7 | Derive the insertion comparison using fixed-point induction. |
 | 10.8 | Derive the bag-algebra equation for permutation generation. |
 | 10.9 | Derive the equal-weight schedule and its sorting time bound. |
