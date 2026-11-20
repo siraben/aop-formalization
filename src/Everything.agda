@@ -72,6 +72,7 @@ import AoP.CylinderEntry
 import AoP.CylinderExample
 import AoP.PartyExample
 import AoP.Bellman
+import AoP.BranchingDP
 import AoP.EditScript
 import AoP.EditMinimum
 import AoP.Bracketing
