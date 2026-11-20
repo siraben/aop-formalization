@@ -1,9 +1,5 @@
 *.djvu
 .pi/
-*.vo
-*.vok
-*.vos
-*.glob
-.*.aux
-.lia.cache
+*.agdai
+_build/
 result
