@@ -2,7 +2,7 @@
 
 ## §9.1 Theory
 
-[TaggedThinning](../src/AoP/TaggedThinning.agda) checks the left-injection thinning law in exercise 9.5. Thinning a set of left-tagged candidates can only retain left-tagged values. Removing their tags gives a thinning under the left comparison, and any such thinning can be lifted back. The right-injection law, disjoint-range calculation, and full proposition remain open.
+[TaggedThinning](../src/AoP/TaggedThinning.agda) checks both injection laws in exercise 9.5. When every input candidate has the same tag, every retained candidate has that tag. Removing the tags gives a thinning under that branch’s comparison, and every such thinning can be lifted back. The disjoint-range calculation and full proposition remain open.
 
 ## §9.2 The string edit problem
 

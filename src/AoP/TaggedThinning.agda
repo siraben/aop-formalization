@@ -31,3 +31,22 @@ module Law {A B : Set} (Q : A ← A) (S : B ← B) where
   shape : ∀ X Y → Thin (Q ⊕ S) Y (L X) → Y ≐ L (λ a → Y (inl a))
   shape X Y t = (λ { (inl a) y → y ; (inr b) y → Thin.subset t y }) ,
                 (λ { (inl a) y → y ; (inr b) () })
+
+  R : Pred B → Pred (A ⊎ B)
+  R X (inl a) = ⊥
+  R X (inr b) = X b
+
+  lift-right : ∀ {X Y} → Thin S X Y → Thin (Q ⊕ S) (R X) (R Y)
+  lift-right t = thin (λ { {inl a} () ; {inr b} x → Thin.subset t x }) λ where
+    (inl a) ()
+    (inr b) y → let a , x , s = Thin.cover t b y in inr a , x , right s
+
+  lower-right : ∀ X Y → Thin (Q ⊕ S) Y (R X) → Thin S (λ b → Y (inr b)) X
+  lower-right X Y t = thin (λ x → Thin.subset t x) cover
+    where cover : ∀ b → X b → Σ _ λ a → Y (inr a) × S a b
+          cover b x with Thin.cover t (inr b) x
+          ... | _ , y , right s = _ , y , s
+
+  shape-right : ∀ X Y → Thin (Q ⊕ S) Y (R X) → Y ≐ R (λ b → Y (inr b))
+  shape-right X Y t = (λ { (inl a) y → Thin.subset t y ; (inr b) y → y }) ,
+                      (λ { (inl a) () ; (inr b) y → y })
