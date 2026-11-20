@@ -33,6 +33,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §5.6 | [Subsequences](src/AoP/Subsequences.agda) | Enumerate subsequences by a fold; prove membership is equivalent to the skip/keep relational specification |
 | §5.7 | [LaxMembership](src/AoP/LaxMembership.agda) | Membership is lax natural for power lifting; the opposite inclusion holds for function graphs |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
+| §6.3 | [Hylo](src/AoP/Hylo.agda) | List hylomorphism as unfold followed by fold; prove both fixed-point inclusions and leastness |
 | §6.7 | [Closure](src/AoP/Closure.agda) | Finite paths, closure induction, and the least preorder containing a relation |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
 
