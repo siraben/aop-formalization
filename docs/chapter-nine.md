@@ -10,6 +10,8 @@
 
 [EditCellCount](../src/AoP/EditCellCount.agda) counts interior table updates. Advancing a row visits one interior cell per target letter, and tabulation advances one row per source letter. For lengths `p` and `q` the exact count is `p*q`. This measure excludes boundary initialization, letter comparison, and computing or comparing script lengths.
 
+[CachedEditCell](../src/AoP/CachedEditCell.agda) checks the book’s script-length cache for an interior cell. Matching letters copy the diagonal entry; unequal letters compare the two neighbouring cached lengths. Each branch prepends one command and increments the chosen length. The returned script is shortest and the cache equals its operation count. Integrating these entries into a complete cached table remains open.
+
 ## §9.3 Optimal bracketing
 
 [MatrixBracketCost](../src/AoP/MatrixBracketCost.agda) checks the size and cost functions in exercise 9.10. A matrix product of sizes `i × k` and `k × j` has size `i × j` and adds `i·k·j` scalar multiplications to the two subtree costs. For input dimensions `2 × 3`, `3 × 4`, and `4 × 5`, the two bracketings cost 64 and 90, respectively. The type indices ensure that each intermediate product has compatible dimensions. The cost counts ordinary dense scalar multiplications.
