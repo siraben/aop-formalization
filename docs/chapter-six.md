@@ -4,7 +4,7 @@ This inventory tracks the 37 numbered exercises in Chapter 6. The [sorting inven
 
 | Exercise | Construction and scope |
 | --- | --- |
-| 6.1 | Open: derive the decimal digit printer that divides by ten and accumulates remainders, including the singleton digit for zero. [DecimalInverse](../src/AoP/DecimalInverse.agda) proves inverse laws for a separate positive-number printer. |
+| 6.1 | [DecimalDivision](../src/AoP/DecimalDivision.agda) computes the quotient `q` and a digit `d` with `n = 10q + d`. The accumulator derivation for the decimal digit printer, including the singleton digit for zero, remains open. [DecimalInverse](../src/AoP/DecimalInverse.agda) proves inverse laws for a separate positive-number printer. |
 | 6.2 | [FixedPoint](../src/AoP/FixedPoint.agda) isolates the use of local completeness: the collection of prefixpoints must have an infimum. The remainder of the proof uses its two order laws, transitivity, and monotonicity. |
 | 6.3 | [Kleene](../src/AoP/Kleene.agda) constructs the ascending chain from the empty relation. Its union is a fixed point under the stated continuity assumption and lies below every prefixpoint. |
 | 6.4 | [FixedPoint](../src/AoP/FixedPoint.agda) gives the prefixpoint bound. [Kleene](../src/AoP/Kleene.agda) proves fixed-point induction by bounding each finite approximation. |
