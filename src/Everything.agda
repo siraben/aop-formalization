@@ -71,6 +71,7 @@ import AoP.ThreeOperations
 import AoP.IdentityAlgebra
 import AoP.ConstantInitial
 import AoP.FoldRetraction
+import AoP.ParametricFold
 import AoP.ListAlgebra
 import AoP.Folds
 import AoP.Horner
