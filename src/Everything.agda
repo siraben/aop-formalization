@@ -478,6 +478,11 @@ import AoP.InjectionTests
 import AoP.InjectionAdjunction
 import AoP.AdjointGraph
 import AoP.PowerRelator
+import AoP.PowerGraphExtension
+import AoP.PowerMiddleBounds
+import AoP.PowerLargestOutput
+import AoP.ListFoldByMembership
+import AoP.RelationalFoldTransfer
 import AoP.RelationalFusion
 import AoP.FoldFixedFusion
 import AoP.Subsequences
