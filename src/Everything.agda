@@ -491,6 +491,11 @@ import AoP.PrefixFoldCuts
 import AoP.PrefixFoldEnumeration
 import AoP.SuffixPathCuts
 import AoP.PartitionLayerInverse
+import AoP.PartitionPoolFold
+import AoP.BagFoldExchange
+import AoP.LaxMapSquare
+import AoP.LaxSquareComposition
+import AoP.LaxTabulationTheorem
 import AoP.RelationalFoldTransfer
 import AoP.RelationalFusion
 import AoP.FoldFixedFusion
