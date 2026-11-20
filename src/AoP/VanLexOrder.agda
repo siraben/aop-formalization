@@ -31,9 +31,21 @@ module Order (A : Set) where
   transQ (x ∷ xs) (y ∷ ys) (z ∷ zs) (xy , p) (yz , q) = transP xy yz , λ zx →
     transQ xs ys zs (p (transP yz zx)) (q (transP zx xy))
 
-  fresh : ∀ a xs ys → Q xs ys → Q ((a ∷ []) ∷ xs) ((a ∷ []) ∷ ys)
-  fresh a xs ys q = reflP (a ∷ []) , λ _ → q
   tails : ∀ {a b xs ys} → Prefix (a ∷ xs) (b ∷ ys) → Prefix xs ys
   tails (keep _ p) = p
+
+  antisymP : ∀ {x y} → Prefix x y → Prefix y x → x ≡ y
+  antisymP empty empty = refl
+  antisymP (keep a p) q = cong (a ∷_) (antisymP p (tails q))
+
+  antisymQ : ∀ xs ys → Q xs ys → Q ys xs → xs ≡ ys
+  antisymQ [] [] _ _ = refl
+  antisymQ [] (_ ∷ _) _ ()
+  antisymQ (_ ∷ _) [] () _
+  antisymQ (x ∷ xs) (y ∷ ys) (xy , p) (yx , q) =
+    cong (_∷ xs) (antisymP xy yx) ∙ cong (y ∷_) (antisymQ xs ys (p yx) (q xy))
+
+  fresh : ∀ a xs ys → Q xs ys → Q ((a ∷ []) ∷ xs) ((a ∷ []) ∷ ys)
+  fresh a xs ys q = reflP (a ∷ []) , λ _ → q
   glue : ∀ a x xs y ys → Q (x ∷ xs) (y ∷ ys) → Q ((a ∷ x) ∷ xs) ((a ∷ y) ∷ ys)
   glue a x xs y ys (p , q) = keep a p , λ r → q (tails r)
