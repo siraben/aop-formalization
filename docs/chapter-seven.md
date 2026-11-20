@@ -26,4 +26,6 @@
 
 [MinimalImage](../src/AoP/MinimalImage.agda) proves exercise 7.22. The minimal elements of an image are exactly the images of source elements minimal under the pulled-back comparison. Image membership supplies the required preimage even when the function is not injective.
 
+[MinimalSum](../src/AoP/MinimalSum.agda) proves exercise 7.24. For the sum of two relations, a left-tagged element is minimal exactly when it is minimal among the left-tagged members under the left relation; the right-tagged case is symmetric. The proof uses the fact that every incoming edge preserves its tag.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
