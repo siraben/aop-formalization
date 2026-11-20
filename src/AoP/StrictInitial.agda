@@ -15,17 +15,17 @@ module Laws {o h e} (C : Category o h e) where
   module Zero {Z A P : Obj} (initial : Initial Z)
     (l : Hom P A) (r : Hom P Z) where
     open Initial initial
-    null = leave P
+    unnull = leave P
     module Triangle (triangle : leave A ∘ r ≈ l) where
       module Product
         (ext : (f g : Hom P P) → l ∘ f ≈ l ∘ g → r ∘ f ≈ r ∘ g → f ≈ g) where
-        undo : r ∘ null ≈ identity
+        undo : r ∘ unnull ≈ identity
         undo = transitive (unique _) (symmetric (unique identity))
-        restore : null ∘ r ≈ identity
+        restore : unnull ∘ r ≈ identity
         restore = ext _ identity
-          (transitive (symmetric (assoc l null r))
+          (transitive (symmetric (assoc l unnull r))
             (transitive (compose-cong (unique _) reflexive) (transitive triangle (symmetric (unitʳ l)))))
-          (transitive (symmetric (assoc r null r))
+          (transitive (symmetric (assoc r unnull r))
             (transitive (compose-cong undo reflexive) (transitive (unitˡ r) (symmetric (unitʳ r)))))
 
       module Strict (h₀ : Hom A Z) (pair : Hom A P)

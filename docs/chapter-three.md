@@ -1,6 +1,6 @@
 # Chapter 3: paired folds, Horner’s rule, and TeX decimal input
 
-This inventory covers §§3.1–3.3. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
+This inventory covers §§3.1–3.4. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -31,3 +31,16 @@ Given decimal digits after the point, return the nearest count of units of size 
 | 3.20 | [FloorCounterexample](../src/AoP/FloorCounterexample.agda): exact half-integers witness failure for a fractional offset and for a fractional divisor. |
 | 3.21 | [ExtendUpdate](../src/AoP/ExtendUpdate.agda): extend an update along an injection given an image test that supplies a preimage. |
 | 3.22 | [RoundingCollision](../src/AoP/RoundingCollision.agda): two reachable decimal suffixes with the same rounded value give distinct results after the same digit is prefixed. |
+
+## §3.4: conditions and conditionals
+
+[Conditions](../src/AoP/Conditions.agda) distributes an input paired with a Boolean tag into two branches. Both branches retain the input. The calculation of equation 3.3 moves a function after a conditional into both branches. [BranchTags](../src/AoP/BranchTags.agda) checks the precomposition and equal-branch equations 3.4–3.5 pointwise. The abstract categorical calculations for these equations remain open.
+
+| Exercise | Checked construction or remaining work |
+| --- | --- |
+| 3.23, 3.27 | [StrictInitial](../src/AoP/StrictInitial.agda): the projection triangle gives both inverse equations; pairing `id` with an arrow to `0` then proves that its source is initial. |
+| 3.24 | [RelDistribution](../src/AoP/RelDistribution.agda): no relation can invert the comparison that merges two copies of a singleton. The module uses the description of products and coproducts in `Rel` as tagged unions. |
+| 3.25–3.26 | [BranchTags](../src/AoP/BranchTags.agda): recover a predicate from its tag and prove that mapping over the payload preserves the tag, in `Fun`. |
+| 3.28 | [DistributedCase](../src/AoP/DistributedCase.agda): derive the product/case identity in `Fun` using cancellation of distribution. |
+| 3.29 | [Quad](../src/AoP/Quad.agda): encode two Booleans as one of four tags, verify both round trips, and recover conjunction. |
+| 3.30 | [FilterMap](../src/AoP/FilterMap.agda): derive the filter/map law by moving `map` past concatenation and simplifying each singleton-or-empty contribution. |
