@@ -35,6 +35,7 @@ import AoP.PreorderFunctor
 import AoP.UniversalObjects
 import AoP.ConstantArrow
 import AoP.ProductCategory
+import AoP.OrderProducts
 import AoP.TerminalDiagrams
 import AoP.Functors
 import AoP.FunctorIso
