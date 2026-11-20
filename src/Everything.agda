@@ -497,6 +497,11 @@ import AoP.ConnectedBlock
 import AoP.LongestConnectedBlock
 import AoP.ConnectedBlockExchange
 import AoP.ConnectedPartitionMinimum
+import AoP.ConnectedPartitionThin
+import AoP.ConnectedPartitionTrace
+import AoP.ConnectedPartitionFusion
+import AoP.ConnectedStreamInvariant
+import AoP.ConnectedFastDecision
 import AoP.ConnectedMaximum
 import AoP.LeftMinimumBlock
 import AoP.LeftMinimumDirection
