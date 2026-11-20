@@ -40,7 +40,7 @@
 | 9.14 | Open research exercise: derive a thinning fold for bracketing via converse flattening. |
 | 9.15 | Open: optimize over permutations as well as bracketings for commutative operations. |
 | 9.16 | [DictionaryMonotone](../src/AoP/DictionaryMonotone.agda) proves the empty and snoc cases. Extending a code adds the element’s charge; extending two cost-ordered codes with elements of the same kind preserves their order. |
-| 9.17 | Open: prove the decoder’s initial-segment simulation law. |
+| 9.17 | [ShortenPointer](../src/AoP/ShortenPointer.agda) proves that shortening any successful positive-length copy by one yields exactly the original output minus its final letter, including overlapping copies. Lifting this step to a whole code sequence with the cost bound remains open. |
 | 9.18 | `DictionaryMonotone.Failure.impossible` refutes the unrestricted cost-algebra condition: even at equal prefix costs, a two-bit pointer costs more than a one-bit literal. Comparing all element kinds would require this comparison in both directions. |
 | 9.19 | [UniformCodeCost](../src/AoP/UniformCodeCost.agda): with common charge `w`, bit cost equals code length times `w`. Minimizing the number of elements therefore suffices, including `w = 0` when all codes tie. This justifies the objective simplification; the dynamic encoder remains open. |
 | 9.20 | Open research exercise: derive a dictionary thinning fold on codes with an initial literal. |
