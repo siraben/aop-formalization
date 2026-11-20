@@ -113,6 +113,7 @@ import AoP.ExponentialCases
 import AoP.ExponentialFunctor
 import AoP.ExponentialRelator
 import AoP.RelatorTests
+import AoP.LaxChoices
 import AoP.RelatorDomain
 import AoP.PowerMeetFailure
 import AoP.ImageDomainCover

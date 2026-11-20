@@ -1,6 +1,6 @@
 # Chapter 5: relational datatypes
 
-This inventory covers exercises 5.1–5.29 (§§5.1–5.6). A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
+This inventory covers all 30 numbered Chapter 5 exercises. A relator lifts a relation on elements to one on structured values. [ExponentialRelator](../src/AoP/ExponentialRelator.agda), for example, relates two indexed families when their entries are related at every index. [RelationalProducts](../src/AoP/RelationalProducts.agda) relates pairs by independent choices in the two coordinates.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -49,4 +49,4 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [InterleaveFold](../src/AoP/InterleaveFold.agda) checks exercise 5.29. A fold assigns each output entry to one of two lists while preserving order in each. Its converse agrees in both directions with consuming the next head of either input. The book’s example interleaves `[1,2,3,4]` and `[10,11,12]` to obtain `[1,10,2,3,11,12,4]`.
 
-Later sections and the unnumbered calculations still need a full audit.
+[LaxChoices](../src/AoP/LaxChoices.agda) checks exercise 5.30: wrapping one chosen output gives a cover of singletons; duplicating one output gives two compatible choices; taking the union of two covers gives a cover of the union. The unnumbered examples and intermediate calculations still need a full audit.
