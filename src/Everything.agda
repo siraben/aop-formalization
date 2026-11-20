@@ -226,6 +226,7 @@ import AoP.AccessibilityMeasure
 import AoP.AccessibleMeet
 import AoP.AccessibleFixed
 import AoP.AccessibleTransfer
+import AoP.AccessibleExtremes
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison

@@ -23,6 +23,8 @@ This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md
 
 [AccessibleTransfer](../src/AoP/AccessibleTransfer.agda) proves exercise 6.13. If every two-step `R` path can be replaced by an `S` step followed by an `R` step with the same endpoint, well-foundedness of `S` implies well-foundedness of `R`. The induction at `x` establishes accessibility of every `R`-child of `x`.
 
+[AccessibleExtremes](../src/AoP/AccessibleExtremes.agda) checks exercise 6.14. Every point is accessible for the empty relation. A self-edge rules out accessibility at that point, which handles identity and the universal relation on inhabited carriers. Every relation on an empty carrier is vacuously well-founded.
+
 [AccessibleMeet](../src/AoP/AccessibleMeet.agda) checks exercise 6.15 for accessibility. Restricting a relation preserves accessibility, so a meet is well-founded if either factor is. On two vertices, each one-way edge alone is well-founded; their union admits an endless alternating path.
 
 [AccessibilityMeasure](../src/AoP/AccessibilityMeasure.agda) proves exercise 6.16 for type-valued relations. Pulling a well-founded relation back along any function preserves accessibility: each recursive call descends to a predecessor of its measure. The measure may take the same value at distinct inputs.
