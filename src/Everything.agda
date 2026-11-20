@@ -27,6 +27,7 @@ import AoP.RelationalSums
 import AoP.PowerRelator
 import AoP.RelationalFusion
 import AoP.Subsequences
+import AoP.LaxMembership
 import AoP.FixedPoint
 import AoP.Refinement
 import AoP.Thinning
