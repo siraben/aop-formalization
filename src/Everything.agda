@@ -443,6 +443,7 @@ import AoP.SupersequenceFold
 import AoP.InitFold
 import AoP.SingletonTranspose
 import AoP.LiberalPrecondition
+import AoP.TransformerEnvelope
 import AoP.TransformerOrder
 import AoP.FibreBounds
 import AoP.PreorderFibres

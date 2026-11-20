@@ -106,4 +106,6 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Injectio
 
 [LiberalPrecondition](../src/AoP/LiberalPrecondition.agda) checks exercise 4.52: a weakest liberal precondition requires every possible output to satisfy the postcondition. Sequential composition applies the two transformers in reverse order, and comparison on all postconditions reverses and reflects relation inclusion.
 
+[TransformerEnvelope](../src/AoP/TransformerEnvelope.agda) handles the last part of 4.52 for an arbitrary predicate transformer `p`. At input `a`, keep precisely the outputs satisfying every postcondition accepted by `p` at `a`. Call this relation `S`. If `p ≤ wlp R`, each `R` edge must pass every such test, hence is an `S` edge. Thus `wlp S ≤ wlp R`. Conversely, `p ≤ wlp S` by construction, giving the reverse implication. Quantifying over small predicates puts `S` in `Set₁`; `Small` proves the original small-relation version given a logically equivalent small edge predicate. No monotonicity or global resizing is assumed.
+
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, and the full inventory of unnumbered examples remain open.
