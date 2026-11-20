@@ -39,4 +39,6 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [InitFold](../src/AoP/InitFold.agda) checks exercise 5.24: folding a nonempty list with an empty singleton result and a cons step removes exactly its last element. The proof reconstructs the input by appending the discarded element and shows that any such decomposition yields the same prefix.
 
+[InterleaveFold](../src/AoP/InterleaveFold.agda) checks exercise 5.29. A fold assigns each output entry to one of two lists while preserving order in each. Its converse agrees in both directions with consuming the next head of either input. The book’s example interleaves `[1,2,3,4]` and `[10,11,12]` to obtain `[1,10,2,3,11,12,4]`.
+
 Later sections and the unnumbered calculations still need a full audit.
