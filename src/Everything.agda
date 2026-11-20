@@ -396,6 +396,7 @@ import AoP.BitonicExample
 import AoP.FiniteMinimum
 import AoP.Party
 import AoP.PartyListCost
+import AoP.PartyPlanTraversal
 import AoP.PartyScoreTable
 import AoP.PartyComparisons
 import AoP.PartyCachedPlan
