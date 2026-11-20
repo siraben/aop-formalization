@@ -70,6 +70,7 @@ import AoP.SecureBlock
 import AoP.LongestPrefix
 import AoP.VanTrimming
 import AoP.VanBudget
+import AoP.VanMinimum
 import AoP.VanSchedule
 import AoP.VanExample
 import AoP.CylinderEntry
