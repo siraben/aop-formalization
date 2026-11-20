@@ -78,6 +78,7 @@ import AoP.ParametricFold
 import AoP.ListAlgebra
 import AoP.Folds
 import AoP.Horner
+import AoP.Steep
 import AoP.TeXFraction
 import AoP.TeXExternal
 import AoP.Conditions
