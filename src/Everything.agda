@@ -340,6 +340,7 @@ import AoP.SelectionUnique
 import AoP.SelectionRelUnique
 import AoP.InsertionSort
 import AoP.InsertionGap
+import AoP.InsertionGapExample
 import AoP.InsertionFusion
 import AoP.OrderedInsertionFold
 import AoP.InsertionFoldRefinement
