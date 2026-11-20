@@ -119,6 +119,7 @@ import AoP.ReverseAccumulator
 import AoP.DepthAccumulator
 import AoP.MinimumDepth
 import AoP.SnocLoop
+import AoP.LoopConversion
 import AoP.TipTraversal
 import AoP.AppendEquation
 import AoP.Iteration
