@@ -6,7 +6,7 @@
 
 ## §10.2 Tab compression
 
-[Detab](../src/AoP/Detab.agda) expands tabs to blanks at fixed tab stops. [EntabMinimum](../src/AoP/EntabMinimum.agda) proves that the buffered encoder produces a shortest representation at every positive width. The exercises also examine alternative objectives and the intermediate loop derivation.
+[Detab](../src/AoP/Detab.agda) expands tabs to blanks at fixed tab stops. [EntabMinimum](../src/AoP/EntabMinimum.agda) proves that the buffered encoder produces a shortest representation at every positive width. [TabPrefixExample](../src/AoP/TabPrefixExample.agda) checks the width-eight example that rules out unrestricted prefix pruning: five glyphs and a tab encode eight columns in six characters, but the seven-column prefix requires at least seven characters. The exercises also examine alternative objectives and the intermediate loop derivation.
 
 | Exercise | Calculation and scope |
 | --- | --- |
