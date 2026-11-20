@@ -51,6 +51,29 @@ invariant (more e d) tail = append-low (reference e) d tail ∙ invariant e (d �
 print : Nat → List Digit
 print n = acc (build n n (rid n)) []
 
+-- Fuse build with acc. The recursive call takes the decimal quotient
+-- and the suffix already extended by its low digit. No Expansion is
+-- allocated by direct; it appears only on the specification side.
+direct : ∀ fuel n → n ≤ fuel → List Digit → List Digit
+direct zero .0 z≤ tail = oh ∷ tail
+direct (suc k) n bound tail with split n
+... | parts zero d = d ∷ tail
+... | parts (suc q) d with bound
+...   | s≤ h = direct k (suc q) (chain (s≤ (pad 8 (small q d))) h) (d ∷ tail)
+
+fusion : ∀ fuel n (p : n ≤ fuel) tail → acc (build fuel n p) tail ≡ direct fuel n p tail
+fusion zero .0 z≤ tail = refl
+fusion (suc k) n bound tail with split n
+... | parts zero d = refl
+... | parts (suc q) d with bound
+...   | s≤ h = fusion k (suc q) (chain (s≤ (pad 8 (small q d))) h) (d ∷ tail)
+
+printer : Nat → List Digit
+printer n = direct n n (rid n) []
+
+correct : ∀ n → print n ≡ printer n
+correct n = fusion n n (rid n) []
+
 zero-example : print 0 ≡ oh ∷ []
 zero-example = refl
 internal-zero : print 105 ≡ nonzero one ∷ oh ∷ nonzero five ∷ []
