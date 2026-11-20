@@ -73,5 +73,6 @@ import AoP.Greedy
 import AoP.Detab
 import AoP.TabFree
 import AoP.TabStop
+import AoP.Entab
 import AoP.Tardiness
 import AoP.TardinessExample
