@@ -69,6 +69,7 @@ import AoP.Products
 import AoP.Initial
 import AoP.ThreeOperations
 import AoP.IdentityAlgebra
+import AoP.ConstantInitial
 import AoP.FoldRetraction
 import AoP.ListAlgebra
 import AoP.Folds
