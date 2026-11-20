@@ -45,3 +45,11 @@ module Law {E S : Set} (rating : E → S) (z : S) (add : S → S → S) (R : S �
 
   guests : Rose E → List E
   guests t = names (plan (snd (table t))) []
+
+  mandatory : ∀ e ts → Entry (λ (g : Guests true ts) → score (invite {e = e} g))
+  mandatory e ts with fst (rows ts)
+  ... | entry g v eq opt = entry g (add (rating e) v) (cong (add (rating e)) eq)
+    (λ q → mono (rid (rating e)) (opt q))
+
+  with-president : E → Forest E → List E
+  with-president e ts = e ∷ namesᶠ (plan (mandatory e ts)) []

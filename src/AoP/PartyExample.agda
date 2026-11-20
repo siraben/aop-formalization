@@ -7,6 +7,7 @@ module AoP.PartyExample where
 -- the invitation problem by computing their actual answers.
 open import AoP.Prelude
 open import AoP.Party using (module Planning)
+open import AoP.PartyCachedPlan using (module Law)
 open import AoP.Trees using (fork; grow; null)
 open import Agda.Builtin.Nat using (Nat; zero; _+_)
 open import AoP.NatOrder using (_≤_; rid; chain; sum-mono; compare)
@@ -27,3 +28,11 @@ ordinary = refl
 -- Requiring Ada costs two points; neither direct report may attend.
 mandatory : presidential-invitations Ada reports ≡ Ada ∷ []
 mandatory = refl
+
+module Cached = Law rating zero _+_ _≤_ rid chain sum-mono compare
+cached-ordinary : Cached.guests (fork Ada reports) ≡ Bo ∷ Cy ∷ []
+cached-ordinary = refl
+cached-mandatory : Cached.with-president Ada reports ≡ Ada ∷ []
+cached-mandatory = refl
+cached-president-score : Cached.Entry.cached (Cached.mandatory Ada reports) ≡ 8
+cached-president-score = refl
