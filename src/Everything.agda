@@ -502,6 +502,10 @@ import AoP.ConnectedPartitionTrace
 import AoP.ConnectedPartitionFusion
 import AoP.ConnectedStreamInvariant
 import AoP.ConnectedFastDecision
+import AoP.CachedConnectedFold
+import AoP.CachedConnectedTrace
+import AoP.CachedBlockExtrema
+import AoP.CachedFoldSimulation
 import AoP.ConnectedCutLongest
 import AoP.ConnectedReverseCut
 import AoP.LongestPrefixUnique
