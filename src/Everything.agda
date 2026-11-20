@@ -221,6 +221,7 @@ import AoP.HalvingDigits
 import AoP.HalvingPower
 import AoP.ModulusBound
 import AoP.ModulusStep
+import AoP.BinaryModulus
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
