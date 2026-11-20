@@ -4,7 +4,9 @@ module AoP.AdjacentCoverage where
 open import AoP.Prelude
 open import AoP.Bump using (module Prune)
 open import AoP.AdjacentThin using (module Algorithm)
-open import AoP.Subsequences using (_∈_; here; there)
+open import AoP.Subsequences using (Subseq)
+open import AoP.Relations using (cons; nil)
+open import AoP.Refinement using (skip; keep)
 open import AoP.Thinning using (Thin; thin; thin-compose; thin-id)
 
 -- Exercise 8.13. Replacing two comparable heads by their winner is
@@ -26,3 +28,20 @@ module Law {A : Set} (Q : A → A → Set) (rr : ∀ x → Q x x)
     correct : ∀ xs → C.Covers (D.thinlist xs) xs
     correct [] = thin-id rr
     correct (a ∷ xs) = pending a xs
+
+    -- Reinsert an eliminated second input cell into the subsequence
+    -- witness. The first cell may itself have been discarded later.
+    insert-second : ∀ {ys : List A} {a xs} b → Subseq ys (a ∷ xs) → Subseq ys (a ∷ b ∷ xs)
+    insert-second b (cons skip p) = cons skip (cons skip p)
+    insert-second b (cons keep p) = cons keep (cons skip p)
+
+    pending-order : ∀ a xs → Subseq (D.pending a xs) (a ∷ xs)
+    pending-order a [] = cons keep (nil refl)
+    pending-order a (b ∷ xs) with cmp a b
+    ... | P.first _ = insert-second b (pending-order a xs)
+    ... | P.second _ = cons skip (pending-order b xs)
+    ... | P.retain = cons keep (pending-order b xs)
+
+    ordered : ∀ xs → Subseq (D.thinlist xs) xs
+    ordered [] = nil refl
+    ordered (a ∷ xs) = pending-order a xs
