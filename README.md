@@ -27,6 +27,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §4.6 | [Power](src/AoP/Power.agda) | Power transpose, fusion with a function, and existential image preserving identities and composition |
 | §§5.1–5.2 | [RelationalProducts](src/AoP/RelationalProducts.agda) | Product of relations preserves inclusion, identity, converse, and composition |
 | §5.3 | [RelationalSums](src/AoP/RelationalSums.agda) | Tag-preserving coproduct of relations; identity, composition, monotonicity and converse laws |
+| §5.4 | [PowerRelator](src/AoP/PowerRelator.agda) | Two-sided coverage of subsets, extensional identity, converse, and factorization through a middle subset |
 | §5.5 | [Relations](src/AoP/Relations.agda), [Refinement](src/AoP/Refinement.agda) | Inductive relational fold; derive a deterministic implementation from branch refinements; filter refines subsequence selection |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |

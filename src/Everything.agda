@@ -24,6 +24,7 @@ import AoP.Complement
 import AoP.Power
 import AoP.RelationalProducts
 import AoP.RelationalSums
+import AoP.PowerRelator
 import AoP.FixedPoint
 import AoP.Refinement
 import AoP.Thinning
