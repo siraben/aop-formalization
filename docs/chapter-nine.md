@@ -12,6 +12,8 @@
 
 [CachedEditCell](../src/AoP/CachedEditCell.agda) checks the book’s script-length cache for an interior cell. Matching letters copy the diagonal entry; unequal letters compare the two neighbouring cached lengths. Each branch prepends one command and increments the chosen length. The returned script is shortest and the cache equals its operation count. [CachedEditTable](../src/AoP/CachedEditTable.agda) builds the complete table from these entries. Empty-string boundaries admit only insertions or only deletions; each interior update uses the diagonal, below, and right entries. `solve` returns a shortest script and its certified length for any alphabet with decidable equality.
 
+[EditListMinimum](../src/AoP/EditListMinimum.agda) gives the external command-list specification. The returned list decodes to the requested pair of strings. Every competing command list decoding to that pair induces a typed competitor with the same operation count, so the returned list is at least as short.
+
 ## §9.3 Optimal bracketing
 
 [MatrixBracketCost](../src/AoP/MatrixBracketCost.agda) checks the size and cost functions in exercise 9.10. A matrix product of sizes `i × k` and `k × j` has size `i × j` and adds `i·k·j` scalar multiplications to the two subtree costs. For input dimensions `2 × 3`, `3 × 4`, and `4 × 5`, the two bracketings cost 64 and 90, respectively. The type indices ensure that each intermediate product has compatible dimensions. The cost counts ordinary dense scalar multiplications.
