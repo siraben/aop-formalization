@@ -533,6 +533,9 @@ import AoP.ReserveExtrema
 import AoP.ReservePrefixGreedy
 import AoP.ReservePrefixWitness
 import AoP.ReserveClipping
+import AoP.ReserveGrowth
+import AoP.ReserveGreedyClip
+import AoP.ReserveFoldAgreement
 import AoP.ReservePrefixTrace
 import AoP.ReserveIntervalExample
 import AoP.VanLengthOrder
