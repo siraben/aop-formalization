@@ -34,6 +34,7 @@ import AoP.PreorderFunctor
 import AoP.UniversalObjects
 import AoP.Functors
 import AoP.FunctorIso
+import AoP.TreeFunctor
 import AoP.Transformations
 import AoP.Polynomial
 import AoP.Products
