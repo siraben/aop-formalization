@@ -3,7 +3,7 @@ module AoP.Knapsack where
 
 open import AoP.Prelude
 open import Agda.Builtin.Nat using (Nat; zero; suc; _+_; _-_)
-open import AoP.PartyExample using (_≤_; z≤; s≤; rid; chain; sum-mono; compare)
+open import AoP.NatOrder using (_≤_; z≤; s≤; rid; chain; sum-mono; compare)
 open import AoP.Polynomial using (inl; inr)
 open import AoP.Complement using (⊥)
 
