@@ -42,7 +42,7 @@
 | 9.16 | Open: prove the dictionary cost algebra monotone. |
 | 9.17 | Open: prove the decoder’s initial-segment simulation law. |
 | 9.18 | Open: explain failure of the proposed prefix comparison. |
-| 9.19 | Open: simplify encoding when literal and pointer charges coincide. |
+| 9.19 | [UniformCodeCost](../src/AoP/UniformCodeCost.agda): with common charge `w`, bit cost equals code length times `w`. Minimizing the number of elements therefore suffices, including `w = 0` when all codes tie. This justifies the objective simplification; the dynamic encoder remains open. |
 | 9.20 | Open research exercise: derive a dictionary thinning fold on codes with an initial literal. |
 
 The inventory covers all 20 numbered exercises. The audit of unnumbered examples and intermediate derivations continues.

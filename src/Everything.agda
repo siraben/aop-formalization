@@ -414,6 +414,7 @@ import AoP.BracketEnumeration
 import AoP.BracketMinimum
 import AoP.AppendOptimal
 import AoP.Compression
+import AoP.UniformCodeCost
 import AoP.CompressionGrowth
 import AoP.PointerBounds
 import AoP.CompressionAlphabet
