@@ -403,8 +403,11 @@ import AoP.MeetFromJoin
 import AoP.EntireBridge
 import AoP.Joins
 import AoP.Complement
+import AoP.DivisionStability
 import AoP.NegationLaws
 import AoP.Schroeder
+import AoP.ModularDisjointness
+import AoP.RightModularDisjointness
 import AoP.Power
 import AoP.FibreEquality
 import AoP.InhabitedTranspose
