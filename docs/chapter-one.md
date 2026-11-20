@@ -2,6 +2,8 @@
 
 The numbered exercises below link to their checked constructions. For the section-level examples, the [README](../README.md) links to the main developments. The unnumbered examples are being checked section by section. For §1.1, [SmallDatatypes](../src/AoP/SmallDatatypes.agda) enumerates seven-bit ASCII, constructs the Boolean sum and product examples, checks their list lengths (130 and 256), and defines negation, switch, paired and curried conjunction, and optional values.
 
+For §1.2, [ArithmeticFolds](../src/AoP/ArithmeticFolds.agda) constructs addition, multiplication, and exponentiation by fixing their first argument. It also shows that the solutions of `f n ≡ f (suc n)` are exactly the constant functions. [Naturals](../src/AoP/Naturals.agda) covers fold uniqueness and the factorial and Fibonacci pair invariants.
+
 | Exercise | Construction or remaining work |
 | --- | --- |
 | 1.1 | [PositiveFold](../src/AoP/PositiveFold.agda): instantiating the proposed recursion at zero would give a natural equal to its successor. |
