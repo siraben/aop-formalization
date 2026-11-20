@@ -17,4 +17,6 @@ This inventory covers exercises 5.1–5.11 (§§5.1–5.2). A relator lifts a re
 
 In §5.3, [CopairCancellation](../src/AoP/CopairCancellation.agda) checks equation 5.11 (exercise 5.13) in `Rel`. The intermediate point carries a tag, so its path belongs to exactly one branch of the construction. The result is the union of the two component composites. The relational tensor used for products has pairs of intermediate points; reversing arrows preserves that tensor rather than turning it into a tagged union.
 
+[SumRestriction](../src/AoP/SumRestriction.agda) checks exercise 5.14: a step in the relational sum keeps its tag, so a common observation restricting that step need only be tested in the matching branch. Both inclusions retain the same observation witness.
+
 Later sections and the unnumbered calculations still need a full audit.

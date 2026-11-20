@@ -182,6 +182,7 @@ import AoP.RelationalCurry
 import AoP.PairInput
 import AoP.RelationalSums
 import AoP.CopairCancellation
+import AoP.SumRestriction
 import AoP.PowerRelator
 import AoP.RelationalFusion
 import AoP.Subsequences
