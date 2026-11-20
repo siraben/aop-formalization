@@ -8,7 +8,7 @@ This inventory covers §§3.1–3.2. The [one-pass average](../src/AoP/Average.a
 | 3.2 | [ProductComparison](../src/AoP/ProductComparison.agda): the two mapped projections give a natural comparison from `F (A × B)` to `F A × F B`. |
 | 3.3 | [Steep](../src/AoP/Steep.agda): maintain the suffix sum to test each entry with one comparison. |
 | 3.4 | [AuxiliaryFold](../src/AoP/AuxiliaryFold.agda): use the auxiliary fold result at each child and recover the desired answer by projection. |
-| 3.5 | Open: instantiate the auxiliary-fold construction for the book’s subtree-size balance criterion. |
+| 3.5 | [BalanceFold](../src/AoP/BalanceFold.agda): return each subtree’s size alongside its balance flag. Integer cross-products test the inclusive one-third and two-thirds bounds. |
 | 3.6–3.7 | [Predecessors](../src/AoP/Predecessors.agda) derives the descending list; [FactorialFusion](../src/AoP/FactorialFusion.agda) multiplies it without allocating the list. |
 | 3.8 | [MutualFold](../src/AoP/MutualFold.agda): mutual recursion for an initial algebra in `Fun`, with banana-split and the auxiliary fold as corollaries. |
 | 3.9 | [Slice](../src/AoP/Slice.agda): applying `tri tail` drops `i` elements from row `i`. |
