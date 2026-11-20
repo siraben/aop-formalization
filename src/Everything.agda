@@ -111,6 +111,7 @@ import AoP.RelDistribution
 import AoP.Currying
 import AoP.ExponentialCases
 import AoP.ExponentialFunctor
+import AoP.ExponentialRelator
 import AoP.PreorderExponential
 import AoP.MapNaturality
 import AoP.FunStrength
