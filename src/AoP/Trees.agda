@@ -79,3 +79,29 @@ spine-law (bin l r) ts = begin
 
 curry-uncurry : (t : Tree A) → curry (uncurry t) ≡ t
 curry-uncurry t = spine-law t null
+
+-- Conversely, peeling off the arguments of f(a,b) must recover [a,b],
+-- not [b,a]. State the forest lemma with a pending suffix: each argument
+-- peeled from a binary application goes immediately before that suffix.
+_++ᶠ_ : Forest A → Forest A → Forest A
+null ++ᶠ ys = ys
+grow x xs ++ᶠ ys = grow x (xs ++ᶠ ys)
+
+unitᶠ : (xs : Forest A) → xs ++ᶠ null ≡ xs
+unitᶠ null = refl
+unitᶠ (grow x xs) = cong (grow x) (unitᶠ xs)
+
+mutual
+  uncurry-curry : (t : Rose A) → uncurry (curry t) ≡ t
+  uncurry-curry (fork a xs) = begin
+    uncurry (apply (tip a) xs) ≡⟨ peel (tip a) xs null ⟩
+    fork a (xs ++ᶠ null)       ≡⟨ cong (fork a) (unitᶠ xs) ⟩
+    fork a xs ∎
+
+  peel : (t : Tree A) (xs ys : Forest A) → spine (apply t xs) ys ≡ spine t (xs ++ᶠ ys)
+  peel t null ys = refl
+  peel t (grow x xs) ys = begin
+    spine (apply (bin t (curry x)) xs) ys ≡⟨ peel (bin t (curry x)) xs ys ⟩
+    spine t (grow (uncurry (curry x)) (xs ++ᶠ ys))
+      ≡⟨ cong (λ u → spine t (grow u (xs ++ᶠ ys))) (uncurry-curry x) ⟩
+    spine t (grow x (xs ++ᶠ ys)) ∎
