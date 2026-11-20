@@ -367,6 +367,7 @@ import AoP.LineBreaks
 import AoP.ParagraphMinimum
 import AoP.Bitonic
 import AoP.SymmetricTour
+import AoP.SymmetricTourTable
 import AoP.BitonicTable
 import AoP.BitonicExample
 import AoP.FiniteMinimum

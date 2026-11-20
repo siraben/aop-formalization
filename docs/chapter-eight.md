@@ -60,7 +60,7 @@ Exercise 8.22 remains open: derive binary thinning with guards tested before the
 | Exercise | Remaining construction |
 | --- | --- |
 | 8.25 | Calculate the endpoint pairs produced by extending the left or right leg, then derive the order of the table entries. |
-| 8.26 | [SymmetricTour](../src/AoP/SymmetricTour.agda) proves that swapping both leg endpoints and every interior assignment preserves cost for symmetric edges. Fixing the first interior city on the outward leg removes the duplicate orientation; the reference recurrence then returns a globally optimal tour. A symmetry-reduced table implementation remains open. |
+| 8.26 | [SymmetricTour](../src/AoP/SymmetricTour.agda) proves that swapping both leg endpoints and every interior assignment preserves cost for symmetric edges. Fixing the first interior city on the outward leg removes the duplicate orientation; the reference recurrence then returns a globally optimal tour. [SymmetricTourTable](../src/AoP/SymmetricTourTable.agda) stores a single optimal cell per endpoint pair in each row. Reversing the shared cell provides the other orientation with the same cached price and an optimality proof. |
 | 8.27 | Allow a city to occur on both legs. |
 | 8.28 | Allow cities to be skipped. |
 | 8.29 | Derive a longest ordered subsequence algorithm by thinning. |
