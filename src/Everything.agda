@@ -87,6 +87,12 @@ import AoP.FilterCalculation
 import AoP.FilterCombinators
 import AoP.FilterMap
 import AoP.Categories
+import AoP.PartialGraphCategory
+import AoP.TotalPartialEmbedding
+import AoP.RelationGraphCategory
+import AoP.GraphInclusionTrace
+import AoP.SquareProductFunctors
+import AoP.InitialSegmentImage
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
