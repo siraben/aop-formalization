@@ -202,6 +202,7 @@ import AoP.SteepWork
 import AoP.Average
 import AoP.ProductComparison
 import AoP.AuxiliaryFold
+import AoP.CategoricalAuxiliaryFold
 import AoP.BalanceFold
 import AoP.MutualFold
 import AoP.Predecessors
@@ -337,6 +338,7 @@ import AoP.AppendEquation
 import AoP.Iteration
 import AoP.ParameterRecursion
 import AoP.ParameterFold
+import AoP.AdjointParameterFold
 import AoP.Relations
 import AoP.MeetWitness
 import AoP.MeetTerminal
