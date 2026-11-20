@@ -41,6 +41,7 @@ import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
 import AoP.FilterGreedy
 import AoP.LexSubsequence
+import AoP.LexHeadFold
 import AoP.MaximumSegment
 import AoP.SignedSegment
 import AoP.SegmentFusion
