@@ -19,7 +19,14 @@ module Ruby {A : Set} (e : A) (_⊛_ : A → A → A) (f : A → A)
   -- The algebra endomorphism can be moved outside the reduction.
   promote : ∀ xs → reduce (map f xs) ≡ f (reduce xs)
   promote [] = base
-  promote (x ∷ xs) = cong (f x ⊛_) (promote xs) ∙ step x (reduce xs)
+  promote (x ∷ xs) = begin
+    reduce (map f (x ∷ xs))
+      ≡⟨⟩  -- map and reduce on cons
+    f x ⊛ reduce (map f xs)
+      ≡⟨ cong (f x ⊛_) (promote xs) ⟩  -- induction hypothesis
+    f x ⊛ f (reduce xs)
+      ≡⟨ step x (reduce xs) ⟩  -- f preserves the algebra
+    f (reduce (x ∷ xs)) ∎
 
   -- Replace the materialised triangle with one traversal (§3.2).
   horner : ∀ xs → reduce (tri f xs) ≡ ⦅ e ∣ (λ x y → x ⊛ f y) ⦆ xs

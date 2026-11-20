@@ -24,7 +24,14 @@ unitˡ (xs ▻ x) = cong (_▻ x) (unitˡ xs)
 
 assoc : (xs ys zs : Snoc A) → xs ++ (ys ++ zs) ≡ (xs ++ ys) ++ zs
 assoc xs ys ε = refl
-assoc xs ys (zs ▻ z) = cong (_▻ z) (assoc xs ys zs)
+assoc xs ys (zs ▻ z) = begin
+  xs ++ (ys ++ (zs ▻ z))
+    ≡⟨⟩  -- unfold concatenation twice
+  (xs ++ (ys ++ zs)) ▻ z
+    ≡⟨ cong (_▻ z) (assoc xs ys zs) ⟩  -- induction on the final list
+  ((xs ++ ys) ++ zs) ▻ z
+    ≡⟨⟩  -- fold concatenation back up
+  (xs ++ ys) ++ (zs ▻ z) ∎
 
 -- Carry the already converted suffix instead of repeatedly appending at
 -- the end of a cons-list. Both conversions visit each constructor once.
