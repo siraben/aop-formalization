@@ -46,6 +46,7 @@ import AoP.Whiskering
 import AoP.FunctorCategory
 import AoP.WalkingArrow
 import AoP.ArrowCategory
+import AoP.DiagramEvaluation
 import AoP.SquareMonic
 import AoP.SwapNatural
 import AoP.Polynomial
