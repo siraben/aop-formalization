@@ -9,7 +9,7 @@
 | Move pivot bounds through flattening and permutation; derive quicksort by fusion | `upper-perm`, `lower-perm`, and `ordered` prove the forward bound-preservation and sortedness steps for natural numbers. The full relational equalities and fusion calculation remain open. |
 | 6.22: permutation and membership, selection guard | Open. |
 | 6.23: termination of both sorts | `shorter` in SelectionSort and `smaller` in Quicksort justify recursive calls by input length. |
-| 6.24: ordering by the intersection of preorders | Open. |
+| 6.24: ordering by the intersection of preorders | [OrderedMeet](../src/AoP/OrderedMeet.agda) proves both relational inclusions for arbitrary comparison relations, using the all-pairs definition of orderedness. |
 | 6.25: sorting a set represented by a list with duplicates | Open. |
 | 6.26–6.28: preorder, postorder and merge variants of tree flattening | Open. |
 | 6.29: changing the intermediate tree datatype | Open. |

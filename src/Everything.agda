@@ -48,6 +48,7 @@ import AoP.InsertionSort
 import AoP.Quicksort
 import AoP.QuickPermutation
 import AoP.QuickOrdered
+import AoP.OrderedMeet
 import AoP.Squaring
 import AoP.Binary
 import AoP.Refinement
