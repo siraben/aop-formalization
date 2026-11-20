@@ -64,6 +64,7 @@ import AoP.Party
 import AoP.Cylinder
 import AoP.Reserves
 import AoP.SecureBlock
+import AoP.VanSchedule
 import AoP.CylinderEntry
 import AoP.CylinderExample
 import AoP.PartyExample
