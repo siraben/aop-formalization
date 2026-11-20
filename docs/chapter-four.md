@@ -26,7 +26,7 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 | Exercise | Construction and scope |
 | --- | --- |
 | 4.19 | [MonicKernel](../src/AoP/MonicKernel.agda): a function is monic exactly when two inputs sharing an output must be equal. |
-| 4.20 | Open: construct the epi-monic factorization and establish its uniqueness up to isomorphism. |
+| 4.20 | [ImageComparison](../src/AoP/ImageComparison.agda): two given surjective/injective factorizations have a unique comparison isomorphism in `Fun`, using supplied preimages. Constructing a factorization for every function remains open. |
 | 4.21–4.23 | [TabulatedFunction](../src/AoP/TabulatedFunction.agda): simplicity makes the source column injective for a jointly injective table. Totality supplies a row for each input. Together these yield both inverse laws. |
 | 4.24 | [EntireBridge](../src/AoP/EntireBridge.agda): each row can be connected to an intermediate value exactly when the span lies in the composite relation. |
 | 4.25 | Open: determine when locale-valued relations admit tabulations. |

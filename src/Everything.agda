@@ -142,6 +142,7 @@ import AoP.Shunting
 import AoP.Tabulation
 import AoP.TabulatedFunction
 import AoP.MonicKernel
+import AoP.ImageComparison
 import AoP.EntireBridge
 import AoP.Joins
 import AoP.Complement
