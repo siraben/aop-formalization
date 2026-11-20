@@ -38,6 +38,7 @@ import AoP.ProductCategory
 import AoP.OrderProducts
 import AoP.ProjectionEpic
 import AoP.PartialProduct
+import AoP.LazyPair
 import AoP.ExchangeLaw
 import AoP.ProductUnit
 import AoP.ProductSymmetry
