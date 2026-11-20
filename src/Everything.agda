@@ -380,6 +380,7 @@ import AoP.UpsequenceFrontier
 import AoP.UpsequenceExtensions
 import AoP.UpsequenceSound
 import AoP.UpsequenceCoverage
+import AoP.LongestUpsequence
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
