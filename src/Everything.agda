@@ -33,6 +33,7 @@ import AoP.RelEpic
 import AoP.PreorderCategory
 import AoP.PreorderFunctor
 import AoP.UniversalObjects
+import AoP.ConstantArrow
 import AoP.Functors
 import AoP.FunctorIso
 import AoP.HomAction
