@@ -22,26 +22,33 @@ module Solver {A : Set} (Q : A → A → Set) (self : ∀ x → Q x x) (test : �
   singleton x .x .x here here = inl (self x)
   singleton x _ _ here (there ())
   singleton x _ _ (there ()) _
+  open import AoP.GreedyBoundaryAgreement using (module Agreement)
+  open Agreement Q using (Cuts; stop; take; unique)
+  block-list : ∀ {n xs} → Within n xs → List (List A)
+  block-list empty = []
+  block-list (cut {a = a} {xs = xs} _ p) = (a ∷ xs) ∷ block-list p
   record Result (xs : List A) : Set where
     constructor answer
     field count : Nat
           partition : Within count xs
           least : ∀ n → Within n xs → count ≤ n
-  block-list : ∀ {n xs} → Within n xs → List (List A)
-  block-list empty = []
-  block-list (cut {a = a} {xs = xs} _ p) = (a ∷ xs) ∷ block-list p
+          boundaries : Cuts xs (block-list partition)
+  install : ∀ {ys zs n} → ys ≡ zs → Within n ys → Within n zs
+  install refl w = w
+  unchanged : ∀ {ys zs n} (eq : ys ≡ zs) (w : Within n ys) → block-list w ≡ block-list (install eq w)
+  unchanged refl w = refl
   -- Fuel is the number of blocks in any known feasible partition.
   -- Exchange decreases it at every recursive call on a nonempty list.
   solve-with : ∀ n xs → Within n xs → Result xs
-  solve-with n [] _ = answer 0 empty (λ _ _ → z≤)
+  solve-with n [] _ = answer 0 empty (λ _ _ → z≤) stop
   solve-with 0 (x ∷ xs) ()
   solve-with (suc n) (x ∷ xs) budget with first (x ∷ xs) in chosen
   ... | result [] rest eq fits dom with dom (cons nil) (singleton x)
   ...   | ()
   solve-with (suc n) (x ∷ xs) budget | g@(result (a ∷ bs) rest eq fits dom) with solve-with n rest (exchange g budget)
-  ... | answer k p low = answer (suc k) (install eq (cut fits p)) min-bound
-    where install : ∀ {ys zs n} → ys ≡ zs → Within n ys → Within n zs
-          install refl w = w
+  ... | answer k p low cuts = answer (suc k) (install eq (cut fits p)) min-bound (shift (unchanged eq (cut fits p)) (take g cuts))
+    where shift : ∀ {bs cs} → bs ≡ cs → Cuts (x ∷ xs) bs → Cuts (x ∷ xs) cs
+          shift refl w = w
           min-bound : ∀ m → Within m (x ∷ xs) → suc k ≤ m
           min-bound 0 ()
           min-bound (suc m) rival = s≤ (low m (exchange g rival))
@@ -52,3 +59,5 @@ module Solver {A : Set} (Q : A → A → Set) (self : ∀ x → Q x x) (test : �
   solve : ∀ xs → Result xs
   solve xs with singles xs
   ... | n , p = solve-with n xs p
+  agrees : ∀ xs {bs} → Cuts xs bs → bs ≡ block-list (Result.partition (solve xs))
+  agrees xs w = unique w (Result.boundaries (solve xs))

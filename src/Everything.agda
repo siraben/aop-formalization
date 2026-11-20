@@ -502,6 +502,10 @@ import AoP.ConnectedPartitionTrace
 import AoP.ConnectedPartitionFusion
 import AoP.ConnectedStreamInvariant
 import AoP.ConnectedFastDecision
+import AoP.ConnectedCutLongest
+import AoP.ConnectedReverseCut
+import AoP.LongestPrefixUnique
+import AoP.GreedyBoundaryAgreement
 import AoP.ConnectedMaximum
 import AoP.LeftMinimumBlock
 import AoP.LeftMinimumDirection
