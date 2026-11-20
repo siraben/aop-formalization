@@ -51,6 +51,7 @@ import AoP.QuickOrdered
 import AoP.OrderedMeet
 import AoP.LeafSplit
 import AoP.PreorderSort
+import AoP.PostorderSort
 import AoP.PermutationGuard
 import AoP.Squaring
 import AoP.Binary
