@@ -17,7 +17,7 @@ This inventory covers exercises all 52 numbered exercises in Chapter 4. [Relatio
 | 4.15 | [SimpleZigzag](../src/AoP/SimpleZigzag.agda): simplicity collapses a zigzag; allowing both Boolean outputs disproves the converse. |
 | 4.16 | [RangeRotation](../src/AoP/RangeRotation.agda): expose the same range by exchanging triangle witnesses. |
 | 4.17 | [DomainPullback](../src/AoP/DomainPullback.agda): pull a domain test back along a function graph. |
-| 4.18 | Open: construct the allegory of locale-valued relations. |
+| 4.18 | [LocaleRelations](../src/AoP/LocaleRelations.agda) defines composition by joining the meets of path grades over all intermediate points. It proves the modular inequality by distributing the outer meet across that join and using the original target as witness in the converse composite. The category laws and full allegory instance remain open. |
 
 ## §4.3: tabulations
 
