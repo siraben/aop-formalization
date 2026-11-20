@@ -587,6 +587,7 @@ import AoP.LatenessExchange
 import AoP.LatenessPick
 import AoP.LatenessSchedule
 import AoP.LatenessThreshold
+import AoP.LatenessPeakBound
 import AoP.DeadlineSortExample
 import AoP.PickLast
 import AoP.BackwardSchedule
