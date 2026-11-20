@@ -50,6 +50,8 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 
 [LeftDivision](../src/AoP/LeftDivision.agda) checks the universal property of left division in `Rel`. Exercise 4.35 moves a function graph across either argument of division; the graph fixes the intermediate input, giving both directions of each equality. [DivisionCalculation](../src/AoP/DivisionCalculation.agda) checks the preceding three unnumbered identities for a composite, a union on the left, and a meet on the right.
 
+[ResidualConnections](../src/AoP/ResidualConnections.agda) checks exercise 4.36: fixing either factor makes composition left adjoint to division. Subtraction is left adjoint to adjoining the subtracted relation when its membership is decidable. Both maps in each pair are monotone by the adjunction laws.
+
 [MeetConnection](../src/AoP/MeetConnection.agda) checks exercise 4.39: the diagonal map is left adjoint to binary meet in the componentwise product order. It derives the adjunction from the meet projections and pairing, recovers both laws, and proves monotonicity of the two maps.
 
 [AdjointJoins](../src/AoP/AdjointJoins.agda) checks both directions of exercise 4.40 for monotone `f` on orders with small indexed joins. Given an adjunction, `f` preserves joins and `g y` is the join of the inputs whose images lie below `y`. Conversely, join preservation makes that join itself admissible, yielding `f x ≤ y` exactly when `x ≤ g y`. The rest of §4.4 still needs an exercise-by-exercise inventory.
