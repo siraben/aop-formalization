@@ -30,4 +30,6 @@
 
 [WellBounded](../src/AoP/WellBounded.agda) proves the connectedness part of 7.26 by taking a minimum of `{a,b}`. For 7.27 a minimum of the function image supplies a source witness for the pulled-back relation. For 7.28 every member lies above some minimum exactly when every inhabited set has a minimum. [StrictBoundCounterexample](../src/AoP/StrictBoundCounterexample.agda) refutes the converse strict-part claim for unrestricted preorders: equality on two points has an empty, well-founded strict part, but the two-point set has no minimum. A corrected equivalence with additional hypotheses remains open.
 
+[UnionMinimum](../src/AoP/UnionMinimum.agda) proves the union law in exercise 7.29 for indexed families. The minima of the union are exactly the minima of the union of the local minima. Empty member sets contribute no candidates. The list-fold derivation in the exercise remains open.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

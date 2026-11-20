@@ -32,6 +32,7 @@ import AoP.MinimalSymmetry
 import AoP.MinimalImage
 import AoP.MinimalSum
 import AoP.WellBounded
+import AoP.UnionMinimum
 import AoP.StrictBoundCounterexample
 import AoP.PrincipalMaximum
 import AoP.DecimalAccumulator
