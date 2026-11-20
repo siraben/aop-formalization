@@ -29,6 +29,7 @@ import AoP.FilterCalculation
 import AoP.Categories
 import AoP.Retractions
 import AoP.Cancellation
+import AoP.PreorderCategory
 import AoP.UniversalObjects
 import AoP.Functors
 import AoP.Transformations
