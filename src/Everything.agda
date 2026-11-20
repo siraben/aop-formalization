@@ -99,6 +99,7 @@ import AoP.LocaleComposition
 import AoP.LocaleAllegory
 import AoP.LocaleScalarTabulation
 import AoP.LocaleProductObstruction
+import AoP.TwoPointLocale
 import AoP.OrderProducts
 import AoP.ProjectionEpic
 import AoP.PartialProduct
