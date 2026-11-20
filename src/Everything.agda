@@ -314,6 +314,9 @@ import AoP.RelatorTests
 import AoP.AllegoryAdjointConverse
 import AoP.RelatorMapConverse
 import AoP.RelatorSpanConverse
+import AoP.ConverseFunctorWitness
+import AoP.ConverseMediatorOrder
+import AoP.TwoObjectAllegory
 import AoP.InhabitedFunctor
 import AoP.LaxChoices
 import AoP.RelatorDomain
