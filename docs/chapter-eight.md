@@ -22,6 +22,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 ## §8.3 Implementing thinning
 
-[SnocBump](../src/AoP/SnocBump.agda) implements the snoc-list fold in exercise 8.12. Each new candidate competes with the last survivor. Under universal comparison with ties awarded to the newcomer, the snoc fold on `[false,true]` keeps `true`, while the cons fold keeps `false`. General coverage and subsequence proofs for the snoc fold remain open.
+[SnocBump](../src/AoP/SnocBump.agda) implements the snoc-list fold in exercise 8.12. Each new candidate competes with the last survivor. Under universal comparison with ties awarded to the newcomer, the snoc fold on `[false,true]` keeps `true`, while the cons fold keeps `false`. [SnocBumpProof](../src/AoP/SnocBumpProof.agda) proves that reading the result last-element-first agrees with cons thinning on the input read in that same direction. This transfers the cons fold’s coverage and subsequence proofs to the snoc fold.
 
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.

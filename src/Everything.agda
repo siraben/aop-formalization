@@ -331,6 +331,7 @@ import AoP.GreedyFold
 import AoP.LayeredPaths
 import AoP.Bump
 import AoP.SnocBump
+import AoP.SnocBumpProof
 import AoP.Knapsack
 import AoP.KnapsackFrontier
 import AoP.KnapsackSearch
