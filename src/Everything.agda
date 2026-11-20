@@ -150,6 +150,7 @@ import AoP.FloorConnection
 import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.DigitInterval
+import AoP.OpenUpperDigit
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad

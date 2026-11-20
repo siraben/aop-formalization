@@ -37,7 +37,7 @@
 | --- | --- |
 | 10.12 | [DigitInterval](../src/AoP/DigitInterval.agda) proves uniqueness for a nonnegative rational scaled fraction `n/w`, with positive denominator. After clearing denominators the digit must satisfy `d*w ≤ n < (d+1)*w`; two distinct digits would force `n < n`. |
 | 10.13 | Derive the printer using integer arithmetic throughout. |
-| 10.14 | Isolate the nonintegral-quotient hypothesis on the scale and remove it. |
+| 10.14 | [OpenUpperDigit](../src/AoP/OpenUpperDigit.agda) treats the excluded upper endpoint: for positive `10q` and `w`, choosing the floor of `(10q−1)/w` gives the unique `d` with `d*w < 10q ≤ (d+1)*w`, even at exact multiples. The checked example `10*65536 = 5*131072` concerns arbitrary numerators; reachability of endpoints and the full printer derivation remain open. |
 | 10.15 | Characterize the selected shortest decimal and refine ties by distance to the represented value. |
 
 This inventory tracks all 15 numbered exercises. The unnumbered worked examples and intermediate derivations still need a separate audit.
