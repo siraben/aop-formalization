@@ -471,6 +471,8 @@ import AoP.KnapsackSortedTable
 import AoP.KnapsackStreamLaw
 import AoP.KnapsackTableCoverage
 import AoP.KnapsackHead
+import AoP.KnapsackPackBridge
+import AoP.KnapsackItemExample
 import AoP.KnapsackSearch
 import AoP.Paragraph
 import AoP.LineWidthClosure
