@@ -113,6 +113,7 @@ import AoP.ExponentialCases
 import AoP.ExponentialFunctor
 import AoP.ExponentialRelator
 import AoP.RelatorTests
+import AoP.PowerMeetFailure
 import AoP.PreorderExponential
 import AoP.MapNaturality
 import AoP.FunStrength
