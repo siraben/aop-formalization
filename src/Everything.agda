@@ -10,6 +10,7 @@ import AoP.Snoc
 import AoP.Trees
 import AoP.CurriedExpression
 import AoP.Inverses
+import AoP.DecimalDigits
 import AoP.Naturality
 import AoP.PointFree
 import AoP.Categories
