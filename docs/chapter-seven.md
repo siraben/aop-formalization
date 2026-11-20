@@ -74,4 +74,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [FilterGreedy](../src/AoP/FilterGreedy.agda) derives the filter recurrence in exercise 7.41 via the greedy theorem. Dropping a head preserves the tail result; retaining a passing head gains one element. Each branch admits a matching step from a longer tail, so the computed result attains maximum length among feasible subsequences. The `tight` proof establishes uniqueness: skipping a passing head would force the tail to exceed its own maximum length. Thus every feasible result attaining the bound equals the filter output.
 
+[LexSubsequence](../src/AoP/LexSubsequence.agda) proves the first stage of exercise 7.42. Prepending the same head preserves dictionary order, so either subsequence step can be matched from a better tail. The greedy fold compares dropping and retaining the head and returns a lexically greatest subsequence. The descending invariant, head-only refinement and off-invariant counterexample remain open.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

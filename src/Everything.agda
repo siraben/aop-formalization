@@ -40,6 +40,7 @@ import AoP.GreedyImage
 import AoP.TakeWhilePrefix
 import AoP.TakeWhileGreedy
 import AoP.FilterGreedy
+import AoP.LexSubsequence
 import AoP.MaximumSegment
 import AoP.SignedSegment
 import AoP.SegmentFusion
