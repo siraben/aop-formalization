@@ -179,6 +179,7 @@ import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
 import AoP.TransposeCombinations
 import AoP.ListSetify
+import AoP.SetifyCombination
 import AoP.PartitionFlatten
 import AoP.PartitionThree
 import AoP.ZippedSplits

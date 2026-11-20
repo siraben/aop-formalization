@@ -33,7 +33,7 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [TransposeCombinations](../src/AoP/TransposeCombinations.agda) checks exercise 5.20. For a given input, the outputs of a union form the union of the two output sets; intersection works analogously. For independent inputs, the possible output pairs form the Cartesian product.
 
-[ListSetify](../src/AoP/ListSetify.agda) checks exercises 5.21–5.22. Treating a list as its membership predicate turns nil into the empty set, a singleton list into a singleton set, cons into union with a singleton, and map into direct image. Applying the same operation to the subsequence enumeration yields exactly the subsequence relation at the given input.
+[ListSetify](../src/AoP/ListSetify.agda) checks exercises 5.21–5.22. Treating a list as its membership predicate turns nil into the empty set, a singleton list into a singleton set, cons into union with a singleton, and map into direct image. [SetifyCombination](../src/AoP/SetifyCombination.agda) checks the intermediate laws: append gives binary union, concatenation gives union over the member lists, and `cpr` pairs a fixed value with each member. Applying setification to the subsequence enumeration yields exactly the subsequence relation at the given input.
 
 [SupersequenceFold](../src/AoP/SupersequenceFold.agda) checks exercise 5.23. The empty input permits any supersequence. Each required head permits an arbitrary prefix before its matching occurrence. The proof converts these witnesses in both directions to the skip/keep subsequence specification.
 
