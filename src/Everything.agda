@@ -482,6 +482,10 @@ import AoP.PowerGraphExtension
 import AoP.PowerMiddleBounds
 import AoP.PowerLargestOutput
 import AoP.ListFoldByMembership
+import AoP.AutomatonFibreFold
+import AoP.TypeLiftConverse
+import AoP.SubsequenceLayerCalculation
+import AoP.CartesianMenuPairs
 import AoP.RelationalFoldTransfer
 import AoP.RelationalFusion
 import AoP.FoldFixedFusion
