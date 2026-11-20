@@ -574,6 +574,7 @@ import AoP.EqualWeightDeadline
 import AoP.DeadlineRun
 import AoP.DeadlineCertificate
 import AoP.DeadlineMerge
+import AoP.DeadlineMergePermutation
 import AoP.PickLast
 import AoP.BackwardSchedule
 import AoP.LastBound
