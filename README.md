@@ -48,6 +48,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §9.1 | [Bellman](src/AoP/Bellman.agda) | Unary-subproblem principle of optimality: branchwise monotone extension preserves the validity of replacing each child by a minimum |
 | §9.2 | [EditScript](src/AoP/EditScript.agda) | Decode copy/delete/insert scripts to their endpoints; prove symmetry and feasibility of endpoint-indexed scripts; [EditMinimum](src/AoP/EditMinimum.agda) tabulates suffix pairs row by row, storing a shortest witness and its optimality proof in each cell |
 | §9.3 | [Bracketing](src/AoP/Bracketing.agda) | Cost and size of expression trees; same-input subtree replacement, with a checked concatenation example |
+| §9.4 | [Compression](src/AoP/Compression.agda) | Decode literals and overlapping backward references; prove literal encodings round-trip and reject an initial pointer |
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
 | §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant |
 

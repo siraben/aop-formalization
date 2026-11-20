@@ -49,5 +49,6 @@ import AoP.Bellman
 import AoP.EditScript
 import AoP.EditMinimum
 import AoP.Bracketing
+import AoP.Compression
 import AoP.Greedy
 import AoP.Detab
