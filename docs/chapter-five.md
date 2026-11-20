@@ -31,4 +31,6 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [EntireFold](../src/AoP/EntireFold.agda) checks the cons-list instance of exercise 5.19: an entire list algebra supplies a base value and a successor for each head and reduced tail, yielding a fold result for every input list. The general proof by reflection remains open.
 
+[TransposeCombinations](../src/AoP/TransposeCombinations.agda) checks exercise 5.20. For a given input, the outputs of a union form the union of the two output sets; intersection works analogously. For independent inputs, the possible output pairs form the Cartesian product.
+
 Later sections and the unnumbered calculations still need a full audit.
