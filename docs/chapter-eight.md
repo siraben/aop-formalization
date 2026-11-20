@@ -38,4 +38,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 [PolynomialChoices](../src/AoP/PolynomialChoices.agda) implements exercise 8.19 by recursion on polynomial functors. The identity case returns its menu; a constant contributes a singleton. Products enumerate independent choices by a Cartesian product, and sums preserve the input tag. The checked Boolean-product example computes all four output pairs. The membership characterization and exercise 8.20’s generality question remain open.
 
+[NonlinearChoices](../src/AoP/NonlinearChoices.agda) proves exercise 8.21 for `I × I`. The sorted Boolean menus `[false,true]` generate both `(false,true)` and `(true,false)`. These pairs are incomparable in the product order, while any two members of an ordered listing must be comparable. Hence even changing the enumeration order cannot satisfy (8.11).
+
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
