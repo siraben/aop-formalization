@@ -60,4 +60,8 @@ This inventory covers exercises 4.1–4.40 (§§4.1–4.4). [Relations](../src/A
 
 [AdjointJoins](../src/AoP/AdjointJoins.agda) checks both directions of exercise 4.40 for monotone `f` on orders with small indexed joins. Given an adjunction, `f` preserves joins and `g y` is the join of the inputs whose images lie below `y`. Conversely, join preservation makes that join itself admissible, yielding `f x ≤ y` exactly when `x ≤ g y`.
 
+## §4.5: Boolean allegories
+
+[NegationLaws](../src/AoP/NegationLaws.agda) checks exercises 4.41–4.42 in `Rel`. Negating the universal relation gives the empty relation, triple negation reduces to single negation, negation exchanges union with intersection of complements, and excluded middle holds under double negation. Eliminating double negation for all relations is equivalent to deciding membership in all relations. Exercise 4.43 (Schröder’s rule) remains open.
+
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.

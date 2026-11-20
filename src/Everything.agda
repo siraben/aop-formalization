@@ -161,6 +161,7 @@ import AoP.MeetFromJoin
 import AoP.EntireBridge
 import AoP.Joins
 import AoP.Complement
+import AoP.NegationLaws
 import AoP.Power
 import AoP.RelationalProducts
 import AoP.RelationalSums
