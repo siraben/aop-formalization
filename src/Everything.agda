@@ -71,5 +71,6 @@ import AoP.Bracketing
 import AoP.Compression
 import AoP.Greedy
 import AoP.Detab
+import AoP.TabFree
 import AoP.Tardiness
 import AoP.TardinessExample
