@@ -6,6 +6,8 @@ For §1.2, [ArithmeticFolds](../src/AoP/ArithmeticFolds.agda) constructs additio
 
 For §1.3, [DecimalPoint](../src/AoP/DecimalPoint.agda) evaluates the whole part with a snoc-list fold and the fractional part with a cons-list fold. The worked input `12.305` gives the exact ratio `12305/1000`. [NonemptyFolds](../src/AoP/NonemptyFolds.agda) derives `head` and shows why `foldr1` cannot change a singleton’s value. [Comprehension](../src/AoP/Comprehension.agda) proves that a guarded comprehension equals filtering followed by mapping; squaring the even numbers from 1 through 10 gives `[4,16,36,64,100]`.
 
+For §1.4, [ForestList](../src/AoP/ForestList.agda) checks the numeric and character trees, proves forests and lists of rose trees are mutually convertible, and expresses the forest fold as a list fold.
+
 | Exercise | Construction or remaining work |
 | --- | --- |
 | 1.1 | [PositiveFold](../src/AoP/PositiveFold.agda): instantiating the proposed recursion at zero would give a natural equal to its successor. |

@@ -14,6 +14,7 @@ import AoP.ConversionCost
 import AoP.Snoc
 import AoP.Trees
 import AoP.CurriedExpression
+import AoP.ForestList
 import AoP.Inverses
 import AoP.DecimalDigits
 import AoP.DecimalPoint
