@@ -3,6 +3,7 @@ module AoP.Entab where
 
 open import Agda.Builtin.Nat using (Nat; zero; suc)
 open import AoP.Prelude
+open import AoP.Complement using (⊥)
 open import AoP.Detab
 open import AoP.TabFree
 open import AoP.TabStop
@@ -19,15 +20,19 @@ module Encode {A : Set} (n : Nat) where
 
   data Test (k m : Nat) : Set where
     same : k ≡ m → Test k m
-    different : Test k m
+    different : (k ≡ m → ⊥) → Test k m
 
   test : ∀ k m → Test k m
   test zero zero = same refl
-  test zero (suc _) = different
-  test (suc _) zero = different
+  test zero (suc _) = different (λ ())
+  test (suc _) zero = different (λ ())
   test (suc k) (suc m) with test k m
   ... | same refl = same refl
-  ... | different = different
+  ... | different neq = different (λ eq → neq (cong pred eq))
+    where
+    pred : Nat → Nat
+    pred zero = zero
+    pred (suc i) = i
 
   record Buffer (target : Text) : Set where
     constructor buf
@@ -43,7 +48,7 @@ module Encode {A : Set} (n : Nat) where
   add-space : ∀ {s} → Buffer s → Buffer (s ▻ blank)
   add-space (buf xs k inv) with test k (position (detab xs))
   ... | same refl = buf (xs ▻ tab) 0 (snoc-blanks (detab xs) (position (detab xs)) ∙ cong (_▻ blank) inv)
-  ... | different = buf xs (suc k) (snoc-blanks (detab xs) k ∙ cong (_▻ blank) inv)
+  ... | different _ = buf xs (suc k) (snoc-blanks (detab xs) k ∙ cong (_▻ blank) inv)
 
   flush : ∀ {s} → Buffer s → Σ Text (λ xs → detab xs ≡ s)
   flush (buf xs k inv) = blanks xs k , (literal-blanks k xs ∙ inv)

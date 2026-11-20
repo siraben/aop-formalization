@@ -32,7 +32,7 @@ module Bound {A : Set} (n : Nat) where
   space-bound : ∀ {s} (b : Buffer s) → size (add-space b) ≤ suc (size b)
   space-bound (buf xs k inv) with test k (position (detab xs))
   ... | same refl = s≤ (grows xs (position (detab xs)))
-  ... | different rewrite snoc-blanks xs k = rid _
+  ... | different _ rewrite snoc-blanks xs k = rid _
 
   size-flush : ∀ {s} (b : Buffer s) → len (fst (flush b)) ≡ size b
   size-flush (buf _ _ _) = refl
