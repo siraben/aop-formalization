@@ -375,6 +375,7 @@ import AoP.FibreMinimumPrune
 import AoP.FibreMinimumFold
 import AoP.ThinningFold
 import AoP.UpsequenceDominance
+import AoP.UpsequenceDecision
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
