@@ -44,7 +44,7 @@ For exercise 8.22, [GuardedBinaryThin](../src/AoP/GuardedBinaryThin.agda) proves
 
 ## §8.4 The knapsack problem
 
-[Knapsack](../src/AoP/Knapsack.agda), [KnapsackSearch](../src/AoP/KnapsackSearch.agda), and [KnapsackFrontier](../src/AoP/KnapsackFrontier.agda) treat feasible selections, optimal search, and pruning. This section has no numbered exercise; its worked calculations still need a separate audit.
+[Knapsack](../src/AoP/Knapsack.agda), [KnapsackSearch](../src/AoP/KnapsackSearch.agda), and [KnapsackFrontier](../src/AoP/KnapsackFrontier.agda) treat feasible selections, optimal search, and pruning. [KnapsackGuardStep](../src/AoP/KnapsackGuardStep.agda) derives the guarded branch condition for natural weights and values: a lighter, at-least-as-valuable representative can match either taking or skipping the next item. Value alone fails at capacity 3: `(weight,value) = (1,4)` can take `(2,3)` and reach value 7, whereas `(3,5)` must skip and remains at 5. The derivation of the sorted merge-and-thin implementation remains open.
 
 ## §8.5 The paragraph problem
 
