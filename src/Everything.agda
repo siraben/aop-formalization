@@ -127,6 +127,7 @@ import AoP.AppendEquation
 import AoP.Iteration
 import AoP.Relations
 import AoP.MeetWitness
+import AoP.ModularRefinement
 import AoP.CoreflexiveMeet
 import AoP.Shunting
 import AoP.Tabulation
