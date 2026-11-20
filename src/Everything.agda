@@ -78,6 +78,7 @@ import AoP.Categories
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
+import AoP.EmptyRelationTargets
 import AoP.Retractions
 import AoP.Cancellation
 import AoP.RelEpic
