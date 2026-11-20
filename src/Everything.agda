@@ -149,6 +149,7 @@ import AoP.AdjointJoins
 import AoP.MeetConnection
 import AoP.RelImplication
 import AoP.RelDifference
+import AoP.LeftDivision
 import AoP.ImplicationPullback
 import AoP.MeetFromJoin
 import AoP.EntireBridge
