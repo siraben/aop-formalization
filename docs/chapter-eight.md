@@ -18,6 +18,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 
 ## §8.2 Paths in a layered network
 
-[FibreMinimumPrune](../src/AoP/FibreMinimumPrune.agda) verifies the local pruning step of exercise 8.11. Group candidates by their intermediate state. When each inhabited enabled group has a minimum and cost dominance within a group implies simulation dominance, retaining the group minima is a valid thinning. The full fold derivation and exercise 8.10’s branching variants remain open.
+[FibreMinimumPrune](../src/AoP/FibreMinimumPrune.agda) verifies the local pruning step of exercise 8.11. Group candidates by their intermediate state. When each inhabited enabled group has a minimum and cost dominance within a group implies simulation dominance, retaining the group minima is a valid thinning. [FibreMinimumFold](../src/AoP/FibreMinimumFold.agda) carries this pruning step through a cons-list fold: generate intermediate states from the retained tail, keep each enabled group’s minima, then apply the thinning theorem. With the stated base thinning and simulation hypothesis, every final table minimum is a minimum of the full search. The general relator derivation and exercise 8.10’s branching variants remain open.
 
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
