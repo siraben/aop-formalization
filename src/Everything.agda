@@ -343,6 +343,7 @@ import AoP.Quicksort
 import AoP.QuickSplitWork
 import AoP.QuickZeros
 import AoP.QuickWorstBound
+import AoP.QuickTight
 import AoP.QuickPermutation
 import AoP.QuickOrdered
 import AoP.OrderedMeet
