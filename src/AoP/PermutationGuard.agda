@@ -58,6 +58,21 @@ module Guard {A : Set} where
     lift : Pair ← Pair
     lift (b , ys) (a , xs) = (b ≡ a) × Perm xs ys
 
+    open import AoP.Relations using (_／_; _˘; _⊓_)
+    open import AoP.Shunting using (Id; graph)
+
+    -- Division says that R relates the candidate to every member of
+    -- the list. Feed the two projections through this relation, then
+    -- intersect with identity to retain precisely the passing pairs.
+    test : Pair ← Pair
+    test = Id ⊓ (graph fst ˘ ∘ ((R ／ (_∈_ ˘)) ∘ graph snd))
+
+    express : ok ⊆ test
+    express (refl , bound) = refl , _ , refl , _ , bound , refl
+
+    interpret : test ⊆ ok
+    interpret (refl , _ , refl , _ , bound , refl) = refl , bound
+
     commute : lift ∘ ok ⊆ ok ∘ lift
     commute (_ , (eq , p) , refl , bound) = _ , (refl , (λ m → subst _ (sym eq) (bound (backward p m)))) , eq , p
       where
