@@ -238,6 +238,11 @@ import AoP.TeXNumeratorBounds
 import AoP.TeXNearestFeasible
 import AoP.TeXRenderWidth
 import AoP.TeXRenderedNearest
+import AoP.TeXPrinterAgreement
+import AoP.TeXClosestTrace
+import AoP.TeXNearestReading
+import AoP.TeXNearestShortest
+import AoP.TeXClosestPrinter
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
@@ -293,6 +298,8 @@ import AoP.Relations
 import AoP.MeetWitness
 import AoP.MeetTerminal
 import AoP.IndirectMeet
+import AoP.SemicommutativePaths
+import AoP.SetoidImageFactor
 import AoP.ModularRefinement
 import AoP.SimpleZigzag
 import AoP.CoreflexiveMeet

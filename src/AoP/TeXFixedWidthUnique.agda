@@ -37,6 +37,9 @@ private
   cell-eq : ∀ {v u n m a} → v ≡ u → n ≡ m → Cell v n a → Cell u m a
   cell-eq refl refl h = h
 
+numerator-bound : ∀ ds → suc (numerator ds) ≤ scale ds
+numerator-bound = below
+
 -- Width matters: .01 and .1 have the same numerator but different widths.
 recover : ∀ ds es → length ds ≡ length es → numerator ds ≡ numerator es → ds ≡ es
 recover [] [] _ _ = refl

@@ -1,11 +1,11 @@
 # Chapter 4: relations
 
-This inventory covers exercises all 52 numbered exercises in Chapter 4. [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
+This inventory covers all 52 numbered exercises in Chapter 4. [Relations](../src/AoP/Relations.agda) represents an edge by a witness and a composite by two edges with a shared intermediate point. For example, two Boolean-valued choices can lead to the same final output through different intermediate values. Exercise 4.3 shows exactly where that difference matters.
 
 | Exercise | Construction and scope |
 | --- | --- |
 | 4.1 | [IndirectMeet](../src/AoP/IndirectMeet.agda): compare the lower bounds of both bracketings to derive associativity from the meet universal property. |
-| 4.2 | Open: translate the two diagrams into inequations. |
+| 4.2 | [SemicommutativePaths](../src/AoP/SemicommutativePaths.agda) reads both paths from the left side vertex to the right. The first diagram gives `V ∘ R˘ ∘ S ⊆ U ∘ T˘`; the second gives `S ∘ R˘ ⊆ V˘ ∘ U ∘ T˘`. In each case `translate` and `read-back` convert between the inclusion and a witness that fills the dashed path for every solid path with the same endpoints. |
 | 4.3 | [MeetWitness](../src/AoP/MeetWitness.agda): prove the forward distribution inclusion and refute its converse with incompatible Boolean witnesses. |
 | 4.4 | [MeetTerminal](../src/AoP/MeetTerminal.agda): construct the thin category of common lower bounds and its terminal intersection. |
 | 4.5–4.6 | [ModularRefinement](../src/AoP/ModularRefinement.agda): keep a witness through a modular restriction; turn one edge into a three-edge zigzag. |
@@ -26,7 +26,7 @@ This inventory covers exercises all 52 numbered exercises in Chapter 4. [Relatio
 | Exercise | Construction and scope |
 | --- | --- |
 | 4.19 | [MonicKernel](../src/AoP/MonicKernel.agda): a function is monic exactly when two inputs sharing an output must be equal. |
-| 4.20 | [ImageComparison](../src/AoP/ImageComparison.agda): two given surjective/injective factorizations have a unique comparison isomorphism in `Fun`, using supplied preimages. Constructing a factorization for every function remains open. |
+| 4.20 | [ImageComparison](../src/AoP/ImageComparison.agda): two given surjective/injective factorizations have a unique comparison isomorphism in `Fun`, using supplied preimages. [SetoidImageFactor](../src/AoP/SetoidImageFactor.agda) constructs the intermediate image for every function as a setoid: inputs represent the same image element exactly when their outputs agree. Its quotient and inclusion graphs satisfy all three equations by mutual inclusion. An image with ordinary Agda equality for arbitrary types remains open. |
 | 4.21–4.23 | [TabulatedFunction](../src/AoP/TabulatedFunction.agda): simplicity makes the source column injective for a jointly injective table. Totality supplies a row for each input. Together these yield both inverse laws. |
 | 4.24 | [EntireBridge](../src/AoP/EntireBridge.agda): each row can be connected to an intermediate value exactly when the span lies in the composite relation. |
 | 4.25 | [LocaleScalarTabulation](../src/AoP/LocaleScalarTabulation.agda) proves a necessary condition by considering relations from a singleton to itself. Each total leg into a singleton has top grade at every input. Hence a scalar factored through two such legs must be equivalent to a join of copies of top indexed by the witness type. [LocaleProductObstruction](../src/AoP/LocaleProductObstruction.agda) constructs the coordinatewise square of a supplied frame. Every such join in the square has first coordinate below the second. If `low` is a grade with `top ≰ low`, the scalar `(top, low)` therefore cannot be tabulated. [TwoPointLocale](../src/AoP/TwoPointLocale.agda) gives a concrete counterexample with grades `Bool → Set` and small-indexed joins. Factoring the open containing only `false` would supply a witness at `false`; totality of both legs makes that same witness work at `true`, a contradiction. [TwoPointTotal](../src/AoP/TwoPointTotal.agda) proves that the allegory condition `id ⊆ f° ∘ f` for a singleton-valued leg is equivalent to the pointwise totality used here. Thus even the factorization part of tabulation fails. The grade carrier lives in `Set₁`. |

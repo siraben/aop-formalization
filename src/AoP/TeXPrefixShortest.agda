@@ -15,7 +15,7 @@ open import AoP.FractionCrossOrder using (module Arithmetic)
 open Arithmetic using (comm; sym; unit; step; nil; dist)
 open import Agda.Builtin.Nat using (Nat; suc; _+_; _*_)
 
-private
+module Calibration where
   times : ∀ a b c → (a * b) * c ≡ a * (b * c)
   times 0 b c = refl
   times (suc a) b c rewrite dist b (a * b) c | times a b c = refl
@@ -26,6 +26,8 @@ private
   cast refl refl h = h
   subst : ∀ (P : Nat → Set) {a b} → a ≡ b → P a → P b
   subst P refl x = x
+
+open Calibration
 
 module Positive (t : Nat) (bound : 2 + suc (t * 2) ≤ 131072) where
   lo = suc (t * 2)

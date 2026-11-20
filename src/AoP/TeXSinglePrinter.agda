@@ -19,10 +19,12 @@ module Certified (t : Nat) (b : suc (suc (suc (t * 2))) ≤ 131072) where
   minimal ds eq es yes = project result eq (Proof.minimal 131071 5 lo j b es (numerator es) (Decimal.into t es yes))
     where project : ∀ r → r ≡ printed ds → Short es r → length ds ≤ length es
           project .(printed ds) refl h = h
-  solve : Σ (List Digit) (λ ds → (result ≡ printed ds) × Shortest (suc t) ds)
-  solve = finish output
-    where finish : Σ (List Digit) (λ ds → (result ≡ printed ds) × (intern ds ≡ suc t)) → Σ (List Digit) (λ ds → (result ≡ printed ds) × Shortest (suc t) ds)
-          finish (ds , (eq , ok)) = ds , (eq , shortest ok (minimal ds eq))
+  -- Clients can transport the run equation without reducing the five-step run.
+  opaque
+    solve : Σ (List Digit) (λ ds → (result ≡ printed ds) × Shortest (suc t) ds)
+    solve = finish output
+      where finish : Σ (List Digit) (λ ds → (result ≡ printed ds) × (intern ds ≡ suc t)) → Σ (List Digit) (λ ds → (result ≡ printed ds) × Shortest (suc t) ds)
+            finish (ds , (eq , ok)) = ds , (eq , shortest ok (minimal ds eq))
 
 extern : ∀ n → suc n ≤ 65536 → Σ (List Digit) (Shortest n)
 extern 0 _ = [] , zero-shortest
