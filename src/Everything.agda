@@ -141,6 +141,7 @@ import AoP.DiagonalTest
 import AoP.Shunting
 import AoP.Tabulation
 import AoP.TabulatedFunction
+import AoP.MonicKernel
 import AoP.EntireBridge
 import AoP.Joins
 import AoP.Complement
