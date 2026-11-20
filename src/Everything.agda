@@ -513,6 +513,7 @@ import AoP.BracketSpineDominance
 import AoP.BracketSpineDecision
 import AoP.BracketFrontier
 import AoP.BracketFrontierCoverage
+import AoP.BracketFrontierMinimum
 import AoP.BracketMinimum
 import AoP.PermutedBrackets
 import AoP.PermutedMinimum
