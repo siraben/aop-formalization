@@ -335,6 +335,7 @@ import AoP.Party
 import AoP.Cylinder
 import AoP.Reserves
 import AoP.SecureBlock
+import AoP.SecureSubsequence
 import AoP.LongestPrefix
 import AoP.VanTrimming
 import AoP.VanBudget

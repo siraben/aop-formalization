@@ -76,4 +76,8 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [LexSubsequence](../src/AoP/LexSubsequence.agda) proves the first stage of exercise 7.42. Prepending the same head preserves dictionary order, so either subsequence step can be matched from a better tail. The greedy fold compares dropping and retaining the head and returns a lexically greatest subsequence. [LexHeadFold](../src/AoP/LexHeadFold.agda) maintains a descending result and certifies its head-only decision as a greedy step. In particular, a tied head is retained: on a descending suffix its extra occurrence postpones a drop or extends the list. [LexCounterexample](../src/AoP/LexCounterexample.agda) shows why this decision requires the invariant: prepending `0` to `[0,1]` on a tie gives `[0,0,1]`, strictly below dropping the head. [LexWinner](../src/AoP/LexWinner.agda) proves that every attainable greatest result equals the head-only fold and hence is descending. Antisymmetry of dictionary order, derived from irreflexivity and transitivity of the strict element order, also gives equality with the full-comparison algorithm.
 
+## §7.5 The security van
+
+[SecureSubsequence](../src/AoP/SecureSubsequence.agda) answers exercise 7.50. At capacity one, the stream `[+1,−1,+1]` is secure starting from zero. Its subsequence `[+1,+1]` overflows from every possible initial balance. This distinguishes arbitrary deletions from cutting a contiguous prefix or suffix.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
