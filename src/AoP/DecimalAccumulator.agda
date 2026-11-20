@@ -2,7 +2,7 @@
 module AoP.DecimalAccumulator where
 
 open import AoP.Prelude
-open import AoP.DecimalDigits using (Digit; oh; nonzero; one; five; value)
+open import AoP.DecimalDigits using (Digit; Nonzero; oh; nonzero; one; five; value)
 open import AoP.DecimalDivision using (tens; Split; parts; split)
 open import AoP.NatOrder using (_≤_; z≤; s≤; weaken; rid; chain)
 open import AoP.Naturality using (_++_)
@@ -89,6 +89,22 @@ round-trip : ∀ n → read-from 0 (printer n) ≡ n
 round-trip n = cong (read-from 0) (back (correct n)) ∙ read-acc (build n n (rid n)) []
   where back : ∀ {x y : List Digit} → x ≡ y → y ≡ x
         back refl = refl
+
+-- Positive dividends start with a nonzero digit even with an arbitrary
+-- pending suffix. The multiple-digit case inherits the first digit of
+-- its positive quotient; interior zeroes remain unrestricted.
+data StartsPositive : List Digit → Set where
+  starts : ∀ d ds → StartsPositive (nonzero d ∷ ds)
+
+positive-acc : ∀ {m n} (e : Expansion m) → m ≡ suc n → ∀ tail → StartsPositive (acc e tail)
+positive-acc (single oh) () tail
+positive-acc (single (nonzero d)) eq tail = starts d tail
+positive-acc (more e d) eq tail = positive-acc e refl (d ∷ tail)
+
+no-leading-zero : ∀ n → StartsPositive (printer (suc n))
+no-leading-zero n = move (correct (suc n)) (positive-acc (build _ _ (rid (suc n))) refl [])
+  where move : ∀ {xs ys} → xs ≡ ys → StartsPositive xs → StartsPositive ys
+        move refl p = p
 
 zero-example : print 0 ≡ oh ∷ []
 zero-example = refl
