@@ -5,7 +5,7 @@ This inventory covers the 40 numbered exercises in Chapter 2. The unnumbered exa
 | Exercise | Checked construction or remaining work |
 | --- | --- |
 | 2.1 | [Retractions](../src/AoP/Retractions.agda): applying the proposed right-unit law to the identity determines the arrow. |
-| 2.2 | Open: check which composites in the diagram have matching endpoints. |
+| 2.2 | [ArrowEndpoints](../src/AoP/ArrowEndpoints.agda) types `k ∘ h ∘ f ∘ h` along the path `A → B → A → B → C`. For `g ∘ k ∘ h`, the output of `k` is `C` but the input of `g` is `A`; the mismatch is proved for the distinct node labels. |
 | 2.3 | [Retractions](../src/AoP/Retractions.agda): use a chosen section to factor through its retraction, and prove the dual extension law. |
 | 2.4–2.5 | [Cancellation](../src/AoP/Cancellation.agda): cancel a section on the left and a retraction on the right. If a composite is epic, its outer arrow is epic; if monic, its inner arrow is monic. |
 | 2.6 | [PreorderCategory](../src/AoP/PreorderCategory.agda): every arrow cancels in both directions. On naturals, `1 → 0` has no return arrow. |
