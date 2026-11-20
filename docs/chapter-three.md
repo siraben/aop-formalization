@@ -54,7 +54,8 @@ Given decimal digits after the point, return the nearest count of units of size 
 | 3.31 | [AppendEquation](../src/AoP/AppendEquation.agda) splits equation 3.6 into its two constructor laws and recombines them in `Fun`. |
 | 3.32 | Open: derive distributivity from cartesian closure and coproducts. |
 | 3.33–3.34 | [ExponentialCases](../src/AoP/ExponentialCases.agda): exponentials indexed by zero, one and a coproduct, and global elements of function spaces; pointwise inverse laws in `Fun`. |
-| 3.35–3.37 | Open: characterize cartesian closed preorders, construct the exponential functor in an arbitrary cartesian closed category, and treat cartesian closure of the functor category in 3.37. |
+| 3.35 | [PreorderExponential](../src/AoP/PreorderExponential.agda): in a preorder with finite meets, an exponential `b^a` is a greatest `x` satisfying `x ∧ a ≼ b`. Both implications of this characterization are checked. |
+| 3.36–3.37 | Open: construct the exponential functor in an arbitrary cartesian closed category and treat cartesian closure of the functor category in 3.37. |
 | 3.38 | [MapNaturality](../src/AoP/MapNaturality.agda): list map is natural contravariantly in the input element type and covariantly in the output. |
 | 3.39 | [ListStrength](../src/AoP/ListStrength.agda): derive the right-list product by currying and mapping, with the left-list variant. |
 | 3.40 | [FunStrength](../src/AoP/FunStrength.agda) proves the book’s strength condition on `Fun`. [SwapStrength](../src/AoP/SwapStrength.agda) gives a functor on `Fun × Fun` with no possible strength component. |

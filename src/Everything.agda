@@ -109,6 +109,7 @@ import AoP.StrictInitial
 import AoP.RelDistribution
 import AoP.Currying
 import AoP.ExponentialCases
+import AoP.PreorderExponential
 import AoP.MapNaturality
 import AoP.FunStrength
 import AoP.SwapStrength
