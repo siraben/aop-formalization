@@ -530,6 +530,7 @@ import AoP.VanComparison
 import AoP.VanRefinement
 import AoP.VanFold
 import AoP.ReserveExtrema
+import AoP.ReservePrefixGreedy
 import AoP.ReserveIntervalExample
 import AoP.VanLengthOrder
 import AoP.VanHeadOrder
