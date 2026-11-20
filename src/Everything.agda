@@ -508,6 +508,8 @@ import AoP.BracketColumnLoop
 import AoP.BracketSpine
 import AoP.BracketEnumeration
 import AoP.ConverseFlattenFold
+import AoP.ConverseNonempty
+import AoP.FlattenConverseLaw
 import AoP.BracketPruneFailure
 import AoP.BracketSpineDominance
 import AoP.PoolPruning
