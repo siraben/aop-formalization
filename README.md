@@ -25,6 +25,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §§4.1, 4.4 | [Relations](src/AoP/Relations.agda) | Modular law and both implications of the universal property of right division |
 | §4.5 | [Complement](src/AoP/Complement.agda) | Order reversal, De Morgan’s law and division by negation; the classical direction takes double-negation stability explicitly |
 | §4.6 | [Power](src/AoP/Power.agda) | Power transpose, fusion with a function, and existential image preserving identities and composition |
+| §§5.1–5.2 | [RelationalProducts](src/AoP/RelationalProducts.agda) | Product of relations preserves inclusion, identity, converse, and composition |
 | §5.5 | [Relations](src/AoP/Relations.agda), [Refinement](src/AoP/Refinement.agda) | Inductive relational fold; derive a deterministic implementation from branch refinements; filter refines subsequence selection |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
 | §§7.1, 8.1 | [Thinning](src/AoP/Thinning.agda) | Feasible minima, thinning as a preorder, and soundness and completeness of thin-introduction |
