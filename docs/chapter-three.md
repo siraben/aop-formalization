@@ -1,6 +1,6 @@
-# Chapter 3: paired folds and Horner’s rule
+# Chapter 3: paired folds, Horner’s rule, and TeX decimal input
 
-This inventory covers §§3.1–3.2. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
+This inventory covers §§3.1–3.3. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -17,3 +17,17 @@ This inventory covers §§3.1–3.2. The [one-pass average](../src/AoP/Average.a
 | 3.12 | [HornerMultiplier](../src/AoP/HornerMultiplier.agda): the constant-coefficient case forces the update to be multiplication by the evaluation point. |
 | 3.13 | [PositionSum](../src/AoP/PositionSum.agda): derive the position-weighted sum from a triangle. Shifting a suffix one place adds its ordinary sum to its weighted sum. |
 | 3.14 | [WeightedPaths](../src/AoP/WeightedPaths.agda): carry the total weight and weighted path length together. Increasing every tip depth by one adds the subtree’s total weight. |
+
+## §3.3: decimal input for TeX
+
+Given decimal digits after the point, return the nearest count of units of size `1/65536`, rounding ties upward. [TeXFraction](../src/AoP/TeXFraction.agda) folds the digits from the right with one extra binary digit of precision, then rounds once. Its refinement from exact valuation assumes the floor-and-shift identity. For example, `.00007` and `.00008` both round to 5 units, but prefixing a zero makes their rounded values differ.
+
+| Exercise | Checked construction or remaining work |
+| --- | --- |
+| 3.15 | [DecimalTriangle](../src/AoP/DecimalTriangle.agda): derive the decimal valuation fold from a triangle, assuming exact division by ten preserves zero and addition. |
+| 3.16 | Open: characterize all decimal inputs for each output at quarter-unit precision. |
+| 3.17 | Open: prove that retaining the first 17 decimal digits preserves the rounded result for every finite input. |
+| 3.18–3.19 | [FloorRule](../src/AoP/FloorRule.agda): equality follows from equality of lower bounds in a partial order. The floor rule then follows given transfer of the integer threshold across positive division and integral translation; the concrete arithmetic instance remains open. |
+| 3.20 | [FloorCounterexample](../src/AoP/FloorCounterexample.agda): exact half-integers witness failure for a fractional offset and for a fractional divisor. |
+| 3.21 | [ExtendUpdate](../src/AoP/ExtendUpdate.agda): extend an update along an injection given an image test that supplies a preimage. |
+| 3.22 | [RoundingCollision](../src/AoP/RoundingCollision.agda): two reachable decimal suffixes with the same rounded value give distinct results after the same digit is prefixed. |
