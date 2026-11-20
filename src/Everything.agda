@@ -71,6 +71,7 @@ import AoP.Comprehension
 import AoP.DecimalSuccessor
 import AoP.DecimalInverse
 import AoP.Naturality
+import AoP.PrefixEnumerationFold
 import AoP.NaturalShapes
 import AoP.PointFree
 import AoP.FilterCalculation
