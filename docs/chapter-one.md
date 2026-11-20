@@ -15,6 +15,6 @@ The numbered exercises below link to their checked constructions. For the sectio
 | 1.11–1.12 | [CountingFolds](../src/AoP/CountingFolds.agda): fold into a function awaiting an accumulator or count. Taking a prefix and dropping it produce pieces that append to the input. |
 | 1.13–1.14 | [Trees](../src/AoP/Trees.agda) folds rose trees and proves both currying round trips. [CurriedExpression](../src/AoP/CurriedExpression.agda) checks the concrete seven-label expression and its depth. |
 | 1.15 | [Inverses](../src/AoP/Inverses.agda): fold over the first list to obtain a function waiting for the second. The reverse zip/unzip law uses aligned lengths. |
-| 1.16 | [DecimalDigits](../src/AoP/DecimalDigits.agda): evaluate by a digit fold; `Printer` specifies the inverse by two laws. Its implementation remains open. |
+| 1.16 | [DecimalDigits](../src/AoP/DecimalDigits.agda): evaluate by a digit fold; `Printer` specifies the inverse by two laws. [DecimalSuccessor](../src/AoP/DecimalSuccessor.agda) implements printing by counting with carries and proves that evaluation recovers the positive input. The converse round trip remains open. |
 | 1.17 | [Naturality](../src/AoP/Naturality.agda): map commutes with concat, reverse, zip, and snoc-list prefix enumeration. |
 | 1.18–1.19 | [NaturalShapes](../src/AoP/NaturalShapes.agda): relabelling laws for the proposed polymorphic functions. The first type has no total inhabitant; the second has a checked root-selection example. |
