@@ -34,4 +34,6 @@
 
 [WellSupported](../src/AoP/WellSupported.agda) checks exercises 7.30–7.31. Every minimum is minimal, whereas equality on two points has a minimal member in every inhabited subset without having a minimum in the full set. Under a well-supported preorder, restricting attention to predecessors of a given member produces a minimal element below it that is also minimal in the original set.
 
+[UnionMinimal](../src/AoP/UnionMinimal.agda) proves exercise 7.32 for indexed families under a well-supported preorder. Keeping all local minimal elements preserves the global minimal elements, including ties and incomparable candidates. For a discarded challenger, exercise 7.31 supplies a retained one below it.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

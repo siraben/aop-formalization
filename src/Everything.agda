@@ -34,6 +34,7 @@ import AoP.MinimalSum
 import AoP.WellBounded
 import AoP.WellSupported
 import AoP.UnionMinimum
+import AoP.UnionMinimal
 import AoP.StrictBoundCounterexample
 import AoP.PrincipalMaximum
 import AoP.DecimalAccumulator
