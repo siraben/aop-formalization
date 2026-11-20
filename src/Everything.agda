@@ -508,6 +508,7 @@ import AoP.BracketColumnLoop
 import AoP.BracketSpine
 import AoP.BracketEnumeration
 import AoP.ConverseFlattenFold
+import AoP.BracketPruneFailure
 import AoP.BracketMinimum
 import AoP.PermutedBrackets
 import AoP.PermutedMinimum
