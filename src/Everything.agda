@@ -48,6 +48,7 @@ import AoP.Functors
 import AoP.FunctorIso
 import AoP.HomAction
 import AoP.TreeFunctor
+import AoP.TreeMonad
 import AoP.UniversalImage
 import AoP.SingletonImage
 import AoP.ProductNaturality
