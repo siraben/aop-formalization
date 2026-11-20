@@ -80,6 +80,7 @@ import AoP.Folds
 import AoP.Horner
 import AoP.Steep
 import AoP.Average
+import AoP.ProductComparison
 import AoP.AuxiliaryFold
 import AoP.Predecessors
 import AoP.TeXFraction
