@@ -677,6 +677,11 @@ import AoP.DictionaryCodeDomain
 import AoP.DictionaryConverseStep
 import AoP.DictionaryConverseCases
 import AoP.DictionaryConverseFold
+import AoP.DictionaryThinFailure
+import AoP.DictionaryThinState
+import AoP.DictionaryStatePrune
+import AoP.DictionaryStateExpand
+import AoP.DictionaryMoveCoverage
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
