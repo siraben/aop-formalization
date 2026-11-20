@@ -48,7 +48,7 @@ This inventory covers exercises 4.1–4.27 (§§4.1–4.3). [Relations](../src/A
 
 [LexicalOrder](../src/AoP/LexicalOrder.agda) checks exercise 4.34 in `Rel`. Compare by `R`, consulting `S` when `R` ties. This operation preserves preorders, is associative, and has the universal relation as a two-sided unit. [LexicalPairs](../src/AoP/LexicalPairs.agda) proves that the worked example on natural-number pairs agrees with the strict-first-or-tied comparison. It checks `(1,9) ≤ (2,0)` by the first coordinate and `(2,1) ≤ (2,3)` by the second.
 
-[LeftDivision](../src/AoP/LeftDivision.agda) checks the universal property of left division in `Rel`. Exercise 4.35 moves a function graph across either argument of division; the graph fixes the intermediate input, giving both directions of each equality.
+[LeftDivision](../src/AoP/LeftDivision.agda) checks the universal property of left division in `Rel`. Exercise 4.35 moves a function graph across either argument of division; the graph fixes the intermediate input, giving both directions of each equality. [DivisionCalculation](../src/AoP/DivisionCalculation.agda) checks the preceding three unnumbered identities for a composite, a union on the left, and a meet on the right.
 
 [MeetConnection](../src/AoP/MeetConnection.agda) checks exercise 4.39: the diagonal map is left adjoint to binary meet in the componentwise product order. It derives the adjunction from the meet projections and pairing, recovers both laws, and proves monotonicity of the two maps.
 
