@@ -80,6 +80,7 @@ import AoP.Folds
 import AoP.Horner
 import AoP.Steep
 import AoP.AuxiliaryFold
+import AoP.Predecessors
 import AoP.TeXFraction
 import AoP.TeXExternal
 import AoP.Conditions
