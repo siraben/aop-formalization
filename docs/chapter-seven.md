@@ -88,7 +88,7 @@ Together with the entries above, this register accounts for exercises 7.1–7.57
 
 | Exercise | Coverage or remaining proof |
 | --- | --- |
-| 7.7 | Open: the membership and converse-membership composition and its set-theoretic interpretation. |
+| 7.7 | [CommonSet](../src/AoP/CommonSet.agda) proves that membership composed with converse membership is universal: for any two elements the unordered pair contains both. This gives the pairing witness in the predicate model of sets. |
 | 7.36 | Open: necessity as well as sufficiency for the greedy theorem’s conclusion. |
 | 7.43 | [Party](../src/AoP/Party.agda) proves optimality of the tree calculation. The individual relational steps in the chapter derivation still need an audit. |
 | 7.44 | [PartyExample](../src/AoP/PartyExample.agda) checks a mandatory-president solution. A cost theorem with an explicit representation of guest lists remains open. |
