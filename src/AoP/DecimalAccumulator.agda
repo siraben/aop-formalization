@@ -74,6 +74,22 @@ printer n = direct n n (rid n) []
 correct : ∀ n → print n ≡ printer n
 correct n = fusion n n (rid n) []
 
+-- Reading a digit shifts the accumulated magnitude one decimal place.
+-- Reading the generated prefix in front of any suffix therefore leaves
+-- exactly the original number as the starting magnitude for that suffix.
+read-from : Nat → List Digit → Nat
+read-from m [] = m
+read-from m (d ∷ ds) = read-from (tens m + value d) ds
+
+read-acc : ∀ {n} (e : Expansion n) tail → read-from 0 (acc e tail) ≡ read-from n tail
+read-acc (single d) tail = refl
+read-acc (more e d) tail = read-acc e (d ∷ tail)
+
+round-trip : ∀ n → read-from 0 (printer n) ≡ n
+round-trip n = cong (read-from 0) (back (correct n)) ∙ read-acc (build n n (rid n)) []
+  where back : ∀ {x y : List Digit} → x ≡ y → y ≡ x
+        back refl = refl
+
 zero-example : print 0 ≡ oh ∷ []
 zero-example = refl
 internal-zero : print 105 ≡ nonzero one ∷ oh ∷ nonzero five ∷ []
