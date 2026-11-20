@@ -55,3 +55,27 @@ module Planning {Employee Score : Set} (rating : Employee → Score)
     ... | (a , ma) , (b , mb) | (as , mas) , (bs , mbs) =
       (join a as , (λ { (join x xs) → mono (ma x) (mas xs) })) ,
       (join b bs , (λ { (join x xs) → mono (mb x) (mbs xs) }))
+
+  -- The president must attend (second question of §7.3). Do not merely
+  -- allow the root to attend: restrict the whole optimization domain to
+  -- plans of the form `invite g`. The first forest entry is precisely
+  -- the best such g, since its immediate supervisor attends.
+  president : ∀ e ts → Best (λ (g : Guests true ts) → score (invite {e = e} g))
+  president e ts with fst (forest ts)
+  ... | g , optimal = g , λ h → mono (refl≤ (rating e)) (optimal h)
+
+  -- Extract the actual invitation list, not just its score. A forest is
+  -- visited left to right, with a suffix accumulator to avoid appends.
+  mutual
+    names : ∀ {p t} → Plan p t → List Employee → List Employee
+    names (invite {e} g) rest = e ∷ namesᶠ g rest
+    names (omit g) rest = namesᶠ g rest
+    namesᶠ : ∀ {p ts} → Guests p ts → List Employee → List Employee
+    namesᶠ none rest = rest
+    namesᶠ (join t ts) rest = names t (namesᶠ ts rest)
+
+  invitations : Rose Employee → List Employee
+  invitations t = names (fst (snd (tree t))) []
+
+  presidential-invitations : Employee → Forest Employee → List Employee
+  presidential-invitations e ts = e ∷ namesᶠ (fst (president e ts)) []
