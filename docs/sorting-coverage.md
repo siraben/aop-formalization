@@ -13,6 +13,6 @@
 | 6.25: sorting a set represented by a list with duplicates | Open. |
 | 6.26: preorder flattening | [PreorderSort](../src/AoP/PreorderSort.agda) selects a minimum for each root and recurses on a single right child. Its preorder traversal meets `Result`. |
 | 6.27: postorder flattening | [PostorderSort](../src/AoP/PostorderSort.agda) maintains a maximum at the root. Inserting each input key preserves occurrences and sorted postorder traversal. |
-| 6.28: merge variant of tree flattening | Open. |
+| 6.28: merge variant of tree flattening | [OrderedMerge](../src/AoP/OrderedMerge.agda) implements the merge step, records each head choice and proves preservation of sortedness and common lower bounds. Tree construction and the complete sort remain open. |
 | 6.29: changing the intermediate tree datatype | [LeafSplit](../src/AoP/LeafSplit.agda) exhibits an unchanged recursive input and proves strict length decrease when contiguous splits require two nonempty children. |
 | 6.30: insertion sort and its fusion condition | [InsertionSort](../src/AoP/InsertionSort.agda) proves the deletion guard, inserts into a sorted suffix, and returns the same `Result` as selection sort for natural numbers. |
