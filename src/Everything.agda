@@ -532,6 +532,7 @@ import AoP.VanFold
 import AoP.ReserveExtrema
 import AoP.ReservePrefixGreedy
 import AoP.ReservePrefixWitness
+import AoP.ReserveClipping
 import AoP.ReservePrefixTrace
 import AoP.ReserveIntervalExample
 import AoP.VanLengthOrder
