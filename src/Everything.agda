@@ -168,6 +168,7 @@ import AoP.Currying
 import AoP.DistributiveHoms
 import AoP.InverseNaturality
 import AoP.DistributiveSquare
+import AoP.ClosedDistributivity
 import AoP.RepresentingIso
 import AoP.ExponentialCases
 import AoP.ExponentialFunctor
