@@ -511,6 +511,11 @@ import AoP.FixedPoint
 import AoP.UniqueFixedBounds
 import AoP.AbstractFoldBounds
 import AoP.HyloDivisionBound
+import AoP.HyloBranchUnion
+import AoP.PositiveLoopFixed
+import AoP.AccessiblePlus
+import AoP.AccessibleNoDescent
+import AoP.AccessibleContainerHylo
 import AoP.PrefixLambek
 import AoP.RelPrefixLambek
 import AoP.DifunctionalClosure
@@ -518,6 +523,7 @@ import AoP.BinaryOctal
 import AoP.HalvingRun
 import AoP.HalvingDigits
 import AoP.HalvingPower
+import AoP.HalvingPowerWork
 import AoP.ModulusBound
 import AoP.ModulusStep
 import AoP.BinaryModulus
