@@ -369,6 +369,7 @@ import AoP.Bitonic
 import AoP.SymmetricTour
 import AoP.SymmetricTourTable
 import AoP.TourVariants
+import AoP.TourVariantExamples
 import AoP.BitonicTable
 import AoP.BitonicExample
 import AoP.FiniteMinimum
