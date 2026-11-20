@@ -57,6 +57,7 @@ import AoP.Whiskering
 import AoP.FunctorCategory
 import AoP.WalkingArrow
 import AoP.ArrowCategory
+import AoP.ArrowProducts
 import AoP.DiagramEvaluation
 import AoP.ArrowDiagram
 import AoP.DiagramRoundTrip

@@ -8,7 +8,7 @@ In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a di
 
 ## Results by book section
 
-Exercise inventories: [Chapter 1](docs/chapter-one.md) · [§§2.1–2.4](docs/chapter-two.md) · [§6.6 sorting](docs/sorting-coverage.md).
+Exercise inventories: [Chapter 1](docs/chapter-one.md) · [§§2.1–2.5](docs/chapter-two.md) · [§6.6 sorting](docs/sorting-coverage.md).
 
 | Book sections | Agda | Checked statements |
 | --- | --- | --- |

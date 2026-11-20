@@ -1,6 +1,6 @@
 # Chapter 2: categories, functors, and transformations
 
-This inventory covers the exercises in §§2.1–2.4. Later sections and the unnumbered examples still need an exercise-by-exercise and example-by-example audit.
+This inventory covers the exercises in §§2.1–2.5. Later sections and the unnumbered examples still need an exercise-by-exercise and example-by-example audit.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -26,3 +26,10 @@ This inventory covers the exercises in §§2.1–2.4. Later sections and the unn
 | 2.22 | [TerminalDiagrams](../src/AoP/TerminalDiagrams.agda): in the book’s preorder orientation, a terminal object is a least element. |
 | 2.23 | [ProductCategory](../src/AoP/ProductCategory.agda): construct the product category and pair initial or terminal objects componentwise. |
 | 2.24 | [TerminalDiagrams](../src/AoP/TerminalDiagrams.agda): the constant diagram at the target’s terminal object is terminal in the functor category. |
+| 2.25 | [OrderProducts](../src/AoP/OrderProducts.agda): maximum and minimum satisfy the product and coproduct bounds in the natural-number preorder. |
+| 2.26 | [ProductUnit](../src/AoP/ProductUnit.agda), [ProductSymmetry](../src/AoP/ProductSymmetry.agda), and [ProductAssociator](../src/AoP/ProductAssociator.agda) derive the inverse and naturality laws from product projections. |
+| 2.27 | [ExchangeLaw](../src/AoP/ExchangeLaw.agda): pairing commutes with case analysis by product and coproduct uniqueness. |
+| 2.28 | [ProjectionEpic](../src/AoP/ProjectionEpic.agda): injections are monic; projections can fail to be epic with an empty factor. |
+| 2.29 | [ArrowProducts](../src/AoP/ArrowProducts.agda): pair the sources and targets, then pair commuting squares. Both projections and uniqueness hold componentwise. |
+| 2.30 | [PartialProduct](../src/AoP/PartialProduct.agda): construct the unique pairing of partial functions, accounting for inputs where only one function is defined. |
+| 2.31 | [LazyPair](../src/AoP/LazyPair.agda): observing the outer constructor distinguishes two lazy pairs whose projections agree. |
