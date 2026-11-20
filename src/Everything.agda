@@ -54,6 +54,7 @@ import AoP.Inordered
 import AoP.PivotPermutation
 import AoP.PivotFusion
 import AoP.QuickFusion
+import AoP.QuickEquation
 import AoP.LeafSplit
 import AoP.PreorderSort
 import AoP.PostorderSort
