@@ -50,6 +50,7 @@ import AoP.HomAction
 import AoP.TreeFunctor
 import AoP.TreeMonad
 import AoP.FreeSubstitution
+import AoP.FreeMonad
 import AoP.UniversalImage
 import AoP.SingletonImage
 import AoP.ProductNaturality
