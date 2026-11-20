@@ -26,6 +26,7 @@ import AoP.LowerMinimum
 import AoP.MinimumMeet
 import AoP.ProductMinimum
 import AoP.TieMinimum
+import AoP.MinimalComparison
 import AoP.PrincipalMaximum
 import AoP.DecimalAccumulator
 import AoP.DecimalPoint

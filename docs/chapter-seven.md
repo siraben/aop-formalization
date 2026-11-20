@@ -18,4 +18,6 @@
 
 [TieMinimum](../src/AoP/TieMinimum.agda) derives exercise 7.16 in both directions. Taking an `R`-minimum among the `S`-minima gives the same candidates as comparing first by `S` and applying `R` on ties. Transitivity of `S` suffices for the concrete relation proof.
 
+[MinimalComparison](../src/AoP/MinimalComparison.agda) checks exercise 7.19. The comparison `R b a → R a b` used to test minimality is reflexive. A three-element preorder with one strict edge and an isolated point shows why this comparison can fail transitivity.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
