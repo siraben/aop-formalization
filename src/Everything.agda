@@ -101,6 +101,7 @@ import AoP.FloorRule
 import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.Conditions
+import AoP.RelDistribution
 import AoP.Currying
 import AoP.Relations
 import AoP.Shunting
