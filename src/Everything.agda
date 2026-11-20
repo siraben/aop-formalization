@@ -216,8 +216,13 @@ import AoP.ListMeet
 import AoP.DatatypeMeet
 import AoP.UnzipListLaw
 import AoP.UnzipContainer
+import AoP.UnzipProjectionLaw
+import AoP.UnzipOneSide
+import AoP.UnzipTrace
 import AoP.GuardCases
 import AoP.ImageNotRelator
+import AoP.ImageGraphFunctor
+import AoP.ImageGraphSetoid
 import AoP.PreorderExponential
 import AoP.MapNaturality
 import AoP.FunStrength
