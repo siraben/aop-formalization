@@ -545,6 +545,8 @@ import AoP.BranchingGreedy
 import AoP.EditScript
 import AoP.EditTail
 import AoP.EditSuffix
+import AoP.EditDropSquares
+import AoP.ScriptRelationInduction
 import AoP.EditSourceTail
 import AoP.EditSuffixPair
 import AoP.ScriptLengthOrder
