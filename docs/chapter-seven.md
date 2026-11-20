@@ -82,4 +82,22 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [LineWidthClosure](../src/AoP/LineWidthClosure.agda) verifies the width argument in exercise 7.56 for natural word widths and single-column spaces. Every nonempty prefix and suffix of a fitting line has width at most the original line’s width, so both fit the same margin. [LayoutTie](../src/AoP/LayoutTie.agda) compares two minimum-line layouts of three one-letter words at margin three. Breaking after word one or word two uses two lines, yet the unused space on the first line is two columns or zero respectively. The proof excludes a fitting one-line layout.
 
-The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
+### Remaining numbered items and case-study scope
+
+Together with the entries above, this register accounts for exercises 7.1–7.57. The audit of unnumbered examples and intermediate calculations continues.
+
+| Exercise | Coverage or remaining proof |
+| --- | --- |
+| 7.7 | Open: the membership and converse-membership composition and its set-theoretic interpretation. |
+| 7.36 | Open: necessity as well as sufficiency for the greedy theorem’s conclusion. |
+| 7.43 | [Party](../src/AoP/Party.agda) proves optimality of the tree calculation. The individual relational steps in the chapter derivation still need an audit. |
+| 7.44 | [PartyExample](../src/AoP/PartyExample.agda) checks a mandatory-president solution. A cost theorem with an explicit representation of guest lists remains open. |
+| 7.45–7.47 | [Cylinder](../src/AoP/Cylinder.agda) and [CylinderEntry](../src/AoP/CylinderEntry.agda) cover the three-move problem. Open: audit of relator assumptions, five allowed moves, and the singleton move variation. |
+| 7.48 | [VaultCapacity](../src/AoP/VaultCapacity.agda) relates reserve feasibility to the extrema of cumulative transactions. |
+| 7.49 | [Reserves](../src/AoP/Reserves.agda) cuts a feasible run at any boundary, certifying security of the prefix. |
+| 7.51–7.53 | Secure partition fusion, monotonicity of cons, and the three auxiliary equations still need a step-by-step audit against the verified schedule constructions. |
+| 7.54 | [VanRefinement](../src/AoP/VanRefinement.agda) certifies the longest-secure-prefix strategy. [CachedVanExample](../src/AoP/CachedVanExample.agda) shows how the right fold places a visit earlier on a tie. Global optimality of the cached right fold remains open. |
+| 7.55 | [ReserveExtrema](../src/AoP/ReserveExtrema.agda) covers reserve extrema; deriving both extrema calculations via the greedy theorem remains open. |
+| 7.57 | Open: monotonicity for the recursive partition order and its relationship to minimizing the number of visits. |
+
+Case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
