@@ -361,6 +361,7 @@ import AoP.QuickFusion
 import AoP.QuickEquation
 import AoP.QuickLeast
 import AoP.LeafSplit
+import AoP.LeafSplitCycle
 import AoP.PreorderSort
 import AoP.PostorderSort
 import AoP.OrderedMerge
