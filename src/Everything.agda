@@ -126,6 +126,7 @@ import AoP.TipTraversal
 import AoP.AppendEquation
 import AoP.Iteration
 import AoP.Relations
+import AoP.MeetWitness
 import AoP.Shunting
 import AoP.Tabulation
 import AoP.Joins
