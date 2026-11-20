@@ -46,6 +46,7 @@ In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a di
 | §5.7 | [LaxMembership](src/AoP/LaxMembership.agda) | Membership is lax natural for power lifting; the opposite inclusion holds for function graphs |
 | §§6.1, 6.4 | [Binary](src/AoP/Binary.agda) | Binary carry, increment correctness, and evaluation as a left inverse of unary-to-binary encoding |
 | §6.2 | [FixedPoint](src/AoP/FixedPoint.agda) | Knaster–Tarski: the infimum of the prefixpoints is the least fixed point, up to mutual inequality |
+| Exercise 6.3 | [Kleene](src/AoP/Kleene.agda) | Construct the least fixed point of a continuous operator as the union of its finite approximations |
 | §6.3 | [Hylo](src/AoP/Hylo.agda) | List hylomorphism as unfold followed by fold; prove both fixed-point inclusions and leastness |
 | §6.4 | [Squaring](src/AoP/Squaring.agda) | Calculate exponentiation by squaring over binary digits using associativity and a left unit |
 | §6.5 | [Inductive](src/AoP/Inductive.agda) | Accessibility of every recursive child makes the relational list hylomorphism the unique fixed point |
