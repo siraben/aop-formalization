@@ -232,6 +232,12 @@ import AoP.TeXSinglePrinter
 import AoP.TeXLoopGreatest
 import AoP.TeXWidthAgreement
 import AoP.TeXFixedWidthUnique
+import AoP.TeXNearestNeighbours
+import AoP.TeXNearestClamp
+import AoP.TeXNumeratorBounds
+import AoP.TeXNearestFeasible
+import AoP.TeXRenderWidth
+import AoP.TeXRenderedNearest
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
