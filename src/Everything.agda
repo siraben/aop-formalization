@@ -622,6 +622,9 @@ import AoP.Squaring
 import AoP.Binary
 import AoP.Refinement
 import AoP.Thinning
+import AoP.ThinFibreCalculation
+import AoP.ThinningHyloBound
+import AoP.ThinLayerFusion
 import AoP.ThinIdentity
 import AoP.ThinUnion
 import AoP.SingletonThinning
@@ -640,6 +643,7 @@ import AoP.SortedImage
 import AoP.SortedFilter
 import AoP.PolynomialChoices
 import AoP.InfiniteChoices
+import AoP.FinitaryShapeChoices
 import AoP.ChoiceCoverage
 import AoP.NonlinearChoices
 import AoP.QuadraticQueries
@@ -693,6 +697,7 @@ import AoP.LayeredCostFold
 import AoP.LayeredRowChoice
 import AoP.LayeredPathMinimum
 import AoP.LayeredHeadCache
+import AoP.LayeredCachedRow
 import AoP.BranchNetwork
 import AoP.BranchNetworkTrace
 import AoP.Bump
