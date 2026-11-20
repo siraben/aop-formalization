@@ -80,6 +80,7 @@ import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.Compression
 import AoP.CompressionGrowth
+import AoP.PointerBounds
 import AoP.Greedy
 import AoP.Detab
 import AoP.TabFree
