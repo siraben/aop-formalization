@@ -441,6 +441,9 @@ import AoP.NonlinearChoices
 import AoP.QuadraticQueries
 import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
+import AoP.FibrePowerThinning
+import AoP.InitialFibrePruning
+import AoP.FibreGeneration
 import AoP.FibreMinimumFold
 import AoP.ThinningFold
 import AoP.GuardedBinaryThin
@@ -474,6 +477,8 @@ import AoP.BusMinimum
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
+import AoP.BranchNetwork
+import AoP.BranchNetworkTrace
 import AoP.Bump
 import AoP.SnocBump
 import AoP.SnocBumpProof
