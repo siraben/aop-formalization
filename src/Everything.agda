@@ -8,6 +8,7 @@ import AoP.PositiveFold
 import AoP.SquareFold
 import AoP.LastSatisfying
 import AoP.CountingFolds
+import AoP.NonemptyFolds
 import AoP.ConversionFold
 import AoP.ConversionCost
 import AoP.Snoc
