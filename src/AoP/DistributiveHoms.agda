@@ -34,3 +34,20 @@ module Law {Obj : Set} (Hom : Obj → Obj → Set) (_+_ : Obj → Obj → Obj)
   ... | u , v rewrite section l u | section r v = cong (from whole) (pair-law eq) ∙ retract whole f
     where pair-law : ∀ {p} → to cases (to whole f) ≡ p → from cases p ≡ to whole f
           pair-law refl = retract cases (to whole f)
+
+  -- Reassemble the two branches as one arrow out of the coproduct
+  -- of products. This last step fixes the candidate representing object.
+  products = split (times a c) (times b c) t
+  distribute : Bijection (Hom (times (a + b) c) t) (Hom (times a c + times b c) t)
+  to distribute f = from products (to branches f)
+  from distribute g = from branches (to products g)
+  section distribute g = begin
+    from products (to branches (from branches (to products g)))
+      ≡⟨ cong (from products) (section branches (to products g)) ⟩
+    from products (to products g) ≡⟨ retract products g ⟩
+    g ∎
+  retract distribute f = begin
+    from branches (to products (from products (to branches f)))
+      ≡⟨ cong (from branches) (section products (to branches f)) ⟩
+    from branches (to branches f) ≡⟨ retract branches f ⟩
+    f ∎
