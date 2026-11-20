@@ -587,6 +587,8 @@ import AoP.PartyExample
 import AoP.Bellman
 import AoP.BranchingDP
 import AoP.IdentityDecompositions
+import AoP.ObjectiveThinning
+import AoP.ObjectiveThinningExample
 import AoP.BellmanTable
 import AoP.BranchingGreedy
 import AoP.EditScript
