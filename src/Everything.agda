@@ -102,6 +102,7 @@ import AoP.FloorCounterexample
 import AoP.TeXExternal
 import AoP.Conditions
 import AoP.BranchTags
+import AoP.Quad
 import AoP.DistributedCase
 import AoP.RelDistribution
 import AoP.Currying
