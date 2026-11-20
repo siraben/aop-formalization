@@ -313,6 +313,7 @@ import AoP.Hylo
 import AoP.Inductive
 import AoP.Selection
 import AoP.SelectionSort
+import AoP.SelectionFusion
 import AoP.InsertionSort
 import AoP.Quicksort
 import AoP.QuickPermutation
