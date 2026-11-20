@@ -341,6 +341,7 @@ import AoP.SelectionRelUnique
 import AoP.InsertionSort
 import AoP.InsertionGap
 import AoP.InsertionFusion
+import AoP.OrderedInsertionFold
 import AoP.Quicksort
 import AoP.QuickSplitWork
 import AoP.QuickSplitFold
