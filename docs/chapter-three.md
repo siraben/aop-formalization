@@ -15,3 +15,5 @@ This inventory covers §§3.1–3.2. The [one-pass average](../src/AoP/Average.a
 | 3.10 | [Hyperproduct](../src/AoP/Hyperproduct.agda): use commutativity to distribute squaring over multiplication, then fuse the triangle of repeated squarings. |
 | 3.11 | [GeneralHorner](../src/AoP/GeneralHorner.agda): derive the generalized Horner rule in `Fun` for a natural transformation of layers and a compatible reduction. |
 | 3.12 | [HornerMultiplier](../src/AoP/HornerMultiplier.agda): the constant-coefficient case forces the update to be multiplication by the evaluation point. |
+| 3.13 | Open: derive the paired fold for the sum weighted by list position. |
+| 3.14 | [WeightedPaths](../src/AoP/WeightedPaths.agda): carry the total weight and weighted path length together. Increasing every tip depth by one adds the subtree’s total weight. |

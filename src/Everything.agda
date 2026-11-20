@@ -80,6 +80,7 @@ import AoP.Folds
 import AoP.Horner
 import AoP.Slice
 import AoP.TipDepths
+import AoP.WeightedPaths
 import AoP.GeneralHorner
 import AoP.HornerMultiplier
 import AoP.Hyperproduct
