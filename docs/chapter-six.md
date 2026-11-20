@@ -1,6 +1,6 @@
 # Chapter 6: recursive programs
 
-This inventory covers §§6.1–6.2. The [sorting inventory](sorting-coverage.md) separately tracks the §6.6 algorithms and intermediate equations.
+This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md) separately tracks the §6.6 algorithms and intermediate equations.
 
 | Exercise | Construction and scope |
 | --- | --- |
@@ -14,5 +14,7 @@ This inventory covers §§6.1–6.2. The [sorting inventory](sorting-coverage.md
 | 6.8 | [DifunctionalClosure](../src/AoP/DifunctionalClosure.agda) builds finite derivations by completing rectangles. The proof establishes the fixed-point equation and leastness among all difunctional extensions. |
 
 [BinaryOctal](../src/AoP/BinaryOctal.agda) checks exercise 6.9 in §6.3. Unfold a low-bit-first word into triples, padding the last group with zeroes, then fold each triple into one octal digit. The proof establishes preservation of numeric value for every input, including the empty word. The worked example converts `110101₂` to `65₈`, both denoting 53.
+
+[SimpleHylo](../src/AoP/SimpleHylo.agda) checks the cons-list case of exercise 6.10. For a fixed input, two successful producer runs must emit the same list. A simple consumer then gives the same result on that list. Inputs with no finite run need no result. The general theorem for arbitrary initial types remains open.
 
 The remaining sections and the inventory of unnumbered examples still need a full audit.
