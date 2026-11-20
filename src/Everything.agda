@@ -113,6 +113,7 @@ import AoP.MapNaturality
 import AoP.FunStrength
 import AoP.SwapStrength
 import AoP.ListStrength
+import AoP.IndexedBranches
 import AoP.Iteration
 import AoP.Relations
 import AoP.Shunting
