@@ -44,6 +44,7 @@ import AoP.Hylo
 import AoP.Inductive
 import AoP.Selection
 import AoP.SelectionSort
+import AoP.Quicksort
 import AoP.Squaring
 import AoP.Binary
 import AoP.Refinement
