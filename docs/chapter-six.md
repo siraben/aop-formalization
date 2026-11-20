@@ -31,4 +31,6 @@ This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md
 
 [TreeMemberPath](../src/AoP/TreeMemberPath.agda) checks the two tree cases of exercise 6.17. Membership gives a path to a node carrying the sought label, and following such a path proves membership. A path ends at a tip in a tip-labelled tree; it may end at any fork in a fork-labelled tree. [ListMemberPath](../src/AoP/ListMemberPath.agda) checks the intermediate list equation `inlist = head ∘ tail*` in both directions: drop zero or more cells, then read the head of the resulting suffix. [MemberFold](../src/AoP/MemberFold.agda) derives list membership using the singleton and cons cases of the nonempty-list fold. For an inhabited element type, no ordinary relational cons-list fold directly returning an element can implement membership: a successful fold on a singleton needs a result on the empty tail, which has no members.
 
+[ContainerEmpty](../src/AoP/ContainerEmpty.agda) checks a container case of exercise 6.21. If every value has a member, there are no values over the empty element type. Conversely, if each shape has decidably inhabited positions, emptiness over the empty element type implies that every value has a member. The general Boolean-allegory proof remains open.
+
 The remaining sections and the inventory of unnumbered examples still need a full audit.
