@@ -177,6 +177,7 @@ import AoP.FibreEquality
 import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
 import AoP.TransposeCombinations
+import AoP.ListSetify
 import AoP.SingletonTranspose
 import AoP.LiberalPrecondition
 import AoP.TransformerOrder

@@ -33,4 +33,6 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [TransposeCombinations](../src/AoP/TransposeCombinations.agda) checks exercise 5.20. For a given input, the outputs of a union form the union of the two output sets; intersection works analogously. For independent inputs, the possible output pairs form the Cartesian product.
 
+[ListSetify](../src/AoP/ListSetify.agda) checks exercises 5.21–5.22. Treating a list as its membership predicate turns nil into the empty set, a singleton list into a singleton set, cons into union with a singleton, and map into direct image. Applying the same operation to the subsequence enumeration yields exactly the subsequence relation at the given input.
+
 Later sections and the unnumbered calculations still need a full audit.
