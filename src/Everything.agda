@@ -204,6 +204,17 @@ import AoP.TeXUpperResidual
 import AoP.TeXLowerResidual
 import AoP.TeXStrictDigit
 import AoP.TeXPrinterStep
+import AoP.TeXFirstGrid
+import AoP.TeXFivePlaces
+import AoP.TeXIntervalGrowth
+import AoP.TeXGridMinimum
+import AoP.TeXClosestShortest
+import AoP.TeXDistanceScale
+import AoP.TeXReadCell
+import AoP.TeXNestedCell
+import AoP.TeXExactState
+import AoP.TeXCellThreshold
+import AoP.TeXRoundInterval
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad

@@ -31,7 +31,7 @@
 
 ## §10.4 TeX decimal output
 
-[TeXExternal](../src/AoP/TeXExternal.agda) specifies shortest round-tripping output and verifies particular values. [TeXShortestSearch](../src/AoP/TeXShortestSearch.agda) gives an exhaustive reference printer. It searches all strings over the [ten digits](../src/AoP/TeXDigitAlphabet.agda) through length 17 and returns a shortest round-tripping string or a proof that none exists. The 17-digit cutoff sends every longer rival to a candidate of no greater length with the same decoded value. This finite search is impractically large. The book’s greedy integer printer and closest-output tie rule remain open.
+[TeXExternal](../src/AoP/TeXExternal.agda) specifies shortest round-tripping output and verifies particular values. [TeXShortestSearch](../src/AoP/TeXShortestSearch.agda) gives an exhaustive reference printer. It searches all strings over the [ten digits](../src/AoP/TeXDigitAlphabet.agda) through length 17 and returns a shortest round-tripping string or a proof that none exists. The 17-digit cutoff sends every longer rival to a candidate of no greater length with the same decoded value. This finite search is impractically large. [TeXClosestShortest](../src/AoP/TeXClosestShortest.agda) refines this reference search: among strings of minimum length that decode to the target, it returns one with least absolute error. [TeXDistanceScale](../src/AoP/TeXDistanceScale.agda) checks the common denominator at fixed length and the scores for `.00007` and `.00008`. The efficient greedy printer’s symbolic derivation remains open.
 
 | Exercise | Remaining construction |
 | --- | --- |
