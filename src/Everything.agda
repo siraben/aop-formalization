@@ -396,6 +396,7 @@ import AoP.BitonicExample
 import AoP.FiniteMinimum
 import AoP.Party
 import AoP.PartyListCost
+import AoP.PartyScoreTable
 import AoP.Cylinder
 import AoP.Reserves
 import AoP.SecureBlock
