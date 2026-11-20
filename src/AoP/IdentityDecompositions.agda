@@ -5,6 +5,7 @@ open import AoP.Prelude
 open import AoP.Relations using (_←_; _⊆_)
 open import AoP.Thinning using (Pred; Thin; Min; thin-id)
 open import AoP.ThinIdentity using (preserve)
+open import AoP.PowerRelator using (Lift; cover)
 
 -- Exercise 9.1. In Theorem 9.2 take equality as the preorder on
 -- decompositions. A retained set then contains exactly the original
@@ -25,6 +26,19 @@ module At {D V : Set} (R : V ← V) (unit : ∀ v → R v v)
     (e , y , q) → best w (e , snd (preserve th) e y , q)
   retain-all : ∀ {v} → Plain v (values all) → Σ (Pred D) λ X → Thin _≡_ X all × Plain v (values X)
   retain-all p = all , thin-id (λ _ → refl) , p
+
+  -- For the relational power P the outcome set O need not be the
+  -- full image. Keep O fixed and transport both coverage conditions.
+  forget-power : ∀ {X O v} → Thin _≡_ X all → Lift outcome O X × Min R v O → Lift outcome O all × Min R v O
+  forget-power t (p , m) = cover back forth , m
+    where
+    back : ∀ w → _ → _
+    back w o = let d , x , q = Lift.backward p w o in d , fst (preserve t) d x , q
+    forth : ∀ d → _ → _
+    forth d a = Lift.forward p d (snd (preserve t) d a)
+  retain-power : ∀ {O v} → Lift outcome O all × Min R v O →
+                 Σ (Pred D) λ X → Thin _≡_ X all × (Lift outcome O X × Min R v O)
+  retain-power p = all , thin-id (λ _ → refl) , p
 
 -- Equal recurrence bodies have the same least prefixpoints. Apply
 -- each leastness rule to the other solution after transferring its

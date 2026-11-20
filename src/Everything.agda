@@ -586,6 +586,7 @@ import AoP.CylinderExample
 import AoP.PartyExample
 import AoP.Bellman
 import AoP.BranchingDP
+import AoP.PrunedDP
 import AoP.IdentityDecompositions
 import AoP.ObjectiveThinning
 import AoP.ObjectiveThinningExample
@@ -604,6 +605,8 @@ import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
 import AoP.DisjointFibres
 import AoP.DisjointMinimum
+import AoP.DisjointPowerMinimum
+import AoP.BranchOutcomeChoice
 import AoP.EditMinimum
 import AoP.EditCellCount
 import AoP.CachedEditCell
