@@ -342,6 +342,7 @@ import AoP.InsertionSort
 import AoP.Quicksort
 import AoP.QuickSplitWork
 import AoP.QuickSplitFold
+import AoP.QuickSplitRefinement
 import AoP.QuickZeros
 import AoP.QuickWorstBound
 import AoP.QuickTight
