@@ -10,6 +10,8 @@ For §1.4, [ForestList](../src/AoP/ForestList.agda) checks the numeric and chara
 
 For §1.5, [InverseDomains](../src/AoP/InverseDomains.agda) identifies the image of `unzip` with aligned pairs of lists. The same module shows why unrestricted decimal digit lists have no left-inverse printer: the empty sequence and a single zero evaluate to the same number.
 
+For §1.7, [FilterCalculation](../src/AoP/FilterCalculation.agda) derives ordinary filtering from tagging each item with its predicate result, selecting the true tags, and projecting their values. The steps name concat naturality, map composition, and the Boolean guard law.
+
 | Exercise | Construction or remaining work |
 | --- | --- |
 | 1.1 | [PositiveFold](../src/AoP/PositiveFold.agda): instantiating the proposed recursion at zero would give a natural equal to its successor. |

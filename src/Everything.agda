@@ -25,6 +25,7 @@ import AoP.DecimalInverse
 import AoP.Naturality
 import AoP.NaturalShapes
 import AoP.PointFree
+import AoP.FilterCalculation
 import AoP.Categories
 import AoP.UniversalObjects
 import AoP.Functors
