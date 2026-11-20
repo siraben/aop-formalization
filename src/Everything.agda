@@ -566,6 +566,7 @@ import AoP.SumTardiness
 import AoP.ScheduleCostFactor
 import AoP.ScheduleAlgebraOrder
 import AoP.ScheduleInsertion
+import AoP.BagAlgebraFibre
 import AoP.TardinessExample
 import AoP.ScheduleSearch
 import AoP.ScheduleDuration
