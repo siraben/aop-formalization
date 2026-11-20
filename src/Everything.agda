@@ -22,6 +22,7 @@ import AoP.DecimalDivision
 import AoP.TwoMinima
 import AoP.MinimumComparison
 import AoP.UniqueMinimum
+import AoP.LowerMinimum
 import AoP.DecimalAccumulator
 import AoP.DecimalPoint
 import AoP.Comprehension

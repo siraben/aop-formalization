@@ -8,4 +8,6 @@
 
 [UniqueMinimum](../src/AoP/UniqueMinimum.agda) checks exercise 7.11 for reflexive relations. Antisymmetry gives at most one minimum on each set. Conversely, the shared two-element witness from 7.8 turns uniqueness into antisymmetry. The reflexivity hypothesis matters for this converse: a two-cycle without self-loops has no minima and fails antisymmetry.
 
+[LowerMinimum](../src/AoP/LowerMinimum.agda) proves exercises 7.5 and 7.12 for preorders. Transitivity makes every predecessor of a lower bound another lower bound; reflexivity supplies the converse witness. A member of a set is a minimum exactly when it precedes some minimum of that set.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
