@@ -94,6 +94,7 @@ import AoP.MutualFold
 import AoP.Predecessors
 import AoP.FactorialFusion
 import AoP.TeXFraction
+import AoP.FloorRule
 import AoP.TeXExternal
 import AoP.Conditions
 import AoP.Currying
