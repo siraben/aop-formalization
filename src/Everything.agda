@@ -341,6 +341,7 @@ import AoP.SelectionRelUnique
 import AoP.InsertionSort
 import AoP.Quicksort
 import AoP.QuickSplitWork
+import AoP.QuickZeros
 import AoP.QuickPermutation
 import AoP.QuickOrdered
 import AoP.OrderedMeet
