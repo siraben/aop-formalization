@@ -664,6 +664,11 @@ import AoP.DictionaryTokenCoverage
 import AoP.DictionaryHistory
 import AoP.DictionaryBellman
 import AoP.DictionaryOptimal
+import AoP.LongestPointerDominance
+import AoP.LongestPointerScan
+import AoP.PointerSpanOrder
+import AoP.ReducedDictionary
+import AoP.ReducedDictionaryTrace
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
