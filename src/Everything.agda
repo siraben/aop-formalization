@@ -94,6 +94,7 @@ import AoP.MutualFold
 import AoP.Predecessors
 import AoP.FactorialFusion
 import AoP.TeXFraction
+import AoP.RoundingCollision
 import AoP.FloorRule
 import AoP.FloorCounterexample
 import AoP.TeXExternal
