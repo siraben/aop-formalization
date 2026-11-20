@@ -153,6 +153,7 @@ import AoP.LexicalPairs
 import AoP.RelDifference
 import AoP.LeftDivision
 import AoP.ResidualConnections
+import AoP.OppositeComposition
 import AoP.DivisionCalculation
 import AoP.ImplicationPullback
 import AoP.MeetFromJoin
