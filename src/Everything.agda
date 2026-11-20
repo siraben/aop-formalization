@@ -16,6 +16,7 @@ import AoP.Trees
 import AoP.CurriedExpression
 import AoP.ForestList
 import AoP.Inverses
+import AoP.InverseDomains
 import AoP.DecimalDigits
 import AoP.DecimalPoint
 import AoP.Comprehension

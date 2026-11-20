@@ -8,6 +8,8 @@ For §1.3, [DecimalPoint](../src/AoP/DecimalPoint.agda) evaluates the whole part
 
 For §1.4, [ForestList](../src/AoP/ForestList.agda) checks the numeric and character trees, proves forests and lists of rose trees are mutually convertible, and expresses the forest fold as a list fold.
 
+For §1.5, [InverseDomains](../src/AoP/InverseDomains.agda) identifies the image of `unzip` with aligned pairs of lists. The same module shows why unrestricted decimal digit lists have no left-inverse printer: the empty sequence and a single zero evaluate to the same number.
+
 | Exercise | Construction or remaining work |
 | --- | --- |
 | 1.1 | [PositiveFold](../src/AoP/PositiveFold.agda): instantiating the proposed recursion at zero would give a natural equal to its successor. |
