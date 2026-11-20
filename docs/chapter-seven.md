@@ -46,4 +46,6 @@
 
 [LiftMinimum](../src/AoP/LiftMinimum.agda) proves the inclusion in exercise 7.18 for concrete relations with reflexive comparison. Add the reachable candidate to the intermediate set of 7.4. Its incoming edge preserves backward coverage, and reflexivity gives the missing comparison with itself, turning the lower bound into a minimum.
 
+The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agda) returns one minimum of a nonempty list under a decidable connected preorder. A successful head comparison selects the head, including on ties; in the other branch connectedness proves that the tail winner precedes the head. Each result carries input membership and its lower-bound proof.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

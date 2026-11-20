@@ -40,6 +40,7 @@ import AoP.WellBounded
 import AoP.WellSupported
 import AoP.UnionMinimum
 import AoP.ListMinimumFold
+import AoP.BinaryMinimum
 import AoP.UnionMinimal
 import AoP.StrictBoundCounterexample
 import AoP.PrincipalMaximum
