@@ -16,4 +16,8 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 | 8.8 | [GreedySingleton](../src/AoP/GreedySingleton.agda) specializes the cons-list thinning theorem to programs that choose a local minimum at every suffix. Exercise 8.5 turns local optimality into singleton thinning and the resulting global thinning back into global optimality. The abstract relator case remains open. |
 | 8.9 | [MinimalThinning](../src/AoP/MinimalThinning.agda) proves that retaining all minimal members of a set is a valid thinning under a well-supported preorder. Exercise 7.31 supplies a retained member below each input member. |
 
+## §8.2 Paths in a layered network
+
+[FibreMinimumPrune](../src/AoP/FibreMinimumPrune.agda) verifies the local pruning step of exercise 8.11. Group candidates by their intermediate state. When each inhabited enabled group has a minimum and cost dominance within a group implies simulation dominance, retaining the group minima is a valid thinning. The full fold derivation and exercise 8.10’s branching variants remain open.
+
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
