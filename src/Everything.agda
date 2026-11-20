@@ -215,6 +215,14 @@ import AoP.TeXNestedCell
 import AoP.TeXExactState
 import AoP.TeXCellThreshold
 import AoP.TeXRoundInterval
+import AoP.TeXEmitNumerator
+import AoP.TeXPrefixRun
+import AoP.TeXOccupiedPrefix
+import AoP.TeXPrefixShortest
+import AoP.TeXBoundedPrinter
+import AoP.TeXResidualLoop
+import AoP.TeXResidualGap
+import AoP.TeXLoopTermination
 import AoP.Conditions
 import AoP.BranchTags
 import AoP.Quad
