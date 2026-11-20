@@ -31,19 +31,28 @@ module Rules {c r : Level} {P : Set c} (_≤_ : P → P → Set r)
     backward = least diag n (trans (hm n (unfold nested))
                               (trans (fold (rows n)) (fold nested)))
 
+  -- Parameter monotonicity: the solution at b is a prefixpoint of
+  -- the row at a whenever a ≤ b. Leastness then compares the rows.
+  row-monotone : (h : P → P → P) (inner : P → P) →
+                 (∀ a → Mu (h a) (inner a)) →
+                 (∀ {a b} y → a ≤ b → h a y ≤ h b y) →
+                 ∀ {a b} → a ≤ b → inner a ≤ inner b
+  row-monotone h inner rows mono {a} {b} ab = least (rows a) (inner b)
+    (trans (mono (inner b) ab) (fold (rows b)))
+
   -- Substitution: roll f out of the outer binder. What remains is
   -- a nested fixed point with row at a given by h (f a); diagonalize
   -- those rows before applying f again.
   module Substitution (f inner : P → P) (h : P → P → P)
          (fm : ∀ {a b} → a ≤ b → f a ≤ f b)
-         (im : ∀ {a b} → a ≤ b → inner a ≤ inner b)
+         (left : ∀ {a b} y → a ≤ b → h a y ≤ h b y)
          (hm : ∀ a {b c} → b ≤ c → h a b ≤ h a c)
          (rows : ∀ a → Mu (h a) (inner a))
          {x n d} (outer : Mu (λ a → f (inner a)) x)
          (rolled : Mu (λ a → inner (f a)) n)
          (diagonal : Mu (λ a → h (f a) a) d) where
     private
-      module R = Rolling f inner fm im outer rolled
+      module R = Rolling f inner fm (row-monotone h inner rows left) outer rolled
       module D = Diagonal (λ a → h (f a)) (λ a → hm (f a))
                           (λ a → inner (f a)) (λ a → rows (f a)) rolled diagonal
     forward : x ≤ f d
