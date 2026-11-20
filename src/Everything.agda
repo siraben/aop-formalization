@@ -86,3 +86,4 @@ import AoP.UnitTabs
 import AoP.Tardiness
 import AoP.TardinessExample
 import AoP.ScheduleSearch
+import AoP.ScheduleDuration
