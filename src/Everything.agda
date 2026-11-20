@@ -218,6 +218,7 @@ import AoP.DifunctionalClosure
 import AoP.BinaryOctal
 import AoP.HalvingRun
 import AoP.HalvingDigits
+import AoP.HalvingPower
 import AoP.SimpleHylo
 import AoP.FoldReachability
 import AoP.FoldComparison
