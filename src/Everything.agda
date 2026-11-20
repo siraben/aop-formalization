@@ -689,6 +689,7 @@ import AoP.DictionaryStateRuns
 import AoP.DictionaryStateWinner
 import AoP.DictionaryRunShape
 import AoP.DictionaryStateMinimum
+import AoP.InversePoolTrace
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
