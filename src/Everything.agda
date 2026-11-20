@@ -444,6 +444,10 @@ import AoP.FibreMinimumPrune
 import AoP.FibrePowerThinning
 import AoP.InitialFibrePruning
 import AoP.FibreGeneration
+import AoP.FibreGenerationTransport
+import AoP.CertifiedFibreLayer
+import AoP.FibreFoldRefinement
+import AoP.FibreTieTrace
 import AoP.FibreMinimumFold
 import AoP.ThinningFold
 import AoP.GuardedBinaryThin
