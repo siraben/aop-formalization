@@ -35,6 +35,7 @@ import AoP.UniversalObjects
 import AoP.Functors
 import AoP.FunctorIso
 import AoP.TreeFunctor
+import AoP.UniversalImage
 import AoP.Transformations
 import AoP.Polynomial
 import AoP.Products
