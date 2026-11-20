@@ -2,7 +2,7 @@
 
 ## §9.1 Theory
 
-[TaggedThinning](../src/AoP/TaggedThinning.agda) checks both injection laws in exercise 9.5. When every input candidate has the same tag, every retained candidate has that tag. Removing the tags gives a thinning under that branch’s comparison, and every such thinning can be lifted back. The disjoint-range calculation and full proposition remain open.
+[TaggedThinning](../src/AoP/TaggedThinning.agda) checks both injection laws in exercise 9.5. When every input candidate has the same tag, every retained candidate has that tag. Removing the tags gives a thinning under that branch’s comparison, and every such thinning can be lifted back. [DisjointFibres](../src/AoP/DisjointFibres.agda) shows that the two ranges are disjoint exactly when restricting the right range to the complement of the left leaves it unchanged. Given a decision procedure for membership in the left range, the inverse fibre of the copair is obtained by selecting the corresponding tagged fibre. The final derivation of Proposition 9.1 remains open.
 
 ## §9.2 The string edit problem
 

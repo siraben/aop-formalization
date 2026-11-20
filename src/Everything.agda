@@ -404,6 +404,7 @@ import AoP.BranchingGreedy
 import AoP.EditScript
 import AoP.ScriptLengthOrder
 import AoP.TaggedThinning
+import AoP.DisjointFibres
 import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.MatrixBracketCost
