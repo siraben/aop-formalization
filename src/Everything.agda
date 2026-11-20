@@ -511,6 +511,7 @@ import AoP.BracketMinimum
 import AoP.PermutedBrackets
 import AoP.PermutedMinimum
 import AoP.PermutedValue
+import AoP.PermutedBracketExample
 import AoP.AppendOptimal
 import AoP.Compression
 import AoP.UniformCodeCost
