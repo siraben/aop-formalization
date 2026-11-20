@@ -18,6 +18,8 @@
 
 ## §9.4 Data compression
 
+[DictionaryExamples](../src/AoP/DictionaryExamples.agda) checks the three worked decoding examples: an overlapping copy extends `aba` to `ababab`, a literal and one pointer decode to ten copies of `a`, and the mixed literal/pointer sequence decodes to `aababacab`. The formal pointer stores its copy length minus one.
+
 [DictionarySearch](../src/AoP/DictionarySearch.agda) certifies a least-cost encoding by bounded exhaustive search. The dictionary dynamic program and its derivation remain open.
 
 ## Numbered exercise inventory

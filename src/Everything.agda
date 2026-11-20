@@ -418,6 +418,7 @@ import AoP.UniformCodeCost
 import AoP.DictionaryMonotone
 import AoP.ShortenPointer
 import AoP.DecoderInit
+import AoP.DictionaryExamples
 import AoP.CompressionGrowth
 import AoP.PointerBounds
 import AoP.CompressionAlphabet
