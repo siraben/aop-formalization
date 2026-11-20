@@ -80,6 +80,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [SecureSubsequence](../src/AoP/SecureSubsequence.agda) answers exercise 7.50. At capacity one, the stream `[+1,−1,+1]` is secure starting from zero. Its subsequence `[+1,+1]` overflows from every possible initial balance. This distinguishes arbitrary deletions from cutting a contiguous prefix or suffix.
 
-[LineWidthClosure](../src/AoP/LineWidthClosure.agda) verifies the width argument in exercise 7.56 for natural word widths and single-column spaces. Every nonempty prefix and suffix of a fitting line has width at most the original line’s width, so both fit the same margin. The layout-quality comparison in the exercise remains open.
+[LineWidthClosure](../src/AoP/LineWidthClosure.agda) verifies the width argument in exercise 7.56 for natural word widths and single-column spaces. Every nonempty prefix and suffix of a fitting line has width at most the original line’s width, so both fit the same margin. [LayoutTie](../src/AoP/LayoutTie.agda) compares two minimum-line layouts of three one-letter words at margin three. Breaking after word one or word two uses two lines, yet the unused space on the first line is two columns or zero respectively. The proof excludes a fitting one-line layout.
 
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
