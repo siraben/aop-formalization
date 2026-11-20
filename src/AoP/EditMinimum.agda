@@ -54,29 +54,49 @@ module Distance {A : Set} (equal? : (x y : A) → (x ≡ y) ⊎ (x ≡ y → ⊥
   cases c d i (del q) = d q
   cases c d i (ins q) = i q
 
-  -- Spend one source head to obtain the previous row. Inside each row,
-  -- recurse on the target tail. Both recursions are structural.
-  row : (xs ys : List A) → Best xs ys
-  row [] [] = done , λ { done → rid 0 }
-  row [] (y ∷ ys) with row [] ys
-  ... | p , opt = ins p , λ { (ins q) → s≤ (opt q) }
-  row (x ∷ xs) ys = build ys
-    where
-    build : (zs : List A) → Best (x ∷ xs) zs
-    build [] with row xs []
-    ... | p , opt = del p , λ { (del q) → s≤ (opt q) }
-    build (y ∷ zs) with equal? x y
-    ... | inr neq with merge (Cell.deletes x y xs zs (row xs (y ∷ zs))) (Cell.inserts x y xs zs (build zs))
+  -- A cell depends only on three previously solved suffix pairs.
+  module Update (x : A) (xs : List A) where
+    cell : ∀ y zs → Best xs zs → Best xs (y ∷ zs) → Best (x ∷ xs) zs → Best (x ∷ xs) (y ∷ zs)
+    cell y zs diag below beside with equal? x y
+    ... | inr neq with merge (Cell.deletes x y xs zs below) (Cell.inserts x y xs zs beside)
     ...   | p , bound = p , λ where
       (del q) → bound _ (inl (Cell.d q))
       (ins q) → bound _ (inr (Cell.i q))
       (cpy q) → impossible (neq refl)
         where impossible : ∀ {T : Set} → ⊥ → T
               impossible ()
-    build (.x ∷ zs) | inl refl with row xs zs | merge (Cell.deletes x x xs zs (row xs (x ∷ zs))) (Cell.inserts x x xs zs (build zs))
+    cell .x zs diag below beside | inl refl with diag | merge (Cell.deletes x x xs zs below) (Cell.inserts x x xs zs beside)
     ... | r , opt | p , bound with compare (suc (cost r)) (cost p)
     ...   | inl le = cpy r , cases (λ q _ → s≤ (opt q))
       (λ q → chain le (bound _ (inl (Cell.d q))))
       (λ q → chain le (bound _ (inr (Cell.i q))))
     ...   | inr ge = p , cases (λ q _ → chain ge (s≤ (opt q)))
       (λ q → bound _ (inl (Cell.d q))) (λ q → bound _ (inr (Cell.i q)))
+
+  -- A strip stores one optimum for *every suffix* of its target.
+  -- Prepending a source letter transforms the old strip into a new one.
+  data Strip (xs : List A) : List A → Set where
+    last : Best xs [] → Strip xs []
+    more : ∀ {y ys} → Best xs (y ∷ ys) → Strip xs ys → Strip xs (y ∷ ys)
+
+  top : ∀ {xs ys} → Strip xs ys → Best xs ys
+  top (last p) = p
+  top (more p _) = p
+
+  base : ∀ ys → Strip [] ys
+  base [] = last (done , λ { done → rid 0 })
+  base (y ∷ ys) with base ys
+  ... | tail with top tail
+  ...   | p , opt = more (ins p , (λ { (ins q) → s≤ (opt q) })) tail
+
+  advance : ∀ x {xs ys} → Strip xs ys → Strip (x ∷ xs) ys
+  advance x (last (p , opt)) = last (del p , (λ { (del q) → s≤ (opt q) }))
+  advance x {xs} (more {y} {ys} below tail) with advance x tail
+  ... | new = more (Update.cell x xs y ys (top tail) below (top new)) new
+
+  tabulate : ∀ xs ys → Strip xs ys
+  tabulate [] ys = base ys
+  tabulate (x ∷ xs) ys = advance x (tabulate xs ys)
+
+  row : ∀ xs ys → Best xs ys
+  row xs ys = top (tabulate xs ys)
