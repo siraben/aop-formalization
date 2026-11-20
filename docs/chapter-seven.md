@@ -58,4 +58,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [OneWayMonotone](../src/AoP/OneWayMonotone.agda) gives the intermediate §7.2 counterexample for relational monotonicity. The high input can return an extra low output. Every increase in input permits a matching increase or equality in output, but the reverse comparison cannot match that extra output.
 
+[AdditionReflection](../src/AoP/AdditionReflection.agda) checks exercise 7.33. Pulling a comparison back along addition of a fixed natural number reflects the comparison to the original arguments. The proof strips the common successors and supplies the point-free inclusion for both strict and non-strict order.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).

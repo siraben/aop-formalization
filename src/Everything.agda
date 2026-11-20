@@ -32,6 +32,7 @@ import AoP.MinimumMeet
 import AoP.ProductMinimum
 import AoP.SumOfMinima
 import AoP.OneWayMonotone
+import AoP.AdditionReflection
 import AoP.TieMinimum
 import AoP.MinimalTieClass
 import AoP.MinimalComparison
