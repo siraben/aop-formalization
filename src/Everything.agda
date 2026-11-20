@@ -3,6 +3,7 @@ module Everything where
 
 import AoP.Naturals
 import AoP.Snoc
+import AoP.Trees
 import AoP.Polynomial
 import AoP.Folds
 import AoP.Horner
