@@ -198,6 +198,7 @@ import AoP.TipTraversal
 import AoP.AppendEquation
 import AoP.Iteration
 import AoP.ParameterRecursion
+import AoP.ParameterFold
 import AoP.Relations
 import AoP.MeetWitness
 import AoP.MeetTerminal
