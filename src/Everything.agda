@@ -428,6 +428,7 @@ import AoP.CompressionAlphabet
 import AoP.BoundedWords
 import AoP.DictionarySearch
 import AoP.Greedy
+import AoP.ProjectedLoop
 import AoP.Detab
 import AoP.TabFree
 import AoP.TabStop

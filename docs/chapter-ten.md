@@ -8,9 +8,9 @@
 
 [Detab](../src/AoP/Detab.agda) expands tabs to blanks at fixed tab stops. [EntabMinimum](../src/AoP/EntabMinimum.agda) proves that the buffered encoder produces a shortest representation at every positive width. The exercises also examine alternative objectives and the intermediate loop derivation.
 
-| Exercise | Remaining calculation |
+| Exercise | Calculation and scope |
 | --- | --- |
-| 10.1 | Derive the projected loop that emits output while updating the column state. |
+| 10.1 | [ProjectedLoop](../src/AoP/ProjectedLoop.agda) proves the streaming loop equivalent to projecting the output of the accumulating loop. The invariant allows an arbitrary saved output prefix and column state; specializing to the empty prefix gives the exercise equation. |
 | 10.2 | Compare maximizing the number of tabs with minimizing output length. |
 | 10.3 | Prove cost monotonicity of extension and derive the variant preferring a single blank on ties. |
 | 10.4 | Prove the three prefix/fill laws and identify the failure when the fill constraint is removed. |
