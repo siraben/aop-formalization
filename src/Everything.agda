@@ -11,6 +11,7 @@ import AoP.Categories
 import AoP.Functors
 import AoP.Transformations
 import AoP.Polynomial
+import AoP.Products
 import AoP.Folds
 import AoP.Horner
 import AoP.Relations
