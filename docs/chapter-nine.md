@@ -14,6 +14,16 @@
 
 [EditListMinimum](../src/AoP/EditListMinimum.agda) gives the external command-list specification. The returned list decodes to the requested pair of strings. Every competing command list decoding to that pair induces a typed competitor with the same operation count, so the returned list is at least as short.
 
+[EditTableExample](../src/AoP/EditTableExample.agda) checks all nine entries for `ab → ba`. With target suffixes `ba`, `a`, and the empty string, the costs are:
+
+| Source suffix | `ba` | `a` | empty |
+| --- | ---: | ---: | ---: |
+| `ab` | 3 | 2 | 2 |
+| `b` | 2 | 2 | 1 |
+| empty | 2 | 1 | 0 |
+
+At `ab → ba`, deleting `a` and inserting `b` tie as first moves. The solver chooses deletion, then copies `b` and inserts `a`. Copies count as operations, giving three commands in total.
+
 ## §9.3 Optimal bracketing
 
 [MatrixBracketCost](../src/AoP/MatrixBracketCost.agda) checks the size and cost functions in exercise 9.10. A matrix product of sizes `i × k` and `k × j` has size `i × j` and adds `i·k·j` scalar multiplications to the two subtree costs. For input dimensions `2 × 3`, `3 × 4`, and `4 × 5`, the two bracketings cost 64 and 90, respectively. The type indices ensure that each intermediate product has compatible dimensions. The cost counts ordinary dense scalar multiplications.

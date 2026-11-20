@@ -502,6 +502,7 @@ import AoP.EditCellCount
 import AoP.CachedEditCell
 import AoP.CachedEditTable
 import AoP.EditListMinimum
+import AoP.EditTableExample
 import AoP.Bracketing
 import AoP.MatrixBracketCost
 import AoP.DecimalBracketCost
