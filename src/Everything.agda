@@ -494,6 +494,7 @@ import AoP.TourKeyNormal
 import AoP.TourArmNormal
 import AoP.TourArmExtension
 import AoP.TourTableOrder
+import AoP.TourCostedOrder
 import AoP.TourVariantExamples
 import AoP.BitonicTable
 import AoP.BitonicExample
