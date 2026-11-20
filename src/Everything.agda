@@ -39,6 +39,7 @@ import AoP.Binary
 import AoP.Refinement
 import AoP.Thinning
 import AoP.LayeredPaths
+import AoP.Bump
 import AoP.Party
 import AoP.PartyExample
 import AoP.Bellman
