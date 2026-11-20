@@ -8,7 +8,7 @@ open import AoP.FractionThreshold using (strip)
 open import Agda.Builtin.Nat using (Nat; suc; _+_; _*_)
 open Fraction
 
-private
+module Arithmetic where
   sym : ∀ {x y : Nat} → x ≡ y → y ≡ x
   sym refl = refl
   unit : ∀ a → a + 0 ≡ a
@@ -43,6 +43,8 @@ private
   scale k (s≤ p) = sum-mono (rid k) (scale k p)
   cast : ∀ {a b c d} → a ≡ c → b ≡ d → a ≤ b → c ≤ d
   cast refl refl p = p
+
+open Arithmetic
 
 Cross : Fraction → Fraction → Set
 Cross f g = r f * suc (d g) ≤ r g * suc (d f)
