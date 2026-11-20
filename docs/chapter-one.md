@@ -12,7 +12,7 @@ For §1.5, [InverseDomains](../src/AoP/InverseDomains.agda) identifies the image
 
 For §1.6, [PrefixEnumerationFold](../src/AoP/PrefixEnumerationFold.agda) constructs the prefix enumeration as a snoc-list fold. The last entry is always the entire input processed so far; extending that entry gives the next prefix. The worked three-item input yields `[], [a], [a,b], [a,b,c]`. [Naturality](../src/AoP/Naturality.agda) proves that mapping commutes with prefix enumeration, concatenation, reversal, and zip.
 
-For §1.7, [FilterCalculation](../src/AoP/FilterCalculation.agda) derives ordinary filtering from tagging each item with its predicate result, selecting the true tags, and projecting their values. The steps name concat naturality, map composition, and the Boolean guard law. [FilterCombinators](../src/AoP/FilterCombinators.agda) checks the empty-list and singleton laws (1.3–1.5) and the general zip law (1.7): zipping two maps over the same input pairs their results element by element.
+For §1.7, [FilterCalculation](../src/AoP/FilterCalculation.agda) derives ordinary filtering from tagging each item with its predicate result, selecting the true tags, and projecting their values. The steps name concat naturality, map composition, and the Boolean guard law. [FilterCombinators](../src/AoP/FilterCombinators.agda) checks the empty-list and singleton laws (1.3–1.5) and the general zip law (1.7): zipping two maps over the same input pairs their results element by element. [Conditions](../src/AoP/Conditions.agda) proves (1.10–1.11): preprocessing acts on the test and both branches; postprocessing acts on the branch results.
 
 | Exercise | Construction or remaining work |
 | --- | --- |

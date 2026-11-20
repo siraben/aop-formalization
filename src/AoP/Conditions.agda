@@ -39,6 +39,14 @@ then-law p f g x yes rewrite yes = refl
 else-law : (p : A → Bool) (f g : A → B) → ∀ x → p x ≡ false → choose p f g x ≡ g x
 else-law p f g x no rewrite no = refl
 
+-- (1.10): preprocessing the argument changes the test and both arms.
+before : (h : A → B) (p : B → Bool) (f g : B → C) → ∀ x →
+         choose p f g (h x) ≡ choose (λ a → p (h a)) (λ a → f (h a)) (λ a → g (h a)) x
+before h p f g x with p (h x)
+... | true = refl
+... | false = refl
+
+-- (1.11): postprocessing acts only on the selected result.
 after : (h : B → C) (p : A → Bool) (f g : A → B) → ∀ x →
         h (choose p f g x) ≡ choose p (λ a → h (f a)) (λ a → h (g a)) x
 after h p f g x with p x
