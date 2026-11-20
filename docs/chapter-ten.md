@@ -21,7 +21,7 @@
 
 | Exercise | Derivation or variant to audit |
 | --- | --- |
-| 10.5 | Monotonicity of the cost algebra with the remaining bag held fixed. |
+| 10.5 | [ScheduleAlgebraOrder](../src/AoP/ScheduleAlgebraOrder.agda) proves monotonicity using job lists related by permutation as representatives of one bag. Their durations sum to the same time, so the appended job incurs the same penalty; maximum preserves the prefix cost comparison. |
 | 10.6 | [ScheduleCostFactor](../src/AoP/ScheduleCostFactor.agda) proves (10.4) for empty and extended schedules: the cost is the maximum of the final job’s penalty and the prefix cost, with both components zero in the empty case. |
 | 10.7 | Derive the insertion comparison using fixed-point induction. |
 | 10.8 | Derive the bag-algebra equation for permutation generation. |
