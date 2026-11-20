@@ -131,6 +131,7 @@ import AoP.MeetTerminal
 import AoP.IndirectMeet
 import AoP.ModularRefinement
 import AoP.CoreflexiveMeet
+import AoP.PartialEquivalence
 import AoP.Shunting
 import AoP.Tabulation
 import AoP.Joins
