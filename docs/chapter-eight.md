@@ -12,5 +12,6 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 | 8.4 | [ThinUnion](../src/AoP/ThinUnion.agda) shows that adding back any subset of the original candidates preserves a thinning. It proves the intermediate union membership inclusion. When the comparisons coincide, taking the same thinning twice witnesses the reverse inclusion up to extensional equality. |
 | 8.5 | [SingletonThinning](../src/AoP/SingletonThinning.agda) proves that retaining just `a` is a valid thinning exactly when `a` is a minimum. Under equality the full Boolean set is a valid thinning of itself, yet neither singleton is valid. |
 | 8.6 | [FibreThinning](../src/AoP/FibreThinning.agda) proves that thinning the results of one input is unchanged by restricting comparisons to pairs sharing a generating input. The input itself witnesses the extra condition for each coverage edge. |
+| 8.7 | [ThinFamily](../src/AoP/ThinFamily.agda) proves (8.4) for indexed families with both power-relator coverage conditions. The converse fails: the union of the Boolean singletons can thin to `{false}` under universal comparison, but any thinning of `{true}` must retain `true`. |
 
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
