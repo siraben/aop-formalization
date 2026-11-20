@@ -1,10 +1,12 @@
 # Algebra of Programming in Agda
 
-A constructive Agda companion to Richard Bird and Oege de Moor’s *Algebra of Programming*. The book is not included. To check the whole development, run `nix flake check`; [`Everything.agda`](src/Everything.agda) imports the proofs.
+Agda formalization of definitions, calculations, and programs from Richard Bird and Oege de Moor’s *Algebra of Programming*.
 
-**Start with a worked problem.** In the [company-party example](src/AoP/PartyExample.agda), Ada supervises Bo and Cy. May Ada and Bo both attend? No. Should Ada attend? Not necessarily: the two reports together score more. Load the example to see the two checked guest lists, then follow [the general derivation](src/AoP/Party.agda) to see why comparing two plans per subtree suffices. For a smaller equational calculation, try [Horner’s rule](src/AoP/Horner.agda).
+Run `nix flake check` to type-check [`Everything.agda`](src/Everything.agda), which imports all modules. For interactive work, run `nix develop` and open a `.agda` file in your editor. The proofs use Agda builtins with `--safe --without-K`.
 
-**Coverage.** The table lists checked results, not completed chapters. Some rows give the book’s general theorem, others a list instance, a reference solver, or only a specification. Those distinctions matter: proving optimality of an exhaustive solver does not verify the book’s faster algorithm.
+In the [company-party example](src/AoP/PartyExample.agda), a supervisor and a direct report cannot both attend. Ada scores 8; her reports Bo and Cy score 5 each. The best guest list is `[Bo, Cy]`, or `[Ada]` if the president must attend. The [proof](src/AoP/Party.agda) calculates the best plan for each subtree under both choices for its supervisor.
+
+## Results by book section
 
 | Book sections | Agda | Checked statements |
 | --- | --- | --- |
@@ -68,14 +70,17 @@ A constructive Agda companion to Richard Bird and Oege de Moor’s *Algebra of P
 | §10.1 | [Greedy](src/AoP/Greedy.agda) | Single-branch optimality from exchange and monotone extension, for unary decompositions |
 | §10.2 | [Detab](src/AoP/Detab.agda) | Tab expansion at positive fixed width; derive the one-pass version by maintaining a column invariant; [TabFree](src/AoP/TabFree.agda) characterizes the image of expansion; [Entab](src/AoP/Entab.agda) proves buffered encoding round-trips on that image and [EntabMinimum](src/AoP/EntabMinimum.agda) proves shortestness against every competing encoding at any positive tab width |
 | §10.3 | [Tardiness](src/AoP/Tardiness.agda) | Fuse elapsed time and maximum weighted tardiness into a single schedule evaluator; [check all six example schedules](src/AoP/TardinessExample.agda); [ScheduleSearch](src/AoP/ScheduleSearch.agda) proves an exhaustive scheduler optimal for arbitrary job lists; [BackwardSchedule](src/AoP/BackwardSchedule.agda) implements the backward-greedy algorithm and proves termination and permutation correctness; [BackwardOptimal](src/AoP/BackwardOptimal.agda) proves that it meets every penalty cap attainable by any permutation. [ScheduleCertificate](src/AoP/ScheduleCertificate.agda) checks it against the exhaustive solver’s specification; [BackwardExample](src/AoP/BackwardExample.agda) computes the optimal order |
-| §10.4 | [TeXExternal](src/AoP/TeXExternal.agda) | Specify shortest round-tripping decimals; check the zero and half-unit cases (not the general printer) |
+| §10.4 | [TeXExternal](src/AoP/TeXExternal.agda) | Specify shortest round-tripping decimals; prove shortestness for zero and half a unit |
 
 The [appendix list product](src/AoP/ListProduct.agda) enumerates one choice from each of a list of menus, with proofs of soundness and completeness.
 
-`R : B ← A` takes the output first: `R b a` is evidence that `b` is a possible result for `a`. Thus `S ∘ R` runs `R` first. Inclusion `R ⊆ S` maps witnesses rather than comparing predicates by definitional equality. `⦅ e ∣ f ⦆` denotes the list catamorphism with base `e` and step `f`; Agda reserves `⦇ ⦈` for idiom brackets.
+## Notation
 
-**Reading the calculations.** Read the expressions down the left margin between `begin` and `∎`. A step `≡⟨ law ⟩` names its justification; `≡⟨⟩` means the neighbouring expressions agree by definition. Compare [snoc-list associativity](src/AoP/Snoc.agda) with §1.3, or [Horner promotion](src/AoP/Horner.agda) with §3.2. Prefer a chain for a derivation; keep `refl` or a named law when it already explains the whole step.
+- `R : B ← A` relates an input `a` to a possible output `b`, written `R b a`. Composition `S ∘ R` applies `R` first.
+- `R ⊆ S` sends each witness of `R b a` to a witness of `S b a`.
+- `⦅ e ∣ f ⦆` is the list fold with base `e` and step `f`.
+- Between `begin` and `∎`, each `≡⟨ law ⟩` cites the law for that step; `≡⟨⟩` uses definitional equality. See [snoc-list associativity](src/AoP/Snoc.agda) and [Horner’s rule](src/AoP/Horner.agda).
 
-Run `nix flake check` to type-check all modules with `--safe --without-K`, or `nix develop` followed by `agda -i src src/Everything.agda` to work interactively. Only Agda builtins are required.
+## Open work
 
-Outstanding work includes the general dynamic-programming and greedy theorems, the quadratic bitonic-tour algorithm, optimal dictionary encoding and the general TeX printer. The table is not a claim that every exercise or derivation has been formalized.
+The general dynamic-programming and greedy theorems, the quadratic bitonic-tour algorithm, optimal dictionary encoding, and the general TeX printer remain open.
