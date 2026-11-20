@@ -167,6 +167,7 @@ import AoP.QuarterZero
 import AoP.QuarterDigits
 import AoP.QuarterRound
 import AoP.QuarterUnique
+import AoP.SeventeenGrid
 import AoP.ExtendUpdate
 import AoP.FloorRule
 import AoP.FractionThreshold
