@@ -14,4 +14,35 @@
 
 [AssociativeBrackets](../src/AoP/AssociativeBrackets.agda) proves exercise 9.12. Folding the nonempty list of leaves equals folding the bracketing tree directly. The intermediate append law uses associativity alone; nonempty lists eliminate the need for a unit.
 
-[BracketMinimum](../src/AoP/BracketMinimum.agda) gives an exhaustive bracketing solver and [AppendOptimal](../src/AoP/AppendOptimal.agda) proves optimality for the list-append cost model. A full inventory of numbered exercises, unnumbered examples and intermediate derivations remains open.
+[BracketMinimum](../src/AoP/BracketMinimum.agda) gives an exhaustive bracketing solver and [AppendOptimal](../src/AoP/AppendOptimal.agda) proves optimality for the list-append cost model. The same-input optimal-subtree argument and enumerator support comparison with the book’s interval algorithm.
+
+## §9.4 Data compression
+
+[DictionarySearch](../src/AoP/DictionarySearch.agda) certifies a least-cost encoding by bounded exhaustive search. The dictionary dynamic program and its derivation remain open.
+
+## Numbered exercise inventory
+
+| Exercise | Subject and checked scope |
+| --- | --- |
+| 9.1 | Open: specialize the general dynamic-programming theorem to the first theorem. |
+| 9.2 | Open: weaken both dynamic-programming hypotheses using context. |
+| 9.3 | Open: general proof of Theorem 9.2. |
+| 9.4 | Open: construct a thinning comparison from the objective and examine its implementation cost. |
+| 9.5 | Both tag laws and the concrete disjoint-range calculation above; final composition open. |
+| 9.6 | Script-length cons monotonicity above. |
+| 9.7 | Open: derive the relational tail condition for string editing. |
+| 9.8 | Open: decimal-addition size and work model. |
+| 9.9 | Open: decimal-multiplication size and work model. |
+| 9.10 | Dimension-indexed matrix costs above. |
+| 9.11 | [AppendOptimal](../src/AoP/AppendOptimal.agda): right association attains the append-work lower bound. |
+| 9.12 | Associative nonempty fold fusion above. |
+| 9.13 | Open: calculate the loop over initial segments via snoc recursion and derive (9.9). |
+| 9.14 | Open research exercise: derive a thinning fold for bracketing via converse flattening. |
+| 9.15 | Open: optimize over permutations as well as bracketings for commutative operations. |
+| 9.16 | Open: prove the dictionary cost algebra monotone. |
+| 9.17 | Open: prove the decoder’s initial-segment simulation law. |
+| 9.18 | Open: explain failure of the proposed prefix comparison. |
+| 9.19 | Open: simplify encoding when literal and pointer charges coincide. |
+| 9.20 | Open research exercise: derive a dictionary thinning fold on codes with an initial literal. |
+
+The inventory covers all 20 numbered exercises. The audit of unnumbered examples and intermediate derivations continues.
