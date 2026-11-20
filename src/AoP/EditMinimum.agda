@@ -3,7 +3,7 @@ module AoP.EditMinimum where
 
 open import AoP.Prelude
 open import AoP.EditScript using (module Scripts)
-open import AoP.NatOrder using (_≤_; rid; chain; s≤; compare)
+open import AoP.NatOrder using (_≤_; rid; chain; s≤; weaken; compare)
 open import AoP.Polynomial using (_⊎_; inl; inr)
 open import AoP.Complement using (⊥)
 open import Agda.Builtin.Nat using (Nat; suc)
@@ -54,6 +54,26 @@ module Distance {A : Set} (equal? : (x y : A) → (x ≡ y) ⊎ (x ≡ y → ⊥
   cases c d i (del q) = d q
   cases c d i (ins q) = i q
 
+  -- Indexed versions of the two tail laws (§9.2). Keeping a leading
+  -- delete (insert) recurses; a copy becomes a delete (insert).
+  trim-target : ∀ {xs b ys} (q : Script xs (b ∷ ys)) → Σ (Script xs ys) λ r → cost r ≤ cost q
+  trim-target (cpy q) = del q , rid _
+  trim-target (ins q) = q , weaken (rid _)
+  trim-target (del q) with trim-target q
+  ... | r , le = del r , s≤ le
+  trim-source : ∀ {a xs ys} (q : Script (a ∷ xs) ys) → Σ (Script xs ys) λ r → cost r ≤ cost q
+  trim-source (cpy q) = ins q , rid _
+  trim-source (del q) = q , weaken (rid _)
+  trim-source (ins q) with trim-source q
+  ... | r , le = ins r , s≤ le
+
+  -- Equal heads: copy from the diagonal optimum. In either other
+  -- branch its tail can be trimmed to a diagonal competitor.
+  copy-best : ∀ x {xs ys} → Best xs ys → Best (x ∷ xs) (x ∷ ys)
+  copy-best x (r , opt) = cpy r , cases (λ q _ → s≤ (opt q))
+    (λ q → let t , le = trim-target q in s≤ (chain (opt t) le))
+    (λ q → let t , le = trim-source q in s≤ (chain (opt t) le))
+
   -- A cell depends only on three previously solved suffix pairs.
   module Update (x : A) (xs : List A) where
     cell : ∀ y zs → Best xs zs → Best xs (y ∷ zs) → Best (x ∷ xs) zs → Best (x ∷ xs) (y ∷ zs)
@@ -65,13 +85,7 @@ module Distance {A : Set} (equal? : (x y : A) → (x ≡ y) ⊎ (x ≡ y → ⊥
       (cpy q) → impossible (neq refl)
         where impossible : ∀ {T : Set} → ⊥ → T
               impossible ()
-    cell .x zs diag below beside | inl refl with diag | merge (Cell.deletes x x xs zs below) (Cell.inserts x x xs zs beside)
-    ... | r , opt | p , bound with compare (suc (cost r)) (cost p)
-    ...   | inl le = cpy r , cases (λ q _ → s≤ (opt q))
-      (λ q → chain le (bound _ (inl (Cell.d q))))
-      (λ q → chain le (bound _ (inr (Cell.i q))))
-    ...   | inr ge = p , cases (λ q _ → chain ge (s≤ (opt q)))
-      (λ q → bound _ (inl (Cell.d q))) (λ q → bound _ (inr (Cell.i q)))
+    cell .x zs diag below beside | inl refl = copy-best x diag
 
   -- A strip stores one optimum for *every suffix* of its target.
   -- Prepending a source letter transforms the old strip into a new one.
