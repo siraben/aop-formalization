@@ -149,6 +149,7 @@ import AoP.AdjointJoins
 import AoP.MeetConnection
 import AoP.RelImplication
 import AoP.LexicalOrder
+import AoP.LexicalPairs
 import AoP.RelDifference
 import AoP.LeftDivision
 import AoP.ImplicationPullback
