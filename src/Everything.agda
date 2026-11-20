@@ -53,6 +53,7 @@ import AoP.ParagraphMinimum
 import AoP.Bitonic
 import AoP.FiniteMinimum
 import AoP.Party
+import AoP.Cylinder
 import AoP.PartyExample
 import AoP.Bellman
 import AoP.EditScript
