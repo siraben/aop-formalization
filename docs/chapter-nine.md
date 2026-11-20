@@ -42,7 +42,7 @@ At `ab → ba`, deleting `a` and inserting `b` tie as first moves. The solver ch
 
 | Exercise | Subject and checked scope |
 | --- | --- |
-| 9.1 | Open: specialize the general dynamic-programming theorem to the first theorem. |
+| 9.1 | [IdentityDecompositions](../src/AoP/IdentityDecompositions.agda) specializes the decomposition step of Theorem 9.2 to equality. A retained set then contains exactly the original decompositions. `forget` and `retain-all` give both directions after evaluation and minimization, and `simulate` discharges the extra comparison hypothesis by replaying the same outcome. This identifies the two recurrence bodies pointwise. `Least.same` transfers those inclusions to their least prefixpoints by using each solution as a candidate for the other. |
 | 9.2 | Open: weaken both dynamic-programming hypotheses using context. |
 | 9.3 | Open: general proof of Theorem 9.2. |
 | 9.4 | Open: construct a thinning comparison from the objective and examine its implementation cost. |
