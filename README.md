@@ -88,4 +88,4 @@ The [appendix list product](src/AoP/ListProduct.agda) enumerates one choice from
 
 ## Open work
 
-The general dynamic-programming and greedy theorems, the dynamic-programming dictionary encoder, and the general TeX printer remain open.
+The [dictionary encoder guide](docs/dictionary.md) derives the minimum-cost prefix table and its longest-pointer refinement. [Chapter 9](docs/chapter-nine.md) records the relational hypotheses for the dynamic-programming theorem. Open work includes the general greedy theorem, exercise 9.20’s alternative dictionary thinning fold, and the general TeX printer.

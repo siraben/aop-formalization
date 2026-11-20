@@ -669,6 +669,10 @@ import AoP.LongestPointerScan
 import AoP.PointerSpanOrder
 import AoP.ReducedDictionary
 import AoP.ReducedDictionaryTrace
+import AoP.ReducedPointerBound
+import AoP.ReducedBellman
+import AoP.ReducedDictionaryOptimal
+import AoP.DictionaryCachedSize
 import AoP.Greedy
 import AoP.ProjectedLoop
 import AoP.Detab
