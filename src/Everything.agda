@@ -116,6 +116,7 @@ import AoP.ListStrength
 import AoP.IndexedBranches
 import AoP.AccumulatorFusion
 import AoP.ReverseAccumulator
+import AoP.DepthAccumulator
 import AoP.Iteration
 import AoP.Relations
 import AoP.Shunting
