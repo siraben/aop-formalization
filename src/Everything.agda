@@ -321,6 +321,7 @@ import AoP.ThinUnion
 import AoP.SingletonThinning
 import AoP.FibreThinning
 import AoP.ThinFamily
+import AoP.MinimalThinning
 import AoP.ThinningFold
 import AoP.MonotoneMinimum
 import AoP.GreedyFold

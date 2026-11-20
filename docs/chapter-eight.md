@@ -13,5 +13,7 @@ Thinning retains a subset of candidates. Each original candidate must have a ret
 | 8.5 | [SingletonThinning](../src/AoP/SingletonThinning.agda) proves that retaining just `a` is a valid thinning exactly when `a` is a minimum. Under equality the full Boolean set is a valid thinning of itself, yet neither singleton is valid. |
 | 8.6 | [FibreThinning](../src/AoP/FibreThinning.agda) proves that thinning the results of one input is unchanged by restricting comparisons to pairs sharing a generating input. The input itself witnesses the extra condition for each coverage edge. |
 | 8.7 | [ThinFamily](../src/AoP/ThinFamily.agda) proves (8.4) for indexed families with both power-relator coverage conditions. The converse fails: the union of the Boolean singletons can thin to `{false}` under universal comparison, but any thinning of `{true}` must retain `true`. |
+| 8.8 | Open: derive the greedy theorem by specializing the thinning theorem. |
+| 8.9 | [MinimalThinning](../src/AoP/MinimalThinning.agda) proves that retaining all minimal members of a set is a valid thinning under a well-supported preorder. Exercise 7.31 supplies a retained member below each input member. |
 
 The numbered exercise and intermediate derivation inventory for the rest of Chapter 8 remains open.
