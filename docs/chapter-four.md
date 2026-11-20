@@ -68,4 +68,6 @@ This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/A
 
 [FibreEquality](../src/AoP/FibreEquality.agda) proves exercise 4.48 with extensional equality of subsets. Two inputs have the same set of possible outputs exactly when each fibre contains the other. Left division expresses each containment. The witness for the shared set lives in the universe of predicates.
 
+[PreorderFibres](../src/AoP/PreorderFibres.agda) checks exercise 4.49: `R` is a preorder exactly when it equals its left division by itself. Sending each input to its fibre realizes that preorder by inclusion of subsets, with extensional equality. Conversely, pulling a preorder back along any function preserves reflexivity and transitivity.
+
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.

@@ -165,6 +165,7 @@ import AoP.NegationLaws
 import AoP.Schroeder
 import AoP.Power
 import AoP.FibreEquality
+import AoP.PreorderFibres
 import AoP.RelationalProducts
 import AoP.RelationalSums
 import AoP.PowerRelator
