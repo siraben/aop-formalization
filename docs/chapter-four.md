@@ -23,7 +23,11 @@ For Proposition 4.1 in concrete `Rel`, [InjectionAdjunction](../src/AoP/Injectio
 
 ## §4.3: tabulations
 
-[TabulationMediator](../src/AoP/TabulationMediator.agda) proves Proposition 4.2 in concrete `Rel` for any supplied table. The span with columns `h,k` is included in `R` exactly when each of its inputs can be mapped to a table row with those column values. `factor` constructs the row from inclusion; `include` reads it back as a witness of `R`. If the table columns jointly distinguish rows, any two such maps agree pointwise (`unique`).
+[TabulationMediator](../src/AoP/TabulationMediator.agda) proves Proposition 4.2 in concrete `Rel` for any supplied table. The span with columns `h,k` is included in `R` exactly when each of its inputs can be mapped to a table row with those column values. `factor` constructs the row from inclusion; `include` reads it back as a witness of `R`. If the table columns jointly distinguish rows, any two such maps agree pointwise (`unique`). [TabulationMeet](../src/AoP/TabulationMeet.agda) checks the intermediate relation `(f˘ ∘ h) ⊓ (g˘ ∘ k)` on function graphs. A candidate row must pass both column tests. Joint monicity makes it single-valued before any existence assumption; span inclusion supplies a matching row for each input. `graph-in` and `graph-out` identify the intersection with the graph of the constructed mediator.
+
+[TabulationIso](../src/AoP/TabulationIso.agda) compares two tables of the same relation. Use each table’s columns as a span into the other to get `encode` and `decode`. Each round trip preserves both column values; joint monicity therefore recovers the original row. `unique` proves pointwise uniqueness among maps that preserve both columns.
+
+[RelUnitObject](../src/AoP/RelUnitObject.agda) characterizes the unit objects of concrete `Rel`: a type must have an inhabitant and any two inhabitants must be equal. An entire relation from the singleton supplies the inhabitant; testing the scalar law on the full endorelation forces equality. Conversely, the constant map to that inhabitant covers every input. Its converse composed with the corresponding constant map on another type contains every relation between the two types: the chosen inhabitant witnesses every path.
 
 [Tabulation](../src/AoP/Tabulation.agda) gives a table one row per witnessed edge. Reading its source and target columns reconstructs the relation. Joint injectivity of the columns follows when evidence for any given edge is unique.
 

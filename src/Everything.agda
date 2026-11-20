@@ -374,6 +374,9 @@ import AoP.DiagonalTest
 import AoP.Shunting
 import AoP.Tabulation
 import AoP.TabulationMediator
+import AoP.TabulationMeet
+import AoP.TabulationIso
+import AoP.RelUnitObject
 import AoP.TabulatedFunction
 import AoP.MonicKernel
 import AoP.ImageComparison
