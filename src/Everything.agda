@@ -397,6 +397,7 @@ import AoP.FiniteMinimum
 import AoP.Party
 import AoP.PartyListCost
 import AoP.PartyPlanTraversal
+import AoP.PartyPlanWork
 import AoP.PartyScoreTable
 import AoP.PartyComparisons
 import AoP.PartyCachedPlan

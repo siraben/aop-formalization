@@ -34,10 +34,13 @@ module Law {E S : Set} (rating : E → S) (z : S) (add : S → S → S) (R : S �
   combine : ∀ {p t ts} → Entry (score {p} {t}) → Entry (total {p} {ts}) → Entry (total {p} {grow t ts})
   combine (entry g a ea ga) (entry h b eb hb) = entry (join g h) (add a b)
     (cong (λ x → add x (total h)) ea ∙ cong (add a) eb) λ { (join v vs) → mono (ga v) (hb vs) }
+  skip : ∀ e {ts} → Entry (total {false} {ts}) → Entry (score {true} {fork e ts})
+  skip e o = entry (omit (plan o)) (cached o) (exact o) (λ { (omit g) → best o g })
+
   mutual
     table : ∀ t → Entry (score {true} {t}) × Entry (score {false} {t})
     table (fork e ts) with rows ts
-    ... | i , o = entry (omit (plan o)) (cached o) (exact o) (λ { (omit g) → best o g }) , select e i o
+    ... | i , o = skip e o , select e i o
     rows : ∀ ts → Entry (total {true} {ts}) × Entry (total {false} {ts})
     rows null = entry none z refl (λ { none → rid z }) , entry none z refl (λ { none → rid z })
     rows (grow t ts) with table t | rows ts
