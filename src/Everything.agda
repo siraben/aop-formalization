@@ -16,6 +16,7 @@ import AoP.Initial
 import AoP.ListAlgebra
 import AoP.Folds
 import AoP.Horner
+import AoP.TeXFraction
 import AoP.Conditions
 import AoP.Currying
 import AoP.Relations
