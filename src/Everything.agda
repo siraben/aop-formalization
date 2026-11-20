@@ -30,6 +30,7 @@ import AoP.Categories
 import AoP.Retractions
 import AoP.Cancellation
 import AoP.PreorderCategory
+import AoP.PreorderFunctor
 import AoP.UniversalObjects
 import AoP.Functors
 import AoP.FunctorIso
