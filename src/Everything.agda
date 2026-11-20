@@ -388,6 +388,7 @@ import AoP.OrderedPivot
 import AoP.Inordered
 import AoP.PivotPermutation
 import AoP.PivotFusion
+import AoP.PivotCalculation
 import AoP.QuickFusion
 import AoP.QuickEquation
 import AoP.QuickLeast
