@@ -20,6 +20,7 @@ A constructive formalization of selected results from Richard Bird and Oege de M
 | §§2.6, 3.1 | [Folds](src/AoP/Folds.agda) | List-fold uniqueness; fusion and banana-split derived from uniqueness |
 | §3.2 | [Horner](src/AoP/Horner.agda) | Fuse a list reduction with a Ruby triangle, yielding Horner's one-pass rule |
 | §3.4 | [Conditions](src/AoP/Conditions.agda) | Derive a conditional from distributivity and coproduct case analysis; verify branch equations and postcomposition |
+| §3.5 | [Currying](src/AoP/Currying.agda) | Exponential universal property in Fun; curried list concatenation as a function-valued fold |
 | §§4.1–4.2 | [Shunting](src/AoP/Shunting.agda) | Function graphs are entire and simple; calculate both implications of the left shunting rule |
 | §4.3 | [Tabulation](src/AoP/Tabulation.agda) | Reconstruct a relation from its two columns; derive uniqueness of mediators for proposition-valued membership |
 | §4.4 | [Joins](src/AoP/Joins.agda) | Universal properties of indexed joins and meets; composition distributes over joins on either side |
