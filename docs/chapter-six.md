@@ -29,4 +29,6 @@ This inventory covers §§6.1–6.3. The [sorting inventory](sorting-coverage.md
 
 [AccessibilityMeasure](../src/AoP/AccessibilityMeasure.agda) proves exercise 6.16 for type-valued relations. Pulling a well-founded relation back along any function preserves accessibility: each recursive call descends to a predecessor of its measure. The measure may take the same value at distinct inputs.
 
+[TreeMemberPath](../src/AoP/TreeMemberPath.agda) checks the two tree cases of exercise 6.17. Membership gives a path to a node carrying the sought label, and following such a path proves membership. A path ends at a tip in a tip-labelled tree; it may end at any fork in a fork-labelled tree. The list-fold part of this exercise still needs a separate derivation.
+
 The remaining sections and the inventory of unnumbered examples still need a full audit.
