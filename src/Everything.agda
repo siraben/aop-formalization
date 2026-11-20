@@ -178,6 +178,7 @@ import AoP.InhabitedTranspose
 import AoP.TransposeCounterexample
 import AoP.TransposeCombinations
 import AoP.ListSetify
+import AoP.SupersequenceFold
 import AoP.InitFold
 import AoP.SingletonTranspose
 import AoP.LiberalPrecondition
