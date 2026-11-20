@@ -44,4 +44,6 @@
 
 [LiftBound](../src/AoP/LiftBound.agda) proves exercise 7.4 using the factorization from 7.3. Intersect the intermediate set with the image of the source set: each source still has a witness, and every retained intermediate value now has a source. These are the two coverage conditions of the power relator.
 
+[LiftMinimum](../src/AoP/LiftMinimum.agda) proves the inclusion in exercise 7.18 for concrete relations with reflexive comparison. Add the reachable candidate to the intermediate set of 7.4. Its incoming edge preserves backward coverage, and reflexivity gives the missing comparison with itself, turning the lower bound into a minimum.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
