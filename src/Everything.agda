@@ -113,6 +113,12 @@ import AoP.PolynomialSubstitution
 import AoP.RemainderUnique
 import AoP.ModularAdditionHom
 import AoP.AlgebraCategory
+import AoP.InitialAlgebraFolds
+import AoP.NatAlgebraFold
+import AoP.InitialAlgebraBridge
+import AoP.ListTypeFunctorFusion
+import AoP.ChangeAlgebraParameter
+import AoP.InitialTypeFunctor
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
