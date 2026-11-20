@@ -66,4 +66,6 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/BinaryMinimum.agd
 
 [LocalWinnerFold](../src/AoP/LocalWinnerFold.agda) checks exercise 7.37 for container-generated trees. Each node chooses a feasible local minimum for its child answers. Monotonicity compares the computed children with those of a competing run; local optimality then compares the node choices. The resulting fold is feasible and globally minimal.
 
+[GreedyImage](../src/AoP/GreedyImage.agda) proves exercise 7.38 for concrete relations. After selecting a minimum input and a minimum output at that input, compare against any competing output. The simulation hypothesis supplies an output available at the selected input that is at least as good as the competitor; transitivity gives the bound.
+
 The complete exercise and worked-example inventory for this chapter remains open. Existing case-study entry points include [PartyExample](../src/AoP/PartyExample.agda), [CylinderExample](../src/AoP/CylinderExample.agda), and [VanExample](../src/AoP/VanExample.agda).
