@@ -55,3 +55,4 @@ import AoP.Compression
 import AoP.Greedy
 import AoP.Detab
 import AoP.Tardiness
+import AoP.TardinessExample
