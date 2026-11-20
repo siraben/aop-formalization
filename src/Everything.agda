@@ -181,6 +181,7 @@ import AoP.TransposeCombinations
 import AoP.ListSetify
 import AoP.PartitionFlatten
 import AoP.PartitionThree
+import AoP.ZippedSplits
 import AoP.PartitionPredicate
 import AoP.PartitionRanges
 import AoP.PermuteTail

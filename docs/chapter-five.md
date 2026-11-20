@@ -37,6 +37,8 @@ In §5.4, [ImageNotRelator](../src/AoP/ImageNotRelator.agda) checks the obstruct
 
 [SupersequenceFold](../src/AoP/SupersequenceFold.agda) checks exercise 5.23. The empty input permits any supersequence. Each required head permits an arbitrary prefix before its matching occurrence. The proof converts these witnesses in both directions to the skip/keep subsequence specification.
 
+[ZippedSplits](../src/AoP/ZippedSplits.agda) checks the unnumbered split construction. Pair the prefixes in increasing length with the suffixes in decreasing length. The resulting list agrees in order and membership with the direct split enumeration, including both endpoint cuts.
+
 [InitFold](../src/AoP/InitFold.agda) checks exercise 5.24: folding a nonempty list with an empty singleton result and a cons step removes exactly its last element. The proof reconstructs the input by appending the discarded element and shows that any such decomposition yields the same prefix.
 
 [PartitionRanges](../src/AoP/PartitionRanges.agda) checks both range identities of exercise 5.25. Starting a new block produces precisely a singleton first block. Gluing produces precisely a first block with at least two elements. In either case all later blocks stay unchanged.
