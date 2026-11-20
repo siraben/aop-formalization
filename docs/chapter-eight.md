@@ -61,8 +61,8 @@ Exercise 8.22 remains open: derive binary thinning with guards tested before the
 | --- | --- |
 | 8.25 | Calculate the endpoint pairs produced by extending the left or right leg, then derive the order of the table entries. |
 | 8.26 | [SymmetricTour](../src/AoP/SymmetricTour.agda) proves that swapping both leg endpoints and every interior assignment preserves cost for symmetric edges. Fixing the first interior city on the outward leg removes the duplicate orientation; the reference recurrence then returns a globally optimal tour. [SymmetricTourTable](../src/AoP/SymmetricTourTable.agda) stores a single optimal cell per endpoint pair in each row. Reversing the shared cell provides the other orientation with the same cached price and an optimality proof. |
-| 8.27 | Allow a city to occur on both legs. |
-| 8.28 | Allow cities to be skipped. |
+| 8.27 | [TourVariants](../src/AoP/TourVariants.agda), mode `both`: an interior city may be assigned to both legs. That branch pays both directed extension costs and updates both endpoints. The three-branch reference search certifies a least-cost assignment. |
+| 8.28 | [TourVariants](../src/AoP/TourVariants.agda), mode `neither`: skipping an interior city leaves the two endpoints unchanged and costs zero at that step. The search retains the two one-leg alternatives and certifies optimality with fixed start and turnaround cities. No table complexity bound is claimed for either variant. |
 | 8.29 | Derive a longest ordered subsequence algorithm by thinning. |
 | 8.30 | Minimize fuel stops along a route subject to tank capacity and station supplies. |
 | 8.31 | Choose a fixed number of bus stops to minimize total walking distance. |
