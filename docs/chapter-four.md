@@ -72,6 +72,8 @@ This inventory covers exercises 4.1–4.43 (§§4.1–4.5). [Relations](../src/A
 
 [FibreBounds](../src/AoP/FibreBounds.agda) checks exercise 4.50: an output belongs to a fibre exactly when every set containing the whole fibre contains that output. For the reverse direction, choose the fibre itself as the test set.
 
+[TransformerOrder](../src/AoP/TransformerOrder.agda) checks exercise 4.51: a transformer is monotone exactly when postcomposition by it preserves pointwise inclusion. Constant transformers recover the original set inclusion in the reverse proof.
+
 [LiberalPrecondition](../src/AoP/LiberalPrecondition.agda) checks exercise 4.52: a weakest liberal precondition requires every possible output to satisfy the postcondition. Sequential composition applies the two transformers in reverse order, and comparison on all postconditions reverses and reflects relation inclusion.
 
 The witness calculations above establish the laws in concrete `Rel`. Their derivations from abstract allegory axioms, the remaining sections, and the full inventory of unnumbered examples remain open.

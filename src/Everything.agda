@@ -166,6 +166,7 @@ import AoP.Schroeder
 import AoP.Power
 import AoP.FibreEquality
 import AoP.LiberalPrecondition
+import AoP.TransformerOrder
 import AoP.FibreBounds
 import AoP.PreorderFibres
 import AoP.RelationalProducts
