@@ -330,6 +330,7 @@ import AoP.TraceCardinality
 import AoP.OrderedPairs
 import AoP.PairMembers
 import AoP.SortedSubset
+import AoP.SortedImage
 import AoP.QuadraticQueries
 import AoP.GreedySingleton
 import AoP.FibreMinimumPrune
