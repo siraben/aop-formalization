@@ -500,6 +500,7 @@ import AoP.DisjointFibres
 import AoP.EditMinimum
 import AoP.Bracketing
 import AoP.MatrixBracketCost
+import AoP.DecimalBracketCost
 import AoP.AssociativeBrackets
 import AoP.PrefixLoop
 import AoP.BracketColumnLoop
