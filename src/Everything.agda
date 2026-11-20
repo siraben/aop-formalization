@@ -147,6 +147,7 @@ import AoP.MonicKernel
 import AoP.ImageComparison
 import AoP.AdjointJoins
 import AoP.RelImplication
+import AoP.ImplicationPullback
 import AoP.MeetFromJoin
 import AoP.EntireBridge
 import AoP.Joins
