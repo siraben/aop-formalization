@@ -195,6 +195,7 @@ import AoP.TipDepths
 import AoP.WeightedPaths
 import AoP.PositionSum
 import AoP.GeneralHorner
+import AoP.CategoricalHorner
 import AoP.HornerMultiplier
 import AoP.Hyperproduct
 import AoP.Steep
@@ -206,6 +207,7 @@ import AoP.CategoricalAuxiliaryFold
 import AoP.BalanceFold
 import AoP.BalanceConvention
 import AoP.MutualFold
+import AoP.CategoricalMutualFold
 import AoP.Predecessors
 import AoP.FactorialFusion
 import AoP.TeXFraction

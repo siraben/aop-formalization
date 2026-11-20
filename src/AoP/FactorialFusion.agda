@@ -33,3 +33,16 @@ correct n = begin
   snd (factorials n) ∎
   where back : ∀ {a b : Nat} → a ≡ b → b ≡ a
         back refl = refl
+
+-- At the final successor step for 4!, the list-producing fold would
+-- prepend 4. The commuting square replaces that allocation followed
+-- by multiplication with an update of the cached pair (3,6).
+four-step : reduce (state 4) ≡ (4 , 24)
+four-step = begin
+  reduce (state 4) ≡⟨⟩
+  reduce (step (state 3)) ≡⟨ commute (state 3) ⟩
+  advance (reduce (state 3)) ≡⟨ cong advance (fused 3) ⟩
+  advance (factorials 3) ≡⟨⟩
+  advance (3 , 6) ≡⟨⟩
+  (4 , 4 * 6) ≡⟨⟩
+  (4 , 24) ∎
