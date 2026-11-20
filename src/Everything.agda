@@ -214,6 +214,7 @@ import AoP.PermuteRemoval
 import AoP.ListProduct
 import AoP.LaxMembership
 import AoP.FixedPoint
+import AoP.DifunctionalClosure
 import AoP.Kleene
 import AoP.Closure
 import AoP.Hylo
