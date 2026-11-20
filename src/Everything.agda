@@ -482,6 +482,8 @@ import AoP.Party
 import AoP.PartyChoiceOrder
 import AoP.PartyConcatOrder
 import AoP.PartyIncludeExclude
+import AoP.PartyExcludeMaximum
+import AoP.PartyPairTrace
 import AoP.PartyListCost
 import AoP.PartyPlanTraversal
 import AoP.PartyPlanWork
