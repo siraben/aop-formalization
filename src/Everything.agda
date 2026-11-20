@@ -215,6 +215,7 @@ import AoP.ListProduct
 import AoP.LaxMembership
 import AoP.FixedPoint
 import AoP.DifunctionalClosure
+import AoP.BinaryOctal
 import AoP.FoldReachability
 import AoP.Kleene
 import AoP.Closure
