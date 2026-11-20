@@ -37,6 +37,7 @@ import AoP.FunctorIso
 import AoP.HomAction
 import AoP.TreeFunctor
 import AoP.UniversalImage
+import AoP.SingletonImage
 import AoP.Transformations
 import AoP.Polynomial
 import AoP.Products
