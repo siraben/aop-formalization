@@ -37,6 +37,7 @@ import AoP.ConstantArrow
 import AoP.ProductCategory
 import AoP.OrderProducts
 import AoP.ProjectionEpic
+import AoP.ExchangeLaw
 import AoP.TerminalDiagrams
 import AoP.Functors
 import AoP.FunctorIso
