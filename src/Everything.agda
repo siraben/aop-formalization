@@ -105,6 +105,14 @@ import AoP.ProductProjectionFunctors
 import AoP.SpanProductFunctor
 import AoP.OppositeCategory
 import AoP.CoproductByDuality
+import AoP.PartialProductDecision
+import AoP.ExecutablePartialGraph
+import AoP.PartialGraphCoproduct
+import AoP.RelSumProduct
+import AoP.PolynomialSubstitution
+import AoP.RemainderUnique
+import AoP.ModularAdditionHom
+import AoP.AlgebraCategory
 import AoP.ArrowEndpoints
 import AoP.EmptyTargets
 import AoP.EmptyProductTargets
