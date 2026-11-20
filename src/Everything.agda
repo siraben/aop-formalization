@@ -193,8 +193,10 @@ import AoP.Horner
 import AoP.Slice
 import AoP.TipDepths
 import AoP.WeightedPaths
+import AoP.WeightedDepthSpec
 import AoP.PositionSum
 import AoP.GeneralHorner
+import AoP.HornerPolynomialTrace
 import AoP.CategoricalHorner
 import AoP.HornerMultiplier
 import AoP.Hyperproduct

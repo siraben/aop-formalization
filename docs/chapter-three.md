@@ -1,6 +1,6 @@
 # Chapter 3: paired folds, Horner’s rule, and TeX decimal input
 
-This inventory lists exercises 3.1–3.51 and selected worked derivations in §§3.1–3.5. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction.
+This inventory lists exercises 3.1–3.51 and selected worked derivations in §§3.1–3.5. The [one-pass average](../src/AoP/Average.agda) illustrates pairing two independent folds; the [steep-list test](../src/AoP/Steep.agda) uses a pair in which one result depends on the other. For Horner’s rule, compare the [list triangle](../src/AoP/Horner.agda) with the [depth-labelled tree](../src/AoP/TipDepths.agda). Both derivations eliminate an intermediate structure by moving an operation through the final reduction. [HornerPolynomialTrace](../src/AoP/HornerPolynomialTrace.agda) checks the polynomial example: with coefficients `[2,3,4]` in ascending degree at `x = 10`, the triangle builds `[2,30,400]`. Horner’s fold instead evaluates the suffixes to `4`, `43`, then `432`. Distributivity proves that the routes agree for any list of natural coefficients and any natural evaluation point.
 
 | Exercise | Checked construction or remaining work |
 | --- | --- |
@@ -15,8 +15,8 @@ This inventory lists exercises 3.1–3.51 and selected worked derivations in §�
 | 3.10 | [Hyperproduct](../src/AoP/Hyperproduct.agda): use commutativity to distribute squaring over multiplication, then fuse the triangle of repeated squarings. |
 | 3.11 | [GeneralHorner](../src/AoP/GeneralHorner.agda): derive the generalized Horner rule in `Fun` for a natural transformation of layers and a compatible reduction. [CategoricalHorner](../src/AoP/CategoricalHorner.agda) gives the derivation in an arbitrary category with the specified initial algebra. `promote` moves the layer change past reduction. Using it under the functor makes the reduction a homomorphism from the triangle algebra to the Horner algebra; `horner` then fuses triangle construction and reduction into a single fold. |
 | 3.12 | [HornerMultiplier](../src/AoP/HornerMultiplier.agda): the constant-coefficient case forces the update to be multiplication by the evaluation point. |
-| 3.13 | [PositionSum](../src/AoP/PositionSum.agda): derive the position-weighted sum from a triangle. Shifting a suffix one place adds its ordinary sum to its weighted sum. |
-| 3.14 | [WeightedPaths](../src/AoP/WeightedPaths.agda): carry the total weight and weighted path length together. Increasing every tip depth by one adds the subtree’s total weight. |
+| 3.13 | [PositionSum](../src/AoP/PositionSum.agda): derive the position-weighted sum from a triangle. Shifting a suffix one place adds its ordinary sum to its weighted sum. For `[2,3,5]`, the suffix `[3,5]` has summary `(8,5)`. Prepending `2` shifts that suffix, changing its weighted sum to `5 + 8 = 13`. The final `(10,13)` agrees with reducing the explicit terms `(2,0)`, `(3,3)`, `(5,10)`. |
+| 3.14 | [WeightedPaths](../src/AoP/WeightedPaths.agda): carry the total weight and weighted path length together. Increasing every tip depth by one adds the subtree’s total weight. [WeightedDepthSpec](../src/AoP/WeightedDepthSpec.agda) proves that the bottom-up fold agrees with passing depth down from the root and charging `depth × weight` at each tip. For weights `2,3,5` at depths `1,2,2`, the right fork has summary `(8,8)` and the root returns `(10,18)`. |
 
 ## §3.3: decimal input for TeX
 

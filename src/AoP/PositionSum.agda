@@ -46,4 +46,15 @@ correct xs = begin
 
 -- Sum 2+3+5 = 10; weighted sum 0*2 + 1*3 + 2*5 = 13.
 example : scan (2 ∷ 3 ∷ 5 ∷ []) ≡ (10 , 13)
-example = refl
+example = begin
+  scan (2 ∷ 3 ∷ 5 ∷ []) ≡⟨⟩
+  step 2 (step 3 (5 , 0)) ≡⟨⟩
+  step 2 (8 , 5) ≡⟨⟩
+  merge (seed 2) (lift (8 , 5)) ≡⟨⟩
+  merge (2 , 0) (8 , 13) ≡⟨⟩
+  (10 , 13) ∎
+
+-- Start instead from the explicit weighted terms. The correctness
+-- theorem takes their reduction to the same cached computation.
+explicit : H.reduce ((2 , 0) ∷ (3 , 3) ∷ (5 , 10) ∷ []) ≡ (10 , 13)
+explicit = correct (2 ∷ 3 ∷ 5 ∷ []) ∙ example
