@@ -379,6 +379,7 @@ import AoP.UpsequenceDecision
 import AoP.UpsequenceFrontier
 import AoP.UpsequenceExtensions
 import AoP.UpsequenceSound
+import AoP.UpsequenceCoverage
 import AoP.MonotoneMinimum
 import AoP.GreedyFold
 import AoP.LayeredPaths
