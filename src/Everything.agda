@@ -425,6 +425,8 @@ import AoP.VanHeadOrder
 import AoP.VanExtensionOrder
 import AoP.VanGreedyStep
 import AoP.VanGreedyDominance
+import AoP.CachedVanDecisions
+import AoP.CachedVanOptimal
 import AoP.SecurePartitionFold
 import AoP.ReserveTransfer
 import AoP.VaultCapacity
