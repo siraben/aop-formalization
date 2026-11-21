@@ -38,3 +38,23 @@ peel : (l r : Tree A) → Σ _ λ a → Σ _ λ t → Place a t (bin l r)
 peel (tip a) r = a , r , root
 peel (bin l s) r with peel l s
 ... | a , t , p = a , bin t r , descend p
+
+-- Calculate the inverse on values (without comparing proofs of Place).
+-- At a root insertion the old tree is the right child. At a deeper
+-- insertion, peel the left subtree and restore the untouched right one.
+remove : (l r : Tree A) → A × Tree A
+remove (tip a) r = a , r
+remove (bin l s) r with remove l s
+... | a , t = a , bin t r
+
+undo : ∀ {a : A} {t l r} → Place a t (bin l r) → remove l r ≡ (a , t)
+undo root = refl
+undo (descend {l′ = tip _} ())
+undo (descend {l′ = bin x y} p) rewrite undo p = refl
+
+-- Even with repeated operand labels, reaching the same compound
+-- expression determines both the prepended label and the old tree.
+unique-source : ∀ {a b : A} {t u l r} → Place a t (bin l r) → Place b u (bin l r) → (a , t) ≡ (b , u)
+unique-source p q = back (undo p) ∙ undo q
+  where back : ∀ {X : Set} {x y : X} → x ≡ y → y ≡ x
+        back refl = refl

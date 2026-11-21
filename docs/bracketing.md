@@ -4,6 +4,16 @@ Given a nonempty sequence of operands, choose parentheses without changing opera
 
 ### Where the candidates come from
 
+**Read insertion backwards.** Write `l · r` for a binary node. To undo a new leftmost operand, inspect the left child:
+
+```text
+remove(a · t)         = (a, t)                      when a is a tip
+remove((l · s) · r)   = let (a,t) = remove(l · s)
+                        in (a, t · r)               restore the untouched right child
+```
+
+For example, removing the first tip from `(a · b) · c` first returns `(a,b)` from the left child, then returns `(a,b · c)` from the whole expression. In [BracketSpine](../src/AoP/Chapter09/BracketSpine.agda), `undo` proves that applying this calculation to any legal insertion recovers its label and original tree. Consequently, if two insertions yield the same expression, applying `remove` once identifies both sources (`unique-source`). This uses the shape of the expression, so repeated operand labels need no equality test.
+
 Read the input from right to left. A singleton has just one tree. To prepend `a` to `(b c)`, either make a new root `(a (b c))` or insert lower down, yielding `((a b) c)`. For a larger tree, the available positions are precisely its left spine. [Peeling](../src/AoP/Chapter09/BracketSpine.agda) recovers the first operand and an insertion witness from every compound tree. The [converse function theorem application](../src/AoP/Chapter09/FlattenConverseLaw.agda) uses this decomposition and the leaf equations to characterize all bracketings. [ConverseFlattenFold](../src/AoP/Chapter09/ConverseFlattenFold.agda) enumerates them.
 
 ### Why keeping the cheapest suffix fails

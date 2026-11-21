@@ -4,6 +4,21 @@
 
 ## §9.1 Theory
 
+**Theorem 9.1: try every legal split.** Write `H w a` when `w` is a feasible result on `a`, and `M w a` when it is a minimum of that fibre. Suppose the recursive calls return minima. For each legal decomposition we compute a parent result with `h`, then select a minimum of the resulting pool. To show that this step preserves `M`, [PrunedDP.AllSplits](../src/AoP/Chapter09/PrunedDP.agda) proves two inclusions separately:
+
+1. **Feasibility (9.2).** The winner belongs to the pool, so we can recover its split and its child results. Each child minimum is feasible. Applying the feasible-result equation in the constructing direction (`roll`) therefore gives a feasible parent.
+2. **Optimality (9.3).** Take any feasible rival and unpack it (`unroll`). If its split is `b` and its children give layer `v`, the rival is `h v`. The pool contains an output `h u` built from minima at that same split. Compare in two steps:
+
+   ```text
+   winner R h u     because h u is in the pool
+   h u    R h v     because the child minima beat those feasible rivals
+                    and h preserves the lifted comparison
+   ```
+
+   Transitivity gives `winner R rival`. This is where coverage of *every* legal split matters; feasibility alone only says the chosen split was legal.
+
+Together these facts give `Step M ⊆ M`. Least-fixed-point induction gives the desired global inclusion without requiring that every input have a result or a unique minimizing witness. Theorem 9.2 additionally permits pruning the splits, which requires a way to match each omitted split with a retained one.
+
 [DPBifunctor](../src/AoP/Chapter09/DPBifunctor.agda) derives Proposition 9.4 for a two-argument relator. Compare labels by `U` and subproblems by `V`. Reflexivity on labels gives the ordinary monotonicity condition. For thinning, `prune` starts with a discarded decomposition and its evaluated layer, composes the lifted comparisons, and splits them again to produce a feasible retained layer whose combined result is at least as good. The relator, evaluator and subproblem comparison laws are explicit hypotheses.
 
 [DPCostFactor](../src/AoP/Chapter09/DPCostFactor.agda) derives Proposition 9.2. Rank solutions by comparing their costs. `move-cost` transfers a comparison of solutions to their costs, and `move-layer` lifts that transfer to a layer of recursive results. If the cost of evaluating a layer is computed by a monotone cost function `k`, then `monotone` proves that the original evaluator preserves the solution ranking. The proof uses the stated relator laws and agreement of the lifted cost graph with the graph of its action on layers.
