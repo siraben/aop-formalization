@@ -29,9 +29,12 @@ module Trees {X V S : Set} (P : S → Set)
   valid (choose s sub d ex a kids) = build s sub d a (λ i → valid (kids i))
 
   lower : ∀ {x u v} → Greedy x u → Feasible x v → u ≤ v
-  lower (choose s sub d ex a kids) competitor with ex _ competitor
-  ... | b , completions , le = trans local le
+  lower {v = v} (choose s sub d ex a kids) competitor with ex v competitor
+  ... | b , completions , le =
+    f s a ≤⟨ local ⟩       -- solve the exchanged competitor's children greedily
+    f s b ≤⟨ le ⟩∎ v       -- exchange bounds this completion by the original rival
     where
+    open BoundSteps _≤_ trans
     local : f s a ≤ f s b
     local = mono s a b (λ i → lower (kids i) (completions i))
 

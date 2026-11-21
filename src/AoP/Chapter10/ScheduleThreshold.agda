@@ -8,9 +8,9 @@ open import AoP.Chapter02.Polynomial using (_⊎_; inl; inr)
 open import AoP.Chapter10.PickLast using (Pick)
 open import AoP.Chapter10.ScheduleDuration using (total; perm-total)
 open import AoP.Chapter10.Tardiness using (Job)
-open import AoP.Chapter10.TardinessBound using (module Limit)
+open import AoP.Chapter10.TardinessBound using (module Limit; charge)
 open import AoP.Chapter10.LastBound using (module Witness)
-open import AoP.Common.NatOrder using (chain)
+open import AoP.Common.NatOrder using (_≤_; chain)
 open import Agda.Builtin.Nat using (Nat)
 
 -- §10.3. Even though the competitor need not end with the greedy job,
@@ -36,4 +36,6 @@ module Bound (k : Nat) where
             Fits 0 (y ∷ ys) → Allowed (Pick.last p) (total jobs)
   last-ok {jobs} {y} {ys} p perm fits with final-job y ys fits
   ... | z , mem , ok rewrite finish-total 0 (y ∷ ys) | perm-total perm =
-    chain (Pick.cheapest p z (original perm mem)) ok
+    charge (Pick.last p) (total jobs) ≤⟨ Pick.cheapest p z (original perm mem) ⟩
+    charge z (total jobs)             ≤⟨ ok ⟩∎ k
+    where open BoundSteps _≤_ chain

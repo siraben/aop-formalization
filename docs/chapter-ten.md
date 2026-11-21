@@ -4,7 +4,16 @@
 
 ## §10.1 Theory
 
-[BranchingGreedy](../src/AoP/Chapter10/BranchingGreedy.agda) verifies a branch-selection algorithm from a monotone cost extension and an exchange witness. The abstract relational derivations still need an audit.
+[GreedyDecomposition](../src/AoP/Chapter10/GreedyDecomposition.agda) derives Theorem 10.1 for a relation lifting on `Rel`. Chapter 9 evaluated competing splits before selecting a parent minimum. Here the program chooses a minimum split `c` first. Let `h u` be its result and `h v` a feasible rival obtained at another split `b`. The minimum-split condition compares `c` with `b`; exchange turns the rival into a completion `w` at `c`. Now calculate:
+
+```text
+h u  R  h w    both use c: each child minimum beats its feasible rival; apply monotonicity of h
+h w  R  h v    exchange bound for the rival at b
+```
+
+Transitivity gives the global comparison. Feasibility follows by building the chosen layer from its feasible children. Together these show that the greedy step preserves feasible minima; least-fixed-point induction gives the theorem. This proves an inclusion: an input with no minimum split need not yield an output. [BranchingGreedy](../src/AoP/Chapter10/BranchingGreedy.agda) checks the corresponding argument for a tree of explicit branch choices.
+
+**Proposition 10.1: moving the branch test before minimization.** Suppose legal splits come from either a left or a right branch, and the two ranges are disjoint. Fix an input and test whether it belongs to the left range. If it does, every legal split carries the left tag. Unwrapping the winner’s tag gives a left-branch minimum with the same output. Conversely, tag a left minimum: it beats every left rival, and disjointness rules out right rivals. A negative test gives the corresponding right-branch calculation. If neither branch applies, the right fibre is empty and supplies no winner. [DisjointGreedyBranches](../src/AoP/Chapter10/DisjointGreedyBranches.agda) checks both directions (`forward`, `backward`) with an explicit decision procedure for the left range. It does not require either branch to produce a unique output.
 
 ## §10.2 Tab compression
 

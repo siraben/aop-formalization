@@ -42,8 +42,11 @@ module DP {Input Value Shape : Set} (Pos : Shape → Set)
     build s sub split f (λ i → fst (opts i)) , bound
     where
     bound : ∀ w → Feasible x w → eval s f ≤ w
-    bound _ (build t cs d g runs) = trans local extended
+    bound _ (build t cs d g runs) =
+      eval s f     ≤⟨ local ⟩         -- compare with the best completion of the rival split
+      eval t costs ≤⟨ extended ⟩∎ eval t g
       where
+      open BoundSteps _≤_ trans
       opt = best t cs d
       costs = λ i → fst (opt i)
       local : eval s f ≤ eval t costs

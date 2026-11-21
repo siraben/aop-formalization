@@ -30,3 +30,15 @@ _≡⟨⟩_ : ∀ {A : Set} (x : A) {y} → x ≡ y → x ≡ y
 x ≡⟨⟩ p = p
 _∎ : ∀ {A : Set} (x : A) → x ≡ x
 x ∎ = refl
+
+-- An optimization calculation may assume only transitivity. End with
+-- the actual last inequality rather than demanding reflexivity there.
+module BoundSteps {A : Set} (_≤_ : A → A → Set)
+                  (trans : ∀ {x y z} → x ≤ y → y ≤ z → x ≤ z) where
+  infixr 2 _≤⟨_⟩_
+  _≤⟨_⟩_ : (x : A) → ∀ {y z} → x ≤ y → y ≤ z → x ≤ z
+  _ ≤⟨ xy ⟩ yz = trans xy yz
+  infix 3 last-step
+  last-step : (x y : A) → x ≤ y → x ≤ y
+  last-step x y xy = xy
+  syntax last-step x y xy = x ≤⟨ xy ⟩∎ y

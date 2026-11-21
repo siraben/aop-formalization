@@ -7,6 +7,8 @@ import AoP.Chapter10.BackwardSchedule
 import AoP.Chapter10.BagAlgebraFibre
 import AoP.Chapter10.BlankTie
 import AoP.Chapter10.BranchingGreedy
+import AoP.Chapter10.DisjointGreedyBranches
+import AoP.Chapter10.GreedyDecomposition
 import AoP.Chapter10.DeadlineCertificate
 import AoP.Chapter10.DeadlineLog
 import AoP.Chapter10.DeadlineMerge
