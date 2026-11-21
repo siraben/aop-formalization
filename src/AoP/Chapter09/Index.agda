@@ -36,6 +36,7 @@ import AoP.Chapter09.DecimalBracketMinimum
 import AoP.Chapter09.DecoderInit
 import AoP.Chapter09.DecoderPrefix
 import AoP.Chapter09.DictionaryBellman
+import AoP.Chapter09.DictionaryCachedRows
 import AoP.Chapter09.DictionaryCachedSize
 import AoP.Chapter09.DictionaryCodeDomain
 import AoP.Chapter09.DictionaryConverseCases
