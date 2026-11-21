@@ -36,8 +36,14 @@ module Optimal {A : Set} (n : Nat) where
 
   beats : ∀ xs → size (encode (plain xs)) ≤ len xs
   beats ε = rid 0
-  beats (xs ▻ blank) = chain (space-bound (encode (plain xs))) (s≤ (beats xs))
-  beats (xs ▻ tab) = chain (tab-bound (plain xs)) (s≤ (beats xs))
+  beats (xs ▻ blank) =
+    size (encode (plain (xs ▻ blank))) ≤⟨ space-bound (encode (plain xs)) ⟩
+    suc (size (encode (plain xs)))     ≤⟨ s≤ (beats xs) ⟩∎ len (xs ▻ blank)
+    where open BoundSteps _≤_ chain
+  beats (xs ▻ tab) =
+    size (encode (plain (xs ▻ tab))) ≤⟨ tab-bound (plain xs) ⟩
+    suc (size (encode (plain xs)))   ≤⟨ s≤ (beats xs) ⟩∎ len (xs ▻ tab)
+    where open BoundSteps _≤_ chain
   beats (xs ▻ newline) = s≤ (beats xs)
   beats (xs ▻ glyph a) = s≤ (beats xs)
 

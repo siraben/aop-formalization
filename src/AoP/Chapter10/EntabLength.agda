@@ -7,7 +7,7 @@ open import AoP.Chapter10.Entab
 open import AoP.Chapter10.TabFree
 open import AoP.Chapter01.Snoc using (ε; _▻_)
 open import AoP.Common.NatOrder using (_≤_; rid; chain; s≤; weaken)
-open import Agda.Builtin.Nat using (Nat; zero; suc)
+open import Agda.Builtin.Nat using (Nat; zero; suc; _+_)
 
 -- §10.2. Round-trip correctness alone would permit an encoder that never
 -- emits a tab. As a first bound on encoded length, charge one character
@@ -24,6 +24,18 @@ module Bound {A : Set} (n : Nat) where
 
   size : ∀ {s} → Buffer s → Nat
   size (buf xs k _) = len (blanks xs k)
+
+  -- Put the pending count first so each tick removes one successor.
+  -- Moving a blank onto the prefix preserves their combined length.
+  flush-length : ∀ xs k → len (blanks xs k) ≡ k + len xs
+  flush-length xs zero = refl
+  flush-length xs (suc k) = begin
+    len (blanks (xs ▻ blank) k) ≡⟨ flush-length (xs ▻ blank) k ⟩
+    k + suc (len xs)            ≡⟨ slide k (len xs) ⟩
+    suc k + len xs              ∎
+    where slide : ∀ a b → a + suc b ≡ suc (a + b)
+          slide zero b = refl
+          slide (suc a) b = cong suc (slide a b)
 
   grows : ∀ xs k → len xs ≤ len (blanks xs k)
   grows xs zero = rid _

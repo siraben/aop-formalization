@@ -47,8 +47,14 @@ module Block {A : Set} (n : Nat) where
 
   tab-block : ∀ {s} (p : Plain s) →
     view (encode (spaces (suc (position s)) p)) ≡ (Buffer.code (encode p) ▻ tab , 0)
-  tab-block {s} p = consume (suc (position s)) p ∙ finish
+  tab-block {s} p = begin
+    view (encode (spaces (suc (position s)) p))  ≡⟨ consume (suc (position s)) p ⟩
+    run (suc (position s)) (view (encode p))     ≡⟨ finish ⟩  -- reach the stop, commit a tab
+    (Buffer.code (encode p) ▻ tab , 0)          ∎
     where
     finish : run (suc (position s)) (view (encode p)) ≡ (Buffer.code (encode p) ▻ tab , 0)
     finish with encode p | bounded p | distance p
-    ... | buf xs k inv | le | eq = cong (λ j → run (suc j) (xs , k)) eq ∙ At.completes xs k le
+    ... | buf xs k inv | le | eq = begin
+      run (suc (position s)) (xs , k)               ≡⟨ cong (λ j → run (suc j) (xs , k)) eq ⟩
+      run (suc (Prefix.m xs - k)) (xs , k)          ≡⟨ At.completes xs k le ⟩
+      (xs ▻ tab , 0)                               ∎
