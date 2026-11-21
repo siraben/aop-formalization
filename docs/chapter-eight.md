@@ -108,6 +108,15 @@ The objective matters. [ParagraphSquareFailure](../src/AoP/Chapter08/ParagraphSq
 
 ## §8.6 Bitonic tours and final exercises
 
+**Calculate the number of endpoint pairs.** After processing `k ≥ 2` distinct cities, let `b` be the newest city. Each older city `a` contributes `(a,b)` on one arm and `(b,a)` on the other. The same older city may occur on both arms, but the ordered pairs differ because `a ≠ b`. [TourTableOrder.width](../src/AoP/Chapter08/TourTableOrder.agda) calculates the width of the compacted key table from its two-arm form:
+
+```text
+number of keys = length of left arm + length of right arm
+               = (k − 1) + (k − 1).
+```
+
+For cities processed as `4,3,2,1`, the seed `(4,4)` gives way to layers of widths `2`, `4`, then `6`. The last expansion initially has eight entries. The middle runs `(2,1),(2,1)` and `(1,2),(1,2)` each lose one duplicate; [TourKeyExample](../src/AoP/Chapter08/TourKeyExample.agda) checks all eight inputs and all six survivors. [TourCostedOrder.width](../src/AoP/Chapter08/TourCostedOrder.agda) transfers the count to the table that stores actual tours: projecting each record to its key preserves length, and `erase` identifies the resulting list with the compacted key table. The number of survivors therefore does not depend on which tied tour was retained. The proof counts records; it makes no assumption about the time needed to evaluate a tour’s cost.
+
 [BitonicTable](../src/AoP/Chapter08/BitonicTable.agda) and [BitonicExample](../src/AoP/Chapter08/BitonicExample.agda) verify a table algorithm and a directed example. The following entries track the tour variants and final exercises.
 
 | Exercise | Remaining construction |

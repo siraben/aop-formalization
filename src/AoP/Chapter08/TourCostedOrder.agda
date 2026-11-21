@@ -11,7 +11,7 @@ open import AoP.Chapter02.Polynomial using (_⊎_)
 open import AoP.Chapter04.Complement using (⊥)
 open import AoP.Chapter03.Horner using (map)
 open import AoP.Chapter01.Naturality using (_++_; map-++)
-open import Agda.Builtin.Nat using (Nat)
+open import Agda.Builtin.Nat using (Nat; suc; _+_)
 
 -- Run the thinning calculation on tours with both leg tails present.
 -- Index a frontier by its common first city, so a newly prepended city
@@ -51,3 +51,13 @@ module Solve (City : Set) where
     order : ∀ a b cs z → Table.Unique City (b ∷ Table.front City cs z) →
             map key (tours a b cs z) ≡ L b (z ∷ Table.rev City cs) ++ R b (Table.front City cs z)
     order a b cs z u = erase a b cs z ∙ K.order b cs z u
+
+    -- Projecting a tour to its endpoint key preserves the number of
+    -- entries. Thus the key-width calculation also counts the actual
+    -- cost-selected records, regardless of which tied tour survived.
+    width : ∀ a b cs z → Table.Unique City (b ∷ Table.front City cs z) →
+      K.size (tours a b cs z) ≡ suc (K.size cs) + suc (K.size cs)
+    width a b cs z u = back (K.mapped key (tours a b cs z)) ∙
+      cong K.size (erase a b cs z) ∙ K.width b cs z u
+      where back : ∀ {x y : Nat} → x ≡ y → y ≡ x
+            back refl = refl

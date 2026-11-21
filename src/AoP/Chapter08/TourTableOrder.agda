@@ -2,6 +2,8 @@
 module AoP.Chapter08.TourTableOrder where
 
 open import AoP.Common.Prelude
+open import Agda.Builtin.Nat using (Nat; suc; _+_)
+open import AoP.Chapter03.Horner using (map)
 open import AoP.Chapter08.TourArmExtension using (module Step)
 open import AoP.Chapter08.TourKeyLayer using (module Keys)
 open import AoP.Chapter08.TourArmNormal using (module Law′)
@@ -56,3 +58,28 @@ module Table (City : Set) where
                      (b ∈ (a ∷ rev (c ∷ ts)) → ⊥) → expand b (L c (a ∷ rev ts) ++ R c (front ts a)) ≡ L b (a ∷ rev (c ∷ ts)) ++ R b (front (c ∷ ts) a)
             finish [] a = extend b c a [] a []
             finish (v ∷ vs) a = extend b c a (rev (v ∷ vs)) v (front vs a)
+
+    -- Count both arms after thinning. The endpoint z occurs once in
+    -- each arm; it forms distinct keys (z,b) and (b,z) by freshness.
+    size : ∀ {A : Set} → List A → Nat
+    size [] = 0
+    size (_ ∷ xs) = suc (size xs)
+    mapped : ∀ {A B : Set} (f : A → B) xs → size (map f xs) ≡ size xs
+    mapped f [] = refl
+    mapped f (x ∷ xs) = cong suc (mapped f xs)
+    private
+      joined : ∀ {A : Set} (xs ys : List A) → size (xs ++ ys) ≡ size xs + size ys
+      joined [] ys = refl
+      joined (x ∷ xs) ys = cong suc (joined xs ys)
+      snoc-size : ∀ xs z → size (front xs z) ≡ suc (size xs)
+      snoc-size [] z = refl
+      snoc-size (x ∷ xs) z = cong suc (snoc-size xs z)
+      reversed : ∀ xs → size (rev xs) ≡ size xs
+      reversed [] = refl
+      reversed (x ∷ xs) = snoc-size (rev xs) x ∙ cong suc (reversed xs)
+
+    width : ∀ b cs z → Unique (b ∷ front cs z) →
+      size (keys b cs z) ≡ suc (size cs) + suc (size cs)
+    width b cs z u rewrite order b cs z u | joined (L b (z ∷ rev cs)) (R b (front cs z))
+      | mapped (λ a → a , b) (rev cs) | mapped (λ a → b , a) (front cs z)
+      | snoc-size cs z | reversed cs = refl
