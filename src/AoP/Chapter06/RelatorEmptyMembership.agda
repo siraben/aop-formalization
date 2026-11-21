@@ -18,8 +18,14 @@ module Proof (F : Set → Set) (L : ∀ {A B} → B ← A → F B ← F A)
   Entire = ∀ (A : Set) (v : F A) → Σ A (λ a → member A a v)
   forward : Entire → F ⊥ → ⊥
   forward all v = fst (all ⊥ v)
-  backward : IdentityLaw → (∀ P → ((P → ⊥) → ⊥) → P) → (F ⊥ → ⊥) → Entire
-  backward law dne empty A v = dne _ λ none → empty (fst (CompositeLaw.expand (generalize law) R S {b = v} {a = tt} (vacant none)))
+  Member : ∀ A → F A → Set
+  Member A v = Σ A (λ a → member A a v)
+  NoVacant = ∀ A (v : F A) → (Member A v → ⊥) → ⊥
+
+  -- The factorization itself needs no classical elimination. A vacant
+  -- fibre would produce an intermediate F ⊥ value.
+  no-vacant : IdentityLaw → (F ⊥ → ⊥) → NoVacant
+  no-vacant law empty A v none = empty (fst (CompositeLaw.expand (generalize law) R S {b = v} {a = tt} (vacant none)))
     where R : A ← ⊥
           R a ()
           S : ⊥ ← ⊤
@@ -27,3 +33,16 @@ module Proof (F : Set → Set) (L : ∀ {A B} → B ← A → F B ← F A)
           vacant : (Σ A (λ a → member A a v) → ⊥) → Columns (R ∘ S) v tt
           vacant none {x} m with none (x , m)
           ... | ()
+
+  -- Conversely a structure over ⊥ cannot supply a member. Thus
+  -- emptiness of F ⊥ is constructively equivalent to NoVacant.
+  empty-from-no-vacant : NoVacant → F ⊥ → ⊥
+  empty-from-no-vacant nv v = nv ⊥ v fst
+
+  -- Extract actual witnesses only at the fibres where they are used.
+  -- A local decision procedure suffices, even without global DNE.
+  stable-backward : IdentityLaw → (∀ A v → ((Member A v → ⊥) → ⊥) → Member A v) →
+                    (F ⊥ → ⊥) → Entire
+  stable-backward law stable empty A v = stable A v (no-vacant law empty A v)
+  backward : IdentityLaw → (∀ P → ((P → ⊥) → ⊥) → P) → (F ⊥ → ⊥) → Entire
+  backward law dne = stable-backward law (λ A v → dne (Member A v))
