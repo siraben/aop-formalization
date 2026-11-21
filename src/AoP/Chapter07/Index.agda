@@ -24,6 +24,7 @@ import AoP.Chapter07.CylinderMoveExample
 import AoP.Chapter07.CylinderPotential
 import AoP.Chapter07.CylinderSampleGrid
 import AoP.Chapter07.CylinderTableWinner
+import AoP.Chapter07.CylinderWindow
 import AoP.Chapter07.CylinderTupleLift
 import AoP.Chapter07.FilterGreedy
 import AoP.Chapter07.FiveMoveCylinder

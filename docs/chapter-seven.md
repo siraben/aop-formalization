@@ -118,7 +118,11 @@ D(j,r) = min {cell(j,r) + cost(p) | s in {up(r), r, down(r)}, p starts at (j+1,s
        = cell(j,r) + min {D(j+1,up(r)), D(j+1,r), D(j+1,down(r))}
 ```
 
-The current charge is the same for every rival, and each of the three suffix minima has a witnessing path. Store both the score and the winning move, then fill the columns right to left. Minimizing over the first column removes the fixed-start assumption. Wrapping affects the two neighbour lookups: moving up from the top selects the bottom row and moving down from the bottom selects the top. [CylinderCachedColumn](../src/AoP/Chapter07/CylinderCachedColumn.agda) proves that the chosen extension beats every rival; [CylinderSampleGrid](../src/AoP/Chapter07/CylinderSampleGrid.agda) checks the book’s illustrated path cost of **429** and the optimum of **188** on the same grid.
+The current charge is the same for every rival, and each of the three suffix minima has a witnessing path. Store both the score and the winning move, then fill the columns right to left. Minimizing over the first column removes the fixed-start assumption.
+
+**Calculate the neighbour lookup.** In a linked column `[a,b,c,d]`, the cyclic triples are `(d,a,b)`, `(a,b,c)`, `(b,c,d)`, `(c,d,a)`. Obtain the initial predecessor `d` once and retain `a` for the final wrap. After emitting a triple, its centre becomes the next predecessor. [CylinderWindow](../src/AoP/Chapter07/CylinderWindow.agda) checks `Scan.correct`: at every row, applying any update to the streamed triple gives exactly the indexed up/stay/down result, including for a one-row cylinder. This costs one walk to the last entry and one update per row, assuming a constant-cost update. It establishes the linear neighbour-access step separately from the indexed path solver and from arithmetic costs.
+
+ Wrapping affects the two neighbour lookups: moving up from the top selects the bottom row and moving down from the bottom selects the top. [CylinderCachedColumn](../src/AoP/Chapter07/CylinderCachedColumn.agda) proves that the chosen extension beats every rival; [CylinderSampleGrid](../src/AoP/Chapter07/CylinderSampleGrid.agda) checks the book’s illustrated path cost of **429** and the optimum of **188** on the same grid.
 
 ## §7.5 The security van
 
