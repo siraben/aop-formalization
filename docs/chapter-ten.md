@@ -33,6 +33,17 @@
 
 ## §10.4 TeX decimal output
 
+**Derive the search interval.** A decimal with `k` fractional digits represents `p/D`, where `D = 10^k` and `0 ≤ p < D`. For a target of `n` units of size `1/65536`, half-up rounding accepts this decimal exactly when
+
+```text
+n − 1/2 ≤ 65536 p/D < n + 1/2                half-up rounding cell
+(2n − 1) D ≤ 131072 p < (2n + 1) D           multiply by the positive integer 2D
+```
+
+The left endpoint belongs to the cell; the right one rounds to the next target. For `n = 10` and `D = 10000`, the interval for `131072 p` is `[190000,210000)`. It falls between successive multiples `131072` and `262144`, so width four cannot work. Every shorter decimal can be padded with zeros to width four, ruling those out too. At `D = 100000` the interval becomes `[1900000,2100000)`, admitting `p = 15` and `16`. Both `.00015` and `.00016` are therefore shortest round-tripping decimals.
+
+To choose the closest, compare `|65536 p − 10D|` at the common denominator. The errors are `|983040 − 1000000| = 16960` and `|1048576 − 1000000| = 48576`. Thus `.00015` wins the extra comparison. [TeXClosestTrace](../src/AoP/Chapter10/TeXClosestTrace.agda) checks the two feasible endpoints and both errors; the [rounding guide](tex-rounding.md) connects this grid calculation to the printer.
+
 [TeXExternal](../src/AoP/Chapter10/TeXExternal.agda) specifies shortest round-tripping output and verifies particular values. [TeXShortestSearch](../src/AoP/Chapter10/TeXShortestSearch.agda) gives an exhaustive reference printer. It searches all strings over the [ten digits](../src/AoP/Chapter10/TeXDigitAlphabet.agda) through length 17 and returns a shortest round-tripping string or a proof that none exists. The 17-digit cutoff sends every longer rival to a candidate of no greater length with the same decoded value. This finite search is impractically large. [TeXClosestShortest](../src/AoP/Chapter10/TeXClosestShortest.agda) refines this reference search: among strings of minimum length that decode to the target, it returns one with least absolute error. [TeXDistanceScale](../src/AoP/Chapter10/TeXDistanceScale.agda) checks the common denominator at fixed length and the scores for `.00007` and `.00008`. [TeXSinglePrinter](../src/AoP/Chapter10/TeXSinglePrinter.agda) certifies the single-loop strict-digit printer for the full TeX input range.
 
 | Exercise | Remaining construction |

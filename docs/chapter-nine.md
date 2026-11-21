@@ -14,6 +14,18 @@
 
 ## §9.2 The string edit problem
 
+Let `E(xs,ys)` be the minimum number of commands transforming source `xs` into target `ys`. Copy, insert and delete each cost one. For nonempty strings, split every legal script by its first command; the remaining script solves the indicated suffix problem:
+
+```text
+delete x:  (x ∷ xs, y ∷ ys) → (xs,     y ∷ ys)    cost 1 + E(xs, y ∷ ys)
+insert y:  (x ∷ xs, y ∷ ys) → (x ∷ xs, ys)        cost 1 + E(x ∷ xs, ys)
+copy x:    (x ∷ xs, x ∷ ys) → (xs,     ys)        cost 1 + E(xs, ys)
+```
+
+Take the minimum of the available costs. Unpacking a rival’s first command proves the lower bound; prefixing that command to an optimal suffix script attains its branch cost. At an empty source only insertions remain, so `E([],ys) = length ys`; at an empty target only deletions remain. These equations determine the table from shorter suffixes.
+
+For `ab → ba`, the initial letters differ. Deletion leaves `b → ba` at cost 2, while insertion leaves `ab → a` at cost 2. Thus `E(ab,ba) = 1 + min(2,2) = 3`. [EditTableExample](../src/AoP/Chapter09/EditTableExample.agda) checks all nine suffix cells and the chosen tie branch: delete `a`, copy `b`, insert `a`.
+
 [ScriptLengthOrder](../src/AoP/Chapter09/ScriptLengthOrder.agda) verifies exercise 9.6. Prepending one command to each script preserves their length comparison, even when the commands differ. This proves the point-free cons monotonicity law for the shortest-script objective.
 
 [EditCellCount](../src/AoP/Chapter09/EditCellCount.agda) counts interior table updates. Advancing a row visits one interior cell per target letter, and tabulation advances one row per source letter. For lengths `p` and `q` the exact count is `p*q`. This measure excludes boundary initialization, letter comparison, and computing or comparing script lengths.
