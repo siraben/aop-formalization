@@ -34,7 +34,21 @@ module From {o h e} (C : Category o h e) (F : Functor C C) where
     layer = alg (Functor.F₀ F (carrier I)) (Functor.F₁ F (step I))
     out = fold layer
     roll-out : step I ∘ out ≈ identity
-    roll-out = transitive (fusion (hom {X = layer} {Y = I} (step I) reflexive)) (symmetric reflection)
+    private
+      infixr 2 _≈⟨_⟩_
+      _≈⟨_⟩_ : ∀ {A B} (f : Hom A B) {g k} → f ≈ g → g ≈ k → f ≈ k
+      _ ≈⟨ p ⟩ q = transitive p q
+      infix 3 _∎≈
+      _∎≈ : ∀ {A B} (f : Hom A B) → f ≈ f
+      _ ∎≈ = reflexive
+    roll-out =
+      step I ∘ out ≈⟨ fusion (hom {X = layer} {Y = I} (step I) reflexive) ⟩
+      fold I       ≈⟨ symmetric reflection ⟩
+      identity     ∎≈
     out-roll : out ∘ step I ≈ identity
-    out-roll = transitive (computation layer) (transitive (symmetric (Functor.composition F (step I) out))
-      (transitive (Functor.resp F roll-out) (Functor.identity F)))
+    out-roll =
+      out ∘ step I                            ≈⟨ computation layer ⟩
+      Functor.F₁ F (step I) ∘ Functor.F₁ F out ≈⟨ symmetric (Functor.composition F (step I) out) ⟩
+      Functor.F₁ F (step I ∘ out)              ≈⟨ Functor.resp F roll-out ⟩
+      Functor.F₁ F identity                    ≈⟨ Functor.identity F ⟩
+      identity                                ∎≈

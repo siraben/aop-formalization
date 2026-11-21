@@ -12,7 +12,11 @@ foldn z s (suc n) = s (foldn z s n)
 foldn-unique : ∀ {A : Set} (h : ℕ → A) z s → h zero ≡ z →
                (∀ n → h (suc n) ≡ s (h n)) → ∀ n → h n ≡ foldn z s n
 foldn-unique h z s base step zero = base
-foldn-unique h z s base step (suc n) = step n ∙ cong s (foldn-unique h z s base step n)
+foldn-unique h z s base step (suc n) = begin
+  h (suc n)          ≡⟨ step n ⟩
+  s (h n)            ≡⟨ cong s (foldn-unique h z s base step n) ⟩
+  s (foldn z s n)    ≡⟨⟩
+  foldn z s (suc n)  ∎
 
 fact fib : ℕ → ℕ
 fact zero = 1
@@ -27,7 +31,12 @@ factorials = foldn (0 , 1) λ { (i , a) → suc i , suc i * a }
 
 factorial-invariant : ∀ n → factorials n ≡ (n , fact n)
 factorial-invariant zero = refl
-factorial-invariant (suc n) rewrite factorial-invariant n = refl
+factorial-invariant (suc n) = let step = λ { (i , a) → suc i , suc i * a } in begin
+  factorials (suc n)           ≡⟨⟩                            -- unfold the fold
+  step (factorials n)          ≡⟨ cong step (factorial-invariant n) ⟩
+  step (n , fact n)            ≡⟨⟩                            -- apply the paired update
+  (suc n , suc n * fact n)     ≡⟨⟩                            -- fold the specification
+  (suc n , fact (suc n))       ∎
 
 -- Two adjacent entries suffice: the pair advances without recomputing either.
 neighbours : ℕ → ℕ × ℕ
@@ -35,7 +44,12 @@ neighbours = foldn (0 , 1) λ { (a , b) → b , a + b }
 
 fibonacci-invariant : ∀ n → neighbours n ≡ (fib n , fib (suc n))
 fibonacci-invariant zero = refl
-fibonacci-invariant (suc n) rewrite fibonacci-invariant n = refl
+fibonacci-invariant (suc n) = let advance = λ { (a , b) → b , a + b } in begin
+  neighbours (suc n)                  ≡⟨⟩
+  advance (neighbours n)              ≡⟨ cong advance (fibonacci-invariant n) ⟩
+  advance (fib n , fib (suc n))       ≡⟨⟩
+  (fib (suc n) , fib n + fib (suc n)) ≡⟨⟩                       -- Fibonacci recurrence
+  (fib (suc n) , fib (suc (suc n)))   ∎
 
 -- Exercise 1.6: the carrier itself can be a function space. The outer fold
 -- computes a whole row of Ackermann's function from its preceding row.

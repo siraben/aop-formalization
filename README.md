@@ -91,6 +91,7 @@ The [appendix list product](src/AoP/Appendix/ListProduct.agda) enumerates one ch
 - `R : B ← A` relates an input `a` to a possible output `b`, written `R b a`. Composition `S ∘ R` applies `R` first.
 - `R ⊆ S` sends each witness of `R b a` to a witness of `S b a`.
 - `⦅ e ∣ f ⦆` is the list fold with base `e` and step `f`.
+- Write calculational proofs in the Agda source as well as in the guide. Start from the specification, show the intermediate expressions in reading order, and cite the law or induction hypothesis at the step where it applies. For relational refinements use directed inclusions; when equality is claimed, establish both directions. Keep constructor cases and witness choices explicit when they justify a step.
 - Between `begin` and `∎`, each `≡⟨ law ⟩` cites the law for that step; `≡⟨⟩` uses definitional equality. See [snoc-list associativity](src/AoP/Chapter01/Snoc.agda) and [Horner’s rule](src/AoP/Chapter03/Horner.agda).
 
 ## Open work
