@@ -96,6 +96,30 @@ The unnumbered §7.1 implementation [BinaryMinimum](../src/AoP/Chapter07/BinaryM
 
 [LexSubsequence](../src/AoP/Chapter07/LexSubsequence.agda) proves the first stage of exercise 7.42. Prepending the same head preserves dictionary order, so either subsequence step can be matched from a better tail. The greedy fold compares dropping and retaining the head and returns a lexically greatest subsequence. [LexHeadFold](../src/AoP/Chapter07/LexHeadFold.agda) maintains a descending result and certifies its head-only decision as a greedy step. In particular, a tied head is retained: on a descending suffix its extra occurrence postpones a drop or extends the list. [LexCounterexample](../src/AoP/Chapter07/LexCounterexample.agda) shows why this decision requires the invariant: prepending `0` to `[0,1]` on a tie gives `[0,0,1]`, strictly below dropping the head. [LexWinner](../src/AoP/Chapter07/LexWinner.agda) proves that every attainable greatest result equals the head-only fold and hence is descending. Antisymmetry of dictionary order, derived from irreflexivity and transitivity of the strict element order, also gives equality with the full-comparison algorithm.
 
+## §7.3 Planning a company party
+
+No supervisor may attend with a direct report. A single best guest list for a subtree loses information: the best list may include its root, and the supervisor’s choice may forbid that. Keep two scores per employee `e`: `I(e)` is the best attainable score if `e` attends, `O(e)` if `e` stays home. Write `children(e)` for the direct reports. Calculate the two cases separately:
+
+```text
+I(e) = rating(e) + max {sum of child scores | every child stays home}
+     = rating(e) + sum [O(c) | c in children(e)]
+O(e) = max {sum of child scores | each child may attend or stay home}
+     = sum [max(I(c), O(c)) | c in children(e)]
+```
+
+Why can the maxima move inside the sum? Different child subtrees have no supervisor/report edge between them. Their chosen guest lists can therefore be combined, and addition preserves each score comparison. Every rival is bounded child by child, and the concatenation of the winning lists attains the sum. For a leaf the sum is empty: the pair is `(rating(e), 0)`. With Ada rated 8 and her two direct reports Bo and Cy rated 5 each, Ada’s pair is `(8, 10)`. A free root choice invites Bo and Cy; requiring Ada selects the first component instead. [PartyPairTrace](../src/AoP/Chapter07/PartyPairTrace.agda) checks the two actual lists; [PartyExcludeMaximum](../src/AoP/Chapter07/PartyExcludeMaximum.agda) proves the childwise choice and concatenation step. The Agda score model uses natural numbers.
+
+## §7.4 Shortest paths on a cylinder
+
+Fix a starting row `r` in column `j`. Let `D(j,r)` be the minimum remaining cost, including the cell at `(j,r)`. In the last column the path consists of that cell alone. In every earlier column, split the candidates by their first move:
+
+```text
+D(j,r) = min {cell(j,r) + cost(p) | s in {up(r), r, down(r)}, p starts at (j+1,s)}
+       = cell(j,r) + min {D(j+1,up(r)), D(j+1,r), D(j+1,down(r))}
+```
+
+The current charge is the same for every rival, and each of the three suffix minima has a witnessing path. Store both the score and the winning move, then fill the columns right to left. Minimizing over the first column removes the fixed-start assumption. Wrapping affects the two neighbour lookups: moving up from the top selects the bottom row and moving down from the bottom selects the top. [CylinderCachedColumn](../src/AoP/Chapter07/CylinderCachedColumn.agda) proves that the chosen extension beats every rival; [CylinderSampleGrid](../src/AoP/Chapter07/CylinderSampleGrid.agda) checks the book’s illustrated path cost of **429** and the optimum of **188** on the same grid.
+
 ## §7.5 The security van
 
 [ReserveIntervalExample](../src/AoP/Chapter07/ReserveIntervalExample.agda) proves both directions of the opening example. With capacity 10, the transactions `+2, −5, +7` run without a visit exactly when the starting reserve lies between 3 and 6 inclusive. The block needs at least 3 units of stock and 4 units of empty space.
