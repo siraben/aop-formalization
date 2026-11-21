@@ -42,6 +42,17 @@ Choose one vertex from each nonempty layer to minimize the sum of adjacent edge 
 
 ## §8.3 Implementing thinning
 
+**Derive the list update.** Write `U ≼ V` here for “the retained list `U` thins the original list `V`”: each survivor came from `V`, and each member of `V` is dominated by some survivor. Suppose `ys = thinlist xs`. The fold step needs `thinlist (x ∷ xs) ≼ x ∷ xs`. Factor this obligation through the candidate list `x ∷ ys`:
+
+```text
+bump x ys ≼ x ∷ ys       local elimination: drop a head only with a dominating witness
+          ≼ x ∷ xs       lift the suffix thinning; x represents itself
+```
+
+Transitivity composes the two coverage witnesses. If `ys` starts with `y`, compare `x` with `y`: retain `x` in place of `y` when `x` dominates it, retain `y` alone when it dominates `x`, or keep both. The empty suffix just takes the singleton `[x]`. This proves coverage without assuming every pair is comparable or promising the smallest possible survivor list. [Bump](../src/AoP/Chapter08/Bump.agda) checks both inclusions implicit in the thinning specification, and `ordered` records the actual surviving positions as a subsequence.
+
+**Comparison count.** The suffix of a nonempty list has a survivor whenever that suffix itself is nonempty: its first input member needs a representative. So for a list of length `n` the call count satisfies `C(0) = C(1) = 0` and `C(n+2) = 1 + C(n+1)`. `exact-work` proves `C(n+1) = n` even if the comparison always chooses to retain both candidates. This counts calls to the supplied comparison, independently of the cost of deciding dominance.
+
 The [connected thinning guide](connected-thinning.md) follows exercise 8.14 from the minimum-block specification through the streaming fold and its worked trace.
 
 [SnocBump](../src/AoP/Chapter08/SnocBump.agda) implements the snoc-list fold in exercise 8.12. Each new candidate competes with the last survivor. Under universal comparison with ties awarded to the newcomer, the snoc fold on `[false,true]` keeps `true`, while the cons fold keeps `false`. [SnocBumpProof](../src/AoP/Chapter08/SnocBumpProof.agda) proves that reading the result last-element-first agrees with cons thinning on the input read in that same direction. This transfers the cons fold’s coverage and subsequence proofs to the snoc fold.
@@ -71,6 +82,22 @@ The [worked knapsack derivation](knapsack.md) follows one item through the take 
 [Knapsack](../src/AoP/Chapter08/Knapsack.agda), [KnapsackSearch](../src/AoP/Chapter08/KnapsackSearch.agda), and [KnapsackFrontier](../src/AoP/Chapter08/KnapsackFrontier.agda) treat feasible selections, optimal search, and pruning. [KnapsackGuardStep](../src/AoP/Chapter08/KnapsackGuardStep.agda) derives the guarded branch condition for natural weights and values: a lighter, at-least-as-valuable representative can match either taking or skipping the next item. Value alone fails at capacity 3: `(weight,value) = (1,4)` can take `(2,3)` and reach value 7, whereas `(3,5)` must skip and remains at 5. [KnapsackSortedBranches](../src/AoP/Chapter08/KnapsackSortedBranches.agda) proves that taking an item preserves descending value order: adding its value preserves comparisons, and filtering overweight results preserves the surviving order. For the same capacity and next item, extending `[(3,5),(1,4),(0,0)]` retains `[(3,7),(2,3)]`. The skip stream keeps the original order. [KnapsackMerge](../src/AoP/Chapter08/KnapsackMerge.agda) merges the take and skip streams, preserving descending order and membership in both directions. In the example the merged values are `7,5,4,3,0`. [KnapsackSortedTable](../src/AoP/Chapter08/KnapsackSortedTable.agda) folds merging and thinning over all items and proves every resulting table remains sorted. The sample sweep keeps `[(3,7),(1,4),(0,0)]`. [KnapsackStreamLaw](../src/AoP/Chapter08/KnapsackStreamLaw.agda) proves both membership directions before thinning: each merged candidate comes from a previous pack and an enabled take or skip, and every such choice occurs. [KnapsackTableCoverage](../src/AoP/Chapter08/KnapsackTableCoverage.agda) proves the whole-fold invariant: every survivor has a legal take/skip history, and every legal history is represented by a survivor at least as valuable and no heavier. Skipping all items supplies a history even at capacity zero. [KnapsackHead](../src/AoP/Chapter08/KnapsackHead.agda) extracts the first survivor: the all-skip history rules out an empty table, and descending value order puts the head above every legal history’s representative. `Solver.solve` returns the optimal summary and its take/skip witness. For `[(2,3),(3,5),(1,4)]` at capacity 3 it returns `(3,7)`. [KnapsackPackBridge](../src/AoP/Chapter08/KnapsackPackBridge.agda) turns that history back into a selection of original input items. Its `solve-pack` has the same `Best` specification as exhaustive search for any item type with natural weights and values. Replaying by input position keeps distinct items distinguishable even when their summaries coincide. [KnapsackItemExample](../src/AoP/Chapter08/KnapsackItemExample.agda) checks the actual selected names: at capacity 4, `red` and `blue`, each weighing 2 and worth 3, together beat `heavy`, which weighs 3 and is worth 5.
 
 ## §8.5 The paragraph problem
+
+**Calculate the objective from the layout state.** Let `m` be the margin, `k` the number of completed lines, and `l` the width of the current line. Charge unused space on completed lines only. Let `flat` be the width of all the words written on one line, counting one space between adjacent words. [ParagraphSnocWaste.balance](../src/AoP/Chapter08/ParagraphSnocWaste.agda) gives the invariant
+
+```text
+waste + flat = k * (m + 1) + l.
+```
+
+To see where the `+ 1` comes from, append a word of width `w`. On either branch `flat` grows by `1 + w`. Gluing the word leaves `waste` unchanged and increases `l` by the same amount (provided the line fits). Breaking instead adds `m − l` to `waste`, increments `k`, and sets the new width to `w`. The left side after the break becomes
+
+```text
+(m − l) + waste + flat + 1 + w
+= (m − l) + k * (m + 1) + l + 1 + w     previous invariant
+= (k + 1) * (m + 1) + w                  since l ≤ m.
+```
+
+Thus layouts of the same words can be compared using `k` and `l`, since `flat` is fixed. At margin 6 the words `[2,2,1]` have `flat = 7`. Joining the first two and breaking before the last gives `(k,l) = (1,1)`, hence waste `7 + 1 − 7 = 1`. Breaking after the first gives `(1,4)`, hence waste `4`. [ParagraphSnocTrace](../src/AoP/Chapter08/ParagraphSnocTrace.agda) checks the line decisions and both costs. This calculation concerns additive waste; squaring each line’s slack changes the objective.
 
 The objective matters. [ParagraphSquareFailure](../src/AoP/Chapter08/ParagraphSquareFailure.agda) checks two layouts of word widths `[3,2,2,5]` at margin 6. Greedy closes lines of widths 6 and 2, leaving gaps 0 and 4; breaking earlier closes widths 3 and 5, leaving gaps 3 and 1. Both layouts have additive waste 4, but the squared penalties are 16 and 10 respectively. Thus the greedy rule in 8.24 fails for the section’s squared objective.
 

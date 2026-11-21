@@ -58,6 +58,34 @@ module Prune {A : Set} (_≼_ : A → A → Set) (rid : ∀ x → x ≼ x)
     correct [] = thin-id rid
     correct (x ∷ xs) = thin-compose chain (local x (thinlist xs)) (lift x (correct xs))
 
+    -- Cost model: charge one call to compare when bump sees a first
+    -- survivor, zero when its second argument is empty. This counts
+    -- comparisons, independently of their internal implementation.
+    open import Agda.Builtin.Nat using (Nat; zero; suc)
+    charge size work : List A → Nat
+    charge [] = 0
+    charge (_ ∷ _) = 1
+    size [] = 0
+    size (_ ∷ xs) = suc (size xs)
+    work [] = 0
+    work (x ∷ xs) with thinlist xs
+    ... | [] = work xs
+    ... | y ∷ ys = suc (work xs)
+
+    -- Coverage of the head forces a survivor of every nonempty suffix.
+    occupied : ∀ {xs} a → a ∈ xs → charge xs ≡ 1
+    occupied _ here = refl
+    occupied _ (there _) = refl
+    tested : ∀ x xs → charge (thinlist (x ∷ xs)) ≡ 1
+    tested x xs with Thin.cover (correct (x ∷ xs)) x here
+    ... | a , slot , _ = occupied a slot
+
+    exact-work : ∀ x xs → work (x ∷ xs) ≡ size xs
+    exact-work x [] = refl
+    exact-work x (y ∷ ys) with thinlist (y ∷ ys) | tested y ys
+    ... | [] | ()
+    ... | _ ∷ _ | _ = cong suc (exact-work y ys)
+
     -- Coverage alone would permit shuffling or duplicating candidates.
     -- The second half of the specification is about their positions:
     -- each survivor must occupy a distinct input slot, in input order.

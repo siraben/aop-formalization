@@ -66,7 +66,33 @@ ordered (right {y = y} {zs = zs} yx m) sx@(Order.cons lx _) (Order.cons ly sy) =
         ... | inl here = yx
         ... | inl (there l) = chain (lx l) yx
 
+-- A head comparison emits one cell. When either input ends, the
+-- remaining stream is returned intact. Charge that suffix separately
+-- to obtain an exact accounting even when one branch is empty.
+open import Agda.Builtin.Nat using (Nat; suc; _+_)
+private
+  length : List Summary → Nat
+  length [] = 0
+  length (_ ∷ xs) = suc (length xs)
+comparisons leftover : ∀ {xs ys zs} → Merge xs ys zs → Nat
+comparisons (nilL _) = 0
+comparisons (nilR _) = 0
+comparisons (left _ m) = suc (comparisons m)
+comparisons (right _ m) = suc (comparisons m)
+leftover (nilL ys) = length ys
+leftover (nilR xs) = length xs
+leftover (left _ m) = leftover m
+leftover (right _ m) = leftover m
+account : ∀ {xs ys zs} (m : Merge xs ys zs) → comparisons m + leftover m ≡ length zs
+account (nilL _) = refl
+account (nilR _) = refl
+account (left _ m) = cong suc (account m)
+account (right _ m) = cong suc (account m)
+
 sample : List Summary
 sample = (3 , 5) ∷ (1 , 4) ∷ (0 , 0) ∷ []
 worked : fst (merge (Branch.take 3 (2 , 3) sample) sample) ≡ (3 , 7) ∷ (3 , 5) ∷ (1 , 4) ∷ (2 , 3) ∷ (0 , 0) ∷ []
 worked = refl
+trace = snd (merge (Branch.take 3 (2 , 3) sample) sample)
+worked-cost : (comparisons trace ≡ 4) × (leftover trace ≡ 1)
+worked-cost = refl , refl
