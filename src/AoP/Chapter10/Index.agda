@@ -115,6 +115,8 @@ import AoP.Chapter10.TeXRoundInterval
 import AoP.Chapter10.TeXShortestSearch
 import AoP.Chapter10.TeXSinglePrinter
 import AoP.Chapter10.TeXStrictDigit
+import AoP.Chapter10.TeXOrdinaryLoop
+import AoP.Chapter10.TeXUpperPrefix
 import AoP.Chapter10.TeXUpperGridParity
 import AoP.Chapter10.TeXUpperResidual
 import AoP.Chapter10.TeXWidthAgreement
