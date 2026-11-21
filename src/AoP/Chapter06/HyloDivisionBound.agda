@@ -14,15 +14,31 @@ module Law {o h e p} {C : Category o h e} (L : Laws C p) (F : Functor C C)
   open Category C
   open Laws L
   private module F = Functor F
+  private
+    infixr 2 _≈⟨_⟩_ _⊑⟨_⟩_
+    _≈⟨_⟩_ : ∀ {X Y} (a : Hom X Y) {b c} → a ≈ b → b ≈ c → a ≈ c
+    _ ≈⟨ ab ⟩ bc = transitive ab bc
+    _⊑⟨_⟩_ : ∀ {X Y} (a : Hom X Y) {b c} → a ⊑ b → b ⊑ c → a ⊑ c
+    _ ⊑⟨ ab ⟩ bc = trans ab bc
+    infix 3 _∎≈ _∎⊑
+    _∎≈ : ∀ {X Y} (a : Hom X Y) → a ≈ a
+    _ ∎≈ = reflexive
+    _∎⊑ : ∀ {X Y} (a : Hom X Y) → a ⊑ a
+    _ ∎⊑ = respect reflexive
   module At {A B I} (r : Hom (F.F₀ A) A) (s : Hom B (F.F₀ B)) (out : Hom I (F.F₀ I))
     (c : Hom I A) (u : Hom B I) (unfold : (out ∘ u) ≈ (F.F₁ u ∘ s))
     (induct : ∀ d → ((r ∘ F.F₁ d) ∘ out) ⊑ d → c ⊑ d) where
     -- Fixedness is independent of division. Reassemble the functor
     -- layer and apply the producer and consumer equations in turn.
     fixed : ((r ∘ F.F₁ c) ∘ out) ≈ c → ((r ∘ F.F₁ (c ∘ u)) ∘ s) ≈ (c ∘ u)
-    fixed roll = transitive (compose-cong (compose-cong reflexive (F.composition c u)) reflexive)
-      (transitive (compose-cong (symmetric (assoc _ _ _)) reflexive) (transitive (assoc _ _ _)
-      (transitive (compose-cong reflexive (symmetric unfold)) (transitive (symmetric (assoc _ _ _)) (compose-cong roll reflexive)))))
+    fixed roll =
+      (r ∘ F.F₁ (c ∘ u)) ∘ s           ≈⟨ compose-cong (compose-cong reflexive (F.composition c u)) reflexive ⟩
+      (r ∘ (F.F₁ c ∘ F.F₁ u)) ∘ s      ≈⟨ compose-cong (symmetric (assoc _ _ _)) reflexive ⟩
+      ((r ∘ F.F₁ c) ∘ F.F₁ u) ∘ s      ≈⟨ assoc _ _ _ ⟩
+      (r ∘ F.F₁ c) ∘ (F.F₁ u ∘ s)      ≈⟨ compose-cong reflexive (symmetric unfold) ⟩
+      (r ∘ F.F₁ c) ∘ (out ∘ u)         ≈⟨ symmetric (assoc _ _ _) ⟩
+      ((r ∘ F.F₁ c) ∘ out) ∘ u         ≈⟨ compose-cong roll reflexive ⟩
+      c ∘ u                           ∎≈
     module Candidate (x : Hom B A) (pre : ((r ∘ F.F₁ x) ∘ s) ⊑ x)
       (d : Hom I A) (cancel : (d ∘ u) ⊑ x)
       (divide : ∀ k → (k ∘ u) ⊑ x → k ⊑ d) where
@@ -38,6 +54,13 @@ module Law {o h e p} {C : Category o h e} (L : Laws C p) (F : Functor C C)
       rearrange = transitive (compose-cong (assoc _ _ _) reflexive) (transitive (assoc _ _ _)
         (transitive (compose-cong reflexive pass) (symmetric (assoc _ _ _))))
       prefixed : ((r ∘ F.F₁ d) ∘ out) ⊑ d
-      prefixed = divide _ (trans (respect rearrange) (trans (mono (mono rid (monotone cancel)) rid) pre))
+      prefixed = divide _ (
+        (((r ∘ F.F₁ d) ∘ out) ∘ u) ⊑⟨ respect rearrange ⟩
+        (r ∘ F.F₁ (d ∘ u)) ∘ s     ⊑⟨ mono (mono rid (monotone cancel)) rid ⟩
+        (r ∘ F.F₁ x) ∘ s           ⊑⟨ pre ⟩
+        x                         ∎⊑)
       least : (c ∘ u) ⊑ x
-      least = trans (mono (induct d prefixed) rid) cancel
+      least =
+        c ∘ u ⊑⟨ mono (induct d prefixed) rid ⟩  -- fold induction gives c ⊑ d
+        d ∘ u ⊑⟨ cancel ⟩                       -- d is the division of x by u
+        x     ∎⊑

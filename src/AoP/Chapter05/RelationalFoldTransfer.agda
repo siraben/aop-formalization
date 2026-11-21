@@ -29,24 +29,44 @@ module Transfer {o h e o′ h′ e′} (C : Category o h e) (D : Category o′ h
       alg = L.transpose (S.obj (F.F₀ P) (r D.∘ H mem))
       read : ∀ {X} → C.Hom X P → Rel X B
       read f = mem D.∘ J.F₁ f
+      private
+        infixr 2 _≈⟨_⟩_
+        _≈⟨_⟩_ : ∀ {X Y} (p : D.Hom X Y) {q s} → p D.≈ q → q D.≈ s → p D.≈ s
+        _ ≈⟨ eq ⟩ rest = D.transitive eq rest
+        infix 3 _∎≈
+        _∎≈ : ∀ {X Y} (p : D.Hom X Y) → p D.≈ p
+        _ ∎≈ = D.reflexive
       route : ∀ {X Y} (f : C.Hom Y P) (g : C.Hom X Y) → read (f C.∘ g) D.≈ (read f D.∘ J.F₁ g)
       route f g = D.transitive (D.compose-cong D.reflexive (J.composition _ _)) (D.symmetric (D.assoc _ _ _))
       layer : ∀ {X} (f : C.Hom X P) → read (alg C.∘ F.F₁ f) D.≈ (r D.∘ H (read f))
-      layer f = D.transitive (route alg _) (D.transitive (D.compose-cong (L.cancel _) (D.symmetric (graph f)))
-        (D.transitive (D.assoc _ _ _) (D.compose-cong D.reflexive (D.symmetric (compose mem _)))))
+      layer f =
+        read (alg C.∘ F.F₁ f)             ≈⟨ route alg _ ⟩
+        read alg D.∘ J.F₁ (F.F₁ f)        ≈⟨ D.compose-cong (L.cancel _) (D.symmetric (graph f)) ⟩
+        (r D.∘ H mem) D.∘ H (J.F₁ f)     ≈⟨ D.assoc _ _ _ ⟩
+        r D.∘ (H mem D.∘ H (J.F₁ f))     ≈⟨ D.compose-cong D.reflexive (D.symmetric (compose mem _)) ⟩
+        r D.∘ H (read f)                 ∎≈
       module Fold (fold : C.Hom I P) (step : (fold C.∘ roll) C.≈ (alg C.∘ F.F₁ fold))
         (unique : ∀ f → (f C.∘ roll) C.≈ (alg C.∘ F.F₁ f) → f C.≈ fold) where
         solution = read fold
         solves : (solution D.∘ J.F₁ roll) D.≈ (r D.∘ H solution)
-        solves = D.transitive (D.symmetric (route fold roll)) (D.transitive (D.compose-cong D.reflexive (J.resp step)) (layer fold))
+        solves =
+          solution D.∘ J.F₁ roll    ≈⟨ D.symmetric (route fold roll) ⟩
+          read (fold C.∘ roll)      ≈⟨ D.compose-cong D.reflexive (J.resp step) ⟩
+          read (alg C.∘ F.F₁ fold)  ≈⟨ layer fold ⟩
+          r D.∘ H solution         ∎≈
         module Rival (x : Rel I B) (eq : (x D.∘ J.F₁ roll) D.≈ (r D.∘ H x)) where
           f = L.transpose (S.obj I x)
           -- Both candidate functions represent the same relation;
           -- transpose uniqueness turns the read-back equality into
           -- the ordinary fold equation, to which initiality applies.
           square : read (f C.∘ roll) D.≈ read (alg C.∘ F.F₁ f)
-          square = D.transitive (route f roll) (D.transitive (D.compose-cong (L.cancel _) D.reflexive)
-            (D.transitive eq (D.transitive (D.compose-cong D.reflexive (resp (D.symmetric (L.cancel _)))) (D.symmetric (layer f)))))
+          square =
+            read (f C.∘ roll)      ≈⟨ route f roll ⟩
+            read f D.∘ J.F₁ roll   ≈⟨ D.compose-cong (L.cancel _) D.reflexive ⟩
+            x D.∘ J.F₁ roll        ≈⟨ eq ⟩  -- the rival solves the relational equation
+            r D.∘ H x              ≈⟨ D.compose-cong D.reflexive (resp (D.symmetric (L.cancel _))) ⟩
+            r D.∘ H (read f)       ≈⟨ D.symmetric (layer f) ⟩
+            read (alg C.∘ F.F₁ f)  ∎≈
           eilenberg-wright : f C.≈ fold
           eilenberg-wright = unique f (C.transitive (L.only _ _ square) (C.symmetric (L.only _ _ D.reflexive)))
           only : x D.≈ solution

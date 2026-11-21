@@ -26,7 +26,31 @@ module Law (A B : Set) (_≤a_ : A → A → Set) (_≤b_ : B → B → Set)
 
   -- After distributing, every summand has a bound: it is exactly the
   -- second field of that candidate. Hence the join still meets the test.
+  private
+    infixr 2 _≤⟨_⟩_
+    _≤⟨_⟩_ : (u : B) → ∀ {v w} → u ≤b v → v ≤b w → u ≤b w
+    _ ≤⟨ uv ⟩ vw = trans-b uv vw
+    infix 3 last-step
+    last-step : (u v : B) → u ≤b v → u ≤b v
+    last-step u v proof = proof
+    syntax last-step u v proof = u ≤⟨ proof ⟩∎ v
+
   admissible : ∀ s → apply (residual s) ≤b s
-  admissible s = trans-b (distribute (value {s})) (bound _ s snd)
+  admissible s =
+    apply (join (value {s}))         ≤⟨ distribute (value {s}) ⟩
+    -- Bound the join by bounding each term with its membership evidence.
+    joinB (λ i → apply (value {s} i)) ≤⟨ bound _ s snd ⟩∎ s
+
   eliminate : ∀ x s → x ≤a residual s → apply x ≤b s
-  eliminate x s below = trans-b (mono below) (admissible s)
+  eliminate x s below =
+    apply x ≤⟨ mono below ⟩
+    apply (residual s) ≤⟨ admissible s ⟩∎ s
+
+  -- If the budget s is relaxed to t, its largest admissible candidate
+  -- is still admissible. Introduce it into the new join. This uses
+  -- neither antisymmetry nor a decision procedure on candidates.
+  monotone-residual : ∀ s t → s ≤b t → residual s ≤a residual t
+  monotone-residual s t relax = introduce (residual s) t test
+    where test : apply (residual s) ≤b t
+          test = apply (residual s) ≤⟨ admissible s ⟩
+                 s                  ≤⟨ relax ⟩∎ t

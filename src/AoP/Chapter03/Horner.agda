@@ -41,5 +41,9 @@ module Ruby {A : Set} (e : A) (_⊛_ : A → A → A) (f : A → A)
 
   -- Replace the materialised triangle with one traversal (§3.2).
   horner : ∀ xs → reduce (tri f xs) ≡ ⦅ e ∣ (λ x y → x ⊛ f y) ⦆ xs
-  horner = fusion reduce [] (λ x ys → x ∷ map f ys) (λ x y → x ⊛ f y)
-                  (λ x ys → cong (x ⊛_) (promote ys))
+  horner = fusion reduce [] (λ x ys → x ∷ map f ys) (λ x y → x ⊛ f y) λ x ys → begin
+    reduce (x ∷ map f ys)   ≡⟨⟩                         -- unfold reduction at the head
+    x ⊛ reduce (map f ys)   ≡⟨ cong (x ⊛_) (promote ys) ⟩  -- move f outside the tail reduction
+    x ⊛ f (reduce ys)       ∎
+  -- The last expression needs only x and the already reduced tail.
+  -- Fusion therefore replaces the intermediate list by that one value.
