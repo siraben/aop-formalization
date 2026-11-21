@@ -28,6 +28,20 @@ record Laws {o h e} (C : Category o h e) (p : Level) : Set (o ⊔ h ⊔ e ⊔ ls
     mono : ∀ {a b c} {f f′ : Hom a b} {g g′ : Hom b c} → g ⊑ g′ → f ⊑ f′ → (g ∘ f) ⊑ (g′ ∘ f′)
     modular : ∀ {a b c} (g : Hom b c) (f : Hom a b) (k : Hom a c) → meet (g ∘ f) k ⊑ (g ∘ meet f (rev g ∘ k))
 
+-- Read an ordered calculation from the smaller arrow to its bound.
+-- Equality steps may occur in the same chain without hiding direction.
+module InclusionReasoning {o h e p} {C : Category o h e} (L : Laws C p) where
+  open Category C
+  open Laws L
+  infixr 2 _⊑⟨_⟩_ _=⟨_⟩_
+  infix 3 _∎⊑
+  _⊑⟨_⟩_ : ∀ {A B} (f : Hom A B) {g k} → f ⊑ g → g ⊑ k → f ⊑ k
+  _ ⊑⟨ fg ⟩ gk = trans fg gk
+  _=⟨_⟩_ : ∀ {A B} (f : Hom A B) {g k} → f ≈ g → g ⊑ k → f ⊑ k
+  _ =⟨ fg ⟩ gk = trans (respect fg) gk
+  _∎⊑ : ∀ {A B} (f : Hom A B) → f ⊑ f
+  _ ∎⊑ = respect reflexive
+
 module Pair {o h e p o′ h′ e′ p′} {C : Category o h e} {D : Category o′ h′ e′}
             (left : Laws C p) (right : Laws D p′) where
   private module L = Laws left

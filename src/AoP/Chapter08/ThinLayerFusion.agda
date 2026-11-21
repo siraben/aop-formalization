@@ -2,7 +2,7 @@
 module AoP.Chapter08.ThinLayerFusion where
 
 open import AoP.Chapter02.Categories
-open import AoP.Chapter04.ProductAllegory using (Laws)
+open import AoP.Chapter04.ProductAllegory using (Laws; module InclusionReasoning)
 open import AoP.Chapter02.Functors using (Functor)
 import AoP.Chapter08.ThinningHyloBound as Bound
 
@@ -12,6 +12,7 @@ import AoP.Chapter08.ThinningHyloBound as Bound
 module Law {o h e p} {C : Category o h e} (L : Laws C p) (F : Functor C C) where
   open Category C
   open Laws L
+  open InclusionReasoning L
   private module F = Functor F
   module Run {A P} (mem : Hom P A) (Q : Hom A A) (T : Hom P P)
     (S : Hom (F.F₀ A) A) (G : Hom (F.F₀ P) P)
@@ -22,12 +23,20 @@ module Law {o h e p} {C : Category o h e} (L : Laws C p) (F : Functor C C) where
     M = T ∘ G
     -- Read a retained member, forget pruning, then unpack generation.
     layer-sub : (mem ∘ M) ⊑ (S ∘ F.F₁ mem)
-    layer-sub = trans (respect (symmetric (assoc _ _ _))) (trans (mono members (respect reflexive)) generated)
+    layer-sub =
+      mem ∘ (T ∘ G) =⟨ symmetric (assoc _ _ _) ⟩
+      (mem ∘ T) ∘ G ⊑⟨ mono members (respect reflexive) ⟩
+      mem ∘ G       ⊑⟨ generated ⟩
+      S ∘ F.F₁ mem  ∎⊑
     -- A rival with children from these sets occurs in the generated
     -- set. The coverage half of thinning gives a retained dominator.
     layer-cover : ((M ∘ F.F₁ (rev mem)) ∘ rev S) ⊑ (rev mem ∘ Q)
-    layer-cover = trans (respect (compose-cong (assoc _ _ _) reflexive)) (trans (respect (assoc _ _ _))
-      (trans (mono (respect reflexive) collect) covers))
+    layer-cover =
+      ((T ∘ G) ∘ F.F₁ (rev mem)) ∘ rev S  =⟨ compose-cong (assoc _ _ _) reflexive ⟩
+      (T ∘ (G ∘ F.F₁ (rev mem))) ∘ rev S  =⟨ assoc _ _ _ ⟩
+      T ∘ ((G ∘ F.F₁ (rev mem)) ∘ rev S)  ⊑⟨ mono (respect reflexive) collect ⟩
+      T ∘ rev mem                         ⊑⟨ covers ⟩
+      rev mem ∘ Q                         ∎⊑
     module H = Bound.Law.At L F (rev mem) Q M S layer-cover simulate trans-Q
 
     module Result {I} (m : Hom I P) (s : Hom I A)

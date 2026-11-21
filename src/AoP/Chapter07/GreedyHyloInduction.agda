@@ -2,7 +2,7 @@
 module AoP.Chapter07.GreedyHyloInduction where
 
 open import AoP.Chapter02.Categories
-open import AoP.Chapter04.ProductAllegory using (Laws)
+open import AoP.Chapter04.ProductAllegory using (Laws; module InclusionReasoning)
 open import AoP.Chapter02.Functors using (Functor)
 
 -- §7.2, Theorem 7.2. Compare a greedy derivation with an arbitrary
@@ -12,6 +12,7 @@ open import AoP.Chapter02.Functors using (Functor)
 module Law {o h e p} {C : Category o h e} (L : Laws C p) (F : Functor C C) where
   open Category C
   open Laws L
+  open InclusionReasoning L
   private module F = Functor F
   module At {A I} (R : Hom A A) (S M : Hom (F.F₀ A) A) (s m : Hom I A)
     (local-best : (M ∘ rev S) ⊑ R) (transitive-R : (R ∘ R) ⊑ R)
@@ -20,8 +21,13 @@ module Law {o h e p} {C : Category o h e} (L : Laws C p) (F : Functor C C) where
     -- comparison of children to one between parents; local optimality
     -- and transitivity then contract the two parent comparisons.
     closed : ((M ∘ F.F₁ R) ∘ rev S) ⊑ R
-    closed = trans (respect (assoc _ _ _)) (trans (mono (respect reflexive) simulate)
-      (trans (respect (symmetric (assoc _ _ _))) (trans (mono local-best (respect reflexive)) transitive-R)))
+    closed =
+      (M ∘ F.F₁ R) ∘ rev S    =⟨ assoc _ _ _ ⟩
+      M ∘ (F.F₁ R ∘ rev S)    ⊑⟨ mono (respect reflexive) simulate ⟩
+      M ∘ (rev S ∘ R)         =⟨ symmetric (assoc _ _ _) ⟩
+      (M ∘ rev S) ∘ R         ⊑⟨ mono local-best (respect reflexive) ⟩
+      R ∘ R                   ⊑⟨ transitive-R ⟩
+      R                       ∎⊑
     optimal : (∀ X → ((M ∘ F.F₁ X) ∘ rev S) ⊑ X → (m ∘ rev s) ⊑ X) → (m ∘ rev s) ⊑ R
     optimal induct = induct R closed
     -- Fold monotonicity transports local feasibility M ⊑ S. The

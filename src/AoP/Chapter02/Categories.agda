@@ -25,6 +25,17 @@ record Category (o h e : Level) : Set (lsuc (o ⊔ h ⊔ e)) where
     assoc : ∀ {A B C D} (t : Hom C D) (s : Hom B C) (r : Hom A B) →
             (t ∘ s) ∘ r ≈ t ∘ (s ∘ r)
 
+-- Use the category's own equality when calculating with arrows. In
+-- Fun this is pointwise equality; no equality of functions is needed.
+module ArrowReasoning {o h e} (C : Category o h e) where
+  open Category C
+  infixr 2 _≈⟨_⟩_
+  infix 3 _∎≈
+  _≈⟨_⟩_ : ∀ {A B} (f : Hom A B) {g k} → f ≈ g → g ≈ k → f ≈ k
+  _ ≈⟨ p ⟩ q = transitive p q
+  _∎≈ : ∀ {A B} (f : Hom A B) → f ≈ f
+  _ ∎≈ = reflexive
+
 open import Agda.Primitive using (lzero)
 Fun : Category (lsuc lzero) lzero lzero
 Fun = record

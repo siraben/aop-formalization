@@ -34,13 +34,7 @@ module From {o h e} (C : Category o h e) (F : Functor C C) where
     layer = alg (Functor.F₀ F (carrier I)) (Functor.F₁ F (step I))
     out = fold layer
     roll-out : step I ∘ out ≈ identity
-    private
-      infixr 2 _≈⟨_⟩_
-      _≈⟨_⟩_ : ∀ {A B} (f : Hom A B) {g k} → f ≈ g → g ≈ k → f ≈ k
-      _ ≈⟨ p ⟩ q = transitive p q
-      infix 3 _∎≈
-      _∎≈ : ∀ {A B} (f : Hom A B) → f ≈ f
-      _ ∎≈ = reflexive
+    open ArrowReasoning C
     roll-out =
       step I ∘ out ≈⟨ fusion (hom {X = layer} {Y = I} (step I) reflexive) ⟩
       fold I       ≈⟨ symmetric reflection ⟩
